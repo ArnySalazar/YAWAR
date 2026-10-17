@@ -1,0 +1,113 @@
+"""Cliente mínimo de WhatsApp Cloud API.
+
+En MODO_PRUEBA=1 no se llama a Meta: los mensajes se guardan en BANDEJA_PRUEBA,
+lo que permite probar todo el flujo sin credenciales.
+
+Importante: un mensaje que inicia la conversación (el recordatorio semanal) debe ser una
+PLANTILLA aprobada por Meta. Los mensajes interactivos libres (la lista de razones) solo
+se pueden enviar dentro de las 24 horas después de que la persona respondió.
+"""
+import hashlib
+import hmac
+
+import httpx
+
+from api import config
+from bot import mensajes
+
+BANDEJA_PRUEBA: list[dict] = []
+
+
+def _enviar(payload: dict) -> str | None:
+    if config.MODO_PRUEBA:
+        BANDEJA_PRUEBA.append(payload)
+        return f"prueba-{len(BANDEJA_PRUEBA)}"
+    url = (f"https://graph.facebook.com/{config.WA_API_VERSION}/"
+           f"{config.WA_PHONE_NUMBER_ID}/messages")
+    r = httpx.post(url, json=payload,
+                   headers={"Authorization": f"Bearer {config.WA_TOKEN}"}, timeout=20)
+    r.raise_for_status()
+    datos = r.json()
+    return datos.get("messages", [{}])[0].get("id")
+
+
+def enviar_recordatorio(telefono: str, alias: str, id_nino: str, semana: str) -> str | None:
+    """Plantilla con 3 botones de respuesta rápida. La plantilla en Meta debe tener:
+    cuerpo con una variable {{1}} (el alias) y 3 botones quick reply en este orden:
+    Sí le di / No le di / Tuve un problema."""
+    botones = [
+        {"type": "button", "sub_type": "quick_reply", "index": str(i),
+         "parameters": [{"type": "payload",
+                         "payload": mensajes.id_boton(op, id_nino, semana)}]}
+        for i, op in enumerate(mensajes.RESPUESTAS)
+    ]
+    payload = {
+        "messaging_product": "whatsapp",
+        "to": telefono,
+        "type": "template",
+        "template": {
+            "name": config.WA_PLANTILLA_RECORDATORIO,
+            "language": {"code": config.WA_PLANTILLA_IDIOMA},
+            "components": [
+                {"type": "body", "parameters": [{"type": "text", "text": alias}]},
+                *botones,
+            ],
+        },
+    }
+    return _enviar(payload)
+
+
+def enviar_pregunta_razon(telefono: str, id_nino: str, semana: str) -> str | None:
+    """Mensaje de lista (permitido porque la persona acaba de responder)."""
+    filas = [{"id": mensajes.id_boton(f"razon:{k}", id_nino, semana), "title": v}
+             for k, v in mensajes.RAZONES.items()]
+    payload = {
+        "messaging_product": "whatsapp",
+        "to": telefono,
+        "type": "interactive",
+        "interactive": {
+            "type": "list",
+            "body": {"text": mensajes.TEXTO_PREGUNTA_RAZON},
+            "action": {"button": "Elegir motivo",
+                       "sections": [{"title": "Motivos", "rows": filas}]},
+        },
+    }
+    return _enviar(payload)
+
+
+def enviar_texto(telefono: str, texto: str) -> str | None:
+    return _enviar({"messaging_product": "whatsapp", "to": telefono,
+                    "type": "text", "text": {"body": texto}})
+
+
+def firma_valida(cuerpo: bytes, firma: str | None) -> bool:
+    """Verifica X-Hub-Signature-256 si se configuró WA_APP_SECRET."""
+    if not config.WA_APP_SECRET:
+        return True
+    if not firma or not firma.startswith("sha256="):
+        return False
+    esperado = hmac.new(config.WA_APP_SECRET.encode(), cuerpo, hashlib.sha256).hexdigest()
+    return hmac.compare_digest(esperado, firma.removeprefix("sha256="))
+
+
+def extraer_respuestas(evento: dict) -> list[dict]:
+    """Saca de un webhook de Meta las respuestas a botones o listas.
+    Devuelve [{telefono, opcion, id_nino, semana}]. Ignora todo lo demás."""
+    salida = []
+    for entrada in evento.get("entry", []):
+        for cambio in entrada.get("changes", []):
+            for msg in cambio.get("value", {}).get("messages", []):
+                valor = None
+                if msg.get("type") == "button":  # respuesta a botón de plantilla
+                    valor = msg.get("button", {}).get("payload")
+                elif msg.get("type") == "interactive":
+                    inter = msg.get("interactive", {})
+                    valor = (inter.get("button_reply") or inter.get("list_reply") or {}).get("id")
+                if not valor:
+                    continue
+                leido = mensajes.leer_id_boton(valor)
+                if leido:
+                    opcion, id_nino, semana = leido
+                    salida.append({"telefono": msg.get("from"), "opcion": opcion,
+                                   "id_nino": id_nino, "semana": semana})
+    return salida

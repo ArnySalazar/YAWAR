@@ -1,0 +1,19 @@
+# Secretos
+.env
+# Datos (ENDES se descarga con el script de datos/, nunca se sube)
+datos/*
+!datos/README.md
+!datos/padron_ejemplo.csv
+*.db
+# Python
+__pycache__/
+.venv/
+.pytest_cache/
+*.pyc
+# Modelos entrenados pesados
+modelo/*.joblib
+
+# Herramientas locales del editor (no se suben)
+.claude/
+CLAUDE.md
+CLAUDE.local.md

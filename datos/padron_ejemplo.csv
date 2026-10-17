@@ -1,0 +1,11 @@
+id_nino,establecimiento_id,alias_cuidador,telefono,edad_meses,area,region,altitud_msnm,controles_cred,fecha_entrega_hierro
+N0001,EESS01,Mamá de N0001,+51000000001,8,urbano,Lima,150,3,2026-10-01
+N0002,EESS01,Mamá de N0002,+51000000002,14,urbano,Lima,150,2,2026-10-02
+N0003,EESS01,Papá de N0003,+51000000003,22,urbano,Lima,150,0,2026-09-20
+N0004,EESS01,Mamá de N0004,+51000000004,30,urbano,Lima,150,1,2026-09-15
+N0005,EESS02,Mamá de N0005,+51000000005,10,rural,Cusco,3400,2,2026-10-03
+N0006,EESS02,Abuela de N0006,+51000000006,19,rural,Cusco,3400,0,2026-09-28
+N0007,EESS02,Mamá de N0007,+51000000007,27,rural,Cusco,3400,1,2026-09-10
+N0008,EESS03,Mamá de N0008,+51000000008,12,rural,Loreto,120,2,2026-10-05
+N0009,EESS03,Mamá de N0009,+51000000009,24,urbano,Loreto,120,0,2026-09-25
+N0010,EESS03,Papá de N0010,+51000000010,33,rural,Loreto,120,1,2026-09-01

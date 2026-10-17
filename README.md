@@ -32,9 +32,12 @@ Los formatos que se pasan entre carpetas (padrón, puntaje y registro semanal) e
 python -m venv .venv && source .venv/bin/activate   # en Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.ejemplo .env            # MODO_PRUEBA=1 no llama a WhatsApp
-python -m pytest -q             # debe decir "3 passed"
+python -m pytest -q             # todas las pruebas deben pasar
+python -m scripts.reiniciar_demo   # base limpia con el padrón de ejemplo
 uvicorn api.main:app --reload   # documentación en http://localhost:8000/docs
 ```
+
+Si en el `.env` defines `API_CLAVE`, todas las rutas del panel piden el encabezado `X-API-Key` (agrega `-H "X-API-Key: tu-clave"` a cada `curl`). El webhook y `/salud` no la piden.
 
 Prueba rápida con el padrón de ejemplo:
 
@@ -52,12 +55,16 @@ curl localhost:8000/establecimientos/EESS01/indicadores
 | `POST /padron` | Carga el CSV del padrón |
 | `POST /establecimientos/{id}/lista?capacidad=N` | Genera la lista de la semana: los N primeros van a visita, el resto a WhatsApp |
 | `GET /establecimientos/{id}/lista.csv?capacidad=N` | La misma lista en CSV para imprimir (plan B) |
-| `POST /establecimientos/{id}/recordatorios` | Envía el recordatorio semanal (no duplica) |
+| `POST /establecimientos/{id}/recordatorios` | Envía el recordatorio semanal (no duplica; informa enviados, fallidos y bajas) |
 | `GET /ninos/{id}/historial` | Acciones y respuestas por semana |
 | `GET /establecimientos/{id}/indicadores` | Enviados, respondidos, "sí le di" y meta-alerta |
 | `GET` y `POST /webhook` | Verificación y respuestas de WhatsApp |
 
 **Reglas de prioridad:** primero quien la semana pasada respondió "No le di" o "Tuve un problema"; luego quien no respondió en `DIAS_SIN_RESPUESTA` días; luego el resto por puntaje.
+
+**Mensajes de texto libre:** si el cuidador escribe BAJA deja de recibir mensajes (ALTA para volver). Cualquier otro texto recibe una respuesta de ayuda. Todo lo que llega se guarda en `mensajes_entrantes`.
+
+**Robustez:** el webhook no procesa dos veces el mismo mensaje y siempre responde 200; un envío fallido no detiene a los demás; el padrón se valida completo antes de guardarse. Ver `docs/riesgos_demo.md`.
 
 **Meta-alerta:** si en una semana un establecimiento envía o recibe menos del 30% de su promedio reciente, el sistema lo avisa (para detectar que algo dejó de funcionar).
 

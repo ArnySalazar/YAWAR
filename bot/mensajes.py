@@ -26,6 +26,16 @@ TEXTO_RECORDATORIO = (
 )
 TEXTO_PREGUNTA_RAZON = "Gracias por contarnos. ¿Qué pasó? Elige una opción:"
 TEXTO_GRACIAS_SI = "¡Gracias! Sigue así. Si tienes dudas, consulta en tu establecimiento."
+TEXTO_BAJA = (
+    "Listo, ya no te enviaremos mensajes. Si cambias de opinión, escribe ALTA."
+)
+TEXTO_ALTA = "Gracias, volverás a recibir los recordatorios semanales."
+TEXTO_AYUDA = (
+    "Por ahora solo puedo leer los botones. Si no quieres recibir más mensajes, escribe BAJA."
+)
+PALABRAS_BAJA = {"baja", "stop", "no quiero", "no quiero mensajes", "cancelar"}
+PALABRAS_ALTA = {"alta"}
+
 TEXTO_GRACIAS_RAZON = (
     "Gracias. Le avisaremos al personal de tu establecimiento para que pueda ayudarte."
 )

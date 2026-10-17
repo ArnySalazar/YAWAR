@@ -28,5 +28,8 @@ WA_APP_SECRET = os.getenv("WA_APP_SECRET", "")
 WA_PLANTILLA_RECORDATORIO = os.getenv("WA_PLANTILLA_RECORDATORIO", "recordatorio_hierro")
 WA_PLANTILLA_IDIOMA = os.getenv("WA_PLANTILLA_IDIOMA", "es")
 
+API_CLAVE = os.getenv("API_CLAVE", "")  # si se define, el panel debe enviar el encabezado X-API-Key
+ZONA_HORARIA = os.getenv("ZONA_HORARIA", "America/Lima")
+
 DIAS_SIN_RESPUESTA = int(os.getenv("DIAS_SIN_RESPUESTA", "7"))
 UMBRAL_META_ALERTA = float(os.getenv("UMBRAL_META_ALERTA", "0.3"))

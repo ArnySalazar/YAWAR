@@ -90,24 +90,36 @@ def firma_valida(cuerpo: bytes, firma: str | None) -> bool:
     return hmac.compare_digest(esperado, firma.removeprefix("sha256="))
 
 
-def extraer_respuestas(evento: dict) -> list[dict]:
-    """Saca de un webhook de Meta las respuestas a botones o listas.
-    Devuelve [{telefono, opcion, id_nino, semana}]. Ignora todo lo demás."""
+def extraer_mensajes(evento: dict) -> list[dict]:
+    """Saca de un webhook de Meta los mensajes entrantes.
+    Devuelve [{wa_id, telefono, tipo, valor}], donde valor es el id del botón o de la fila
+    de la lista elegida, o el texto escrito."""
     salida = []
     for entrada in evento.get("entry", []):
         for cambio in entrada.get("changes", []):
             for msg in cambio.get("value", {}).get("messages", []):
-                valor = None
-                if msg.get("type") == "button":  # respuesta a botón de plantilla
-                    valor = msg.get("button", {}).get("payload")
-                elif msg.get("type") == "interactive":
+                tipo = msg.get("type", "otro")
+                if tipo == "button":  # respuesta a botón de plantilla
+                    valor = msg.get("button", {}).get("payload", "")
+                elif tipo == "interactive":
                     inter = msg.get("interactive", {})
-                    valor = (inter.get("button_reply") or inter.get("list_reply") or {}).get("id")
-                if not valor:
-                    continue
-                leido = mensajes.leer_id_boton(valor)
-                if leido:
-                    opcion, id_nino, semana = leido
-                    salida.append({"telefono": msg.get("from"), "opcion": opcion,
-                                   "id_nino": id_nino, "semana": semana})
+                    valor = (inter.get("button_reply") or inter.get("list_reply") or {}).get("id", "")
+                elif tipo == "text":
+                    valor = msg.get("text", {}).get("body", "")
+                else:
+                    valor = ""
+                salida.append({"wa_id": msg.get("id", ""), "telefono": msg.get("from", ""),
+                               "tipo": tipo, "valor": valor})
+    return salida
+
+
+def extraer_estados(evento: dict) -> list[dict]:
+    """Avisos de Meta sobre mensajes que enviamos: sent, delivered, read o failed."""
+    traduccion = {"sent": "enviado", "delivered": "entregado", "read": "leido", "failed": "fallido"}
+    salida = []
+    for entrada in evento.get("entry", []):
+        for cambio in entrada.get("changes", []):
+            for st in cambio.get("value", {}).get("statuses", []):
+                if st.get("status") in traduccion:
+                    salida.append({"wa_id": st.get("id", ""), "estado": traduccion[st["status"]]})
     return salida

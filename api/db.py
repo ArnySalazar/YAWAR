@@ -1,8 +1,9 @@
 """Base de datos. Las tablas siguen la sección "Contratos entre roles" del plan del equipo."""
 from datetime import date, datetime
+from zoneinfo import ZoneInfo
 
-from sqlalchemy import (Date, DateTime, Float, ForeignKey, Integer, String,
-                        UniqueConstraint, create_engine)
+from sqlalchemy import (Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text,
+                        UniqueConstraint, create_engine, event)
 from sqlalchemy.orm import (DeclarativeBase, Mapped, mapped_column,
                             sessionmaker)
 
@@ -19,13 +20,15 @@ class Nino(Base):
     id_nino: Mapped[str] = mapped_column(String, primary_key=True)
     establecimiento_id: Mapped[str] = mapped_column(String, index=True)
     alias_cuidador: Mapped[str] = mapped_column(String)
-    telefono: Mapped[str] = mapped_column(String)
+    telefono: Mapped[str] = mapped_column(String, index=True)
     edad_meses: Mapped[int] = mapped_column(Integer)
     area: Mapped[str] = mapped_column(String)
     region: Mapped[str] = mapped_column(String)
     altitud_msnm: Mapped[int] = mapped_column(Integer)
     controles_cred: Mapped[int] = mapped_column(Integer)
     fecha_entrega_hierro: Mapped[date | None] = mapped_column(Date, nullable=True)
+    # Consentimiento: si el cuidador escribe BAJA, deja de recibir mensajes
+    acepta_mensajes: Mapped[bool] = mapped_column(Boolean, default=True)
 
 
 class Mensaje(Base):
@@ -36,7 +39,21 @@ class Mensaje(Base):
     semana: Mapped[str] = mapped_column(String, index=True)
     tipo: Mapped[str] = mapped_column(String)  # recordatorio | razones
     enviado_en: Mapped[datetime] = mapped_column(DateTime)
-    wa_message_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    wa_message_id: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    # enviado | entregado | leido | fallido (Meta avisa por el webhook)
+    estado: Mapped[str] = mapped_column(String, default="enviado")
+
+
+class MensajeEntrante(Base):
+    """Todo lo que llega por el webhook. Sirve para auditar y para no procesar dos veces
+    el mismo mensaje cuando Meta reintenta."""
+    __tablename__ = "mensajes_entrantes"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    wa_id: Mapped[str] = mapped_column(String, unique=True)
+    telefono: Mapped[str] = mapped_column(String, index=True)
+    tipo: Mapped[str] = mapped_column(String)  # button | interactive | text | otro
+    contenido: Mapped[str] = mapped_column(Text)
+    recibido_en: Mapped[datetime] = mapped_column(DateTime)
 
 
 class Registro(Base):
@@ -58,12 +75,22 @@ class Registro(Base):
 def crear_motor(url: str = config.DATABASE_URL):
     args = {"check_same_thread": False} if url.startswith("sqlite") else {}
     motor = create_engine(url, connect_args=args)
+    if url.startswith("sqlite"):
+        @event.listens_for(motor, "connect")
+        def _activar_claves_foraneas(conexion, _):
+            conexion.execute("PRAGMA foreign_keys=ON")  # SQLite no las aplica por defecto
     Base.metadata.create_all(motor)
     return motor
 
 
 def fabrica_sesiones(motor):
     return sessionmaker(bind=motor, expire_on_commit=False)
+
+
+def ahora() -> datetime:
+    """Hora local de Lima sin zona adjunta. Todas las fechas se guardan así, para que las
+    semanas y los días sin respuesta no se corran 5 horas si el servidor está en UTC."""
+    return datetime.now(ZoneInfo(config.ZONA_HORARIA)).replace(tzinfo=None)
 
 
 def semana_iso(dia: date | datetime) -> str:

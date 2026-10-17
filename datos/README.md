@@ -18,4 +18,6 @@ Variables clave del módulo 1634 (2025), archivo REC95:
 - `QI465ED_CC_A` a `QI465ED_CC_D`: prueba de anemia, diagnóstico, tratamiento indicado y si lo consumió como se indicó.
 - Llave del niño: `CASEID` + `IDX95` (en DIT es `BIDX`; en REC43, `HIDX`).
 
+El padrón acepta una columna opcional `acepta_mensajes` (1 o 0; por defecto 1).
+
 `padron_ejemplo.csv` es un padrón **simulado** de 10 niños para probar la API. Gian genera el padrón completo para la demo.

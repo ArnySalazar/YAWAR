@@ -16,7 +16,7 @@ from modelo.puntuar import puntuar
 COLUMNAS_PADRON = ["id_nino", "establecimiento_id", "alias_cuidador", "telefono", "edad_meses",
                    "area", "region", "altitud_msnm", "controles_cred", "fecha_entrega_hierro"]
 
-log = logging.getLogger("hierroencasa")
+log = logging.getLogger("yawar")
 
 
 def normalizar_telefono(tel: str) -> str:

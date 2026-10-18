@@ -1,4 +1,4 @@
-"""API de HierroEnCasa. Ejecutar con:  uvicorn api.main:app --reload
+"""API de YAWAR. Ejecutar con:  uvicorn api.main:app --reload
 Documentación interactiva en http://localhost:8000/docs
 """
 import csv
@@ -17,9 +17,9 @@ from api.db import Registro, ahora, crear_motor, fabrica_sesiones, semana_iso
 from bot import whatsapp
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
-log = logging.getLogger("hierroencasa")
+log = logging.getLogger("yawar")
 
-app = FastAPI(title="HierroEnCasa API", version="0.2.0")
+app = FastAPI(title="YAWAR API", version="0.2.0")
 _motor = crear_motor()
 _Sesion = fabrica_sesiones(_motor)
 

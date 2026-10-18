@@ -1,4 +1,4 @@
-# YAWAR · HierroEnCasa
+# YAWAR
 
 Hackathon Interdisciplinaria FACI 2026 (UPCH) · Reto 1: Salud digital e IA para el primer nivel de atención.
 

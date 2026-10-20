@@ -1,0 +1,50 @@
+﻿grafico,serie,grupo,porcentaje,ic95_inf,ic95_sup,n_ninos
+G1 recibir no es tomar (2025),Recibió hierro del MINSA (últimos 12 meses),Total,71.95,70.62,73.23,9504
+G1 recibir no es tomar (2025),Recibió hierro del MINSA (últimos 12 meses),6-11,79.1,76.41,81.55,1977
+G1 recibir no es tomar (2025),Recibió hierro del MINSA (últimos 12 meses),12-23,77.63,75.77,79.38,3774
+G1 recibir no es tomar (2025),Recibió hierro del MINSA (últimos 12 meses),24-35,62.36,60.2,64.48,3753
+G1 recibir no es tomar (2025),Tomó hierro (últimos 7 días),Total,38.8,37.53,40.08,9501
+G1 recibir no es tomar (2025),Tomó hierro (últimos 7 días),6-11,65.49,62.65,68.23,1978
+G1 recibir no es tomar (2025),Tomó hierro (últimos 7 días),12-23,38.14,36.17,40.14,3773
+G1 recibir no es tomar (2025),Tomó hierro (últimos 7 días),24-35,24.92,23.22,26.7,3750
+G2 razones de no consumo (2025),Razón (respuesta múltiple),Le dolía el estómago,1.2,0.82,1.74,3510
+G2 razones de no consumo (2025),Razón (respuesta múltiple),Orientación a la madre no fue adecuada,1.95,1.47,2.59,3510
+G2 razones de no consumo (2025),Razón (respuesta múltiple),Le causó diarrea,3.08,2.44,3.87,3510
+G2 razones de no consumo (2025),Razón (respuesta múltiple),Otra,6.44,5.44,7.61,3510
+G2 razones de no consumo (2025),Razón (respuesta múltiple),Le tiñó los dientes,9.22,8.19,10.36,3510
+G2 razones de no consumo (2025),Razón (respuesta múltiple),Se olvidó de darle,10.76,9.52,12.15,3510
+G2 razones de no consumo (2025),Razón (respuesta múltiple),Le causó estreñimiento,33.31,31.33,35.36,3510
+G2 razones de no consumo (2025),Razón (respuesta múltiple),El sabor es desagradable,49.76,47.65,51.86,3510
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Madre de Dios,32.92,27.5,38.84,273
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Puno,34.71,27.77,42.37,182
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Pasco,35.58,28.27,43.62,234
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Moquegua,37.57,31.46,44.09,214
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,La Libertad,39.12,33.15,45.42,257
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Lima,41.49,37.34,45.77,737
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Ucayali,41.63,36.15,47.34,308
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Loreto,41.73,35.92,47.78,324
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,San Martín,43.51,38.48,48.68,397
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Callao,43.67,37.37,50.18,225
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Huánuco,44.17,38.49,50.01,339
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Tumbes,44.47,39.09,49.98,314
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Ica,46.41,39.49,53.46,256
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Huancavelica,46.79,40.11,53.58,229
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Junín,47.33,41.45,53.28,285
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Arequipa,47.8,41.19,54.49,208
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Amazonas,48.09,42.46,53.77,350
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Tacna,49.17,41.85,56.52,196
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Ayacucho,50.1,44.17,56.02,307
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Cusco,50.85,43.78,57.89,225
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Lambayeque,51.76,44.6,58.84,253
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Áncash,52.9,46.68,59.03,223
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Cajamarca,54.73,48.77,60.57,245
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Piura,55.62,50.42,60.7,323
+"G3 tomó entre los que recibieron, por departamento (2025)",2025,Apurímac,55.81,49.48,61.95,268
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2024,Total,43.9,42.7,45.12,10154
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2024,6-11,67.25,64.61,69.8,2081
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2024,12-23,46.77,44.92,48.64,4010
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2024,24-35,29.15,27.48,30.88,4063
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2025,Total,43.66,42.39,44.94,9511
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2025,6-11,66.06,63.31,68.69,1955
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2025,12-23,46.22,44.22,48.23,3752
+G4 anemia 2024 vs 2025 (criterio MINSA 2022),2025,24-35,29.4,27.64,31.21,3804

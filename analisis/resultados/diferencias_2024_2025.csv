@@ -1,0 +1,203 @@
+﻿indicador,grupo_tipo,grupo,estimacion_2024,se_2024,n_2024,estimacion_2025,se_2025,n_2025,cambio_pp,se_cambio,ic_inf,ic_sup,p_valor,distinto_de_0
+Recibió hierro del MINSA (12 meses),Total,Total,70.741,0.641,10079,71.946,0.666,9504,1.205,0.924,-0.607,3.016,0.192,no
+Recibió hierro del MINSA (12 meses),Edad (meses),6-11,81.767,1.254,2085,79.099,1.311,1977,-2.668,1.814,-6.223,0.887,0.141,no
+Recibió hierro del MINSA (12 meses),Edad (meses),12-23,77.334,0.901,4014,77.626,0.922,3774,0.292,1.289,-2.234,2.819,0.821,no
+Recibió hierro del MINSA (12 meses),Edad (meses),24-35,58.268,1.025,3980,62.36,1.092,3753,4.093,1.498,1.157,7.029,0.006,sí
+Recibió hierro del MINSA (12 meses),Área,Urbano,65.454,0.789,6998,66.531,0.822,6889,1.078,1.14,-1.156,3.311,0.344,no
+Recibió hierro del MINSA (12 meses),Área,Rural,84.549,0.938,3081,87.729,0.867,2615,3.18,1.277,0.677,5.683,0.013,sí
+Recibió hierro del MINSA (12 meses),Región natural,Lima Metropolitana,59.349,1.775,1087,56.758,1.749,1154,-2.591,2.492,-7.475,2.293,0.299,no
+Recibió hierro del MINSA (12 meses),Región natural,Resto Costa,68.303,1.093,3060,71.217,1.064,2887,2.914,1.525,-0.076,5.903,0.056,no
+Recibió hierro del MINSA (12 meses),Región natural,Sierra,77.756,0.981,3225,82.105,0.963,2808,4.35,1.374,1.656,7.043,0.002,sí
+Recibió hierro del MINSA (12 meses),Región natural,Selva,78.221,1.128,2707,80.789,1.031,2655,2.568,1.528,-0.427,5.564,0.093,no
+Recibió hierro del MINSA (12 meses),Departamento,Amazonas,83.007,2.01,423,84.398,2.337,417,1.392,3.083,-4.651,7.434,0.652,no
+Recibió hierro del MINSA (12 meses),Departamento,Apurímac,85.148,2.17,342,88.924,1.885,298,3.776,2.874,-1.857,9.408,0.189,no
+Recibió hierro del MINSA (12 meses),Departamento,Arequipa,61.27,2.879,355,63.984,3.074,328,2.715,4.211,-5.54,10.969,0.519,no
+Recibió hierro del MINSA (12 meses),Departamento,Ayacucho,85.327,1.988,388,85.819,2.305,360,0.492,3.044,-5.474,6.458,0.872,no
+Recibió hierro del MINSA (12 meses),Departamento,Cajamarca,83.237,1.816,376,88.699,1.962,273,5.462,2.673,0.223,10.702,0.041,sí
+Recibió hierro del MINSA (12 meses),Departamento,Callao,60.954,2.524,331,64.67,2.807,345,3.715,3.775,-3.683,11.114,0.325,no
+Recibió hierro del MINSA (12 meses),Departamento,Cusco,74.185,2.952,301,85.336,2.468,262,11.151,3.848,3.609,18.692,0.004,sí
+Recibió hierro del MINSA (12 meses),Departamento,Huancavelica,84.543,2.448,307,93.004,1.917,245,8.461,3.109,2.367,14.555,0.007,sí
+Recibió hierro del MINSA (12 meses),Departamento,Huánuco,85.366,2.121,417,84.568,1.831,403,-0.798,2.802,-6.291,4.694,0.776,no
+Recibió hierro del MINSA (12 meses),Departamento,Ica,54.323,2.813,412,58.613,2.576,430,4.289,3.814,-3.186,11.765,0.261,no
+Recibió hierro del MINSA (12 meses),Departamento,Junín,81.854,2.098,380,83.44,2.631,345,1.586,3.365,-5.01,8.182,0.637,no
+Recibió hierro del MINSA (12 meses),Departamento,La Libertad,67.077,3.008,387,72.777,2.443,353,5.7,3.875,-1.895,13.294,0.141,no
+Recibió hierro del MINSA (12 meses),Departamento,Lambayeque,66.87,2.405,398,66.451,2.9,396,-0.42,3.768,-7.804,6.965,0.911,no
+Recibió hierro del MINSA (12 meses),Departamento,Lima,60.323,1.775,1111,57.882,1.751,1170,-2.441,2.493,-7.328,2.446,0.328,no
+Recibió hierro del MINSA (12 meses),Departamento,Loreto,76.728,2.972,416,76.176,2.608,424,-0.553,3.954,-8.302,7.197,0.889,no
+Recibió hierro del MINSA (12 meses),Departamento,Madre de Dios,70.208,2.577,388,72.751,2.118,376,2.543,3.336,-3.995,9.081,0.446,no
+Recibió hierro del MINSA (12 meses),Departamento,Moquegua,67.633,2.901,319,71.355,2.867,299,3.722,4.079,-4.273,11.716,0.362,no
+Recibió hierro del MINSA (12 meses),Departamento,Pasco,74.61,2.48,366,82.123,2.55,286,7.512,3.558,0.539,14.485,0.035,sí
+Recibió hierro del MINSA (12 meses),Departamento,Piura,80.216,2.027,453,83.063,2.005,393,2.847,2.851,-2.742,8.436,0.318,no
+Recibió hierro del MINSA (12 meses),Departamento,Puno,76.598,3.109,274,79.818,2.853,229,3.22,4.219,-5.05,11.49,0.445,no
+Recibió hierro del MINSA (12 meses),Departamento,San Martín,77.87,2.334,390,84.676,1.899,474,6.806,3.009,0.909,12.704,0.024,sí
+Recibió hierro del MINSA (12 meses),Departamento,Tacna,67.939,2.759,333,71.419,3.101,271,3.48,4.151,-4.654,11.615,0.402,no
+Recibió hierro del MINSA (12 meses),Departamento,Tumbes,73.241,2.218,432,77.933,2.065,405,4.692,3.03,-1.247,10.63,0.122,no
+Recibió hierro del MINSA (12 meses),Departamento,Ucayali,66.145,2.702,463,70.937,2.496,438,4.791,3.678,-2.418,12.001,0.193,no
+Recibió hierro del MINSA (12 meses),Departamento,Áncash,75.561,2.535,317,76.785,2.856,284,1.224,3.819,-6.261,8.709,0.749,no
+Tomó hierro en los últimos 7 días (todos los niños),Total,Total,33.875,0.626,10078,38.798,0.65,9501,4.923,0.903,3.153,6.692,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),6-11,65.443,1.369,2086,65.493,1.425,1978,0.05,1.976,-3.823,3.923,0.98,no
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),12-23,30.935,0.976,4013,38.136,1.011,3773,7.201,1.405,4.446,9.955,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),24-35,20.294,0.805,3979,24.917,0.887,3750,4.623,1.197,2.276,6.97,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Área,Urbano,33.052,0.759,6997,37.582,0.767,6887,4.53,1.079,2.415,6.645,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Área,Rural,36.024,1.091,3081,42.344,1.211,2614,6.32,1.63,3.125,9.515,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Lima Metropolitana,32.779,1.7,1086,33.705,1.572,1155,0.926,2.316,-3.612,5.465,0.689,no
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Resto Costa,32.966,1.044,3060,41.287,1.138,2886,8.321,1.544,5.294,11.348,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Sierra,36.222,1.027,3225,42.105,1.116,2805,5.883,1.517,2.91,8.856,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Selva,33.132,1.185,2707,38.207,1.179,2655,5.075,1.672,1.798,8.352,0.002,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Amazonas,31.559,3.205,422,42.258,2.733,417,10.699,4.212,2.443,18.954,0.011,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Apurímac,45.255,2.932,342,52.659,3.143,298,7.404,4.298,-1.021,15.829,0.085,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Arequipa,32.358,2.386,355,39.36,2.739,327,7.002,3.632,-0.117,14.122,0.054,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ayacucho,38.315,3.352,388,45.214,2.788,359,6.899,4.36,-1.646,15.444,0.114,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Cajamarca,36.907,2.449,377,49.993,2.809,272,13.086,3.727,5.782,20.39,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Callao,31.951,2.438,331,37.133,2.847,346,5.182,3.748,-2.164,12.528,0.167,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Cusco,35.491,3.268,301,46.565,3.397,262,11.074,4.714,1.834,20.314,0.019,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Huancavelica,40.21,3.13,307,44.402,3.51,245,4.192,4.703,-5.025,13.41,0.373,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Huánuco,29.407,2.1,417,39.199,2.722,403,9.792,3.438,3.054,16.531,0.004,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ica,21.885,2.178,412,29.261,2.475,430,7.376,3.297,0.915,13.838,0.025,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Junín,38.309,2.805,380,41.888,2.861,345,3.579,4.007,-4.274,11.433,0.372,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,La Libertad,31.283,2.596,387,33.622,2.655,353,2.339,3.713,-4.939,9.617,0.529,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Lambayeque,34.981,2.9,398,40.986,3.209,395,6.004,4.326,-2.474,14.482,0.165,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Lima,32.58,1.693,1109,33.963,1.576,1170,1.382,2.313,-3.151,5.916,0.55,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Loreto,37.696,2.963,416,36.626,2.795,424,-1.07,4.073,-9.053,6.913,0.793,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Madre de Dios,34.422,2.745,388,25.902,2.291,376,-8.52,3.575,-15.528,-1.513,0.017,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Moquegua,34.869,2.539,320,30.857,2.758,299,-4.012,3.749,-11.361,3.336,0.285,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Pasco,35.889,2.646,366,31.138,3.425,286,-4.751,4.328,-13.234,3.732,0.272,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Piura,37.72,2.247,453,52.202,2.324,393,14.481,3.233,8.145,20.818,0.0,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Puno,27.388,2.719,274,28.788,3.263,229,1.4,4.247,-6.924,9.724,0.742,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,San Martín,29.298,2.373,390,38.48,2.272,474,9.182,3.286,2.742,15.621,0.005,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Tacna,35.855,2.529,333,39.514,3.386,271,3.659,4.226,-4.624,11.942,0.387,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Tumbes,33.286,2.466,432,39.232,2.32,404,5.946,3.386,-0.69,12.582,0.079,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ucayali,29.268,2.12,463,33.953,2.482,438,4.685,3.264,-1.713,11.083,0.151,no
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Áncash,41.718,2.728,317,49.039,3.06,285,7.321,4.1,-0.714,15.356,0.074,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Total,Total,40.145,0.722,7344,45.794,0.755,7172,5.649,1.045,3.601,7.697,0.0,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),6-11,69.684,1.37,1755,70.107,1.456,1657,0.423,1.999,-3.495,4.341,0.833,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),12-23,33.128,1.081,3174,42.119,1.124,3039,8.991,1.559,5.935,12.047,0.0,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),24-35,27.861,1.13,2415,33.587,1.153,2476,5.726,1.615,2.561,8.891,0.0,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Área,Urbano,39.433,0.912,4745,45.127,0.941,4890,5.694,1.31,3.126,8.262,0.0,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Área,Rural,41.584,1.173,2599,47.27,1.24,2282,5.686,1.707,2.34,9.033,0.001,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Lima Metropolitana,39.195,2.108,659,41.203,2.177,690,2.008,3.031,-3.932,7.948,0.508,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Resto Costa,40.186,1.309,2061,49.506,1.341,2044,9.32,1.874,5.647,12.993,0.0,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Sierra,42.047,1.141,2568,47.28,1.232,2345,5.233,1.679,1.942,8.524,0.002,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Selva,38.241,1.376,2056,43.922,1.279,2093,5.681,1.879,1.999,9.363,0.002,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Amazonas,36.664,3.43,353,48.09,2.897,350,11.426,4.49,2.626,20.226,0.011,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Apurímac,47.338,3.274,293,55.809,3.197,268,8.471,4.576,-0.498,17.441,0.064,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Arequipa,38.889,3.322,215,47.804,3.413,208,8.915,4.763,-0.42,18.25,0.061,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ayacucho,42.822,3.681,328,50.096,3.034,307,7.274,4.771,-2.076,16.624,0.127,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Cajamarca,41.751,2.889,314,54.735,3.024,245,12.984,4.182,4.787,21.181,0.002,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Callao,41.036,3.246,205,43.668,3.285,225,2.631,4.618,-6.42,11.683,0.569,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Cusco,42.111,3.818,225,50.849,3.623,225,8.739,5.263,-1.577,19.054,0.097,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Huancavelica,44.957,3.304,264,46.787,3.454,229,1.829,4.78,-7.539,11.197,0.702,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Huánuco,32.078,2.261,356,44.171,2.951,339,12.093,3.718,4.807,19.38,0.001,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ica,31.365,3.413,226,46.407,3.585,256,15.042,4.949,5.342,24.743,0.002,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Junín,41.835,3.125,310,47.328,3.031,285,5.493,4.353,-3.039,14.025,0.207,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,La Libertad,36.354,3.152,261,39.117,3.144,257,2.762,4.452,-5.963,11.488,0.535,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Lambayeque,45.576,3.397,260,51.756,3.658,253,6.18,4.993,-3.605,15.965,0.216,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Lima,38.786,2.069,700,41.493,2.153,737,2.706,2.986,-3.147,8.559,0.365,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Loreto,46.015,3.33,319,41.732,3.04,324,-4.283,4.509,-13.12,4.554,0.342,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Madre de Dios,42.327,3.57,271,32.922,2.902,273,-9.406,4.6,-18.422,-0.39,0.041,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Moquegua,38.926,3.367,215,37.567,3.235,214,-1.359,4.669,-10.511,7.792,0.771,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Pasco,41.484,3.092,270,35.578,3.943,234,-5.907,5.011,-15.728,3.915,0.239,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Piura,41.521,2.498,362,55.617,2.631,323,14.096,3.628,6.985,21.206,0.0,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Puno,34.286,3.183,211,34.708,3.747,182,0.421,4.916,-9.215,10.057,0.932,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,San Martín,32.226,2.715,302,43.511,2.612,397,11.286,3.767,3.902,18.67,0.003,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Tacna,43.021,3.122,229,49.168,3.77,196,6.147,4.895,-3.446,15.74,0.209,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Tumbes,38.867,2.843,315,44.466,2.788,314,5.599,3.981,-2.204,13.402,0.16,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ucayali,38.047,2.728,298,41.635,2.864,308,3.588,3.955,-4.164,11.34,0.364,no
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Áncash,49.569,3.027,242,52.895,3.165,223,3.326,4.38,-5.258,11.91,0.448,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Total,Total,42.337,0.632,10076,38.995,0.653,9501,-3.343,0.908,-5.123,-1.562,0.0,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),6-11,24.788,1.176,2085,23.645,1.222,1977,-1.143,1.696,-4.468,2.181,0.5,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),12-23,51.712,1.029,4013,44.93,1.004,3773,-6.782,1.438,-9.601,-3.963,0.0,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),24-35,42.018,0.988,3978,41.399,1.005,3751,-0.618,1.409,-3.38,2.144,0.661,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Área,Urbano,39.637,0.75,6996,36.506,0.785,6887,-3.131,1.086,-5.26,-1.003,0.004,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Área,Rural,49.388,1.123,3080,46.254,1.112,2614,-3.134,1.58,-6.231,-0.036,0.047,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Lima Metropolitana,36.073,1.59,1086,33.372,1.644,1154,-2.701,2.287,-7.183,1.781,0.237,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Resto Costa,40.85,1.133,3059,35.959,1.092,2886,-4.891,1.574,-7.975,-1.807,0.002,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Sierra,45.062,1.027,3225,43.277,1.101,2806,-1.785,1.506,-4.736,1.166,0.236,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Selva,48.303,1.264,2706,45.305,1.117,2655,-2.998,1.687,-6.304,0.308,0.075,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Amazonas,52.535,2.699,422,43.811,2.705,417,-8.724,3.821,-16.214,-1.234,0.022,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Apurímac,44.841,3.126,342,39.296,2.795,298,-5.545,4.194,-13.764,2.675,0.186,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Arequipa,37.443,2.898,355,33.397,2.668,328,-4.045,3.939,-11.766,3.676,0.304,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ayacucho,48.788,3.217,388,42.806,2.858,359,-5.982,4.303,-14.415,2.451,0.164,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Cajamarca,48.485,2.785,376,40.129,2.812,272,-8.356,3.957,-16.112,-0.6,0.035,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Callao,35.941,2.34,331,36.43,2.506,345,0.489,3.428,-6.23,7.208,0.887,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Cusco,42.945,3.129,301,41.943,3.2,262,-1.002,4.476,-9.774,7.77,0.823,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Huancavelica,46.535,3.026,307,49.491,3.283,245,2.956,4.464,-5.794,11.706,0.508,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Huánuco,57.982,2.454,417,47.213,2.581,403,-10.769,3.561,-17.748,-3.79,0.002,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ica,37.285,2.779,412,31.412,2.417,430,-5.873,3.683,-13.091,1.345,0.111,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Junín,47.61,2.693,380,43.95,2.877,345,-3.661,3.941,-11.385,4.063,0.353,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,La Libertad,42.692,2.806,387,44.309,2.798,353,1.617,3.963,-6.149,9.384,0.683,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Lambayeque,36.394,2.433,398,32.059,2.415,396,-4.335,3.428,-11.054,2.384,0.206,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Lima,36.905,1.593,1109,33.865,1.656,1170,-3.04,2.297,-7.543,1.463,0.186,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Loreto,41.422,2.933,416,44.386,2.483,424,2.964,3.843,-4.567,10.496,0.44,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Madre de Dios,40.49,2.9,388,48.8,2.549,376,8.31,3.861,0.742,15.877,0.031,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Moquegua,41.306,2.871,319,44.549,2.914,299,3.243,4.091,-4.775,11.261,0.428,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Pasco,43.659,2.698,366,52.905,3.602,286,9.247,4.501,0.425,18.068,0.04,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Piura,46.91,2.454,453,36.866,2.368,393,-10.043,3.41,-16.727,-3.36,0.003,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Puno,50.336,2.855,274,52.115,3.486,229,1.78,4.506,-7.052,10.611,0.693,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,San Martín,52.776,2.475,390,47.832,2.559,474,-4.943,3.56,-11.921,2.034,0.165,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Tacna,38.711,2.653,333,36.304,3.102,271,-2.407,4.082,-10.407,5.594,0.555,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Tumbes,44.774,2.461,432,43.249,2.45,404,-1.525,3.472,-8.33,5.28,0.661,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ucayali,40.979,2.542,463,41.402,2.397,438,0.423,3.493,-6.424,7.27,0.904,no
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Áncash,38.106,2.678,317,36.169,2.541,284,-1.937,3.692,-9.172,5.299,0.6,no
+"Anemia, criterio RM 363-2022-MINSA",Total,Total,43.902,0.617,10154,43.663,0.65,9511,-0.238,0.896,-1.994,1.518,0.79,no
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),6-11,67.254,1.325,2081,66.055,1.373,1955,-1.199,1.908,-4.94,2.541,0.53,no
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),12-23,46.772,0.949,4010,46.219,1.023,3752,-0.553,1.395,-3.288,2.181,0.692,no
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),24-35,29.149,0.867,4063,29.398,0.91,3804,0.249,1.257,-2.214,2.713,0.843,no
+"Anemia, criterio RM 363-2022-MINSA",Área,Urbano,40.268,0.73,6927,40.701,0.757,6765,0.432,1.052,-1.629,2.493,0.681,no
+"Anemia, criterio RM 363-2022-MINSA",Área,Rural,52.06,1.123,3227,50.719,1.24,2746,-1.341,1.673,-4.619,1.937,0.423,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Amazonas,47.538,2.524,444,43.608,2.498,422,-3.93,3.551,-10.89,3.031,0.269,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Apurímac,59.696,2.905,350,53.709,2.988,313,-5.987,4.167,-14.155,2.181,0.151,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Arequipa,44.975,2.44,333,40.01,2.827,304,-4.965,3.734,-12.284,2.355,0.184,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ayacucho,50.947,2.568,403,54.129,2.813,368,3.182,3.809,-4.284,10.648,0.404,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Cajamarca,38.497,2.304,382,35.255,3.335,281,-3.242,4.054,-11.187,4.703,0.424,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Callao,35.11,2.955,331,40.549,2.552,330,5.44,3.904,-2.213,13.092,0.164,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Cusco,54.479,3.857,301,57.045,3.576,265,2.566,5.259,-7.742,12.875,0.626,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Huancavelica,54.469,3.077,317,54.449,3.544,255,-0.02,4.694,-9.22,9.18,0.997,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Huánuco,45.604,2.399,440,45.344,2.585,414,-0.26,3.526,-7.171,6.651,0.941,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ica,39.56,2.493,413,34.309,2.531,419,-5.25,3.553,-12.214,1.714,0.14,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Junín,50.351,3.042,387,47.823,2.664,345,-2.528,4.044,-10.454,5.397,0.532,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,La Libertad,35.957,2.682,383,38.922,2.632,353,2.966,3.758,-4.4,10.332,0.43,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Lambayeque,36.951,2.486,404,39.76,2.871,382,2.809,3.798,-4.635,10.252,0.46,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Lima,34.239,1.631,1089,36.033,1.648,1150,1.794,2.319,-2.751,6.338,0.439,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Loreto,62.184,2.516,417,55.788,2.466,440,-6.396,3.523,-13.301,0.509,0.069,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Madre de Dios,56.382,2.726,390,55.242,2.688,386,-1.139,3.829,-8.643,6.364,0.766,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Moquegua,39.324,2.482,297,38.853,3.096,293,-0.471,3.968,-8.248,7.307,0.906,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Pasco,54.065,3.073,369,48.953,2.992,285,-5.112,4.289,-13.518,3.293,0.233,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Piura,42.288,2.182,471,44.274,2.449,401,1.986,3.28,-4.442,8.414,0.545,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Puno,75.916,2.693,271,75.125,3.445,227,-0.79,4.373,-9.361,7.78,0.857,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,San Martín,38.807,2.753,405,43.888,2.293,497,5.081,3.583,-1.941,12.104,0.156,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Tacna,36.068,2.864,324,30.706,2.686,249,-5.361,3.927,-13.057,2.334,0.172,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Tumbes,45.094,2.34,449,42.268,2.592,415,-2.826,3.492,-9.671,4.018,0.418,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ucayali,54.647,2.325,472,52.421,2.497,450,-2.226,3.412,-8.913,4.461,0.514,no
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Áncash,46.781,3.397,312,48.213,3.302,267,1.432,4.738,-7.854,10.718,0.762,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Total,Total,35.457,0.583,10154,35.111,0.63,9511,-0.345,0.859,-2.029,1.338,0.688,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),6-11,51.961,1.34,2081,48.944,1.449,1955,-3.017,1.973,-6.885,0.851,0.126,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),12-23,30.786,0.86,4010,30.545,0.936,3752,-0.241,1.271,-2.732,2.249,0.849,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),24-35,31.654,0.891,4063,32.309,0.939,3804,0.655,1.295,-1.883,3.193,0.613,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Área,Urbano,31.369,0.68,6927,31.573,0.718,6765,0.203,0.989,-1.735,2.142,0.837,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Área,Rural,44.635,1.092,3227,43.539,1.231,2746,-1.096,1.646,-4.322,2.13,0.505,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Amazonas,46.275,2.516,444,44.063,2.347,422,-2.212,3.441,-8.956,4.532,0.52,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Apurímac,43.84,3.075,350,40.873,3.024,313,-2.967,4.313,-11.42,5.485,0.491,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Arequipa,44.457,2.685,333,40.495,3.061,304,-3.962,4.072,-11.943,4.019,0.331,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ayacucho,45.283,2.383,403,44.464,2.853,368,-0.819,3.717,-8.105,6.466,0.826,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Cajamarca,40.722,2.238,382,39.326,3.121,281,-1.397,3.84,-8.924,6.13,0.716,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Callao,24.735,2.602,331,28.296,2.628,330,3.561,3.698,-3.686,10.809,0.336,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Cusco,45.505,3.41,301,43.357,3.163,265,-2.147,4.651,-11.263,6.968,0.644,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Huancavelica,32.888,2.453,317,38.817,3.251,255,5.928,4.072,-2.053,13.909,0.145,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Huánuco,42.442,2.368,440,42.15,2.653,414,-0.292,3.556,-7.261,6.677,0.935,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ica,31.371,2.362,413,25.899,2.298,419,-5.472,3.295,-11.931,0.987,0.097,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Junín,41.65,2.922,387,39.619,2.548,345,-2.031,3.877,-9.63,5.567,0.6,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,La Libertad,25.101,2.369,383,27.166,2.484,353,2.065,3.433,-4.663,8.794,0.547,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Lambayeque,26.403,2.408,404,30.586,2.769,382,4.182,3.669,-3.01,11.374,0.254,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Lima,24.95,1.442,1089,26.277,1.529,1150,1.327,2.102,-2.792,5.446,0.528,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Loreto,50.947,2.821,417,45.826,2.788,440,-5.121,3.966,-12.893,2.651,0.197,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Madre de Dios,45.792,2.984,390,44.458,2.893,386,-1.334,4.156,-9.48,6.811,0.748,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Moquegua,38.612,2.641,297,35.621,3.453,293,-2.991,4.348,-11.512,5.53,0.491,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Pasco,35.997,2.634,369,35.295,2.808,285,-0.701,3.85,-8.247,6.845,0.855,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Piura,35.213,2.179,471,35.081,2.44,401,-0.132,3.272,-6.544,6.28,0.968,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Puno,52.689,3.159,271,55.754,3.415,227,3.065,4.652,-6.053,12.182,0.51,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,San Martín,34.838,2.67,405,41.436,2.235,497,6.599,3.482,-0.226,13.423,0.058,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Tacna,33.284,2.959,324,26.076,2.918,249,-7.209,4.156,-15.354,0.937,0.083,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Tumbes,34.381,2.376,449,31.683,2.59,415,-2.698,3.515,-9.587,4.191,0.443,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ucayali,42.771,2.352,472,37.404,2.631,450,-5.367,3.529,-12.284,1.55,0.128,no
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Áncash,37.394,3.269,312,39.725,3.385,267,2.331,4.706,-6.892,11.553,0.62,no

@@ -1,0 +1,405 @@
+﻿indicador,grupo_tipo,grupo,año,factor_usado,estimacion_pct,ic95_inf_pct,ic95_sup_pct,error_estandar_pp,deff,n_ninos_sin_ponderar,n_conglomerados,fiabilidad,universo,ponderada
+Recibió hierro del MINSA (12 meses),Total,Total,2024,mujer,70.741,69.468,71.983,0.641,2.002,10079,3093,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Edad (meses),6-11,2024,mujer,81.767,79.178,84.098,1.254,2.199,2085,1504,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Edad (meses),12-23,2024,mujer,77.334,75.518,79.053,0.901,1.861,4014,2324,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Edad (meses),24-35,2024,mujer,58.268,56.245,60.263,1.025,1.72,3980,2309,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Área,Urbano,2024,mujer,65.454,63.89,66.985,0.789,1.929,6998,2299,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Área,Rural,2024,mujer,84.549,82.619,86.301,0.938,2.076,3081,794,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Lima Metropolitana,2024,mujer,59.349,55.827,62.777,1.775,1.42,1087,419,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Resto Costa,2024,mujer,68.303,66.122,70.406,1.093,1.688,3060,938,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Sierra,2024,mujer,77.756,75.773,79.62,0.981,1.794,3225,1007,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Selva,2024,mujer,78.221,75.929,80.351,1.128,2.021,2707,729,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Amazonas,2024,mujer,83.007,78.695,86.594,2.01,1.212,423,114,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Apurímac,2024,mujer,85.148,80.375,88.921,2.17,1.273,342,102,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Arequipa,2024,mujer,61.27,55.497,66.742,2.879,1.24,355,118,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Ayacucho,2024,mujer,85.327,80.986,88.814,1.988,1.225,388,117,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Cajamarca,2024,mujer,83.237,79.37,86.503,1.816,0.889,376,102,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Callao,2024,mujer,60.954,55.909,65.775,2.524,0.886,331,122,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Cusco,2024,mujer,74.185,67.991,79.541,2.952,1.37,301,98,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Huancavelica,2024,mujer,84.543,79.115,88.761,2.448,1.408,307,100,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Huánuco,2024,mujer,85.366,80.7,89.057,2.121,1.502,417,114,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Ica,2024,mujer,54.323,48.777,59.764,2.813,1.314,412,122,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Junín,2024,mujer,81.854,77.373,85.613,2.098,1.127,380,112,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,La Libertad,2024,mujer,67.077,60.935,72.686,3.008,1.586,387,113,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Lambayeque,2024,mujer,66.87,61.997,71.407,2.405,1.039,398,119,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Lima,2024,mujer,60.323,56.796,63.746,1.775,1.462,1111,412,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Loreto,2024,mujer,76.728,70.405,82.045,2.972,2.058,416,112,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Madre de Dios,2024,mujer,70.208,64.922,75.003,2.577,1.232,388,114,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Moquegua,2024,mujer,67.633,61.707,73.043,2.901,1.226,319,110,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Pasco,2024,mujer,74.61,69.449,79.161,2.48,1.189,366,108,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Piura,2024,mujer,80.216,75.94,83.894,2.027,1.173,453,117,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Puno,2024,mujer,76.598,69.966,82.14,3.109,1.478,274,98,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,San Martín,2024,mujer,77.87,72.958,82.108,2.334,1.233,390,110,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Tacna,2024,mujer,67.939,62.307,73.092,2.759,1.164,333,116,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Tumbes,2024,mujer,73.241,68.676,77.36,2.218,1.084,432,122,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Ucayali,2024,mujer,66.145,60.663,71.226,2.702,1.51,463,118,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Áncash,2024,mujer,75.561,70.258,80.186,2.535,1.103,317,103,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Total,Total,2024,mujer,33.875,32.659,35.113,0.626,1.763,10078,3093,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),6-11,2024,mujer,65.443,62.712,68.076,1.369,1.729,2086,1504,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),12-23,2024,mujer,30.935,29.054,32.882,0.976,1.791,4013,2324,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),24-35,2024,mujer,20.294,18.762,21.918,0.805,1.593,3979,2309,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Área,Urbano,2024,mujer,33.052,31.581,34.558,0.759,1.823,6997,2299,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Área,Rural,2024,mujer,36.024,33.913,38.19,1.091,1.591,3081,794,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Lima Metropolitana,2024,mujer,32.779,29.536,36.195,1.7,1.425,1086,419,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Resto Costa,2024,mujer,32.966,30.952,35.044,1.044,1.509,3060,938,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Sierra,2024,mujer,36.222,34.233,38.259,1.027,1.473,3225,1007,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Selva,2024,mujer,33.132,30.851,35.495,1.185,1.716,2707,729,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Amazonas,2024,mujer,31.559,25.635,38.151,3.205,2.007,422,114,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Apurímac,2024,mujer,45.255,39.594,51.042,2.932,1.187,342,102,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Arequipa,2024,mujer,32.358,27.865,37.201,2.386,0.924,355,118,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ayacucho,2024,mujer,38.315,31.99,45.063,3.352,1.844,388,117,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Cajamarca,2024,mujer,36.907,32.248,41.823,2.449,0.971,377,102,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Callao,2024,mujer,31.951,27.37,36.909,2.438,0.905,331,122,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Cusco,2024,mujer,35.491,29.371,42.126,3.268,1.404,301,98,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Huancavelica,2024,mujer,40.21,34.253,46.47,3.13,1.251,307,100,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Huánuco,2024,mujer,29.407,25.463,33.685,2.1,0.886,417,114,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ica,2024,mujer,21.885,17.915,26.452,2.178,1.143,412,122,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Junín,2024,mujer,38.309,32.978,43.936,2.805,1.265,380,112,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,La Libertad,2024,mujer,31.283,26.431,36.583,2.596,1.213,387,113,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Lambayeque,2024,mujer,34.981,29.528,40.858,2.9,1.472,398,119,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Lima,2024,mujer,32.58,29.353,35.982,1.693,1.446,1109,412,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Loreto,2024,mujer,37.696,32.086,43.656,2.963,1.555,416,112,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Madre de Dios,2024,mujer,34.422,29.256,39.985,2.745,1.295,388,114,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Moquegua,2024,mujer,34.869,30.068,39.998,2.539,0.909,320,110,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Pasco,2024,mujer,35.889,30.882,41.223,2.646,1.113,366,108,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Piura,2024,mujer,37.72,33.425,42.217,2.247,0.974,453,117,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Puno,2024,mujer,27.388,22.39,33.027,2.719,1.019,274,98,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,San Martín,2024,mujer,29.298,24.869,34.157,2.373,1.061,390,110,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Tacna,2024,mujer,35.855,31.06,40.949,2.529,0.926,333,116,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Tumbes,2024,mujer,33.286,28.638,38.283,2.466,1.183,432,122,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ucayali,2024,mujer,29.268,25.291,33.59,2.12,1.005,463,118,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Áncash,2024,mujer,41.718,36.485,47.143,2.728,0.97,317,103,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Total,Total,2024,mujer,40.145,38.737,41.569,0.722,1.595,7344,2842,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),6-11,2024,mujer,69.684,66.933,72.301,1.37,1.559,1755,1318,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),12-23,2024,mujer,33.128,31.045,35.28,1.081,1.673,3174,1992,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),24-35,2024,mujer,27.861,25.699,30.13,1.13,1.535,2415,1636,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Área,Urbano,2024,mujer,39.433,37.66,41.235,0.912,1.652,4745,2062,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Área,Rural,2024,mujer,41.584,39.303,43.902,1.173,1.473,2599,780,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Lima Metropolitana,2024,mujer,39.195,35.148,43.397,2.108,1.229,659,345,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Resto Costa,2024,mujer,40.186,37.648,42.778,1.309,1.47,2061,851,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Sierra,2024,mujer,42.047,39.828,44.299,1.141,1.372,2568,959,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Selva,2024,mujer,38.241,35.582,40.972,1.376,1.648,2056,687,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Amazonas,2024,mujer,36.664,30.232,43.609,3.43,1.788,353,113,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Apurímac,2024,mujer,47.338,40.997,53.767,3.274,1.26,293,100,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Arequipa,2024,mujer,38.889,32.606,45.565,3.322,0.999,215,105,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ayacucho,2024,mujer,42.822,35.804,50.142,3.681,1.815,328,113,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Cajamarca,2024,mujer,41.751,36.218,47.499,2.889,1.077,314,98,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Callao,2024,mujer,41.036,34.853,47.516,3.246,0.893,205,102,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Cusco,2024,mujer,42.111,34.857,49.722,3.818,1.345,225,88,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Huancavelica,2024,mujer,44.957,38.6,51.484,3.304,1.164,264,99,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Huánuco,2024,mujer,32.078,27.815,36.662,2.261,0.835,356,113,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ica,2024,mujer,31.365,25.088,38.407,3.413,1.223,226,100,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Junín,2024,mujer,41.835,35.862,48.057,3.125,1.244,310,109,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,La Libertad,2024,mujer,36.354,30.425,42.73,3.152,1.121,261,102,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Lambayeque,2024,mujer,45.576,39.032,52.277,3.397,1.21,260,111,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Lima,2024,mujer,38.786,34.815,42.913,2.069,1.263,700,350,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Loreto,2024,mujer,46.015,39.59,52.575,3.33,1.424,319,107,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Madre de Dios,2024,mujer,42.327,35.525,49.434,3.57,1.415,271,104,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Moquegua,2024,mujer,38.926,32.561,45.692,3.367,1.025,215,97,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Pasco,2024,mujer,41.484,35.578,47.647,3.092,1.064,270,98,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Piura,2024,mujer,41.521,36.721,46.487,2.498,0.93,362,112,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Puno,2024,mujer,34.286,28.342,40.769,3.183,0.949,211,91,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,San Martín,2024,mujer,32.226,27.148,37.761,2.715,1.019,302,105,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Tacna,2024,mujer,43.021,37.035,49.219,3.122,0.911,229,106,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Tumbes,2024,mujer,38.867,33.46,44.563,2.843,1.071,315,115,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ucayali,2024,mujer,38.047,32.86,43.521,2.728,0.941,298,105,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Áncash,2024,mujer,49.569,43.668,55.483,3.027,0.887,242,99,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Total,Total,2024,mujer,42.337,41.103,43.581,0.632,1.649,10076,3093,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),6-11,2024,mujer,24.788,22.555,27.166,1.176,1.547,2085,1504,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),12-23,2024,mujer,51.712,49.692,53.726,1.029,1.703,4013,2324,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),24-35,2024,mujer,42.018,40.094,43.966,0.988,1.593,3978,2308,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Área,Urbano,2024,mujer,39.637,38.176,41.117,0.75,1.646,6996,2299,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Área,Rural,2024,mujer,49.388,47.189,51.589,1.123,1.553,3080,794,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Lima Metropolitana,2024,mujer,36.073,33.018,39.245,1.59,1.19,1086,419,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Resto Costa,2024,mujer,40.85,38.648,43.089,1.133,1.625,3059,938,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Sierra,2024,mujer,45.062,43.056,47.083,1.027,1.375,3225,1007,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Selva,2024,mujer,48.303,45.831,50.784,1.264,1.731,2706,729,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Amazonas,2024,mujer,52.535,47.234,57.781,2.699,1.233,422,114,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Apurímac,2024,mujer,44.841,38.819,51.018,3.126,1.351,342,102,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Arequipa,2024,mujer,37.443,31.954,43.274,2.898,1.273,355,118,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ayacucho,2024,mujer,48.788,42.533,55.081,3.217,1.607,388,117,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Cajamarca,2024,mujer,48.485,43.065,53.941,2.785,1.167,376,102,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Callao,2024,mujer,35.941,31.493,40.644,2.34,0.787,331,122,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Cusco,2024,mujer,42.945,36.947,49.158,3.129,1.203,301,98,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Huancavelica,2024,mujer,46.535,40.678,52.488,3.026,1.13,307,100,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Huánuco,2024,mujer,57.982,53.11,62.704,2.454,1.03,417,114,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ica,2024,mujer,37.285,32.016,42.874,2.779,1.361,412,122,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Junín,2024,mujer,47.61,42.376,52.898,2.693,1.105,380,112,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,La Libertad,2024,mujer,42.692,37.301,48.262,2.806,1.246,387,113,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Lambayeque,2024,mujer,36.394,31.769,41.284,2.433,1.018,398,119,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Lima,2024,mujer,36.905,33.841,40.079,1.593,1.208,1109,412,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Loreto,2024,mujer,41.422,35.812,47.263,2.933,1.474,416,112,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Madre de Dios,2024,mujer,40.49,34.954,46.279,2.9,1.354,388,114,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Moquegua,2024,mujer,41.306,35.812,47.026,2.871,1.085,319,110,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Pasco,2024,mujer,43.659,38.459,49.001,2.698,1.083,366,108,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Piura,2024,mujer,46.91,42.141,51.736,2.454,1.096,453,117,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Puno,2024,mujer,50.336,44.758,55.905,2.855,0.893,274,98,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,San Martín,2024,mujer,52.776,47.912,57.587,2.475,0.959,390,110,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Tacna,2024,mujer,38.711,33.654,44.022,2.653,0.988,333,116,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Tumbes,2024,mujer,44.774,40.013,49.633,2.461,1.058,432,122,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ucayali,2024,mujer,40.979,36.103,46.039,2.542,1.237,463,118,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Áncash,2024,mujer,38.106,33.011,43.478,2.678,0.964,317,103,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Total,Total,2025,mujer,71.946,70.622,73.233,0.666,2.087,9504,3035,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Edad (meses),6-11,2025,mujer,79.099,76.413,81.552,1.311,2.054,1977,1496,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Edad (meses),12-23,2025,mujer,77.626,75.768,79.382,0.922,1.846,3774,2214,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Edad (meses),24-35,2025,mujer,62.36,60.195,64.477,1.092,1.908,3753,2212,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Área,Urbano,2025,mujer,66.531,64.901,68.123,0.822,2.091,6889,2262,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Área,Rural,2025,mujer,87.729,85.926,89.33,0.867,1.825,2615,773,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Lima Metropolitana,2025,mujer,56.758,53.302,60.15,1.749,1.438,1154,425,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Resto Costa,2025,mujer,71.217,69.087,73.257,1.064,1.594,2887,905,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Sierra,2025,mujer,82.105,80.139,83.916,0.963,1.771,2808,977,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Región natural,Selva,2025,mujer,80.789,78.686,82.731,1.031,1.819,2655,728,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Amazonas,2025,mujer,84.398,79.251,88.455,2.337,1.73,417,115,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Apurímac,2025,mujer,88.924,84.656,92.116,1.885,1.075,298,99,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Arequipa,2025,mujer,63.984,57.765,69.767,3.074,1.345,328,115,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Ayacucho,2025,mujer,85.819,80.675,89.767,2.305,1.571,360,115,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Cajamarca,2025,mujer,88.699,84.246,92.013,1.962,1.048,273,101,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Callao,2025,mujer,64.67,58.992,69.961,2.807,1.19,345,122,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Cusco,2025,mujer,85.336,79.811,89.547,2.468,1.275,262,96,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Huancavelica,2025,mujer,93.004,88.181,95.949,1.917,1.383,245,96,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Huánuco,2025,mujer,84.568,80.628,87.827,1.831,1.035,403,115,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Ica,2025,mujer,58.613,53.489,63.556,2.576,1.176,430,118,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Junín,2025,mujer,83.44,77.622,87.98,2.631,1.728,345,109,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,La Libertad,2025,mujer,72.777,67.735,77.295,2.443,1.063,353,109,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Lambayeque,2025,mujer,66.451,60.549,71.879,2.9,1.494,396,119,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Lima,2025,mujer,57.882,54.415,61.272,1.751,1.472,1170,412,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Loreto,2025,mujer,76.176,70.694,80.908,2.608,1.589,424,110,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Madre de Dios,2025,mujer,72.751,68.407,76.701,2.118,0.851,376,116,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Moquegua,2025,mujer,71.355,65.421,76.634,2.867,1.203,299,110,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Pasco,2025,mujer,82.123,76.568,86.591,2.55,1.267,286,107,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Piura,2025,mujer,83.063,78.762,86.641,2.005,1.123,393,115,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Puno,2025,mujer,79.818,73.648,84.841,2.853,1.157,229,88,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,San Martín,2025,mujer,84.676,80.572,88.042,1.899,1.317,474,112,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Tacna,2025,mujer,71.419,64.976,77.095,3.101,1.276,271,98,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Tumbes,2025,mujer,77.933,73.621,81.715,2.065,1.004,405,122,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Ucayali,2025,mujer,70.937,65.813,75.578,2.496,1.323,438,116,,Niños de 6 a 35 meses,sí
+Recibió hierro del MINSA (12 meses),Departamento,Áncash,2025,mujer,76.785,70.725,81.912,2.856,1.3,284,100,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Total,Total,2025,mujer,38.798,37.531,40.081,0.65,1.693,9501,3035,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),6-11,2025,mujer,65.493,62.648,68.232,1.425,1.778,1978,1497,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),12-23,2025,mujer,38.136,36.175,40.136,1.011,1.633,3773,2214,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Edad (meses),24-35,2025,mujer,24.917,23.219,26.696,0.887,1.576,3750,2211,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Área,Urbano,2025,mujer,37.582,36.091,39.098,0.767,1.726,6887,2262,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Área,Rural,2025,mujer,42.344,39.988,44.735,1.211,1.571,2614,773,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Lima Metropolitana,2025,mujer,33.705,30.695,36.853,1.572,1.278,1155,425,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Resto Costa,2025,mujer,41.287,39.075,43.535,1.138,1.542,2886,905,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Sierra,2025,mujer,42.105,39.933,44.308,1.116,1.434,2805,977,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Región natural,Selva,2025,mujer,38.207,35.923,40.544,1.179,1.564,2655,728,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Amazonas,2025,mujer,42.258,37.01,47.687,2.733,1.276,417,115,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Apurímac,2025,mujer,52.659,46.487,58.751,3.143,1.181,298,99,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Arequipa,2025,mujer,39.36,34.137,44.838,2.739,1.028,327,115,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ayacucho,2025,mujer,45.214,39.826,50.717,2.788,1.127,359,115,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Cajamarca,2025,mujer,49.993,44.507,55.48,2.809,0.859,272,101,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Callao,2025,mujer,37.133,31.743,42.863,2.847,1.201,346,122,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Cusco,2025,mujer,46.565,40.003,53.248,3.397,1.215,262,96,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Huancavelica,2025,mujer,44.402,37.669,51.348,3.51,1.223,245,96,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Huánuco,2025,mujer,39.199,34.009,44.646,2.722,1.253,403,115,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ica,2025,mujer,29.261,24.653,34.338,2.475,1.273,430,118,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Junín,2025,mujer,41.888,36.404,47.58,2.861,1.16,345,109,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,La Libertad,2025,mujer,33.622,28.629,39.01,2.655,1.115,353,109,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Lambayeque,2025,mujer,40.986,34.871,47.392,3.209,1.682,395,119,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Lima,2025,mujer,33.963,30.944,37.118,1.576,1.296,1170,412,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Loreto,2025,mujer,36.626,31.338,42.258,2.795,1.427,424,110,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Madre de Dios,2025,mujer,25.902,21.668,30.639,2.291,1.028,376,116,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Moquegua,2025,mujer,30.857,25.725,36.509,2.758,1.066,299,110,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Pasco,2025,mujer,31.138,24.845,38.215,3.425,1.565,286,107,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Piura,2025,mujer,52.202,47.639,56.728,2.324,0.851,393,115,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Puno,2025,mujer,28.788,22.833,35.58,3.263,1.189,229,88,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,San Martín,2025,mujer,38.48,34.132,43.02,2.272,1.034,474,112,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Tacna,2025,mujer,39.514,33.103,46.307,3.386,1.3,271,98,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Tumbes,2025,mujer,39.232,34.788,43.862,2.32,0.912,404,122,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Ucayali,2025,mujer,33.953,29.267,38.976,2.482,1.204,438,116,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (todos los niños),Departamento,Áncash,2025,mujer,49.039,43.081,55.024,3.06,1.068,285,100,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Total,Total,2025,mujer,45.794,44.318,47.278,0.755,1.648,7172,2802,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),6-11,2025,mujer,70.107,67.176,72.881,1.456,1.676,1657,1292,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),12-23,2025,mujer,42.119,39.932,44.338,1.124,1.576,3039,1933,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Edad (meses),24-35,2025,mujer,33.587,31.365,35.884,1.153,1.476,2476,1682,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Área,Urbano,2025,mujer,45.127,43.29,46.978,0.941,1.748,4890,2040,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Área,Rural,2025,mujer,47.27,44.847,49.707,1.24,1.408,2282,762,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Lima Metropolitana,2025,mujer,41.203,37.01,45.528,2.177,1.35,690,344,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Resto Costa,2025,mujer,49.506,46.881,52.134,1.341,1.47,2044,822,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Sierra,2025,mujer,47.28,44.873,49.7,1.232,1.428,2345,929,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Región natural,Selva,2025,mujer,43.922,41.431,46.444,1.279,1.391,2093,707,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Amazonas,2025,mujer,48.09,42.458,53.771,2.897,1.177,350,110,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Apurímac,2025,mujer,55.809,49.481,61.955,3.197,1.111,268,99,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Arequipa,2025,mujer,47.804,41.191,54.495,3.413,0.971,208,96,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ayacucho,2025,mujer,50.096,44.173,56.017,3.034,1.131,307,111,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Cajamarca,2025,mujer,54.735,48.766,60.571,3.024,0.904,245,98,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Callao,2025,mujer,43.668,37.367,50.179,3.285,0.987,225,105,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Cusco,2025,mujer,50.849,43.776,57.889,3.623,1.182,225,91,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Huancavelica,2025,mujer,46.787,40.113,53.577,3.454,1.097,229,95,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Huánuco,2025,mujer,44.171,38.488,50.011,2.951,1.197,339,114,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ica,2025,mujer,46.407,39.495,53.46,3.585,1.323,256,106,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Junín,2025,mujer,47.328,41.451,53.28,3.031,1.05,285,105,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,La Libertad,2025,mujer,39.117,33.154,45.423,3.144,1.066,257,103,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Lambayeque,2025,mujer,51.756,44.596,58.845,3.658,1.356,253,103,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Lima,2025,mujer,41.493,37.343,45.767,2.153,1.407,737,344,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Loreto,2025,mujer,41.732,35.918,47.784,3.04,1.231,324,106,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Madre de Dios,2025,mujer,32.922,27.5,38.839,2.902,1.041,273,109,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Moquegua,2025,mujer,37.567,31.465,44.09,3.235,0.955,214,98,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Pasco,2025,mujer,35.578,28.27,43.625,3.943,1.588,234,101,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Piura,2025,mujer,55.617,50.416,60.697,2.631,0.906,323,109,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Puno,2025,mujer,34.708,27.766,42.366,3.747,1.127,182,82,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,San Martín,2025,mujer,43.511,38.476,48.684,2.612,1.102,397,110,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Tacna,2025,mujer,49.168,41.848,56.524,3.77,1.114,196,89,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Tumbes,2025,mujer,44.466,39.088,49.977,2.788,0.988,314,111,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Ucayali,2025,mujer,41.635,36.151,47.335,2.864,1.039,308,114,,Niños de 6 a 35 meses,sí
+Tomó hierro en los últimos 7 días (entre los que recibieron),Departamento,Áncash,2025,mujer,52.895,46.677,59.026,3.165,0.897,223,93,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Total,Total,2025,mujer,38.995,37.723,40.281,0.653,1.701,9501,3035,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),6-11,2025,mujer,23.645,21.333,26.124,1.222,1.635,1977,1496,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),12-23,2025,mujer,44.93,42.969,46.906,1.004,1.538,3773,2214,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Edad (meses),24-35,2025,mujer,41.399,39.443,43.383,1.005,1.562,3751,2211,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Área,Urbano,2025,mujer,36.506,34.98,38.059,0.785,1.832,6887,2262,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Área,Rural,2025,mujer,46.254,44.083,48.441,1.112,1.3,2614,773,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Lima Metropolitana,2025,mujer,33.372,30.23,36.668,1.644,1.402,1154,425,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Resto Costa,2025,mujer,35.959,33.847,38.126,1.092,1.494,2886,905,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Sierra,2025,mujer,43.277,41.133,45.446,1.101,1.385,2806,977,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Región natural,Selva,2025,mujer,45.305,43.126,47.503,1.117,1.337,2655,728,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Amazonas,2025,mujer,43.811,38.597,49.165,2.705,1.239,417,115,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Apurímac,2025,mujer,39.296,33.97,44.89,2.795,0.976,298,99,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Arequipa,2025,mujer,33.397,28.384,38.816,2.668,1.05,328,115,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ayacucho,2025,mujer,42.806,37.317,48.478,2.858,1.198,359,115,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Cajamarca,2025,mujer,40.129,34.761,45.745,2.812,0.895,272,101,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Callao,2025,mujer,36.43,31.672,41.469,2.506,0.935,345,122,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Cusco,2025,mujer,41.943,35.829,48.315,3.2,1.102,262,96,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Huancavelica,2025,mujer,49.491,43.097,55.9,3.283,1.056,245,96,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Huánuco,2025,mujer,47.213,42.199,52.285,2.581,1.077,403,115,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ica,2025,mujer,31.412,26.878,36.332,2.417,1.165,430,118,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Junín,2025,mujer,43.95,38.409,49.645,2.877,1.159,345,109,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,La Libertad,2025,mujer,44.309,38.914,49.842,2.798,1.12,353,109,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Lambayeque,2025,mujer,32.059,27.518,36.966,2.415,1.06,396,119,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Lima,2025,mujer,33.865,30.698,37.184,1.656,1.432,1170,412,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Loreto,2025,mujer,44.386,39.586,49.294,2.483,1.059,424,110,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Madre de Dios,2025,mujer,48.8,43.83,53.794,2.549,0.978,376,116,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Moquegua,2025,mujer,44.549,38.931,50.31,2.914,1.028,299,110,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Pasco,2025,mujer,52.905,45.831,59.865,3.602,1.49,286,107,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Piura,2025,mujer,36.866,32.357,41.618,2.368,0.947,393,115,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Puno,2025,mujer,52.115,45.282,58.87,3.486,1.115,229,88,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,San Martín,2025,mujer,47.832,42.854,52.854,2.559,1.244,474,112,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Tacna,2025,mujer,36.304,30.465,42.577,3.102,1.128,271,98,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Tumbes,2025,mujer,43.249,38.523,48.101,2.45,0.988,404,122,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Ucayali,2025,mujer,41.402,36.794,46.166,2.397,1.037,438,116,,Niños de 6 a 35 meses,sí
+Recibió hierro y NO lo tomó la última semana (% de todos los niños),Departamento,Áncash,2025,mujer,36.169,31.351,41.284,2.541,0.794,284,100,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Total,Total,2024,hogar,43.902,42.695,45.115,0.617,1.57,10154,3089,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),6-11,2024,hogar,67.254,64.605,69.798,1.325,1.66,2081,1490,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),12-23,2024,hogar,46.772,44.917,48.637,0.949,1.45,4010,2318,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),24-35,2024,hogar,29.149,27.479,30.877,0.867,1.478,4063,2332,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Área,Urbano,2024,hogar,40.268,38.846,41.707,0.73,1.534,6927,2284,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Área,Rural,2024,hogar,52.06,49.856,54.256,1.123,1.63,3227,805,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Amazonas,2024,hogar,47.538,42.629,52.495,2.524,1.134,444,115,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Apurímac,2024,hogar,59.696,53.895,65.239,2.905,1.227,350,103,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Arequipa,2024,hogar,44.975,40.252,49.79,2.44,0.801,333,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ayacucho,2024,hogar,50.947,45.919,55.957,2.568,1.064,403,118,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Cajamarca,2024,hogar,38.497,34.09,43.101,2.304,0.856,382,102,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Callao,2024,hogar,35.11,29.556,41.098,2.955,1.268,331,121,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Cusco,2024,hogar,54.479,46.871,61.883,3.857,1.806,301,99,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Huancavelica,2024,hogar,54.469,48.399,60.409,3.077,1.21,317,100,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Huánuco,2024,hogar,45.604,40.954,50.332,2.399,1.02,440,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ica,2024,hogar,39.56,34.789,44.537,2.493,1.074,413,122,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Junín,2024,hogar,50.351,44.409,56.284,3.042,1.433,387,112,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,La Libertad,2024,hogar,35.957,30.882,41.366,2.682,1.197,383,112,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Lambayeque,2024,hogar,36.951,32.223,41.943,2.486,1.072,404,119,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Lima,2024,hogar,34.239,31.116,37.504,1.631,1.286,1089,408,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Loreto,2024,hogar,62.184,57.139,66.978,2.516,1.123,417,111,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Madre de Dios,2024,hogar,56.382,50.982,61.634,2.726,1.179,390,113,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Moquegua,2024,hogar,39.324,34.577,44.281,2.482,0.767,297,109,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Pasco,2024,hogar,54.065,48.01,60.003,3.073,1.403,369,107,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Piura,2024,hogar,42.288,38.078,46.613,2.182,0.919,471,117,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Puno,2024,hogar,75.916,70.251,80.796,2.693,1.075,271,98,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,San Martín,2024,hogar,38.807,33.564,44.321,2.753,1.293,405,110,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Tacna,2024,hogar,36.068,30.663,41.85,2.864,1.152,324,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Tumbes,2024,hogar,45.094,40.56,49.712,2.34,0.993,449,122,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ucayali,2024,hogar,54.647,50.063,59.154,2.325,1.029,472,119,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Áncash,2024,hogar,46.781,40.215,53.46,3.397,1.447,312,104,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Total,Total,2024,hogar,35.457,34.321,36.608,0.583,1.509,10154,3089,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),6-11,2024,hogar,51.961,49.332,54.581,1.34,1.496,2081,1490,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),12-23,2024,hogar,30.786,29.127,32.497,0.86,1.391,4010,2318,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),24-35,2024,hogar,31.654,29.933,33.427,0.891,1.492,4063,2332,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Área,Urbano,2024,hogar,31.369,30.052,32.717,0.68,1.486,6927,2284,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Área,Rural,2024,hogar,44.635,42.504,46.786,1.092,1.559,3227,805,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Amazonas,2024,hogar,46.275,41.394,51.23,2.516,1.131,444,115,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Apurímac,2024,hogar,43.84,37.93,49.931,3.075,1.344,350,103,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Arequipa,2024,hogar,44.457,39.273,49.765,2.685,0.972,333,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ayacucho,2024,hogar,45.283,40.665,49.985,2.383,0.924,403,118,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Cajamarca,2024,hogar,40.722,36.418,45.174,2.238,0.793,382,102,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Callao,2024,hogar,24.735,19.992,30.179,2.602,1.203,331,121,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Cusco,2024,hogar,45.505,38.938,52.232,3.41,1.411,301,99,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Huancavelica,2024,hogar,32.888,28.27,37.863,2.453,0.864,317,100,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Huánuco,2024,hogar,42.442,37.878,47.137,2.368,1.01,440,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ica,2024,hogar,31.371,26.935,36.176,2.362,1.07,413,122,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Junín,2024,hogar,41.65,36.058,47.466,2.922,1.359,387,112,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,La Libertad,2024,hogar,25.101,20.746,30.024,2.369,1.143,383,112,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Lambayeque,2024,hogar,26.403,21.959,31.385,2.408,1.205,404,119,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Lima,2024,hogar,24.95,22.231,27.883,1.442,1.209,1089,408,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Loreto,2024,hogar,50.947,45.428,56.444,2.821,1.327,417,111,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Madre de Dios,2024,hogar,45.792,40.024,51.674,2.984,1.399,390,113,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Moquegua,2024,hogar,38.612,33.578,43.902,2.641,0.874,297,109,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Pasco,2024,hogar,35.997,31.009,41.306,2.634,1.111,369,107,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Piura,2024,hogar,35.213,31.067,39.594,2.179,0.98,471,117,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Puno,2024,hogar,52.689,46.486,58.811,3.159,1.085,271,98,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,San Martín,2024,hogar,34.838,29.801,40.238,2.67,1.272,405,110,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Tacna,2024,hogar,33.284,27.755,39.316,2.959,1.278,324,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Tumbes,2024,hogar,34.381,29.883,39.178,2.376,1.124,449,122,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ucayali,2024,hogar,42.771,38.234,47.434,2.352,1.067,472,119,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Áncash,2024,hogar,37.394,31.236,43.991,3.269,1.424,312,104,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Total,Total,2025,hogar,43.663,42.394,44.941,0.65,1.632,9511,3016,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),6-11,2025,hogar,66.055,63.313,68.693,1.373,1.644,1955,1480,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),12-23,2025,hogar,46.219,44.221,48.229,1.023,1.578,3752,2175,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Edad (meses),24-35,2025,hogar,29.398,27.645,31.214,0.91,1.519,3804,2213,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Área,Urbano,2025,hogar,40.701,39.225,42.193,0.757,1.606,6765,2238,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Área,Rural,2025,hogar,50.719,48.289,53.147,1.24,1.689,2746,778,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Amazonas,2025,hogar,43.608,38.787,48.554,2.498,1.071,422,115,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Apurímac,2025,hogar,53.709,47.825,59.491,2.988,1.124,313,100,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Arequipa,2025,hogar,40.01,34.615,45.66,2.827,1.013,304,114,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ayacucho,2025,hogar,54.129,48.585,59.573,2.813,1.173,368,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Cajamarca,2025,hogar,35.255,29.021,42.034,3.335,1.369,281,100,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Callao,2025,hogar,40.549,35.658,45.635,2.552,0.892,330,118,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Cusco,2025,hogar,57.045,49.939,63.872,3.576,1.383,265,96,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Huancavelica,2025,hogar,54.449,47.458,61.27,3.544,1.292,255,95,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Huánuco,2025,hogar,45.344,40.341,50.443,2.585,1.116,414,114,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ica,2025,hogar,34.309,29.53,39.429,2.531,1.191,419,120,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Junín,2025,hogar,47.823,42.642,53.051,2.664,0.981,345,109,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,La Libertad,2025,hogar,38.922,33.901,44.19,2.632,1.029,353,107,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Lambayeque,2025,hogar,39.76,34.287,45.501,2.871,1.315,382,118,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Lima,2025,hogar,36.033,32.868,39.323,1.648,1.355,1150,406,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Loreto,2025,hogar,55.788,50.914,60.553,2.466,1.085,440,111,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Madre de Dios,2025,hogar,55.242,49.932,60.435,2.688,1.128,386,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Moquegua,2025,hogar,38.853,32.981,45.067,3.096,1.182,293,109,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Pasco,2025,hogar,48.953,43.128,54.806,2.992,1.021,285,107,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Piura,2025,hogar,44.274,39.541,49.115,2.449,0.975,401,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Puno,2025,hogar,75.125,67.783,81.257,3.445,1.442,227,86,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,San Martín,2025,hogar,43.888,39.454,48.422,2.293,1.061,497,112,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Tacna,2025,hogar,30.706,25.703,36.208,2.686,0.845,249,96,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Tumbes,2025,hogar,42.268,37.284,47.415,2.592,1.143,415,122,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Ucayali,2025,hogar,52.421,47.517,57.279,2.497,1.125,450,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio RM 363-2022-MINSA",Departamento,Áncash,2025,hogar,48.213,41.804,54.682,3.302,1.166,267,97,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Total,Total,2025,hogar,35.111,33.885,36.357,0.63,1.659,9511,3016,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),6-11,2025,hogar,48.944,46.11,51.786,1.449,1.643,1955,1480,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),12-23,2025,hogar,30.545,28.742,32.41,0.936,1.548,3752,2175,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Edad (meses),24-35,2025,hogar,32.309,30.495,34.178,0.939,1.535,3804,2213,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Área,Urbano,2025,hogar,31.573,30.181,32.998,0.718,1.616,6765,2238,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Área,Rural,2025,hogar,43.539,41.142,45.967,1.231,1.693,2746,778,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Amazonas,2025,hogar,44.063,39.525,48.703,2.347,0.943,422,115,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Apurímac,2025,hogar,40.873,35.102,46.907,3.024,1.184,313,100,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Arequipa,2025,hogar,40.495,34.661,46.611,3.061,1.182,304,114,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ayacucho,2025,hogar,44.464,38.963,50.104,2.853,1.213,368,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Cajamarca,2025,hogar,39.326,33.401,45.581,3.121,1.147,281,100,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Callao,2025,hogar,28.296,23.438,33.718,2.628,1.123,330,118,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Cusco,2025,hogar,43.357,37.29,49.63,3.163,1.079,265,96,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Huancavelica,2025,hogar,38.817,32.664,45.347,3.251,1.135,255,95,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Huánuco,2025,hogar,42.15,37.053,47.42,2.653,1.195,414,114,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ica,2025,hogar,25.899,21.653,30.652,2.298,1.153,419,120,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Junín,2025,hogar,39.619,34.746,44.708,2.548,0.937,345,109,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,La Libertad,2025,hogar,27.166,22.576,32.3,2.484,1.101,353,107,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Lambayeque,2025,hogar,30.586,25.44,36.266,2.769,1.379,382,118,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Lima,2025,hogar,26.277,23.391,29.382,1.529,1.387,1150,406,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Loreto,2025,hogar,45.826,40.432,51.32,2.788,1.377,440,111,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Madre de Dios,2025,hogar,44.458,38.881,50.177,2.893,1.308,386,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Moquegua,2025,hogar,35.621,29.17,42.639,3.453,1.524,293,109,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Pasco,2025,hogar,35.295,30.003,40.975,2.808,0.984,285,107,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Piura,2025,hogar,35.081,30.458,40.002,2.44,1.049,401,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Puno,2025,hogar,55.754,48.994,62.307,3.415,1.073,227,86,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,San Martín,2025,hogar,41.436,37.132,45.875,2.235,1.023,497,112,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Tacna,2025,hogar,26.076,20.77,32.186,2.918,1.1,249,96,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Tumbes,2025,hogar,31.683,26.835,36.965,2.59,1.286,415,122,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Ucayali,2025,hogar,37.404,32.404,42.689,2.631,1.331,450,116,,Niños de 6 a 35 meses,sí
+"Anemia, criterio OMS 2024 / RM 251-2024-MINSA",Departamento,Áncash,2025,hogar,39.725,33.312,46.511,3.385,1.277,267,97,,Niños de 6 a 35 meses,sí

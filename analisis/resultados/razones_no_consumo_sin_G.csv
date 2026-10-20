@@ -1,0 +1,631 @@
+﻿indicador,grupo_tipo,grupo,año,factor_usado,estimacion_pct,ic95_inf_pct,ic95_sup_pct,error_estandar_pp,deff,n_ninos_sin_ponderar,n_conglomerados,fiabilidad,universo,ponderada
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Total,Total,2024,mujer,30.728,29.149,32.354,0.818,1.662,5293,2538,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Edad (meses),6-11,2024,mujer,54.974,51.717,58.188,1.653,1.603,1453,1148,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Edad (meses),12-23,2024,mujer,21.088,19.023,23.313,1.094,1.562,2172,1562,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Edad (meses),24-35,2024,mujer,22.046,19.607,24.696,1.298,1.635,1668,1247,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Área,Urbano,2024,mujer,28.771,26.815,30.809,1.019,1.762,3479,1819,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Área,Rural,2024,mujer,34.792,32.196,37.481,1.349,1.455,1814,719,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Lima Metropolitana,2024,mujer,32.245,27.644,37.218,2.447,1.322,482,300,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Resto Costa,2024,mujer,30.91,28.118,33.849,1.463,1.491,1488,739,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Sierra,2024,mujer,27.795,25.377,30.35,1.269,1.474,1838,864,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Selva,2024,mujer,33.357,30.339,36.519,1.578,1.662,1485,635,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Amazonas,2024,mujer,35.435,29.183,42.229,3.344,1.256,257,103,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Apurímac,2024,mujer,17.221,12.663,22.987,2.625,0.995,206,91,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Arequipa,2024,mujer,25.435,19.036,33.105,3.599,1.1,161,90,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Ayacucho,2024,mujer,24.789,19.014,31.632,3.225,1.423,255,107,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Cajamarca,2024,mujer,38.296,31.94,45.08,3.369,1.09,227,91,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Callao,2024,mujer,28.552,21.861,36.337,3.709,1.126,167,94,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Cusco,2024,mujer,35.173,27.442,43.769,4.197,1.151,149,82,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Huancavelica,2024,mujer,22.428,17.228,28.653,2.916,1.002,205,92,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Huánuco,2024,mujer,21.769,17.319,26.99,2.467,0.918,257,105,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Ica,2024,mujer,27.085,20.647,34.654,3.586,1.022,157,86,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Junín,2024,mujer,22.756,17.071,29.656,3.213,1.422,242,105,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,La Libertad,2024,mujer,24.958,18.71,32.459,3.516,1.135,172,83,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Lambayeque,2024,mujer,37.521,30.304,45.338,3.861,1.31,206,98,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Lima,2024,mujer,32.171,27.622,37.085,2.419,1.335,498,303,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Loreto,2024,mujer,44.16,36.767,51.822,3.868,1.323,218,98,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Madre de Dios,2024,mujer,27.584,20.708,35.715,3.845,1.525,206,94,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Moquegua,2024,mujer,27.161,20.5,35.033,3.722,1.099,157,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Pasco,2024,mujer,22.872,16.781,30.368,3.47,1.126,165,79,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Piura,2024,mujer,31.368,25.724,37.623,3.046,1.047,243,98,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Puno,2024,mujer,22.93,16.835,30.426,3.471,1.057,155,81,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,San Martín,2024,mujer,26.267,21.589,31.551,2.545,0.692,207,93,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Tacna,2024,mujer,47.916,40.001,55.938,4.099,1.097,163,88,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Tumbes,2024,mujer,35.013,29.232,41.27,3.083,0.969,232,105,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Ucayali,2024,mujer,40.211,33.745,47.036,3.409,1.015,210,99,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Áncash,2024,mujer,28.384,21.942,35.849,3.562,1.111,178,88,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Total,Total,2024,mujer,1.02,0.593,1.749,0.282,2.914,3712,2146,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Edad (meses),6-11,2024,mujer,1.876,0.528,6.442,1.203,5.361,682,603,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Edad (meses),12-23,2024,mujer,0.851,0.412,1.749,0.314,2.015,1725,1327,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Edad (meses),24-35,2024,mujer,0.809,0.402,1.624,0.288,1.353,1305,1029,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Área,Urbano,2024,mujer,1.139,0.585,2.206,0.386,3.294,2490,1517,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Área,Rural,2024,mujer,0.75,0.358,1.563,0.282,1.305,1222,629,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Lima Metropolitana,2024,mujer,1.781,0.462,6.618,1.216,2.816,333,232,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Resto Costa,2024,mujer,0.813,0.371,1.776,0.325,1.329,1013,612,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Sierra,2024,mujer,0.899,0.461,1.744,0.305,1.404,1344,744,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Selva,2024,mujer,0.761,0.327,1.761,0.327,1.447,1022,558,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Amazonas,2024,mujer,1.333,0.328,5.25,0.947,1.131,166,90,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Apurímac,2024,mujer,0.0,,,0.0,,168,83,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Arequipa,2024,mujer,0.0,,,0.0,,119,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Ayacucho,2024,mujer,0.0,,,0.0,,194,99,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Cajamarca,2024,mujer,0.0,,,0.0,,139,74,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Callao,2024,mujer,0.869,0.122,5.934,0.867,1.038,119,77,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Cusco,2024,mujer,0.975,0.136,6.623,0.972,0.93,95,61,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Huancavelica,2024,mujer,0.607,0.085,4.213,0.608,0.979,160,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Huánuco,2024,mujer,0.39,0.054,2.732,0.39,0.761,194,99,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Ica,2024,mujer,0.86,0.124,5.709,0.845,0.963,115,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Junín,2024,mujer,1.168,0.285,4.657,0.835,1.131,187,95,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,La Libertad,2024,mujer,1.466,0.356,5.834,1.051,0.979,128,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Lambayeque,2024,mujer,0.751,0.106,5.122,0.747,0.966,129,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Lima,2024,mujer,1.762,0.458,6.541,1.202,2.887,346,233,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Loreto,2024,mujer,2.47,0.799,7.377,1.408,1.037,126,80,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Madre de Dios,2024,mujer,0.529,0.074,3.705,0.531,0.809,151,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Moquegua,2024,mujer,0.849,0.121,5.704,0.839,0.971,116,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Pasco,2024,mujer,1.686,0.574,4.848,0.921,0.66,129,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Piura,2024,mujer,0.62,0.087,4.294,0.62,1.042,167,83,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Puno,2024,mujer,0.661,0.092,4.57,0.661,0.785,118,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,San Martín,2024,mujer,0.499,0.069,3.535,0.504,0.777,152,87,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Tacna,2024,mujer,1.056,0.149,7.109,1.05,0.928,88,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Tumbes,2024,mujer,0.0,,,0.0,,151,89,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Ucayali,2024,mujer,0.0,,,0.0,,128,76,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Áncash,2024,mujer,2.104,0.685,6.28,1.194,0.88,127,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Total,Total,2024,mujer,3.597,2.905,4.446,0.39,1.632,3712,2146,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Edad (meses),6-11,2024,mujer,4.305,2.948,6.245,0.825,1.126,682,603,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Edad (meses),12-23,2024,mujer,3.33,2.408,4.59,0.548,1.61,1725,1327,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Edad (meses),24-35,2024,mujer,3.591,2.464,5.206,0.686,1.772,1305,1029,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Área,Urbano,2024,mujer,2.723,2.075,3.567,0.376,1.33,2490,1517,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Área,Rural,2024,mujer,5.578,4.0,7.727,0.937,2.039,1222,629,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Lima Metropolitana,2024,mujer,1.59,0.627,3.97,0.75,1.196,333,232,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Resto Costa,2024,mujer,1.75,1.001,3.041,0.496,1.451,1013,612,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Sierra,2024,mujer,4.413,3.207,6.044,0.714,1.623,1344,744,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Selva,2024,mujer,6.581,4.703,9.138,1.116,2.071,1022,558,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Amazonas,2024,mujer,6.083,2.365,14.764,2.866,2.387,166,90,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Apurímac,2024,mujer,3.36,1.521,7.258,1.344,0.934,168,83,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Arequipa,2024,mujer,0.839,0.117,5.755,0.839,1.006,119,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Ayacucho,2024,mujer,5.746,2.974,10.816,1.9,1.293,194,99,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Cajamarca,2024,mujer,4.755,1.589,13.368,2.606,2.085,139,74,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Callao,2024,mujer,1.848,0.462,7.088,1.294,1.099,119,77,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Cusco,2024,mujer,2.964,0.957,8.803,1.688,0.941,95,61,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Huancavelica,2024,mujer,2.961,1.232,6.949,1.312,0.958,160,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Huánuco,2024,mujer,4.801,2.511,8.986,1.566,1.041,194,99,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Ica,2024,mujer,0.0,,,0.0,,115,72,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Junín,2024,mujer,3.761,1.434,9.5,1.824,1.719,187,95,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,La Libertad,2024,mujer,2.79,0.651,11.159,2.042,1.968,128,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Lambayeque,2024,mujer,1.715,0.424,6.666,1.211,1.123,129,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Lima,2024,mujer,1.655,0.681,3.969,0.746,1.182,346,233,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Loreto,2024,mujer,8.744,4.753,15.539,2.655,1.113,126,80,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Madre de Dios,2024,mujer,1.736,0.547,5.37,1.015,0.912,151,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Moquegua,2024,mujer,0.854,0.119,5.866,0.854,1.0,116,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Pasco,2024,mujer,3.6,1.367,9.147,1.755,1.145,129,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Piura,2024,mujer,3.554,1.628,7.584,1.4,0.954,167,83,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Puno,2024,mujer,5.473,2.586,11.212,2.057,0.965,118,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,San Martín,2024,mujer,5.876,3.306,10.234,1.699,0.793,152,87,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Tacna,2024,mujer,1.236,0.173,8.308,1.233,1.095,88,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Tumbes,2024,mujer,2.144,0.529,8.288,1.516,1.654,151,89,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Ucayali,2024,mujer,4.195,1.897,9.02,1.675,0.894,128,76,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Áncash,2024,mujer,9.025,5.248,15.086,2.44,0.921,127,73,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Total,Total,2024,mujer,31.794,29.788,33.87,1.041,1.856,3712,2146,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Edad (meses),6-11,2024,mujer,38.212,33.552,43.1,2.442,1.722,682,603,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Edad (meses),12-23,2024,mujer,32.976,30.089,35.998,1.508,1.775,1725,1327,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Edad (meses),24-35,2024,mujer,26.965,23.814,30.366,1.672,1.853,1305,1029,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Área,Urbano,2024,mujer,36.424,33.929,38.995,1.293,1.798,2490,1517,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Área,Rural,2024,mujer,21.293,18.191,24.765,1.677,2.05,1222,629,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Lima Metropolitana,2024,mujer,43.338,37.305,49.575,3.144,1.341,333,232,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Resto Costa,2024,mujer,38.371,34.444,42.455,2.047,1.795,1013,612,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Sierra,2024,mujer,27.317,24.402,30.44,1.541,1.607,1344,744,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Selva,2024,mujer,19.506,16.701,22.653,1.517,1.498,1022,558,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Amazonas,2024,mujer,15.678,10.877,22.073,2.838,1.012,166,90,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Apurímac,2024,mujer,11.354,7.577,16.675,2.29,0.876,168,83,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Arequipa,2024,mujer,33.704,24.935,43.759,4.85,1.253,119,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Ayacucho,2024,mujer,12.519,8.223,18.604,2.615,1.212,194,99,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Cajamarca,2024,mujer,22.511,15.152,32.093,4.329,1.493,139,74,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Callao,2024,mujer,35.696,27.061,45.372,4.717,1.154,119,77,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Cusco,2024,mujer,28.496,19.68,39.328,5.055,1.191,95,61,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Huancavelica,2024,mujer,20.507,15.282,26.949,2.974,0.868,160,81,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Huánuco,2024,mujer,19.334,13.944,26.174,3.114,1.206,194,99,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Ica,2024,mujer,39.211,30.203,49.02,4.853,1.136,115,72,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Junín,2024,mujer,39.884,32.81,47.407,3.748,1.096,187,95,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,La Libertad,2024,mujer,25.9,18.025,35.716,4.536,1.373,128,73,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Lambayeque,2024,mujer,36.639,27.402,46.974,5.05,1.417,129,81,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Lima,2024,mujer,42.557,36.591,48.748,3.115,1.373,346,233,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Loreto,2024,mujer,14.594,9.988,20.833,2.745,0.762,126,80,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Madre de Dios,2024,mujer,20.065,13.982,27.935,3.555,1.19,151,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Moquegua,2024,mujer,40.755,32.185,49.926,4.571,1.004,116,72,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Pasco,2024,mujer,45.228,36.204,54.577,4.739,1.169,129,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Piura,2024,mujer,41.735,33.155,50.846,4.558,1.427,167,83,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Puno,2024,mujer,26.047,17.982,36.136,4.657,1.329,118,73,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,San Martín,2024,mujer,18.114,12.577,25.381,3.255,1.085,152,87,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Tacna,2024,mujer,25.678,17.652,35.768,4.646,0.995,88,62,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Tumbes,2024,mujer,38.6,31.098,46.686,4.006,1.022,151,89,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Ucayali,2024,mujer,20.433,14.138,28.597,3.685,1.069,128,76,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Áncash,2024,mujer,44.446,36.565,52.617,4.129,0.877,127,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Total,Total,2024,mujer,50.196,48.134,52.257,1.052,1.643,3712,2146,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Edad (meses),6-11,2024,mujer,36.315,31.862,41.015,2.34,1.615,682,603,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Edad (meses),12-23,2024,mujer,51.53,48.466,54.582,1.562,1.684,1725,1327,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Edad (meses),24-35,2024,mujer,55.477,52.137,58.768,1.693,1.515,1305,1029,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Área,Urbano,2024,mujer,46.35,43.821,48.899,1.296,1.682,2490,1517,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Área,Rural,2024,mujer,58.917,55.495,62.255,1.726,1.505,1222,629,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Lima Metropolitana,2024,mujer,40.722,34.636,47.108,3.196,1.409,333,232,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Resto Costa,2024,mujer,45.882,42.169,49.642,1.909,1.487,1013,612,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Sierra,2024,mujer,55.319,52.006,58.584,1.68,1.535,1344,744,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Selva,2024,mujer,56.608,53.249,59.906,1.7,1.202,1022,558,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Amazonas,2024,mujer,55.374,47.405,63.076,4.029,1.09,166,90,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Apurímac,2024,mujer,59.129,51.724,66.141,3.701,0.952,168,83,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Arequipa,2024,mujer,39.616,30.983,48.95,4.629,1.066,119,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Ayacucho,2024,mujer,75.478,68.834,81.094,3.133,1.029,194,99,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Cajamarca,2024,mujer,58.594,49.692,66.969,4.449,1.134,139,74,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Callao,2024,mujer,36.772,27.825,46.733,4.875,1.217,119,77,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Cusco,2024,mujer,59.75,49.319,69.368,5.18,1.06,95,61,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Huancavelica,2024,mujer,57.721,50.647,64.491,3.553,0.827,160,81,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Huánuco,2024,mujer,58.589,50.873,65.906,3.862,1.193,194,99,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Ica,2024,mujer,47.926,37.821,58.203,5.271,1.28,115,72,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Junín,2024,mujer,48.62,41.699,55.595,3.567,0.952,187,95,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,La Libertad,2024,mujer,59.167,49.68,68.016,4.727,1.184,128,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Lambayeque,2024,mujer,60.37,51.801,68.347,4.257,0.977,129,81,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Lima,2024,mujer,42.558,36.51,48.837,3.159,1.413,346,233,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Loreto,2024,mujer,56.359,47.85,64.51,4.288,0.942,126,80,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Madre de Dios,2024,mujer,60.412,50.719,69.351,4.805,1.457,151,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Moquegua,2024,mujer,47.172,37.097,57.483,5.272,1.294,116,72,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Pasco,2024,mujer,47.831,39.716,56.062,4.206,0.915,129,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Piura,2024,mujer,39.383,31.999,47.287,3.928,1.079,167,83,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Puno,2024,mujer,55.451,45.524,64.961,5.02,1.204,118,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,San Martín,2024,mujer,48.184,40.752,55.697,3.84,0.898,152,87,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Tacna,2024,mujer,57.78,46.886,67.966,5.455,1.074,88,62,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Tumbes,2024,mujer,38.358,30.87,46.443,4.002,1.023,151,89,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Ucayali,2024,mujer,61.766,52.486,70.262,4.578,1.136,128,76,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Áncash,2024,mujer,37.83,29.076,47.457,4.737,1.212,127,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Total,Total,2024,mujer,7.391,6.435,8.476,0.519,1.462,3712,2146,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Edad (meses),6-11,2024,mujer,3.166,2.02,4.929,0.721,1.157,682,603,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Edad (meses),12-23,2024,mujer,7.192,5.905,8.733,0.718,1.332,1725,1327,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Edad (meses),24-35,2024,mujer,9.801,8.0,11.953,1.004,1.488,1305,1029,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Área,Urbano,2024,mujer,6.137,5.08,7.396,0.588,1.494,2490,1517,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Área,Rural,2024,mujer,10.235,8.363,12.469,1.043,1.447,1222,629,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Lima Metropolitana,2024,mujer,3.331,1.716,6.368,1.117,1.289,333,232,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Resto Costa,2024,mujer,3.926,2.49,6.136,0.904,2.195,1013,612,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Sierra,2024,mujer,8.401,6.808,10.325,0.893,1.392,1344,744,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Selva,2024,mujer,14.086,11.747,16.803,1.287,1.399,1022,558,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Amazonas,2024,mujer,17.155,11.816,24.245,3.156,1.163,166,90,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Apurímac,2024,mujer,16.575,11.435,23.416,3.04,1.123,168,83,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Arequipa,2024,mujer,3.335,1.185,9.033,1.738,1.115,119,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Ayacucho,2024,mujer,11.32,7.314,17.116,2.463,1.172,194,99,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Cajamarca,2024,mujer,7.566,4.067,13.647,2.347,1.095,139,74,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Callao,2024,mujer,2.253,0.701,6.994,1.328,0.953,119,77,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Cusco,2024,mujer,6.659,2.642,15.792,3.064,1.435,95,61,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Huancavelica,2024,mujer,13.294,8.237,20.754,3.147,1.375,160,81,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Huánuco,2024,mujer,12.308,8.058,18.353,2.592,1.208,194,99,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Ica,2024,mujer,3.14,1.047,9.034,1.737,1.14,115,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Junín,2024,mujer,5.994,3.042,11.471,2.038,1.378,187,95,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,La Libertad,2024,mujer,7.23,3.456,14.506,2.661,1.352,128,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Lambayeque,2024,mujer,1.82,0.585,5.513,1.045,0.788,129,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Lima,2024,mujer,2.969,1.44,6.023,1.086,1.417,346,233,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Loreto,2024,mujer,14.102,8.904,21.615,3.204,1.068,126,80,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Madre de Dios,2024,mujer,13.548,8.213,21.536,3.348,1.445,151,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Moquegua,2024,mujer,2.214,0.735,6.475,1.234,0.816,116,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Pasco,2024,mujer,9.357,5.037,16.73,2.88,1.262,129,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Piura,2024,mujer,6.714,3.433,12.718,2.253,1.354,167,83,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Puno,2024,mujer,7.929,4.324,14.096,2.4,0.931,118,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,San Martín,2024,mujer,23.697,17.289,31.573,3.651,1.121,152,87,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Tacna,2024,mujer,3.441,1.257,9.073,1.745,0.806,88,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Tumbes,2024,mujer,2.806,1.069,7.16,1.367,1.034,151,89,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Ucayali,2024,mujer,9.108,5.288,15.244,2.47,0.943,128,76,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Áncash,2024,mujer,7.682,3.867,14.686,2.629,1.238,127,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Total,Total,2024,mujer,2.439,1.861,3.191,0.336,1.756,3712,2146,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Edad (meses),6-11,2024,mujer,3.883,2.326,6.416,1.007,1.851,682,603,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Edad (meses),12-23,2024,mujer,2.269,1.564,3.281,0.429,1.431,1725,1327,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Edad (meses),24-35,2024,mujer,1.932,1.23,3.024,0.444,1.356,1305,1029,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Área,Urbano,2024,mujer,2.715,1.96,3.75,0.449,1.903,2490,1517,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Área,Rural,2024,mujer,1.813,1.171,2.799,0.403,1.116,1222,629,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Lima Metropolitana,2024,mujer,3.034,1.413,6.394,1.171,1.553,333,232,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Resto Costa,2024,mujer,2.033,1.26,3.263,0.494,1.239,1013,612,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Sierra,2024,mujer,2.679,1.804,3.962,0.538,1.492,1344,744,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Selva,2024,mujer,2.028,1.243,3.292,0.504,1.307,1022,558,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Amazonas,2024,mujer,2.151,0.849,5.346,1.013,0.809,166,90,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Apurímac,2024,mujer,1.217,0.303,4.754,0.858,1.028,168,83,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Arequipa,2024,mujer,6.562,3.179,13.059,2.377,1.097,119,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Ayacucho,2024,mujer,1.342,0.428,4.128,0.778,0.887,194,99,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Cajamarca,2024,mujer,2.552,0.838,7.511,1.435,1.152,139,74,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Callao,2024,mujer,2.406,0.769,7.276,1.386,0.974,119,77,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Cusco,2024,mujer,2.23,0.538,8.774,1.6,1.116,95,61,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Huancavelica,2024,mujer,1.224,0.309,4.728,0.856,0.968,160,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Huánuco,2024,mujer,8.899,5.336,14.48,2.274,1.237,194,99,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Ica,2024,mujer,3.998,1.292,11.704,2.266,1.539,115,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Junín,2024,mujer,0.837,0.203,3.382,0.602,0.817,187,95,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,La Libertad,2024,mujer,0.604,0.084,4.204,0.606,0.781,128,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Lambayeque,2024,mujer,1.29,0.315,5.128,0.922,0.861,129,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Lima,2024,mujer,3.097,1.473,6.393,1.162,1.558,346,233,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Loreto,2024,mujer,0.0,,,0.0,,126,80,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Madre de Dios,2024,mujer,1.369,0.334,5.434,0.978,1.07,151,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Moquegua,2024,mujer,4.602,1.6,12.52,2.435,1.567,116,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Pasco,2024,mujer,1.976,0.621,6.103,1.157,0.891,129,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Piura,2024,mujer,2.061,0.769,5.4,1.027,0.873,167,83,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Puno,2024,mujer,1.977,0.463,8.035,1.449,1.279,118,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,San Martín,2024,mujer,1.239,0.312,4.789,0.867,0.933,152,87,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Tacna,2024,mujer,1.719,0.428,6.638,1.208,0.761,88,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Tumbes,2024,mujer,1.341,0.329,5.299,0.955,1.041,151,89,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Ucayali,2024,mujer,0.0,,,0.0,,128,76,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Áncash,2024,mujer,2.949,0.893,9.301,1.775,1.399,127,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Total,Total,2024,mujer,11.412,10.147,12.813,0.679,1.692,3712,2146,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Edad (meses),6-11,2024,mujer,13.201,10.199,16.92,1.706,1.733,682,603,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Edad (meses),12-23,2024,mujer,11.045,9.191,13.218,1.024,1.841,1725,1327,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Edad (meses),24-35,2024,mujer,10.992,9.125,13.186,1.032,1.422,1305,1029,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Área,Urbano,2024,mujer,11.137,9.598,12.887,0.837,1.764,2490,1517,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Área,Rural,2024,mujer,12.038,9.962,14.476,1.148,1.521,1222,629,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Lima Metropolitana,2024,mujer,10.373,6.847,15.415,2.153,1.66,333,232,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Resto Costa,2024,mujer,12.962,10.734,15.571,1.23,1.359,1013,612,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Sierra,2024,mujer,11.671,9.869,13.753,0.988,1.273,1344,744,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Selva,2024,mujer,9.984,7.759,12.758,1.268,1.827,1022,558,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Amazonas,2024,mujer,15.733,9.689,24.525,3.746,1.757,166,90,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Apurímac,2024,mujer,21.964,15.895,29.536,3.482,1.188,168,83,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Arequipa,2024,mujer,13.06,8.586,19.371,2.719,0.775,119,75,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Ayacucho,2024,mujer,8.956,5.219,14.945,2.412,1.385,194,99,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Cajamarca,2024,mujer,11.637,7.446,17.734,2.585,0.903,139,74,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Callao,2024,mujer,17.299,10.699,26.75,4.066,1.375,119,77,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Cusco,2024,mujer,7.926,3.866,15.558,2.832,1.044,95,61,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Huancavelica,2024,mujer,13.928,9.892,19.258,2.372,0.751,160,81,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Huánuco,2024,mujer,6.557,3.303,12.597,2.249,1.602,194,99,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Ica,2024,mujer,16.211,10.453,24.281,3.5,1.037,115,72,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Junín,2024,mujer,12.876,8.289,19.464,2.814,1.32,187,95,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,La Libertad,2024,mujer,18.839,13.148,26.248,3.333,0.93,128,73,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Lambayeque,2024,mujer,10.804,6.318,17.87,2.879,1.109,129,81,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Lima,2024,mujer,9.216,5.87,14.183,2.08,1.788,346,233,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Loreto,2024,mujer,10.796,5.815,19.176,3.306,1.43,126,80,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Madre de Dios,2024,mujer,9.518,5.083,17.127,2.966,1.542,151,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Moquegua,2024,mujer,14.013,8.711,21.771,3.289,1.041,116,72,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Pasco,2024,mujer,6.104,3.03,11.914,2.142,1.032,129,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Piura,2024,mujer,9.62,5.765,15.626,2.456,1.158,167,83,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Puno,2024,mujer,9.956,5.444,17.514,2.983,1.171,118,73,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,San Martín,2024,mujer,8.568,5.044,14.185,2.268,0.998,152,87,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Tacna,2024,mujer,21.603,13.875,32.035,4.637,1.117,88,62,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Tumbes,2024,mujer,14.763,10.189,20.911,2.715,0.884,151,89,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Ucayali,2024,mujer,10.458,5.993,17.628,2.892,1.143,128,76,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Áncash,2024,mujer,7.438,3.924,13.649,2.375,1.041,127,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Total,Total,2024,mujer,6.377,5.456,7.44,0.504,1.582,3712,2146,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Edad (meses),6-11,2024,mujer,9.45,7.167,12.363,1.315,1.379,682,603,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Edad (meses),12-23,2024,mujer,5.462,4.33,6.869,0.643,1.38,1725,1327,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Edad (meses),24-35,2024,mujer,6.03,4.606,7.857,0.822,1.555,1305,1029,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Área,Urbano,2024,mujer,6.527,5.449,7.802,0.598,1.458,2490,1517,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Área,Rural,2024,mujer,6.035,4.438,8.158,0.938,1.895,1222,629,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Lima Metropolitana,2024,mujer,5.765,3.729,8.811,1.266,0.983,333,232,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Resto Costa,2024,mujer,7.053,5.114,9.653,1.144,2.022,1013,612,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Sierra,2024,mujer,6.079,4.702,7.827,0.79,1.471,1344,744,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Selva,2024,mujer,6.547,5.049,8.451,0.861,1.237,1022,558,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Amazonas,2024,mujer,4.238,1.937,9.023,1.67,1.141,166,90,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Apurímac,2024,mujer,8.771,5.115,14.638,2.361,1.171,168,83,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Arequipa,2024,mujer,12.336,7.472,19.692,3.063,1.032,119,75,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Ayacucho,2024,mujer,0.58,0.08,4.068,0.583,1.145,194,99,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Cajamarca,2024,mujer,5.756,2.873,11.198,2.006,1.031,139,74,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Callao,2024,mujer,12.886,8.172,19.733,2.908,0.897,119,77,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Cusco,2024,mujer,10.358,5.489,18.694,3.258,1.086,95,61,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Huancavelica,2024,mujer,10.446,6.38,16.642,2.564,1.124,160,81,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Huánuco,2024,mujer,5.96,3.341,10.412,1.733,1.04,194,99,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Ica,2024,mujer,4.896,2.257,10.296,1.904,0.895,115,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Junín,2024,mujer,2.251,0.847,5.844,1.113,1.052,187,95,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,La Libertad,2024,mujer,1.685,0.403,6.774,1.22,1.151,128,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Lambayeque,2024,mujer,0.6,0.085,4.119,0.597,0.771,129,81,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Lima,2024,mujer,4.936,3.018,7.973,1.225,1.107,346,233,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Loreto,2024,mujer,7.47,4.012,13.49,2.321,0.982,126,80,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Madre de Dios,2024,mujer,8.007,3.997,15.396,2.771,1.574,151,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Moquegua,2024,mujer,2.43,0.771,7.394,1.409,0.971,116,72,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Pasco,2024,mujer,3.457,1.457,7.976,1.505,0.875,129,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Piura,2024,mujer,11.927,7.099,19.355,3.066,1.494,167,83,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Puno,2024,mujer,3.96,1.458,10.307,1.988,1.226,118,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,San Martín,2024,mujer,8.707,5.272,14.048,2.184,0.912,152,87,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Tacna,2024,mujer,4.313,1.604,11.085,2.141,0.978,88,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Tumbes,2024,mujer,4.662,2.271,9.331,1.687,0.967,151,89,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Ucayali,2024,mujer,8.54,4.571,15.398,2.659,1.158,128,76,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Áncash,2024,mujer,11.545,6.762,19.022,3.061,1.165,127,73,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Total,Total,2025,mujer,34.695,32.992,36.439,0.879,1.803,5283,2533,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Edad (meses),6-11,2025,mujer,57.892,54.504,61.208,1.712,1.624,1351,1099,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Edad (meses),12-23,2025,mujer,27.708,25.294,30.258,1.266,1.747,2182,1559,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Edad (meses),24-35,2025,mujer,25.236,22.778,27.863,1.297,1.561,1750,1309,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Área,Urbano,2025,mujer,34.522,32.427,36.68,1.085,1.898,3643,1842,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Área,Rural,2025,mujer,35.088,32.239,38.048,1.483,1.583,1640,691,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Lima Metropolitana,2025,mujer,36.325,31.553,41.382,2.514,1.339,490,294,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Resto Costa,2025,mujer,35.827,32.784,38.989,1.584,1.669,1529,756,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Sierra,2025,mujer,30.641,27.908,33.517,1.432,1.673,1735,828,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Región natural,Selva,2025,mujer,37.415,34.18,40.767,1.682,1.847,1529,655,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Amazonas,2025,mujer,41.148,34.243,48.421,3.639,1.422,260,102,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Apurímac,2025,mujer,21.606,16.077,28.394,3.142,1.177,202,93,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Arequipa,2025,mujer,26.094,19.311,34.248,3.824,1.282,169,89,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Ayacucho,2025,mujer,27.586,22.21,33.7,2.938,1.003,232,101,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Cajamarca,2025,mujer,51.437,43.985,58.824,3.812,1.088,187,89,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Callao,2025,mujer,30.035,23.676,37.268,3.482,0.917,159,91,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Cusco,2025,mujer,46.13,37.277,55.234,4.629,1.371,159,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Huancavelica,2025,mujer,28.411,22.02,35.805,3.53,1.048,171,82,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Huánuco,2025,mujer,26.863,21.759,32.666,2.788,1.06,268,107,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Ica,2025,mujer,39.072,31.15,47.614,4.235,1.446,192,98,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Junín,2025,mujer,22.534,15.881,30.947,3.848,1.866,220,93,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,La Libertad,2025,mujer,21.564,15.911,28.544,3.223,1.216,198,93,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Lambayeque,2025,mujer,40.233,32.875,48.058,3.901,1.284,203,95,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Lima,2025,mujer,37.323,32.575,42.328,2.494,1.399,526,297,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Loreto,2025,mujer,42.466,34.476,50.87,4.218,1.638,225,96,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Madre de Dios,2025,mujer,16.54,11.899,22.528,2.7,1.051,199,100,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Moquegua,2025,mujer,26.065,19.839,33.429,3.477,1.079,172,92,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Pasco,2025,mujer,18.139,12.723,25.196,3.171,1.212,179,94,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Piura,2025,mujer,42.864,36.462,49.513,3.347,1.029,225,104,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Puno,2025,mujer,22.545,15.592,31.444,4.05,1.061,113,65,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,San Martín,2025,mujer,31.264,25.791,37.315,2.949,1.101,272,101,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Tacna,2025,mujer,49.604,40.085,59.153,4.923,1.454,150,81,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Tumbes,2025,mujer,41.759,35.051,48.787,3.524,1.103,216,101,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Ucayali,2025,mujer,50.091,42.702,57.475,3.795,1.267,220,104,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Respondieron ÚNICAMENTE el código G (% de los que se les preguntó),Departamento,Áncash,2025,mujer,22.366,16.241,29.973,3.506,1.175,166,80,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Total,Total,2025,mujer,1.196,0.82,1.742,0.23,1.567,3510,2052,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Edad (meses),6-11,2025,mujer,0.68,0.234,1.962,0.37,1.176,582,531,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Edad (meses),12-23,2025,mujer,1.134,0.634,2.022,0.336,1.6,1591,1224,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Edad (meses),24-35,2025,mujer,1.505,0.914,2.468,0.382,1.313,1337,1064,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Área,Urbano,2025,mujer,1.181,0.739,1.882,0.282,1.648,2425,1476,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Área,Rural,2025,mujer,1.232,0.656,2.301,0.394,1.387,1085,576,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Lima Metropolitana,2025,mujer,0.447,0.063,3.123,0.447,1.412,314,224,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Resto Costa,2025,mujer,0.925,0.332,2.547,0.481,2.438,965,596,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Sierra,2025,mujer,1.957,1.246,3.06,0.448,1.3,1240,702,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Región natural,Selva,2025,mujer,1.099,0.54,2.226,0.398,1.441,991,530,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Amazonas,2025,mujer,2.171,0.754,6.083,1.16,0.995,157,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Apurímac,2025,mujer,0.0,,,0.0,,159,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Arequipa,2025,mujer,1.582,0.39,6.196,1.122,1.003,124,78,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Ayacucho,2025,mujer,4.674,2.211,9.608,1.758,1.173,169,93,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Cajamarca,2025,mujer,0.0,,,0.0,,90,60,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Callao,2025,mujer,0.0,,,0.0,,109,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Cusco,2025,mujer,0.947,0.131,6.506,0.95,0.836,87,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Huancavelica,2025,mujer,1.696,0.412,6.711,1.214,1.087,123,69,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Huánuco,2025,mujer,0.887,0.226,3.418,0.616,0.847,196,90,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Ica,2025,mujer,0.0,,,0.0,,116,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Junín,2025,mujer,1.128,0.289,4.294,0.779,0.919,169,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,La Libertad,2025,mujer,0.705,0.096,4.97,0.713,1.118,154,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Lambayeque,2025,mujer,0.0,,,0.0,,122,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Lima,2025,mujer,0.446,0.062,3.115,0.446,1.462,326,222,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Loreto,2025,mujer,3.002,1.115,7.831,1.5,0.973,126,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Madre de Dios,2025,mujer,0.51,0.072,3.535,0.509,0.853,167,91,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Moquegua,2025,mujer,1.658,0.408,6.484,1.176,1.077,127,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Pasco,2025,mujer,1.004,0.27,3.66,0.669,0.658,146,86,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Piura,2025,mujer,2.259,0.512,9.407,1.692,1.672,129,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Puno,2025,mujer,1.741,0.445,6.565,1.202,0.743,88,54,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,San Martín,2025,mujer,0.0,,,0.0,,185,88,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Tacna,2025,mujer,2.956,0.726,11.254,2.087,1.199,79,57,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Tumbes,2025,mujer,0.771,0.107,5.318,0.772,0.981,126,76,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Ucayali,2025,mujer,0.0,,,0.0,,108,71,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le dolía el estómago,Departamento,Áncash,2025,mujer,5.049,2.199,11.174,2.105,1.183,128,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Total,Total,2025,mujer,3.075,2.44,3.87,0.362,1.542,3510,2052,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Edad (meses),6-11,2025,mujer,3.829,2.342,6.201,0.952,1.433,582,531,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Edad (meses),12-23,2025,mujer,3.325,2.364,4.659,0.575,1.639,1591,1224,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Edad (meses),24-35,2025,mujer,2.426,1.607,3.648,0.508,1.455,1337,1064,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Área,Urbano,2025,mujer,2.603,1.905,3.546,0.413,1.628,2425,1476,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Área,Rural,2025,mujer,4.158,2.947,5.837,0.725,1.432,1085,576,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Lima Metropolitana,2025,mujer,2.148,0.886,5.116,0.963,1.386,314,224,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Resto Costa,2025,mujer,2.01,1.19,3.375,0.535,1.401,965,596,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Sierra,2025,mujer,3.31,2.307,4.727,0.606,1.421,1240,702,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Región natural,Selva,2025,mujer,4.99,3.535,7.001,0.87,1.584,991,530,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Amazonas,2025,mujer,4.113,1.798,9.136,1.713,1.168,157,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Apurímac,2025,mujer,1.254,0.301,5.068,0.907,1.056,159,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Arequipa,2025,mujer,1.508,0.362,6.07,1.091,0.993,124,78,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Ayacucho,2025,mujer,2.341,0.909,5.899,1.121,0.928,169,93,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Cajamarca,2025,mujer,0.0,,,0.0,,90,60,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Callao,2025,mujer,0.0,,,0.0,,109,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Cusco,2025,mujer,5.766,2.371,13.361,2.561,1.05,87,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Huancavelica,2025,mujer,4.106,1.657,9.813,1.873,1.096,123,69,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Huánuco,2025,mujer,3.483,1.684,7.066,1.278,0.952,196,90,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Ica,2025,mujer,0.923,0.134,6.056,0.902,1.032,116,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Junín,2025,mujer,4.078,1.832,8.827,1.642,1.165,169,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,La Libertad,2025,mujer,3.836,1.729,8.293,1.54,0.99,154,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Lambayeque,2025,mujer,2.97,1.116,7.665,1.466,0.91,122,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Lima,2025,mujer,2.274,0.98,5.188,0.969,1.378,326,222,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Loreto,2025,mujer,5.377,2.186,12.624,2.421,1.452,126,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Madre de Dios,2025,mujer,2.062,0.76,5.469,1.041,0.896,167,91,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Moquegua,2025,mujer,1.437,0.353,5.658,1.022,0.936,127,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Pasco,2025,mujer,4.116,1.818,9.053,1.693,1.06,146,86,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Piura,2025,mujer,2.703,1.022,6.959,1.328,0.865,129,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Puno,2025,mujer,2.259,0.515,9.351,1.684,1.131,88,54,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,San Martín,2025,mujer,7.566,4.415,12.67,2.041,1.102,185,88,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Tacna,2025,mujer,2.383,0.629,8.608,1.602,0.871,79,57,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Tumbes,2025,mujer,0.84,0.116,5.83,0.845,1.08,126,76,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Ucayali,2025,mujer,4.574,1.96,10.304,1.946,0.937,108,71,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó diarrea,Departamento,Áncash,2025,mujer,4.603,1.922,10.62,2.018,1.187,128,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Total,Total,2025,mujer,33.311,31.326,35.357,1.028,1.671,3510,2052,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Edad (meses),6-11,2025,mujer,37.598,32.752,42.705,2.546,1.608,582,531,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Edad (meses),12-23,2025,mujer,34.521,31.535,37.635,1.557,1.707,1591,1224,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Edad (meses),24-35,2025,mujer,29.886,26.814,33.151,1.618,1.669,1337,1064,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Área,Urbano,2025,mujer,38.198,35.78,40.677,1.25,1.604,2425,1476,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Área,Rural,2025,mujer,22.111,18.986,25.589,1.684,1.787,1085,576,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Lima Metropolitana,2025,mujer,46.032,40.152,52.025,3.042,1.17,314,224,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Resto Costa,2025,mujer,33.989,30.405,37.766,1.88,1.52,965,596,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Sierra,2025,mujer,29.28,26.197,32.566,1.626,1.583,1240,702,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Región natural,Selva,2025,mujer,26.079,22.973,29.445,1.652,1.402,991,530,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Amazonas,2025,mujer,25.884,19.431,33.586,3.622,1.074,157,82,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Apurímac,2025,mujer,18.11,12.265,25.917,3.469,1.29,159,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Arequipa,2025,mujer,31.357,23.222,40.826,4.526,1.18,124,78,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Ayacucho,2025,mujer,22.471,16.417,29.956,3.457,1.159,169,93,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Cajamarca,2025,mujer,35.968,26.003,47.311,5.51,1.186,90,60,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Callao,2025,mujer,46.303,36.825,56.055,4.965,1.081,109,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Cusco,2025,mujer,30.561,20.571,42.789,5.739,1.35,87,62,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Huancavelica,2025,mujer,20.132,13.595,28.766,3.865,1.143,123,69,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Huánuco,2025,mujer,15.02,10.787,20.531,2.471,0.938,196,90,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Ica,2025,mujer,33.357,24.598,43.438,4.853,1.229,116,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Junín,2025,mujer,47.398,39.558,55.368,4.066,1.12,169,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,La Libertad,2025,mujer,31.358,23.538,40.404,4.333,1.344,154,82,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Lambayeque,2025,mujer,27.876,19.334,38.396,4.9,1.457,122,75,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Lima,2025,mujer,44.762,38.937,50.734,3.022,1.204,326,222,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Loreto,2025,mujer,18.963,13.259,26.375,3.337,0.913,126,70,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Madre de Dios,2025,mujer,26.24,19.527,34.277,3.776,1.23,167,91,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Moquegua,2025,mujer,41.487,33.675,49.751,4.134,0.894,127,79,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Pasco,2025,mujer,42.883,34.859,51.3,4.23,1.067,146,86,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Piura,2025,mujer,27.943,21.066,36.041,3.837,0.943,129,79,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Puno,2025,mujer,24.822,16.711,35.204,4.74,1.06,88,54,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,San Martín,2025,mujer,27.327,21.798,33.655,3.032,0.856,185,88,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Tacna,2025,mujer,36.014,25.247,48.401,6.003,1.235,79,57,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Tumbes,2025,mujer,60.223,51.621,68.237,4.275,0.961,126,76,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Ucayali,2025,mujer,22.11,15.077,31.218,4.122,1.066,108,71,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le causó estreñimiento,Departamento,Áncash,2025,mujer,32.004,24.843,40.127,3.922,0.905,128,70,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Total,Total,2025,mujer,49.755,47.65,51.861,1.074,1.621,3510,2052,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Edad (meses),6-11,2025,mujer,39.649,34.994,44.5,2.431,1.437,582,531,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Edad (meses),12-23,2025,mujer,49.107,46.022,52.2,1.578,1.584,1591,1224,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Edad (meses),24-35,2025,mujer,55.086,51.65,58.474,1.743,1.642,1337,1064,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Área,Urbano,2025,mujer,45.454,42.91,48.022,1.305,1.665,2425,1476,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Área,Rural,2025,mujer,59.611,56.04,63.083,1.799,1.458,1085,576,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Lima Metropolitana,2025,mujer,38.914,32.935,45.245,3.154,1.314,314,224,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Resto Costa,2025,mujer,51.756,48.158,55.335,1.833,1.299,965,596,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Sierra,2025,mujer,56.23,52.836,59.566,1.718,1.488,1240,702,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Región natural,Selva,2025,mujer,47.873,44.021,51.751,1.975,1.549,991,530,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Amazonas,2025,mujer,53.711,46.056,61.196,3.89,0.956,157,82,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Apurímac,2025,mujer,64.978,56.129,72.903,4.313,1.3,159,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Arequipa,2025,mujer,57.264,47.727,66.29,4.788,1.162,124,78,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Ayacucho,2025,mujer,64.019,55.213,71.973,4.31,1.363,169,93,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Cajamarca,2025,mujer,53.378,41.999,64.416,5.815,1.223,90,60,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Callao,2025,mujer,42.559,34.532,50.998,4.237,0.8,109,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Cusco,2025,mujer,38.221,29.283,48.034,4.835,0.861,87,62,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Huancavelica,2025,mujer,60.57,51.04,69.359,4.722,1.148,123,69,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Huánuco,2025,mujer,54.866,47.157,62.349,3.904,1.206,196,90,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Ica,2025,mujer,42.21,33.361,51.588,4.699,1.05,116,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Junín,2025,mujer,44.407,36.489,52.619,4.149,1.178,169,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,La Libertad,2025,mujer,57.006,48.995,64.667,4.029,1.02,154,82,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Lambayeque,2025,mujer,65.227,56.268,73.224,4.361,1.023,122,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Lima,2025,mujer,40.333,34.329,46.641,3.155,1.348,326,222,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Loreto,2025,mujer,43.393,34.466,52.77,4.72,1.143,126,70,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Madre de Dios,2025,mujer,58.159,49.638,66.219,4.267,1.249,167,91,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Moquegua,2025,mujer,40.62,32.876,48.861,4.11,0.889,127,79,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Pasco,2025,mujer,45.079,36.838,53.599,4.314,1.098,146,86,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Piura,2025,mujer,52.849,45.261,60.308,3.866,0.774,129,79,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Puno,2025,mujer,67.549,56.669,76.815,5.196,1.084,88,54,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,San Martín,2025,mujer,42.25,34.843,50.023,3.9,1.153,185,88,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Tacna,2025,mujer,42.535,30.385,55.659,6.584,1.401,79,57,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Tumbes,2025,mujer,32.759,25.258,41.257,4.109,0.966,126,76,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Ucayali,2025,mujer,53.993,44.197,63.491,4.982,1.079,108,71,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+El sabor es desagradable,Departamento,Áncash,2025,mujer,51.549,42.121,60.868,4.838,1.199,128,70,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Total,Total,2025,mujer,9.216,8.189,10.358,0.553,1.281,3510,2052,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Edad (meses),6-11,2025,mujer,4.656,3.116,6.904,0.946,1.173,582,531,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Edad (meses),12-23,2025,mujer,8.468,7.081,10.097,0.766,1.206,1591,1224,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Edad (meses),24-35,2025,mujer,12.189,10.36,14.288,1.0,1.248,1337,1064,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Área,Urbano,2025,mujer,7.897,6.8,9.154,0.599,1.196,2425,1476,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Área,Rural,2025,mujer,12.238,10.094,14.764,1.187,1.425,1085,576,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Lima Metropolitana,2025,mujer,3.139,1.643,5.915,1.027,1.09,314,224,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Resto Costa,2025,mujer,5.068,3.611,7.07,0.869,1.515,965,596,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Sierra,2025,mujer,12.011,9.969,14.406,1.128,1.494,1240,702,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Región natural,Selva,2025,mujer,16.191,13.793,18.913,1.304,1.242,991,530,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Amazonas,2025,mujer,17.415,12.312,24.052,2.983,0.971,157,82,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Apurímac,2025,mujer,19.242,13.374,26.886,3.439,1.21,159,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Arequipa,2025,mujer,3.361,1.359,8.07,1.534,0.898,124,78,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Ayacucho,2025,mujer,17.301,12.01,24.28,3.116,1.147,169,93,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Cajamarca,2025,mujer,6.737,3.06,14.185,2.653,1.008,90,60,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Callao,2025,mujer,2.887,0.948,8.449,1.62,1.02,109,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Cusco,2025,mujer,16.65,9.819,26.82,4.295,1.157,87,62,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Huancavelica,2025,mujer,17.709,11.538,26.203,3.721,1.169,123,69,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Huánuco,2025,mujer,23.797,17.177,31.983,3.785,1.549,196,90,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Ica,2025,mujer,5.038,2.257,10.863,2.029,0.998,116,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Junín,2025,mujer,10.321,6.617,15.749,2.29,0.957,169,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,La Libertad,2025,mujer,6.073,2.878,12.363,2.27,1.391,154,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Lambayeque,2025,mujer,4.351,1.844,9.921,1.877,1.033,122,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Lima,2025,mujer,3.605,2.034,6.311,1.043,1.021,326,222,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Loreto,2025,mujer,12.874,8.035,19.993,3.006,1.015,126,70,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Madre de Dios,2025,mujer,13.213,8.482,20.008,2.903,1.227,167,91,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Moquegua,2025,mujer,5.73,2.771,11.478,2.087,1.024,127,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Pasco,2025,mujer,14.229,8.823,22.143,3.355,1.347,146,86,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Piura,2025,mujer,6.292,2.996,12.741,2.336,1.194,129,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Puno,2025,mujer,7.541,3.666,14.879,2.711,0.927,88,54,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,San Martín,2025,mujer,23.25,17.594,30.06,3.184,1.051,185,88,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Tacna,2025,mujer,3.404,1.065,10.338,1.988,0.949,79,57,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Tumbes,2025,mujer,1.89,0.469,7.308,1.333,1.207,126,76,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Ucayali,2025,mujer,13.312,8.411,20.432,3.026,0.857,108,71,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Le tiñó los dientes,Departamento,Áncash,2025,mujer,11.086,6.989,17.141,2.545,0.841,128,70,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Total,Total,2025,mujer,1.952,1.472,2.586,0.281,1.444,3510,2052,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Edad (meses),6-11,2025,mujer,2.983,1.645,5.35,0.899,1.624,582,531,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Edad (meses),12-23,2025,mujer,2.229,1.515,3.269,0.437,1.396,1591,1224,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Edad (meses),24-35,2025,mujer,1.147,0.679,1.93,0.306,1.102,1337,1064,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Área,Urbano,2025,mujer,1.701,1.186,2.433,0.312,1.408,2425,1476,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Área,Rural,2025,mujer,2.529,1.602,3.97,0.586,1.51,1085,576,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Lima Metropolitana,2025,mujer,0.919,0.228,3.626,0.65,1.458,314,224,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Resto Costa,2025,mujer,2.077,1.17,3.66,0.605,1.734,965,596,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Sierra,2025,mujer,1.803,1.124,2.881,0.433,1.313,1240,702,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Región natural,Selva,2025,mujer,3.056,2.067,4.496,0.606,1.228,991,530,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Amazonas,2025,mujer,0.0,,,0.0,,157,82,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Apurímac,2025,mujer,0.0,,,0.0,,159,85,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Arequipa,2025,mujer,1.915,0.593,6.007,1.136,0.852,124,78,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Ayacucho,2025,mujer,0.615,0.09,4.062,0.599,0.994,169,93,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Cajamarca,2025,mujer,1.24,0.171,8.434,1.245,1.138,90,60,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Callao,2025,mujer,0.0,,,0.0,,109,75,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Cusco,2025,mujer,2.244,0.554,8.645,1.585,0.996,87,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Huancavelica,2025,mujer,0.918,0.132,6.122,0.905,1.108,123,69,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Huánuco,2025,mujer,10.669,7.073,15.783,2.19,0.986,196,90,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Ica,2025,mujer,0.0,,,0.0,,116,73,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Junín,2025,mujer,0.647,0.092,4.421,0.643,1.086,169,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,La Libertad,2025,mujer,0.577,0.081,3.995,0.576,0.892,154,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Lambayeque,2025,mujer,3.183,1.35,7.316,1.377,0.75,122,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Lima,2025,mujer,0.917,0.228,3.617,0.649,1.51,326,222,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Loreto,2025,mujer,5.531,2.685,11.052,2.005,0.969,126,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Madre de Dios,2025,mujer,0.0,,,0.0,,167,91,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Moquegua,2025,mujer,1.626,0.414,6.164,1.126,1.006,127,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Pasco,2025,mujer,3.829,1.715,8.327,1.549,0.951,146,86,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Piura,2025,mujer,2.647,0.87,7.775,1.487,1.107,129,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Puno,2025,mujer,0.0,,,0.0,,88,54,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,San Martín,2025,mujer,1.665,0.53,5.101,0.965,1.051,185,88,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Tacna,2025,mujer,0.0,,,0.0,,79,57,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Tumbes,2025,mujer,0.0,,,0.0,,126,76,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Ucayali,2025,mujer,1.365,0.202,8.64,1.32,1.397,108,71,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Orientación a la madre no fue adecuada,Departamento,Áncash,2025,mujer,5.936,2.627,12.864,2.42,1.343,128,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Total,Total,2025,mujer,10.761,9.517,12.147,0.67,1.64,3510,2052,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Edad (meses),6-11,2025,mujer,12.581,9.545,16.407,1.74,1.603,582,531,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Edad (meses),12-23,2025,mujer,11.344,9.517,13.47,1.005,1.599,1591,1224,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Edad (meses),24-35,2025,mujer,9.223,7.507,11.284,0.959,1.469,1337,1064,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Área,Urbano,2025,mujer,11.199,9.684,12.917,0.823,1.651,2425,1476,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Área,Rural,2025,mujer,9.76,7.736,12.244,1.144,1.612,1085,576,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Lima Metropolitana,2025,mujer,11.695,8.201,16.412,2.074,1.308,314,224,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Resto Costa,2025,mujer,11.585,9.37,14.24,1.237,1.443,965,596,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Sierra,2025,mujer,8.694,7.039,10.693,0.928,1.344,1240,702,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Región natural,Selva,2025,mujer,12.016,9.747,14.727,1.266,1.501,991,530,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Amazonas,2025,mujer,9.592,5.463,16.305,2.688,1.308,157,82,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Apurímac,2025,mujer,15.88,10.704,22.917,3.094,1.14,159,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Arequipa,2025,mujer,17.217,10.812,26.298,3.924,1.339,124,78,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Ayacucho,2025,mujer,10.15,6.062,16.511,2.604,1.257,169,93,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Cajamarca,2025,mujer,6.5,2.692,14.871,2.856,1.208,90,60,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Callao,2025,mujer,9.995,5.532,17.396,2.936,1.045,109,75,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Cusco,2025,mujer,9.142,4.838,16.608,2.892,0.876,87,62,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Huancavelica,2025,mujer,12.88,8.02,20.045,3.022,1.001,123,69,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Huánuco,2025,mujer,7.531,4.64,11.997,1.83,0.942,196,90,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Ica,2025,mujer,20.14,13.547,28.871,3.904,1.099,116,73,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Junín,2025,mujer,10.431,6.373,16.616,2.559,1.185,169,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,La Libertad,2025,mujer,10.635,6.843,16.163,2.338,0.886,154,82,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Lambayeque,2025,mujer,4.937,1.508,14.983,2.925,2.223,122,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Lima,2025,mujer,11.482,8.024,16.168,2.056,1.356,326,222,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Loreto,2025,mujer,23.224,16.408,31.794,3.933,1.093,126,70,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Madre de Dios,2025,mujer,7.039,4.153,11.685,1.863,0.885,167,91,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Moquegua,2025,mujer,16.524,11.144,23.806,3.211,0.949,127,79,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Pasco,2025,mujer,8.824,5.141,14.737,2.38,1.027,146,86,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Piura,2025,mujer,11.018,6.937,17.06,2.538,0.847,129,79,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Puno,2025,mujer,6.486,2.824,14.203,2.691,1.051,88,54,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,San Martín,2025,mujer,5.38,2.694,10.457,1.869,1.269,185,88,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Tacna,2025,mujer,18.704,11.449,29.048,4.469,1.038,79,57,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Tumbes,2025,mujer,12.776,7.492,20.942,3.367,1.282,126,76,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Ucayali,2025,mujer,12.69,8.004,19.537,2.9,0.82,108,71,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Se olvidó de darle,Departamento,Áncash,2025,mujer,2.666,0.988,6.99,1.336,0.88,128,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Total,Total,2025,mujer,6.441,5.437,7.614,0.553,1.783,3510,2052,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Edad (meses),6-11,2025,mujer,8.227,5.757,11.626,1.477,1.681,582,531,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Edad (meses),12-23,2025,mujer,7.163,5.633,9.068,0.87,1.812,1591,1224,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Edad (meses),24-35,2025,mujer,4.743,3.518,6.366,0.718,1.524,1337,1064,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Área,Urbano,2025,mujer,6.737,5.478,8.261,0.706,1.924,2425,1476,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Área,Rural,2025,mujer,5.76,4.329,7.626,0.832,1.385,1085,576,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Lima Metropolitana,2025,mujer,7.159,4.322,11.632,1.813,1.552,314,224,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Resto Costa,2025,mujer,6.458,4.775,8.679,0.985,1.55,965,596,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Sierra,2025,mujer,6.235,4.848,7.985,0.794,1.337,1240,702,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Región natural,Selva,2025,mujer,6.025,4.513,8.003,0.881,1.359,991,530,,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Amazonas,2025,mujer,5.634,2.804,10.996,1.972,1.148,157,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Apurímac,2025,mujer,8.472,4.844,14.404,2.364,1.146,159,85,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Arequipa,2025,mujer,5.835,2.868,11.506,2.077,0.973,124,78,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Ayacucho,2025,mujer,0.896,0.213,3.679,0.652,0.811,169,93,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Cajamarca,2025,mujer,8.168,4.099,15.617,2.803,0.943,90,60,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Callao,2025,mujer,6.107,2.889,12.45,2.288,0.995,109,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Cusco,2025,mujer,16.245,9.687,25.966,4.111,1.081,87,62,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Huancavelica,2025,mujer,9.494,5.513,15.867,2.571,0.946,123,69,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Huánuco,2025,mujer,3.621,1.737,7.397,1.342,1.012,196,90,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Ica,2025,mujer,7.037,3.623,13.225,2.335,0.967,116,73,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Junín,2025,mujer,4.378,2.245,8.366,1.473,0.876,169,85,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,La Libertad,2025,mujer,3.297,1.371,7.719,1.459,1.029,154,82,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Lambayeque,2025,mujer,3.728,1.326,10.041,1.938,1.276,122,75,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Lima,2025,mujer,6.94,4.138,11.415,1.801,1.638,326,222,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Loreto,2025,mujer,5.174,2.32,11.138,2.081,1.112,126,70,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Madre de Dios,2025,mujer,4.081,1.787,9.048,1.696,1.227,167,91,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Moquegua,2025,mujer,2.036,0.642,6.268,1.189,0.9,127,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Pasco,2025,mujer,2.516,0.93,6.625,1.265,0.953,146,86,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Piura,2025,mujer,8.606,4.525,15.759,2.754,1.244,129,79,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Puno,2025,mujer,4.378,1.629,11.235,2.171,0.991,88,54,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,San Martín,2025,mujer,10.386,6.772,15.606,2.218,0.978,185,88,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Tacna,2025,mujer,11.441,6.116,20.396,3.538,0.976,79,57,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Tumbes,2025,mujer,5.767,2.831,11.391,2.057,0.981,126,76,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Ucayali,2025,mujer,2.536,0.82,7.573,1.446,0.914,108,71,CV>30%: poco fiable,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí
+Otra,Departamento,Áncash,2025,mujer,9.588,5.608,15.918,2.562,0.969,128,70,CV 15-30%: con cautela,Niños de 6 a 35 meses que recibieron hierro y dieron una razón distinta de G,sí

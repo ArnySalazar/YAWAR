@@ -1,0 +1,625 @@
+﻿anio,departamento,variable,categoria,porcentaje,ic95_inf,ic95_sup,n_ninos_departamento,ponderada,universo
+2024,Perú,Edad (meses),6-11,20.45,19.44,21.49,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Edad (meses),12-23,39.79,38.6,41.0,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Edad (meses),24-35,39.76,38.52,41.02,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Área,Urbano,72.26,71.17,73.33,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Área,Rural,27.74,26.67,28.83,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Región natural,Lima Metropolitana,24.03,22.79,25.33,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Región natural,Resto Costa,28.04,26.75,29.37,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Región natural,Sierra,28.15,26.7,29.66,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Región natural,Selva,19.77,18.64,20.95,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Altitud del conglomerado,menos de 1 000 m,66.52,64.98,68.02,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Altitud del conglomerado,1 000 a 2 499 m,9.1,8.0,10.35,10197,sí,Niños de 6 a 35 meses
+2024,Perú,Altitud del conglomerado,2 500 m o más,24.38,22.95,25.86,10197,sí,Niños de 6 a 35 meses
+2024,Amazonas,Edad (meses),6-11,16.87,13.64,20.68,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Edad (meses),12-23,43.44,38.39,48.64,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Edad (meses),24-35,39.69,34.96,44.61,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Área,Urbano,24.75,21.29,28.56,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Área,Rural,75.25,71.44,78.71,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Región natural,Lima Metropolitana,0.0,,,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Región natural,Resto Costa,0.0,,,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Región natural,Sierra,15.6,9.38,24.82,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Región natural,Selva,84.4,75.18,90.62,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Altitud del conglomerado,menos de 1 000 m,53.57,42.14,64.64,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Altitud del conglomerado,1 000 a 2 499 m,41.26,30.79,52.58,430,sí,Niños de 6 a 35 meses
+2024,Amazonas,Altitud del conglomerado,2 500 m o más,5.17,1.61,15.35,430,sí,Niños de 6 a 35 meses
+2024,Apurímac,Edad (meses),6-11,21.93,17.83,26.66,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Edad (meses),12-23,35.87,30.51,41.61,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Edad (meses),24-35,42.2,36.98,47.6,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Área,Urbano,43.0,37.42,48.76,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Área,Rural,57.0,51.24,62.58,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Región natural,Lima Metropolitana,0.0,,,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Región natural,Resto Costa,0.0,,,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Región natural,Sierra,100.0,,,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Región natural,Selva,0.0,,,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Altitud del conglomerado,menos de 1 000 m,0.0,,,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Altitud del conglomerado,1 000 a 2 499 m,16.5,11.22,23.6,345,sí,Niños de 6 a 35 meses
+2024,Apurímac,Altitud del conglomerado,2 500 m o más,83.5,76.4,88.78,345,sí,Niños de 6 a 35 meses
+2024,Arequipa,Edad (meses),6-11,23.23,19.12,27.93,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Edad (meses),12-23,37.43,32.4,42.75,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Edad (meses),24-35,39.34,34.58,44.31,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Área,Urbano,89.81,84.48,93.45,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Área,Rural,10.19,6.55,15.52,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Región natural,Lima Metropolitana,0.0,,,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Región natural,Resto Costa,26.28,19.04,35.08,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Región natural,Sierra,73.72,64.92,80.96,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Región natural,Selva,0.0,,,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Altitud del conglomerado,menos de 1 000 m,15.46,9.25,24.71,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Altitud del conglomerado,1 000 a 2 499 m,46.25,36.44,56.36,355,sí,Niños de 6 a 35 meses
+2024,Arequipa,Altitud del conglomerado,2 500 m o más,38.28,29.12,48.37,355,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Edad (meses),6-11,16.8,13.3,21.0,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Edad (meses),12-23,45.54,41.42,49.73,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Edad (meses),24-35,37.66,33.41,42.11,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Área,Urbano,54.08,47.93,60.11,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Área,Rural,45.92,39.89,52.07,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Región natural,Lima Metropolitana,0.0,,,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Región natural,Resto Costa,0.0,,,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Región natural,Sierra,90.1,80.95,95.12,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Región natural,Selva,9.9,4.88,19.05,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Altitud del conglomerado,menos de 1 000 m,5.63,2.37,12.78,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Altitud del conglomerado,1 000 a 2 499 m,11.9,6.3,21.36,389,sí,Niños de 6 a 35 meses
+2024,Ayacucho,Altitud del conglomerado,2 500 m o más,82.47,72.64,89.29,389,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Edad (meses),6-11,19.33,15.43,23.93,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Edad (meses),12-23,37.59,32.88,42.54,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Edad (meses),24-35,43.08,38.11,48.19,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Área,Urbano,34.78,28.93,41.13,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Área,Rural,65.22,58.87,71.07,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Región natural,Lima Metropolitana,0.0,,,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Región natural,Resto Costa,5.07,2.07,11.92,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Región natural,Sierra,62.75,51.34,72.89,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Región natural,Selva,32.18,22.46,43.74,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Altitud del conglomerado,menos de 1 000 m,9.64,5.21,17.17,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Altitud del conglomerado,1 000 a 2 499 m,34.02,24.3,45.29,384,sí,Niños de 6 a 35 meses
+2024,Cajamarca,Altitud del conglomerado,2 500 m o más,56.34,45.23,66.85,384,sí,Niños de 6 a 35 meses
+2024,Callao,Edad (meses),6-11,20.62,16.53,25.42,335,sí,Niños de 6 a 35 meses
+2024,Callao,Edad (meses),12-23,40.93,35.76,46.31,335,sí,Niños de 6 a 35 meses
+2024,Callao,Edad (meses),24-35,38.44,33.65,43.47,335,sí,Niños de 6 a 35 meses
+2024,Callao,Área,Urbano,100.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Área,Rural,0.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Región natural,Lima Metropolitana,100.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Región natural,Resto Costa,0.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Región natural,Sierra,0.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Región natural,Selva,0.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Altitud del conglomerado,menos de 1 000 m,100.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,335,sí,Niños de 6 a 35 meses
+2024,Callao,Altitud del conglomerado,2 500 m o más,0.0,,,335,sí,Niños de 6 a 35 meses
+2024,Cusco,Edad (meses),6-11,19.58,14.41,26.04,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Edad (meses),12-23,40.35,34.41,46.58,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Edad (meses),24-35,40.07,34.23,46.21,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Área,Urbano,57.33,50.33,64.05,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Área,Rural,42.67,35.95,49.67,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Región natural,Lima Metropolitana,0.0,,,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Región natural,Resto Costa,0.0,,,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Región natural,Sierra,85.29,74.03,92.18,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Región natural,Selva,14.71,7.82,25.97,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Altitud del conglomerado,menos de 1 000 m,12.84,6.26,24.53,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Altitud del conglomerado,1 000 a 2 499 m,4.33,1.64,10.95,305,sí,Niños de 6 a 35 meses
+2024,Cusco,Altitud del conglomerado,2 500 m o más,82.83,71.47,90.28,305,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Edad (meses),6-11,16.82,13.13,21.3,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Edad (meses),12-23,38.14,32.27,44.37,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Edad (meses),24-35,45.04,39.24,50.99,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Área,Urbano,32.2,27.23,37.62,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Área,Rural,67.8,62.38,72.77,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Región natural,Lima Metropolitana,0.0,,,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Región natural,Resto Costa,0.2,0.03,1.43,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Región natural,Sierra,99.8,98.57,99.97,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Región natural,Selva,0.0,,,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Altitud del conglomerado,menos de 1 000 m,0.0,,,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Altitud del conglomerado,1 000 a 2 499 m,5.41,2.15,12.96,310,sí,Niños de 6 a 35 meses
+2024,Huancavelica,Altitud del conglomerado,2 500 m o más,94.59,87.04,97.85,310,sí,Niños de 6 a 35 meses
+2024,Huánuco,Edad (meses),6-11,17.23,13.58,21.62,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Edad (meses),12-23,44.35,39.32,49.51,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Edad (meses),24-35,38.41,33.6,43.47,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Área,Urbano,49.62,44.62,54.62,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Área,Rural,50.38,45.38,55.38,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Región natural,Lima Metropolitana,0.0,,,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Región natural,Resto Costa,0.0,,,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Región natural,Sierra,39.98,31.79,48.77,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Región natural,Selva,60.02,51.23,68.21,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Altitud del conglomerado,menos de 1 000 m,34.67,26.4,43.98,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Altitud del conglomerado,1 000 a 2 499 m,35.69,28.64,43.41,418,sí,Niños de 6 a 35 meses
+2024,Huánuco,Altitud del conglomerado,2 500 m o más,29.65,22.63,37.77,418,sí,Niños de 6 a 35 meses
+2024,Ica,Edad (meses),6-11,20.63,16.55,25.4,418,sí,Niños de 6 a 35 meses
+2024,Ica,Edad (meses),12-23,38.04,32.83,43.54,418,sí,Niños de 6 a 35 meses
+2024,Ica,Edad (meses),24-35,41.33,36.44,46.4,418,sí,Niños de 6 a 35 meses
+2024,Ica,Área,Urbano,89.75,85.72,92.74,418,sí,Niños de 6 a 35 meses
+2024,Ica,Área,Rural,10.25,7.26,14.28,418,sí,Niños de 6 a 35 meses
+2024,Ica,Región natural,Lima Metropolitana,0.0,,,418,sí,Niños de 6 a 35 meses
+2024,Ica,Región natural,Resto Costa,99.73,98.07,99.96,418,sí,Niños de 6 a 35 meses
+2024,Ica,Región natural,Sierra,0.27,0.04,1.93,418,sí,Niños de 6 a 35 meses
+2024,Ica,Región natural,Selva,0.0,,,418,sí,Niños de 6 a 35 meses
+2024,Ica,Altitud del conglomerado,menos de 1 000 m,99.73,98.07,99.96,418,sí,Niños de 6 a 35 meses
+2024,Ica,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,418,sí,Niños de 6 a 35 meses
+2024,Ica,Altitud del conglomerado,2 500 m o más,0.27,0.04,1.93,418,sí,Niños de 6 a 35 meses
+2024,Junín,Edad (meses),6-11,20.31,16.56,24.66,382,sí,Niños de 6 a 35 meses
+2024,Junín,Edad (meses),12-23,40.95,36.05,46.03,382,sí,Niños de 6 a 35 meses
+2024,Junín,Edad (meses),24-35,38.74,33.83,43.9,382,sí,Niños de 6 a 35 meses
+2024,Junín,Área,Urbano,64.3,59.04,69.23,382,sí,Niños de 6 a 35 meses
+2024,Junín,Área,Rural,35.7,30.77,40.96,382,sí,Niños de 6 a 35 meses
+2024,Junín,Región natural,Lima Metropolitana,0.0,,,382,sí,Niños de 6 a 35 meses
+2024,Junín,Región natural,Resto Costa,0.0,,,382,sí,Niños de 6 a 35 meses
+2024,Junín,Región natural,Sierra,68.54,58.84,76.86,382,sí,Niños de 6 a 35 meses
+2024,Junín,Región natural,Selva,31.46,23.14,41.16,382,sí,Niños de 6 a 35 meses
+2024,Junín,Altitud del conglomerado,menos de 1 000 m,27.63,19.37,37.76,382,sí,Niños de 6 a 35 meses
+2024,Junín,Altitud del conglomerado,1 000 a 2 499 m,4.3,1.84,9.71,382,sí,Niños de 6 a 35 meses
+2024,Junín,Altitud del conglomerado,2 500 m o más,68.07,58.45,76.37,382,sí,Niños de 6 a 35 meses
+2024,La Libertad,Edad (meses),6-11,19.42,15.88,23.53,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Edad (meses),12-23,36.0,31.48,40.77,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Edad (meses),24-35,44.58,39.85,49.42,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Área,Urbano,70.98,66.25,75.3,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Área,Rural,29.02,24.7,33.75,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Región natural,Lima Metropolitana,0.0,,,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Región natural,Resto Costa,68.09,59.78,75.38,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Región natural,Sierra,31.91,24.62,40.22,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Región natural,Selva,0.0,,,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Altitud del conglomerado,menos de 1 000 m,66.1,58.02,73.34,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Altitud del conglomerado,1 000 a 2 499 m,4.18,1.7,9.94,391,sí,Niños de 6 a 35 meses
+2024,La Libertad,Altitud del conglomerado,2 500 m o más,29.72,22.09,38.67,391,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Edad (meses),6-11,19.69,15.11,25.23,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Edad (meses),12-23,38.72,33.98,43.68,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Edad (meses),24-35,41.6,36.7,46.67,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Área,Urbano,68.79,63.39,73.73,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Área,Rural,31.21,26.27,36.61,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Región natural,Lima Metropolitana,0.0,,,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Región natural,Resto Costa,95.11,85.82,98.42,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Región natural,Sierra,4.89,1.58,14.18,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Región natural,Selva,0.0,,,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Altitud del conglomerado,menos de 1 000 m,95.11,85.82,98.42,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Altitud del conglomerado,1 000 a 2 499 m,1.75,0.24,11.68,404,sí,Niños de 6 a 35 meses
+2024,Lambayeque,Altitud del conglomerado,2 500 m o más,3.14,0.74,12.4,404,sí,Niños de 6 a 35 meses
+2024,Lima,Edad (meses),6-11,20.8,18.17,23.71,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Edad (meses),12-23,41.23,38.02,44.53,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Edad (meses),24-35,37.96,34.46,41.6,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Área,Urbano,97.36,96.39,98.08,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Área,Rural,2.64,1.92,3.61,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Región natural,Lima Metropolitana,87.95,86.6,89.19,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Región natural,Resto Costa,10.7,9.51,12.01,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Región natural,Sierra,1.35,0.71,2.55,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Región natural,Selva,0.0,,,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Altitud del conglomerado,menos de 1 000 m,98.42,97.26,99.1,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Altitud del conglomerado,1 000 a 2 499 m,0.86,0.33,2.2,1118,sí,Niños de 6 a 35 meses
+2024,Lima,Altitud del conglomerado,2 500 m o más,0.72,0.35,1.47,1118,sí,Niños de 6 a 35 meses
+2024,Loreto,Edad (meses),6-11,23.46,19.78,27.58,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Edad (meses),12-23,39.4,35.17,43.79,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Edad (meses),24-35,37.14,32.63,41.89,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Área,Urbano,51.55,47.34,55.75,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Área,Rural,48.45,44.25,52.66,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Región natural,Lima Metropolitana,0.0,,,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Región natural,Resto Costa,0.0,,,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Región natural,Sierra,0.0,,,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Región natural,Selva,100.0,,,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Altitud del conglomerado,menos de 1 000 m,100.0,,,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,427,sí,Niños de 6 a 35 meses
+2024,Loreto,Altitud del conglomerado,2 500 m o más,0.0,,,427,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Edad (meses),6-11,22.39,18.65,26.65,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Edad (meses),12-23,39.35,34.05,44.91,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Edad (meses),24-35,38.26,33.82,42.91,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Área,Urbano,73.58,67.96,78.52,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Área,Rural,26.42,21.48,32.04,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Región natural,Lima Metropolitana,0.0,,,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Región natural,Resto Costa,0.0,,,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Región natural,Sierra,0.0,,,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Región natural,Selva,100.0,,,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Altitud del conglomerado,menos de 1 000 m,100.0,,,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,394,sí,Niños de 6 a 35 meses
+2024,Madre de Dios,Altitud del conglomerado,2 500 m o más,0.0,,,394,sí,Niños de 6 a 35 meses
+2024,Moquegua,Edad (meses),6-11,25.34,20.84,30.43,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Edad (meses),12-23,38.04,33.1,43.23,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Edad (meses),24-35,36.62,31.27,42.33,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Área,Urbano,91.88,86.46,95.25,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Área,Rural,8.12,4.75,13.54,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Región natural,Lima Metropolitana,0.0,,,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Región natural,Resto Costa,89.69,82.81,94.02,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Región natural,Sierra,10.31,5.98,17.19,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Región natural,Selva,0.0,,,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Altitud del conglomerado,menos de 1 000 m,44.39,37.98,51.0,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Altitud del conglomerado,1 000 a 2 499 m,52.75,45.82,59.58,323,sí,Niños de 6 a 35 meses
+2024,Moquegua,Altitud del conglomerado,2 500 m o más,2.86,0.97,8.16,323,sí,Niños de 6 a 35 meses
+2024,Pasco,Edad (meses),6-11,20.43,16.63,24.83,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Edad (meses),12-23,39.4,35.04,43.94,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Edad (meses),24-35,40.17,35.82,44.68,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Área,Urbano,61.42,54.84,67.6,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Área,Rural,38.58,32.4,45.16,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Región natural,Lima Metropolitana,0.0,,,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Región natural,Resto Costa,0.0,,,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Región natural,Sierra,55.15,44.47,65.38,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Región natural,Selva,44.85,34.62,55.53,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Altitud del conglomerado,menos de 1 000 m,22.73,14.05,34.62,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Altitud del conglomerado,1 000 a 2 499 m,25.15,16.8,35.87,372,sí,Niños de 6 a 35 meses
+2024,Pasco,Altitud del conglomerado,2 500 m o más,52.11,41.82,62.23,372,sí,Niños de 6 a 35 meses
+2024,Piura,Edad (meses),6-11,17.79,14.74,21.32,462,sí,Niños de 6 a 35 meses
+2024,Piura,Edad (meses),12-23,41.21,36.63,45.94,462,sí,Niños de 6 a 35 meses
+2024,Piura,Edad (meses),24-35,41.0,36.31,45.86,462,sí,Niños de 6 a 35 meses
+2024,Piura,Área,Urbano,73.18,67.6,78.11,462,sí,Niños de 6 a 35 meses
+2024,Piura,Área,Rural,26.82,21.89,32.4,462,sí,Niños de 6 a 35 meses
+2024,Piura,Región natural,Lima Metropolitana,0.0,,,462,sí,Niños de 6 a 35 meses
+2024,Piura,Región natural,Resto Costa,92.88,85.47,96.66,462,sí,Niños de 6 a 35 meses
+2024,Piura,Región natural,Sierra,7.12,3.34,14.53,462,sí,Niños de 6 a 35 meses
+2024,Piura,Región natural,Selva,0.0,,,462,sí,Niños de 6 a 35 meses
+2024,Piura,Altitud del conglomerado,menos de 1 000 m,86.13,76.94,92.04,462,sí,Niños de 6 a 35 meses
+2024,Piura,Altitud del conglomerado,1 000 a 2 499 m,11.25,5.84,20.57,462,sí,Niños de 6 a 35 meses
+2024,Piura,Altitud del conglomerado,2 500 m o más,2.62,0.63,10.27,462,sí,Niños de 6 a 35 meses
+2024,Puno,Edad (meses),6-11,23.64,18.68,29.45,276,sí,Niños de 6 a 35 meses
+2024,Puno,Edad (meses),12-23,39.52,33.66,45.69,276,sí,Niños de 6 a 35 meses
+2024,Puno,Edad (meses),24-35,36.84,31.78,42.21,276,sí,Niños de 6 a 35 meses
+2024,Puno,Área,Urbano,51.83,45.2,58.39,276,sí,Niños de 6 a 35 meses
+2024,Puno,Área,Rural,48.17,41.61,54.8,276,sí,Niños de 6 a 35 meses
+2024,Puno,Región natural,Lima Metropolitana,0.0,,,276,sí,Niños de 6 a 35 meses
+2024,Puno,Región natural,Resto Costa,0.0,,,276,sí,Niños de 6 a 35 meses
+2024,Puno,Región natural,Sierra,96.45,89.34,98.88,276,sí,Niños de 6 a 35 meses
+2024,Puno,Región natural,Selva,3.55,1.12,10.66,276,sí,Niños de 6 a 35 meses
+2024,Puno,Altitud del conglomerado,menos de 1 000 m,1.5,0.21,9.96,276,sí,Niños de 6 a 35 meses
+2024,Puno,Altitud del conglomerado,1 000 a 2 499 m,2.05,0.5,7.99,276,sí,Niños de 6 a 35 meses
+2024,Puno,Altitud del conglomerado,2 500 m o más,96.45,89.34,98.88,276,sí,Niños de 6 a 35 meses
+2024,San Martín,Edad (meses),6-11,20.37,16.66,24.66,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Edad (meses),12-23,39.11,33.35,45.19,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Edad (meses),24-35,40.52,35.38,45.87,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Área,Urbano,62.66,57.21,67.81,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Área,Rural,37.34,32.19,42.79,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Región natural,Lima Metropolitana,0.0,,,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Región natural,Resto Costa,0.0,,,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Región natural,Sierra,0.0,,,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Región natural,Selva,100.0,,,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Altitud del conglomerado,menos de 1 000 m,91.09,82.01,95.82,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Altitud del conglomerado,1 000 a 2 499 m,8.91,4.18,17.99,397,sí,Niños de 6 a 35 meses
+2024,San Martín,Altitud del conglomerado,2 500 m o más,0.0,,,397,sí,Niños de 6 a 35 meses
+2024,Tacna,Edad (meses),6-11,24.85,19.91,30.54,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Edad (meses),12-23,36.23,31.86,40.84,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Edad (meses),24-35,38.92,33.1,45.08,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Área,Urbano,84.29,77.77,89.16,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Área,Rural,15.71,10.84,22.23,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Región natural,Lima Metropolitana,0.0,,,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Región natural,Resto Costa,92.37,86.25,95.9,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Región natural,Sierra,7.63,4.1,13.75,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Región natural,Selva,0.0,,,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Altitud del conglomerado,menos de 1 000 m,91.95,86.02,95.49,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Altitud del conglomerado,1 000 a 2 499 m,0.42,0.06,3.01,336,sí,Niños de 6 a 35 meses
+2024,Tacna,Altitud del conglomerado,2 500 m o más,7.63,4.1,13.75,336,sí,Niños de 6 a 35 meses
+2024,Tumbes,Edad (meses),6-11,21.31,17.34,25.89,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Edad (meses),12-23,38.92,35.11,42.87,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Edad (meses),24-35,39.78,35.44,44.28,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Área,Urbano,93.72,91.16,95.58,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Área,Rural,6.28,4.42,8.84,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Región natural,Lima Metropolitana,0.0,,,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Región natural,Resto Costa,100.0,100.0,100.0,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Región natural,Sierra,0.0,,,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Región natural,Selva,0.0,,,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Altitud del conglomerado,menos de 1 000 m,100.0,100.0,100.0,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,434,sí,Niños de 6 a 35 meses
+2024,Tumbes,Altitud del conglomerado,2 500 m o más,0.0,,,434,sí,Niños de 6 a 35 meses
+2024,Ucayali,Edad (meses),6-11,22.8,19.07,27.02,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Edad (meses),12-23,40.15,35.7,44.77,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Edad (meses),24-35,37.05,32.32,42.04,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Área,Urbano,74.82,70.79,78.47,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Área,Rural,25.18,21.53,29.21,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Región natural,Lima Metropolitana,0.0,,,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Región natural,Resto Costa,0.0,,,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Región natural,Sierra,0.0,,,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Región natural,Selva,100.0,,,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Altitud del conglomerado,menos de 1 000 m,97.43,92.12,99.19,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Altitud del conglomerado,1 000 a 2 499 m,2.57,0.81,7.88,469,sí,Niños de 6 a 35 meses
+2024,Ucayali,Altitud del conglomerado,2 500 m o más,0.0,,,469,sí,Niños de 6 a 35 meses
+2024,Áncash,Edad (meses),6-11,21.78,17.02,27.43,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Edad (meses),12-23,37.16,31.85,42.8,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Edad (meses),24-35,41.06,35.96,46.36,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Área,Urbano,63.04,57.81,67.98,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Área,Rural,36.96,32.02,42.19,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Región natural,Lima Metropolitana,0.0,,,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Región natural,Resto Costa,45.39,35.9,55.23,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Región natural,Sierra,54.61,44.77,64.1,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Región natural,Selva,0.0,,,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Altitud del conglomerado,menos de 1 000 m,45.22,35.75,55.05,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Altitud del conglomerado,1 000 a 2 499 m,1.39,0.19,9.33,323,sí,Niños de 6 a 35 meses
+2024,Áncash,Altitud del conglomerado,2 500 m o más,53.39,43.83,62.71,323,sí,Niños de 6 a 35 meses
+2025,Perú,Edad (meses),6-11,21.06,20.0,22.16,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Edad (meses),12-23,39.79,38.43,41.16,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Edad (meses),24-35,39.15,37.8,40.52,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Área,Urbano,74.63,73.48,75.74,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Área,Rural,25.37,24.26,26.52,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Región natural,Lima Metropolitana,28.14,26.69,29.65,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Región natural,Resto Costa,26.13,24.87,27.44,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Región natural,Sierra,26.35,24.93,27.82,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Región natural,Selva,19.37,18.29,20.5,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Altitud del conglomerado,menos de 1 000 m,68.65,67.13,70.14,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Altitud del conglomerado,1 000 a 2 499 m,8.67,7.59,9.89,9589,sí,Niños de 6 a 35 meses
+2025,Perú,Altitud del conglomerado,2 500 m o más,22.68,21.32,24.09,9589,sí,Niños de 6 a 35 meses
+2025,Amazonas,Edad (meses),6-11,20.51,16.85,24.72,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Edad (meses),12-23,39.9,35.41,44.57,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Edad (meses),24-35,39.59,35.31,44.04,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Área,Urbano,26.88,23.01,31.13,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Área,Rural,73.12,68.87,76.99,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Región natural,Lima Metropolitana,0.0,,,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Región natural,Resto Costa,0.0,,,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Región natural,Sierra,13.33,8.35,20.62,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Región natural,Selva,86.67,79.38,91.65,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Altitud del conglomerado,menos de 1 000 m,58.18,47.16,68.44,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Altitud del conglomerado,1 000 a 2 499 m,37.86,28.07,48.74,422,sí,Niños de 6 a 35 meses
+2025,Amazonas,Altitud del conglomerado,2 500 m o más,3.96,1.36,11.01,422,sí,Niños de 6 a 35 meses
+2025,Apurímac,Edad (meses),6-11,18.54,14.58,23.28,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Edad (meses),12-23,45.99,40.56,51.52,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Edad (meses),24-35,35.47,29.81,41.56,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Área,Urbano,46.4,40.64,52.25,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Área,Rural,53.6,47.75,59.36,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Región natural,Lima Metropolitana,0.0,,,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Región natural,Resto Costa,0.0,,,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Región natural,Sierra,100.0,,,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Región natural,Selva,0.0,,,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Altitud del conglomerado,menos de 1 000 m,0.0,,,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Altitud del conglomerado,1 000 a 2 499 m,17.38,12.4,23.81,299,sí,Niños de 6 a 35 meses
+2025,Apurímac,Altitud del conglomerado,2 500 m o más,82.62,76.19,87.6,299,sí,Niños de 6 a 35 meses
+2025,Arequipa,Edad (meses),6-11,23.32,19.09,28.17,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Edad (meses),12-23,39.21,33.7,45.0,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Edad (meses),24-35,37.47,32.68,42.52,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Área,Urbano,88.45,83.07,92.28,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Área,Rural,11.55,7.72,16.93,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Región natural,Lima Metropolitana,0.0,,,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Región natural,Resto Costa,25.86,18.68,34.63,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Región natural,Sierra,74.14,65.37,81.32,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Región natural,Selva,0.0,,,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Altitud del conglomerado,menos de 1 000 m,14.65,8.43,24.24,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Altitud del conglomerado,1 000 a 2 499 m,44.45,34.43,54.95,328,sí,Niños de 6 a 35 meses
+2025,Arequipa,Altitud del conglomerado,2 500 m o más,40.9,31.67,50.82,328,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Edad (meses),6-11,24.19,19.99,28.95,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Edad (meses),12-23,36.3,31.24,41.69,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Edad (meses),24-35,39.51,34.42,44.84,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Área,Urbano,60.92,54.99,66.55,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Área,Rural,39.08,33.45,45.01,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Región natural,Lima Metropolitana,0.0,,,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Región natural,Resto Costa,0.0,,,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Región natural,Sierra,92.28,84.26,96.39,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Región natural,Selva,7.72,3.61,15.74,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Altitud del conglomerado,menos de 1 000 m,3.79,1.62,8.6,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Altitud del conglomerado,1 000 a 2 499 m,8.14,3.77,16.67,361,sí,Niños de 6 a 35 meses
+2025,Ayacucho,Altitud del conglomerado,2 500 m o más,88.07,79.8,93.25,361,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Edad (meses),6-11,20.96,16.79,25.86,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Edad (meses),12-23,39.71,33.6,46.16,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Edad (meses),24-35,39.32,33.93,44.99,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Área,Urbano,35.36,30.98,40.0,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Área,Rural,64.64,60.0,69.02,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Región natural,Lima Metropolitana,0.0,,,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Región natural,Resto Costa,3.3,1.22,8.66,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Región natural,Sierra,67.45,56.8,76.56,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Región natural,Selva,29.25,20.41,39.98,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Altitud del conglomerado,menos de 1 000 m,8.28,4.76,14.0,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Altitud del conglomerado,1 000 a 2 499 m,35.34,25.88,46.12,275,sí,Niños de 6 a 35 meses
+2025,Cajamarca,Altitud del conglomerado,2 500 m o más,56.38,45.85,66.37,275,sí,Niños de 6 a 35 meses
+2025,Callao,Edad (meses),6-11,25.03,21.26,29.21,349,sí,Niños de 6 a 35 meses
+2025,Callao,Edad (meses),12-23,34.03,29.69,38.66,349,sí,Niños de 6 a 35 meses
+2025,Callao,Edad (meses),24-35,40.94,36.41,45.63,349,sí,Niños de 6 a 35 meses
+2025,Callao,Área,Urbano,100.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Área,Rural,0.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Región natural,Lima Metropolitana,100.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Región natural,Resto Costa,0.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Región natural,Sierra,0.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Región natural,Selva,0.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Altitud del conglomerado,menos de 1 000 m,100.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,349,sí,Niños de 6 a 35 meses
+2025,Callao,Altitud del conglomerado,2 500 m o más,0.0,,,349,sí,Niños de 6 a 35 meses
+2025,Cusco,Edad (meses),6-11,18.37,13.71,24.17,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Edad (meses),12-23,36.75,30.42,43.57,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Edad (meses),24-35,44.88,37.39,52.6,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Área,Urbano,66.21,59.76,72.1,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Área,Rural,33.79,27.9,40.24,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Región natural,Lima Metropolitana,0.0,,,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Región natural,Resto Costa,0.0,,,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Región natural,Sierra,89.27,80.19,94.48,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Región natural,Selva,10.73,5.52,19.81,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Altitud del conglomerado,menos de 1 000 m,7.09,2.95,16.05,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Altitud del conglomerado,1 000 a 2 499 m,3.64,1.23,10.26,265,sí,Niños de 6 a 35 meses
+2025,Cusco,Altitud del conglomerado,2 500 m o más,89.27,80.19,94.48,265,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Edad (meses),6-11,19.93,15.44,25.33,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Edad (meses),12-23,38.77,31.89,46.13,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Edad (meses),24-35,41.31,35.33,47.54,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Área,Urbano,30.3,24.19,37.21,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Área,Rural,69.7,62.79,75.81,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Región natural,Lima Metropolitana,0.0,,,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Región natural,Resto Costa,0.0,,,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Región natural,Sierra,100.0,,,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Región natural,Selva,0.0,,,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Altitud del conglomerado,menos de 1 000 m,0.0,,,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Altitud del conglomerado,1 000 a 2 499 m,4.28,1.34,12.84,249,sí,Niños de 6 a 35 meses
+2025,Huancavelica,Altitud del conglomerado,2 500 m o más,95.72,87.16,98.66,249,sí,Niños de 6 a 35 meses
+2025,Huánuco,Edad (meses),6-11,19.94,15.8,24.85,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Edad (meses),12-23,40.12,35.14,45.31,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Edad (meses),24-35,39.94,35.17,44.9,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Área,Urbano,44.21,39.22,49.33,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Área,Rural,55.79,50.67,60.78,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Región natural,Lima Metropolitana,0.0,,,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Región natural,Resto Costa,0.0,,,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Región natural,Sierra,41.44,32.7,50.74,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Región natural,Selva,58.56,49.26,67.3,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Altitud del conglomerado,menos de 1 000 m,36.71,28.02,46.35,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Altitud del conglomerado,1 000 a 2 499 m,32.96,25.82,40.98,404,sí,Niños de 6 a 35 meses
+2025,Huánuco,Altitud del conglomerado,2 500 m o más,30.33,22.78,39.12,404,sí,Niños de 6 a 35 meses
+2025,Ica,Edad (meses),6-11,20.41,16.89,24.46,433,sí,Niños de 6 a 35 meses
+2025,Ica,Edad (meses),12-23,38.95,34.01,44.13,433,sí,Niños de 6 a 35 meses
+2025,Ica,Edad (meses),24-35,40.64,36.09,45.35,433,sí,Niños de 6 a 35 meses
+2025,Ica,Área,Urbano,92.14,88.55,94.67,433,sí,Niños de 6 a 35 meses
+2025,Ica,Área,Rural,7.86,5.33,11.45,433,sí,Niños de 6 a 35 meses
+2025,Ica,Región natural,Lima Metropolitana,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Ica,Región natural,Resto Costa,99.49,96.42,99.93,433,sí,Niños de 6 a 35 meses
+2025,Ica,Región natural,Sierra,0.51,0.07,3.58,433,sí,Niños de 6 a 35 meses
+2025,Ica,Región natural,Selva,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Ica,Altitud del conglomerado,menos de 1 000 m,99.49,96.42,99.93,433,sí,Niños de 6 a 35 meses
+2025,Ica,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Ica,Altitud del conglomerado,2 500 m o más,0.51,0.07,3.58,433,sí,Niños de 6 a 35 meses
+2025,Junín,Edad (meses),6-11,18.37,14.94,22.38,347,sí,Niños de 6 a 35 meses
+2025,Junín,Edad (meses),12-23,42.38,37.28,47.64,347,sí,Niños de 6 a 35 meses
+2025,Junín,Edad (meses),24-35,39.26,34.55,44.17,347,sí,Niños de 6 a 35 meses
+2025,Junín,Área,Urbano,69.79,64.35,74.72,347,sí,Niños de 6 a 35 meses
+2025,Junín,Área,Rural,30.21,25.28,35.65,347,sí,Niños de 6 a 35 meses
+2025,Junín,Región natural,Lima Metropolitana,0.0,,,347,sí,Niños de 6 a 35 meses
+2025,Junín,Región natural,Resto Costa,0.0,,,347,sí,Niños de 6 a 35 meses
+2025,Junín,Región natural,Sierra,69.8,59.54,78.4,347,sí,Niños de 6 a 35 meses
+2025,Junín,Región natural,Selva,30.2,21.6,40.46,347,sí,Niños de 6 a 35 meses
+2025,Junín,Altitud del conglomerado,menos de 1 000 m,24.09,15.97,34.63,347,sí,Niños de 6 a 35 meses
+2025,Junín,Altitud del conglomerado,1 000 a 2 499 m,6.67,3.18,13.46,347,sí,Niños de 6 a 35 meses
+2025,Junín,Altitud del conglomerado,2 500 m o más,69.24,59.06,77.84,347,sí,Niños de 6 a 35 meses
+2025,La Libertad,Edad (meses),6-11,20.34,16.74,24.5,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Edad (meses),12-23,42.04,37.35,46.88,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Edad (meses),24-35,37.62,33.28,42.17,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Área,Urbano,69.65,63.43,75.22,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Área,Rural,30.35,24.78,36.57,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Región natural,Lima Metropolitana,0.0,,,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Región natural,Resto Costa,66.41,57.66,74.17,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Región natural,Sierra,33.59,25.83,42.34,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Región natural,Selva,0.0,,,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Altitud del conglomerado,menos de 1 000 m,64.77,56.28,72.41,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Altitud del conglomerado,1 000 a 2 499 m,4.51,1.65,11.71,356,sí,Niños de 6 a 35 meses
+2025,La Libertad,Altitud del conglomerado,2 500 m o más,30.72,22.6,40.25,356,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Edad (meses),6-11,20.66,16.79,25.16,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Edad (meses),12-23,38.82,32.29,45.78,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Edad (meses),24-35,40.52,34.18,47.18,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Área,Urbano,67.09,60.79,72.82,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Área,Rural,32.91,27.18,39.21,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Región natural,Lima Metropolitana,0.0,,,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Región natural,Resto Costa,93.45,79.3,98.15,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Región natural,Sierra,6.55,1.85,20.7,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Región natural,Selva,0.0,,,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Altitud del conglomerado,menos de 1 000 m,92.11,79.03,97.31,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Altitud del conglomerado,1 000 a 2 499 m,5.04,1.11,20.02,401,sí,Niños de 6 a 35 meses
+2025,Lambayeque,Altitud del conglomerado,2 500 m o más,2.85,0.57,13.01,401,sí,Niños de 6 a 35 meses
+2025,Lima,Edad (meses),6-11,21.56,18.95,24.42,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Edad (meses),12-23,39.8,36.35,43.36,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Edad (meses),24-35,38.64,35.07,42.34,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Área,Urbano,97.66,96.82,98.28,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Área,Rural,2.34,1.72,3.18,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Región natural,Lima Metropolitana,89.73,88.49,90.85,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Región natural,Resto Costa,9.83,8.68,11.13,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Región natural,Sierra,0.44,0.2,0.96,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Región natural,Selva,0.0,,,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Altitud del conglomerado,menos de 1 000 m,99.47,98.94,99.74,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Altitud del conglomerado,1 000 a 2 499 m,0.24,0.08,0.69,1177,sí,Niños de 6 a 35 meses
+2025,Lima,Altitud del conglomerado,2 500 m o más,0.29,0.1,0.83,1177,sí,Niños de 6 a 35 meses
+2025,Loreto,Edad (meses),6-11,22.26,17.78,27.5,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Edad (meses),12-23,35.34,30.05,41.01,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Edad (meses),24-35,42.4,37.48,47.47,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Área,Urbano,51.57,46.08,57.03,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Área,Rural,48.43,42.97,53.92,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Región natural,Lima Metropolitana,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Región natural,Resto Costa,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Región natural,Sierra,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Región natural,Selva,100.0,100.0,100.0,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Altitud del conglomerado,menos de 1 000 m,100.0,100.0,100.0,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Loreto,Altitud del conglomerado,2 500 m o más,0.0,,,433,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Edad (meses),6-11,18.75,14.88,23.36,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Edad (meses),12-23,41.01,35.78,46.46,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Edad (meses),24-35,40.24,34.95,45.76,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Área,Urbano,74.98,70.87,78.68,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Área,Rural,25.02,21.32,29.13,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Región natural,Lima Metropolitana,0.0,,,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Región natural,Resto Costa,0.0,,,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Región natural,Sierra,0.0,,,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Región natural,Selva,100.0,,,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Altitud del conglomerado,menos de 1 000 m,98.37,89.19,99.77,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,381,sí,Niños de 6 a 35 meses
+2025,Madre de Dios,Altitud del conglomerado,2 500 m o más,1.63,0.23,10.81,381,sí,Niños de 6 a 35 meses
+2025,Moquegua,Edad (meses),6-11,20.26,16.13,25.14,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Edad (meses),12-23,36.95,31.23,43.05,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Edad (meses),24-35,42.79,37.06,48.72,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Área,Urbano,90.67,85.28,94.22,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Área,Rural,9.33,5.78,14.72,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Región natural,Lima Metropolitana,0.0,,,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Región natural,Resto Costa,90.03,82.77,94.44,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Región natural,Sierra,9.97,5.56,17.23,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Región natural,Selva,0.0,,,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Altitud del conglomerado,menos de 1 000 m,45.06,38.42,51.89,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Altitud del conglomerado,1 000 a 2 499 m,49.24,42.18,56.33,300,sí,Niños de 6 a 35 meses
+2025,Moquegua,Altitud del conglomerado,2 500 m o más,5.7,2.55,12.23,300,sí,Niños de 6 a 35 meses
+2025,Pasco,Edad (meses),6-11,19.08,14.9,24.1,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Edad (meses),12-23,36.04,30.03,42.53,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Edad (meses),24-35,44.88,37.5,52.5,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Área,Urbano,66.09,59.06,72.48,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Área,Rural,33.91,27.52,40.94,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Región natural,Lima Metropolitana,0.0,,,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Región natural,Resto Costa,0.0,,,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Región natural,Sierra,55.38,44.93,65.38,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Región natural,Selva,44.62,34.62,55.07,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Altitud del conglomerado,menos de 1 000 m,20.73,12.4,32.59,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Altitud del conglomerado,1 000 a 2 499 m,21.7,15.0,30.31,287,sí,Niños de 6 a 35 meses
+2025,Pasco,Altitud del conglomerado,2 500 m o más,57.57,46.96,67.53,287,sí,Niños de 6 a 35 meses
+2025,Piura,Edad (meses),6-11,25.29,20.61,30.63,397,sí,Niños de 6 a 35 meses
+2025,Piura,Edad (meses),12-23,39.81,35.17,44.65,397,sí,Niños de 6 a 35 meses
+2025,Piura,Edad (meses),24-35,34.9,30.26,39.84,397,sí,Niños de 6 a 35 meses
+2025,Piura,Área,Urbano,74.6,69.87,78.83,397,sí,Niños de 6 a 35 meses
+2025,Piura,Área,Rural,25.4,21.17,30.13,397,sí,Niños de 6 a 35 meses
+2025,Piura,Región natural,Lima Metropolitana,0.0,,,397,sí,Niños de 6 a 35 meses
+2025,Piura,Región natural,Resto Costa,93.15,85.58,96.89,397,sí,Niños de 6 a 35 meses
+2025,Piura,Región natural,Sierra,6.85,3.11,14.42,397,sí,Niños de 6 a 35 meses
+2025,Piura,Región natural,Selva,0.0,,,397,sí,Niños de 6 a 35 meses
+2025,Piura,Altitud del conglomerado,menos de 1 000 m,86.76,77.79,92.46,397,sí,Niños de 6 a 35 meses
+2025,Piura,Altitud del conglomerado,1 000 a 2 499 m,11.48,6.13,20.48,397,sí,Niños de 6 a 35 meses
+2025,Piura,Altitud del conglomerado,2 500 m o más,1.75,0.31,9.27,397,sí,Niños de 6 a 35 meses
+2025,Puno,Edad (meses),6-11,18.32,14.04,23.56,232,sí,Niños de 6 a 35 meses
+2025,Puno,Edad (meses),12-23,39.61,33.14,46.46,232,sí,Niños de 6 a 35 meses
+2025,Puno,Edad (meses),24-35,42.07,35.36,49.09,232,sí,Niños de 6 a 35 meses
+2025,Puno,Área,Urbano,60.37,51.1,68.94,232,sí,Niños de 6 a 35 meses
+2025,Puno,Área,Rural,39.63,31.06,48.9,232,sí,Niños de 6 a 35 meses
+2025,Puno,Región natural,Lima Metropolitana,0.0,,,232,sí,Niños de 6 a 35 meses
+2025,Puno,Región natural,Resto Costa,0.0,,,232,sí,Niños de 6 a 35 meses
+2025,Puno,Región natural,Sierra,90.95,75.9,96.98,232,sí,Niños de 6 a 35 meses
+2025,Puno,Región natural,Selva,9.05,3.02,24.1,232,sí,Niños de 6 a 35 meses
+2025,Puno,Altitud del conglomerado,menos de 1 000 m,2.5,0.35,15.73,232,sí,Niños de 6 a 35 meses
+2025,Puno,Altitud del conglomerado,1 000 a 2 499 m,6.54,1.67,22.39,232,sí,Niños de 6 a 35 meses
+2025,Puno,Altitud del conglomerado,2 500 m o más,90.95,75.9,96.98,232,sí,Niños de 6 a 35 meses
+2025,San Martín,Edad (meses),6-11,20.53,17.19,24.32,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Edad (meses),12-23,41.49,36.22,46.96,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Edad (meses),24-35,37.98,33.15,43.07,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Área,Urbano,59.02,54.6,63.3,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Área,Rural,40.98,36.7,45.4,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Región natural,Lima Metropolitana,0.0,,,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Región natural,Resto Costa,0.0,,,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Región natural,Sierra,0.0,,,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Región natural,Selva,100.0,,,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Altitud del conglomerado,menos de 1 000 m,88.58,79.48,93.95,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Altitud del conglomerado,1 000 a 2 499 m,11.42,6.05,20.52,482,sí,Niños de 6 a 35 meses
+2025,San Martín,Altitud del conglomerado,2 500 m o más,0.0,,,482,sí,Niños de 6 a 35 meses
+2025,Tacna,Edad (meses),6-11,21.92,17.5,27.09,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Edad (meses),12-23,39.14,33.21,45.4,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Edad (meses),24-35,38.94,33.18,45.03,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Área,Urbano,87.02,79.31,92.14,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Área,Rural,12.98,7.86,20.69,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Región natural,Lima Metropolitana,0.0,,,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Región natural,Resto Costa,93.06,87.34,96.3,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Región natural,Sierra,6.94,3.7,12.66,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Región natural,Selva,0.0,,,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Altitud del conglomerado,menos de 1 000 m,90.75,83.58,94.98,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Altitud del conglomerado,1 000 a 2 499 m,2.3,0.32,14.62,272,sí,Niños de 6 a 35 meses
+2025,Tacna,Altitud del conglomerado,2 500 m o más,6.94,3.7,12.66,272,sí,Niños de 6 a 35 meses
+2025,Tumbes,Edad (meses),6-11,16.68,13.15,20.93,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Edad (meses),12-23,40.54,35.29,46.02,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Edad (meses),24-35,42.78,37.5,48.23,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Área,Urbano,92.74,90.72,94.35,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Área,Rural,7.26,5.65,9.28,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Región natural,Lima Metropolitana,0.0,,,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Región natural,Resto Costa,100.0,,,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Región natural,Sierra,0.0,,,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Región natural,Selva,0.0,,,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Altitud del conglomerado,menos de 1 000 m,100.0,,,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Altitud del conglomerado,1 000 a 2 499 m,0.0,,,408,sí,Niños de 6 a 35 meses
+2025,Tumbes,Altitud del conglomerado,2 500 m o más,0.0,,,408,sí,Niños de 6 a 35 meses
+2025,Ucayali,Edad (meses),6-11,16.65,13.66,20.14,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Edad (meses),12-23,44.89,40.4,49.47,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Edad (meses),24-35,38.46,34.04,43.07,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Área,Urbano,74.98,70.84,78.71,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Área,Rural,25.02,21.29,29.16,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Región natural,Lima Metropolitana,0.0,,,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Región natural,Resto Costa,0.0,,,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Región natural,Sierra,0.0,,,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Región natural,Selva,100.0,100.0,100.0,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Altitud del conglomerado,menos de 1 000 m,98.69,94.91,99.67,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Altitud del conglomerado,1 000 a 2 499 m,1.31,0.33,5.09,445,sí,Niños de 6 a 35 meses
+2025,Ucayali,Altitud del conglomerado,2 500 m o más,0.0,,,445,sí,Niños de 6 a 35 meses
+2025,Áncash,Edad (meses),6-11,18.94,14.61,24.18,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Edad (meses),12-23,44.25,38.22,50.46,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Edad (meses),24-35,36.81,31.09,42.93,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Área,Urbano,65.49,59.69,70.86,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Área,Rural,34.51,29.14,40.31,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Región natural,Lima Metropolitana,0.0,,,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Región natural,Resto Costa,43.43,33.72,53.68,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Región natural,Sierra,56.57,46.32,66.28,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Región natural,Selva,0.0,,,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Altitud del conglomerado,menos de 1 000 m,43.46,33.74,53.71,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Altitud del conglomerado,1 000 a 2 499 m,5.76,1.42,20.6,286,sí,Niños de 6 a 35 meses
+2025,Áncash,Altitud del conglomerado,2 500 m o más,50.78,40.37,61.12,286,sí,Niños de 6 a 35 meses

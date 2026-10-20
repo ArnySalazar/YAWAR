@@ -102,3 +102,4 @@ def titulos(fig, titulo, subtitulo=None, y=0.985):
     fig.text(0.012, y, titulo, fontsize=17, fontweight="semibold", va="top", ha="left", color=TINTA)
     if subtitulo:
         fig.text(0.012, y - 0.42 / fig.get_figheight(), subtitulo, fontsize=11.5, va="top", ha="left", color=TINTA2)
+ 

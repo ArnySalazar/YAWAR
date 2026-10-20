@@ -42,7 +42,7 @@ Todos contienen solo porcentajes: **sí se pueden subir al repositorio**.
 - `rutas.py`: funciones para leer los datos siempre de la misma forma (como texto, sin espacios sobrantes).
 - `encuestas.py`: el estimador de proporciones con estratos y conglomerados (fuente única de las cifras ponderadas).
 - `graficos.py`: estilo y colores comunes de todos los gráficos.
-- Las decisiones y los pendientes se anotan en `docs/registro_decisiones_analisis.md`.
+- Las decisiones, los hallazgos y los límites del análisis se anotan en `docs/registro_decisiones_analisis.md`.
 
 ## Reglas de este análisis
 - Toda cifra dice si está **ponderada o no**, de qué año y de qué edades.

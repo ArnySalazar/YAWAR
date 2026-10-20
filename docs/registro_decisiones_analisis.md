@@ -2,7 +2,7 @@
 
 Responsable: Magno Luque. Aquí se anota cada decisión del análisis con su fecha, el motivo y la evidencia, para que el equipo y el jurado puedan seguir el razonamiento. Lo que **no** está decidido o tiene límites conocidos va en la sección "Límites y supuestos abiertos". 
 
-## Decisiones tomadas
+## Decisiones tomadass
 
 | Fecha | Decisión | Motivo | Evidencia |
 |---|---|---|---|

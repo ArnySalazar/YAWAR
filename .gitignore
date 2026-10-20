@@ -10,6 +10,14 @@ __pycache__/
 .venv/
 .pytest_cache/
 *.pyc
+
+# Los microdatos de ENDES NO se suben 
+endes_raw/
+.ipynb_checkpoints/
+
+# Tablas derivadas de ENDES 
+datos_procesados/
+
 # Modelos entrenados pesados
 modelo/*.joblib
 

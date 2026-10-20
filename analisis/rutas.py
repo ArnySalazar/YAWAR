@@ -59,3 +59,4 @@ def leer(anio, modulo, tabla, columnas=None):
     for c in df.columns:
         df[c] = df[c].str.strip().replace("", pd.NA)
     return df
+ 

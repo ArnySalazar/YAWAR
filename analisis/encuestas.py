@@ -152,3 +152,4 @@ def diferencias(out):
     j["distinto_de_0"] = np.where((j["ic_inf"] > 0) | (j["ic_sup"] < 0), "sí", "no")
     return j.reset_index()
 
+ 

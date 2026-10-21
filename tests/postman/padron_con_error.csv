@@ -1,0 +1,5 @@
+id_nino,establecimiento_id,alias_cuidador,telefono,edad_meses,area,region,altitud_msnm,controles_cred,fecha_entrega_hierro
+P0001,EESS99,Mamá de P0001,+51000000101,12,urbano,Lima,150,2,2026-10-01
+P0002,EESS99,Mamá de P0002,+51000000102,70,urbano,Lima,150,1,2026-10-02
+P0003,EESS99,Papá de P0003,+51000000103,20,selva,Loreto,120,0,2026-09-20
+P0004,EESS99,Mamá de P0004,+51000000104,veinte,rural,Cusco,3400,1,2026-09-15

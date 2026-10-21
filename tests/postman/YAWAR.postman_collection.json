@@ -1,0 +1,1101 @@
+{
+  "info": {
+    "_postman_id": "7ff751ec-9462-4a02-9987-a55cec0c8d8f",
+    "name": "YAWAR API",
+    "description": "Todas las rutas de la API de YAWAR, con pruebas automáticas.\n\n**Para correr el flujo completo de una semana:** con la API encendida en MODO_PRUEBA=1, elige el entorno \"YAWAR · local (modo prueba)\" y usa **Run collection** en el orden en que están las carpetas. Empieza siempre por **0 · Salud**: calcula la semana actual y confirma el modo prueba.\n\n**Protección:** las peticiones que mandan WhatsApp (recordatorios y webhook) se omiten solas si la API no está en modo prueba.\n\n**Después:** `python -m scripts.reiniciar_demo` deja la base limpia.\n\nInstrucciones completas en `tests/postman/README.md`.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{api_key}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "function semanaIso(a, m, d) {",
+          "  const f = new Date(Date.UTC(a, m - 1, d));",
+          "  f.setUTCDate(f.getUTCDate() + 4 - (f.getUTCDay() || 7));",
+          "  const n = Math.ceil(((f - Date.UTC(f.getUTCFullYear(), 0, 1)) / 86400000 + 1) / 7);",
+          "  return f.getUTCFullYear() + '-W' + String(n).padStart(2, '0');",
+          "}",
+          "",
+          "// Semana ISO actual (la misma que usa la API). \"Salud\" la vuelve a calcular con la hora del servidor.",
+          "if (!pm.environment.get('semana')) {",
+          "  const hoy = new Date();",
+          "  pm.environment.set('semana', semanaIso(hoy.getFullYear(), hoy.getMonth() + 1, hoy.getDate()));",
+          "}",
+          "",
+          "// Protección: los recordatorios y el webhook mandan WhatsApp. Solo se ejecutan si \"Salud\" confirmó",
+          "// MODO_PRUEBA=1, o si se cambió permitir_envios_reales a true a propósito.",
+          "const ruta = pm.request.url.getPath();",
+          "const mandaWhatsApp = pm.request.method === 'POST' && /\\/(recordatorios|webhook)$/.test(ruta);",
+          "if (mandaWhatsApp && pm.environment.get('modo_prueba') !== 'true'",
+          "    && pm.environment.get('permitir_envios_reales') !== 'true') {",
+          "  const aviso = 'Petición omitida: ejecuta primero \"Salud\" con la API en MODO_PRUEBA=1 '",
+          "    + '(o pon permitir_envios_reales = true si de verdad quieres mandar WhatsApp).';",
+          "  console.warn(aviso);",
+          "  if (pm.execution && pm.execution.skipRequest) pm.execution.skipRequest();",
+          "  else throw new Error(aviso);",
+          "}"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "0 · Salud",
+      "description": "Comprueba que la API está encendida. Ejecutar siempre primero.",
+      "item": [
+        {
+          "name": "Salud",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/salud",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "salud"
+              ]
+            },
+            "description": "Devuelve `{ok, modo_prueba, hora_local}`. Guarda en el entorno la semana actual (`semana`, por ejemplo 2026-W43) y si la API está en modo prueba (`modo_prueba`). No pide clave.",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "",
+                  "function semanaIso(a, m, d) {",
+                  "  const f = new Date(Date.UTC(a, m - 1, d));",
+                  "  f.setUTCDate(f.getUTCDate() + 4 - (f.getUTCDay() || 7));",
+                  "  const n = Math.ceil(((f - Date.UTC(f.getUTCFullYear(), 0, 1)) / 86400000 + 1) / 7);",
+                  "  return f.getUTCFullYear() + '-W' + String(n).padStart(2, '0');",
+                  "}",
+                  "",
+                  "const s = pm.response.json();",
+                  "pm.environment.set('modo_prueba', String(s.modo_prueba));",
+                  "const [a, m, d] = s.hora_local.slice(0, 10).split('-').map(Number);",
+                  "pm.environment.set('semana', semanaIso(a, m, d));",
+                  "console.log('Semana actual: ' + pm.environment.get('semana') + ' · hora de Lima: ' + s.hora_local);",
+                  "",
+                  "pm.test('Está en modo prueba (no manda WhatsApp de verdad)', () => pm.expect(s.modo_prueba).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1 · Padrón",
+      "description": "Carga del padrón (CSV). La API valida todo el archivo antes de guardar.",
+      "item": [
+        {
+          "name": "Cargar padrón de ejemplo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/padron",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "padron"
+              ]
+            },
+            "description": "Sube `datos/padron_ejemplo.csv` (10 niños simulados). Si el código del niño ya existe, lo actualiza; si no, lo crea. Devuelve `{cargados}`.\n\nSi Postman no encuentra el archivo, elígelo de nuevo en **Body → form-data → archivo**.",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "archivo",
+                  "type": "file",
+                  "src": "datos/padron_ejemplo.csv"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const r = pm.response.json();",
+                  "pm.test('Informa cuántos niños cargó', () => pm.expect(r.cargados).to.be.a('number').and.above(0));",
+                  "console.log('Cargados: ' + r.cargados);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Padrón con errores (no carga nada)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/padron",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "padron"
+              ]
+            },
+            "description": "Sube `tests/postman/padron_con_error.csv`, que tiene 3 filas malas: edad fuera de rango, área inválida y edad escrita en texto. La API responde 400 con la lista de filas y **no guarda ninguna**. La fila de la edad en texto muestra el mensaje técnico de Python (hallazgo 6).",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "archivo",
+                  "type": "file",
+                  "src": "tests/postman/padron_con_error.csv"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 400: el padrón tiene errores', () => pm.response.to.have.status(400));",
+                  "const { detail } = pm.response.json();",
+                  "pm.test('Avisa que no cargó nada y dice qué filas fallan', () => {",
+                  "  pm.expect(detail).to.include('no se cargó');",
+                  "  pm.expect(detail).to.match(/fila \\d+/);",
+                  "});",
+                  "console.log(detail);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2 · Lista de la semana",
+      "description": "Lista priorizada del establecimiento `{{est}}`.",
+      "item": [
+        {
+          "name": "Generar lista",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/lista?capacidad={{capacidad}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "lista"
+              ],
+              "query": [
+                {
+                  "key": "capacidad",
+                  "value": "{{capacidad}}"
+                }
+              ]
+            },
+            "description": "Puntúa a cada niño con el modelo, sube primero a quien la semana pasada respondió \"No le di\" o \"Tuve un problema\" y luego a quien no respondió en 7 días, ordena por puntaje y asigna **visita** a los `capacidad` primeros y **WhatsApp** al resto. Guarda la lista de la semana (cada llamada la reescribe)."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const lista = pm.response.json();",
+                  "const cap = Number(pm.environment.get('capacidad'));",
+                  "pm.test('Devuelve los niños en orden 1, 2, 3…', () => {",
+                  "  pm.expect(lista).to.be.an('array').that.is.not.empty;",
+                  "  lista.forEach((n, i) => pm.expect(n.orden).to.eql(i + 1));",
+                  "});",
+                  "pm.test('Cada fila trae los campos que usa el panel', () => {",
+                  "  const campos = ['orden', 'id_nino', 'alias_cuidador', 'edad_meses', 'puntaje', 'motivos',",
+                  "                  'nivel', 'seguimiento', 'accion', 'regla'];",
+                  "  lista.forEach((n) => pm.expect(n).to.include.all.keys(...campos));",
+                  "});",
+                  "pm.test('Los ' + cap + ' primeros van a visita y el resto a WhatsApp', () => {",
+                  "  lista.forEach((n) => pm.expect(n.accion).to.eql(n.orden <= cap ? 'visita' : 'whatsapp'));",
+                  "});",
+                  "console.log(lista.map((n) => n.orden + '. ' + n.id_nino + ' · ' + n.accion + ' · riesgo '",
+                  "  + Math.round(n.puntaje * 100) + '% · ' + n.regla).join('\\n'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lista en CSV (para imprimir)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/lista.csv?capacidad={{capacidad}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "lista.csv"
+              ],
+              "query": [
+                {
+                  "key": "capacidad",
+                  "value": "{{capacidad}}"
+                }
+              ]
+            },
+            "description": "La misma lista como archivo CSV (plan B de la demo). También la guarda."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con un archivo CSV', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.headers.get('Content-Type')).to.include('text/csv');",
+                  "});",
+                  "pm.test('Trae las columnas para imprimir', () => {",
+                  "  pm.expect(pm.response.text().split(/\\r?\\n/)[0])",
+                  "    .to.eql('orden,id_nino,alias_cuidador,edad_meses,accion,motivos,regla');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3 · Recordatorios",
+      "description": "Envío del recordatorio semanal por WhatsApp.",
+      "item": [
+        {
+          "name": "Enviar recordatorios",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/recordatorios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "recordatorios"
+              ]
+            },
+            "description": "Manda la plantilla de WhatsApp a cada cuidador del establecimiento: salta a quien pidió BAJA, no duplica (si ya se envió esta semana, no lo repite) y, si un envío falla, sigue con los demás. En modo prueba no sale nada a internet."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const r = pm.response.json();",
+                  "pm.test('Informa enviados, fallidos y dados de baja', () => {",
+                  "  ['enviados', 'fallidos', 'omitidos_por_baja'].forEach((c) => pm.expect(r[c]).to.be.a('number'));",
+                  "});",
+                  "console.log('Enviados: ' + r.enviados + ' · Fallidos: ' + r.fallidos + ' · Dados de baja: ' + r.omitidos_por_baja",
+                  "  + ' (si ya se enviaron esta semana, enviados = 0: la API no duplica)');"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4 · WhatsApp simulado (webhook)",
+      "description": "Simula lo que Meta le manda a la API cuando un cuidador responde. Cada petición lleva un id de mensaje nuevo y, si se definió `wa_app_secret`, la firma de Meta.",
+      "item": [
+        {
+          "name": "Verificar webhook (como Meta)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook?hub.mode=subscribe&hub.verify_token={{wa_verify_token}}&hub.challenge=1234567890",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ],
+              "query": [
+                {
+                  "key": "hub.mode",
+                  "value": "subscribe"
+                },
+                {
+                  "key": "hub.verify_token",
+                  "value": "{{wa_verify_token}}"
+                },
+                {
+                  "key": "hub.challenge",
+                  "value": "1234567890"
+                }
+              ]
+            },
+            "description": "Meta lo hace una sola vez al configurar la app: si `hub.verify_token` coincide con `WA_VERIFY_TOKEN` del .env, la API devuelve `hub.challenge`. Copia ese valor del .env a la variable `wa_verify_token` del entorno.",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Devuelve el número de desafío: Meta aceptaría la URL', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.text()).to.eql('1234567890');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Verificar webhook con token incorrecto",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook?hub.mode=subscribe&hub.verify_token=token-incorrecto&hub.challenge=1234567890",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ],
+              "query": [
+                {
+                  "key": "hub.mode",
+                  "value": "subscribe"
+                },
+                {
+                  "key": "hub.verify_token",
+                  "value": "token-incorrecto"
+                },
+                {
+                  "key": "hub.challenge",
+                  "value": "1234567890"
+                }
+              ]
+            },
+            "description": "Con otro token, la API responde 403.",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Rechaza el token incorrecto con 403', () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cuidador responde: No le di",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "Botón de la plantilla. El payload `no_le_di|{{id_nino}}|{{semana}}` dice quién y de qué semana. La API guarda la respuesta y le manda la lista de razones.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"0\",\n      \"changes\": [\n        {\n          \"field\": \"messages\",\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"15550000000\",\n              \"phone_number_id\": \"0\"\n            },\n            \"contacts\": [\n              {\n                \"profile\": {\n                  \"name\": \"Cuidador de prueba\"\n                },\n                \"wa_id\": \"{{telefono}}\"\n              }\n            ],\n            \"messages\": [\n              {\n                \"from\": \"{{telefono}}\",\n                \"id\": \"{{msg_id}}\",\n                \"timestamp\": \"{{ts}}\",\n                \"type\": \"button\",\n                \"button\": {\n                  \"payload\": \"no_le_di|{{id_nino}}|{{semana}}\",\n                  \"text\": \"No le di\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cuidador elige la razón: No le gusta",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "Respuesta a la lista de razones (`razon:sabor`). La API guarda la razón y agradece.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"0\",\n      \"changes\": [\n        {\n          \"field\": \"messages\",\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"15550000000\",\n              \"phone_number_id\": \"0\"\n            },\n            \"contacts\": [\n              {\n                \"profile\": {\n                  \"name\": \"Cuidador de prueba\"\n                },\n                \"wa_id\": \"{{telefono}}\"\n              }\n            ],\n            \"messages\": [\n              {\n                \"from\": \"{{telefono}}\",\n                \"id\": \"{{msg_id}}\",\n                \"timestamp\": \"{{ts}}\",\n                \"type\": \"interactive\",\n                \"interactive\": {\n                  \"type\": \"list_reply\",\n                  \"list_reply\": {\n                    \"id\": \"razon:sabor|{{id_nino}}|{{semana}}\",\n                    \"title\": \"No le gusta\"\n                  }\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Otro cuidador responde: Sí le di",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "El cuidador de `{{id_nino_2}}` responde que sí. La API lo guarda y agradece.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"0\",\n      \"changes\": [\n        {\n          \"field\": \"messages\",\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"15550000000\",\n              \"phone_number_id\": \"0\"\n            },\n            \"contacts\": [\n              {\n                \"profile\": {\n                  \"name\": \"Cuidador de prueba\"\n                },\n                \"wa_id\": \"{{telefono_2}}\"\n              }\n            ],\n            \"messages\": [\n              {\n                \"from\": \"{{telefono_2}}\",\n                \"id\": \"{{msg_id}}\",\n                \"timestamp\": \"{{ts}}\",\n                \"type\": \"button\",\n                \"button\": {\n                  \"payload\": \"si_le_di|{{id_nino_2}}|{{semana}}\",\n                  \"text\": \"Sí le di\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cuidador escribe BAJA",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "Texto libre. Con BAJA (o \"stop\", \"cancelar\"…), el cuidador de `{{id_nino_3}}` deja de recibir mensajes.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"0\",\n      \"changes\": [\n        {\n          \"field\": \"messages\",\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"15550000000\",\n              \"phone_number_id\": \"0\"\n            },\n            \"contacts\": [\n              {\n                \"profile\": {\n                  \"name\": \"Cuidador de prueba\"\n                },\n                \"wa_id\": \"{{telefono_3}}\"\n              }\n            ],\n            \"messages\": [\n              {\n                \"from\": \"{{telefono_3}}\",\n                \"id\": \"{{msg_id}}\",\n                \"timestamp\": \"{{ts}}\",\n                \"type\": \"text\",\n                \"text\": {\n                  \"body\": \"BAJA\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Recordatorios después del BAJA",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/recordatorios",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "recordatorios"
+              ]
+            },
+            "description": "Vuelve a pedir el envío: quien escribió BAJA aparece en `omitidos_por_baja`."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const r = pm.response.json();",
+                  "pm.test('Informa enviados, fallidos y dados de baja', () => {",
+                  "  ['enviados', 'fallidos', 'omitidos_por_baja'].forEach((c) => pm.expect(r[c]).to.be.a('number'));",
+                  "});",
+                  "console.log('Enviados: ' + r.enviados + ' · Fallidos: ' + r.fallidos + ' · Dados de baja: ' + r.omitidos_por_baja",
+                  "  + ' (si ya se enviaron esta semana, enviados = 0: la API no duplica)');",
+                  "",
+                  "pm.test('Quien escribió BAJA no recibe el recordatorio', () => pm.expect(r.omitidos_por_baja).to.be.at.least(1));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cuidador escribe ALTA",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "Con ALTA vuelve a recibir los recordatorios.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"0\",\n      \"changes\": [\n        {\n          \"field\": \"messages\",\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"15550000000\",\n              \"phone_number_id\": \"0\"\n            },\n            \"contacts\": [\n              {\n                \"profile\": {\n                  \"name\": \"Cuidador de prueba\"\n                },\n                \"wa_id\": \"{{telefono_3}}\"\n              }\n            ],\n            \"messages\": [\n              {\n                \"from\": \"{{telefono_3}}\",\n                \"id\": \"{{msg_id}}\",\n                \"timestamp\": \"{{ts}}\",\n                \"type\": \"text\",\n                \"text\": {\n                  \"body\": \"ALTA\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Aviso de estado: mensaje leído",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "Meta avisa que un mensaje se entregó, se leyó o falló. El estado nunca retrocede. `wa_message_id` es el id de un mensaje enviado (en modo prueba: prueba-1, prueba-2…).",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"0\",\n      \"changes\": [\n        {\n          \"field\": \"messages\",\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"15550000000\",\n              \"phone_number_id\": \"0\"\n            },\n            \"statuses\": [\n              {\n                \"id\": \"{{wa_message_id}}\",\n                \"status\": \"read\",\n                \"timestamp\": \"{{ts}}\",\n                \"recipient_id\": \"{{telefono}}\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Cada mensaje simulado lleva un id nuevo: la API ignora los ids repetidos (así se protege de los",
+              "// reintentos de Meta).",
+              "pm.variables.set('msg_id', 'wamid.postman-' + Date.now() + '-' + Math.floor(Math.random() * 1e6));",
+              "pm.variables.set('ts', String(Math.floor(Date.now() / 1000)));",
+              "",
+              "// Firma de Meta (X-Hub-Signature-256): solo hace falta si WA_APP_SECRET está definido en el .env",
+              "const secreto = pm.environment.get('wa_app_secret');",
+              "if (secreto && pm.request.body && pm.request.body.raw) {",
+              "  const CryptoJS = require('crypto-js');",
+              "  const cuerpo = pm.variables.replaceIn(pm.request.body.raw);",
+              "  const firma = CryptoJS.HmacSHA256(cuerpo, secreto).toString(CryptoJS.enc.Hex);",
+              "  pm.request.headers.upsert({ key: 'X-Hub-Signature-256', value: 'sha256=' + firma });",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "5 · Comprobar resultados",
+      "description": "Lo que vería el panel después de las respuestas.",
+      "item": [
+        {
+          "name": "Historial del niño",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/ninos/{{id_nino}}/historial",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "ninos",
+                "{{id_nino}}",
+                "historial"
+              ]
+            },
+            "description": "Semanas registradas del niño, de la más reciente a la más antigua: acción, puntaje, respuesta y razón (como códigos: `no_le_di`, `sabor`)."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const semanas = pm.response.json();",
+                  "pm.test('Devuelve las semanas con sus campos', () => {",
+                  "  pm.expect(semanas).to.be.an('array');",
+                  "  semanas.forEach((s) => pm.expect(s).to.include.all.keys('semana', 'accion', 'puntaje', 'respuesta', 'razon'));",
+                  "});",
+                  "const actual = semanas.find((s) => s.semana === pm.environment.get('semana'));",
+                  "pm.test('Esta semana quedó \"No le di\" con la razón \"No le gusta\" (tras la carpeta 4)', () => {",
+                  "  pm.expect(actual, 'no hay registro de esta semana').to.be.an('object');",
+                  "  pm.expect(actual.respuesta).to.eql('no_le_di');",
+                  "  pm.expect(actual.razon).to.eql('sabor');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Indicadores de la semana",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/indicadores",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "indicadores"
+              ]
+            },
+            "description": "Por semana: enviados, fallidos, respondidos y \"Sí le di\", más la meta-alerta si la semana cae muy por debajo de su promedio."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('Trae la serie por semana y la meta-alerta', () => {",
+                  "  pm.expect(d.serie).to.be.an('array').that.is.not.empty;",
+                  "  pm.expect(d).to.have.property('meta_alerta');",
+                  "  d.serie.forEach((s) => pm.expect(s).to.include.all.keys('semana', 'enviados', 'fallidos', 'respondidos', 'si_le_di'));",
+                  "});",
+                  "const actual = d.serie[d.serie.length - 1];",
+                  "pm.test('La última semana de la serie es la actual', () => pm.expect(actual.semana).to.eql(pm.environment.get('semana')));",
+                  "pm.test('Esta semana hay respuestas registradas (tras la carpeta 4)', () => {",
+                  "  pm.expect(actual.respondidos).to.be.at.least(2);",
+                  "  pm.expect(actual.si_le_di).to.be.at.least(1);",
+                  "});",
+                  "console.log(JSON.stringify(actual) + ' · meta_alerta: ' + d.meta_alerta);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Indicadores de una semana específica",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/indicadores?semana={{semana}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "indicadores"
+              ],
+              "query": [
+                {
+                  "key": "semana",
+                  "value": "{{semana}}"
+                }
+              ]
+            },
+            "description": "Igual, pero para la semana del parámetro `semana` (formato 2026-W43)."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json();",
+                  "pm.test('La serie termina en la semana pedida', () => {",
+                  "  pm.expect(d.serie[d.serie.length - 1].semana).to.eql(pm.environment.get('semana'));",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6 · Robustez y seguridad",
+      "description": "Casos raros que la API debe aguantar sin caerse.",
+      "item": [
+        {
+          "name": "Webhook con contenido raro",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "Aunque llegue algo inesperado, responde 200 y lo registra en el log: si respondiera error, Meta reintentaría una y otra vez.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entry\": \"basura\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Cada mensaje simulado lleva un id nuevo: la API ignora los ids repetidos (así se protege de los",
+                  "// reintentos de Meta).",
+                  "pm.variables.set('msg_id', 'wamid.postman-' + Date.now() + '-' + Math.floor(Math.random() * 1e6));",
+                  "pm.variables.set('ts', String(Math.floor(Date.now() / 1000)));",
+                  "",
+                  "// Firma de Meta (X-Hub-Signature-256): solo hace falta si WA_APP_SECRET está definido en el .env",
+                  "const secreto = pm.environment.get('wa_app_secret');",
+                  "if (secreto && pm.request.body && pm.request.body.raw) {",
+                  "  const CryptoJS = require('crypto-js');",
+                  "  const cuerpo = pm.variables.replaceIn(pm.request.body.raw);",
+                  "  const firma = CryptoJS.HmacSHA256(cuerpo, secreto).toString(CryptoJS.enc.Hex);",
+                  "  pm.request.headers.upsert({ key: 'X-Hub-Signature-256', value: 'sha256=' + firma });",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Respuesta desde un teléfono que no está en el padrón",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/webhook",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "webhook"
+              ]
+            },
+            "description": "Alguien responde por un niño con otro teléfono: la API guarda el mensaje pero no registra la respuesta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"object\": \"whatsapp_business_account\",\n  \"entry\": [\n    {\n      \"id\": \"0\",\n      \"changes\": [\n        {\n          \"field\": \"messages\",\n          \"value\": {\n            \"messaging_product\": \"whatsapp\",\n            \"metadata\": {\n              \"display_phone_number\": \"15550000000\",\n              \"phone_number_id\": \"0\"\n            },\n            \"contacts\": [\n              {\n                \"profile\": {\n                  \"name\": \"Cuidador de prueba\"\n                },\n                \"wa_id\": \"51999999999\"\n              }\n            ],\n            \"messages\": [\n              {\n                \"from\": \"51999999999\",\n                \"id\": \"{{msg_id}}\",\n                \"timestamp\": \"{{ts}}\",\n                \"type\": \"button\",\n                \"button\": {\n                  \"payload\": \"problema|{{id_nino}}|{{semana}}\",\n                  \"text\": \"Tuve un problema\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Cada mensaje simulado lleva un id nuevo: la API ignora los ids repetidos (así se protege de los",
+                  "// reintentos de Meta).",
+                  "pm.variables.set('msg_id', 'wamid.postman-' + Date.now() + '-' + Math.floor(Math.random() * 1e6));",
+                  "pm.variables.set('ts', String(Math.floor(Date.now() / 1000)));",
+                  "",
+                  "// Firma de Meta (X-Hub-Signature-256): solo hace falta si WA_APP_SECRET está definido en el .env",
+                  "const secreto = pm.environment.get('wa_app_secret');",
+                  "if (secreto && pm.request.body && pm.request.body.raw) {",
+                  "  const CryptoJS = require('crypto-js');",
+                  "  const cuerpo = pm.variables.replaceIn(pm.request.body.raw);",
+                  "  const firma = CryptoJS.HmacSHA256(cuerpo, secreto).toString(CryptoJS.enc.Hex);",
+                  "  pm.request.headers.upsert({ key: 'X-Hub-Signature-256', value: 'sha256=' + firma });",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200 con {\"ok\": true} (si no, Meta reintentaría)', () => {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(pm.response.json()).to.eql({ ok: true });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ruta del panel sin clave",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/indicadores",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "indicadores"
+              ]
+            },
+            "description": "Sin el encabezado `X-API-Key`: si `API_CLAVE` está definida en el .env, debe responder 401; si está vacía (desarrollo), responde normal.",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.environment.get('api_key')) {",
+                  "  pm.test('Sin la clave, la API responde 401', () => pm.response.to.have.status(401));",
+                  "} else {",
+                  "  pm.test('API sin clave (API_CLAVE vacía en el .env): responde 200', () => pm.response.to.have.status(200));",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Historial de un niño que no existe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/ninos/NO-EXISTE/historial",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "ninos",
+                "NO-EXISTE",
+                "historial"
+              ]
+            },
+            "description": "Devuelve `[]` en vez de 404."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Un niño que no existe devuelve una lista vacía (no un error 404)', () => pm.expect(pm.response.json()).to.eql([]));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

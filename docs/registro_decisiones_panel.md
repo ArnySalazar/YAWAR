@@ -72,4 +72,3 @@ Responsable: Gian. Aquí se anota cada decisión del panel (`panel/`) con su fec
 - **Capturas** (21 oct): las 7 pantallas en escritorio (1440 px) y celular (390 px), contra la API real en modo prueba. Usan el padrón **simulado** de ejemplo y 4 semanas de historial generadas en una **base temporal** con las funciones de la API; no se tocó `yawar.db`. Ver `docs/panel/evidencias/capturas/`.
 - **Para no tocar la base de trabajo,** las pruebas contra la API se hicieron en instancias aparte (puertos 8001 y 8002), con bases temporales.
 - **Fechas:** en hora de Lima, comprobadas con el reloj de Windows.
-- **Herramientas:** Claude Code (análisis del repositorio, código y adaptación de las pantallas en paralelo), Manus y Stitch (prototipos), Figma (diseño final), Vitest, Postman/Newman, Microsoft Edge (capturas).

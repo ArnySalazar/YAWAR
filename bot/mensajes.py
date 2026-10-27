@@ -37,7 +37,7 @@ PALABRAS_BAJA = {"baja", "stop", "no quiero", "no quiero mensajes", "cancelar"}
 PALABRAS_ALTA = {"alta"}
 
 TEXTO_GRACIAS_RAZON = (
-    "Gracias. Le avisaremos al personal de tu establecimiento para que pueda ayudarte."
+    "Gracias por contarnos. Tu respuesta nos ayuda a mejorar este seguimiento."
 )
 
 

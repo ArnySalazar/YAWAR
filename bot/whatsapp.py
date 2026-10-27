@@ -31,7 +31,8 @@ def _enviar(payload: dict) -> str | None:
     return datos.get("messages", [{}])[0].get("id")
 
 
-def enviar_recordatorio(telefono: str, alias: str, id_nino: str, semana: str) -> str | None:
+def enviar_recordatorio(telefono: str, alias: str, id_nino: str, semana: str,
+                        nombre_nino: str | None = None) -> str | None:
     """Plantilla con 3 botones de respuesta rápida. La plantilla en Meta debe tener:
     cuerpo con una variable {{1}} (el alias) y 3 botones quick reply en este orden:
     Sí le di / No le di / Tuve un problema."""
@@ -49,7 +50,9 @@ def enviar_recordatorio(telefono: str, alias: str, id_nino: str, semana: str) ->
             "name": config.WA_PLANTILLA_RECORDATORIO,
             "language": {"code": config.WA_PLANTILLA_IDIOMA},
             "components": [
-                {"type": "body", "parameters": [{"type": "text", "text": alias}]},
+                    {"type": "body", "parameters": [
+                    {"type": "text", "text": alias},
+                    {"type": "text", "text": nombre_nino or "tu niño o niña"}]},
                 *botones,
             ],
         },

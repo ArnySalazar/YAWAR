@@ -20,6 +20,7 @@ class Nino(Base):
     id_nino: Mapped[str] = mapped_column(String, primary_key=True)
     establecimiento_id: Mapped[str] = mapped_column(String, index=True)
     alias_cuidador: Mapped[str] = mapped_column(String)
+    nombre_nino: Mapped[str | None] = mapped_column(String, nullable=True)  # apodo que autoriza la madre
     telefono: Mapped[str] = mapped_column(String, index=True)
     edad_meses: Mapped[int] = mapped_column(Integer)
     area: Mapped[str] = mapped_column(String)

@@ -56,9 +56,12 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
             fecha = pd.to_datetime(fila["fecha_entrega_hierro"]).date() \
                 if pd.notna(fila["fecha_entrega_hierro"]) else None
             acepta = str(fila.get("acepta_mensajes", "1")).strip().lower() not in ("0", "no", "false")
+            nombre = fila.get("nombre_nino")
+            nombre = str(nombre).strip() if pd.notna(nombre) and str(nombre).strip() else None
             ninos.append(Nino(
                 id_nino=str(fila["id_nino"]), establecimiento_id=str(fila["establecimiento_id"]),
-                alias_cuidador=str(fila["alias_cuidador"]), telefono=tel, edad_meses=edad,
+                alias_cuidador=str(fila["alias_cuidador"]), nombre_nino=nombre,
+                telefono=tel, edad_meses=edad,
                 area=area, region=str(fila["region"]), altitud_msnm=int(fila["altitud_msnm"]),
                 controles_cred=int(fila["controles_cred"]), fecha_entrega_hierro=fecha,
                 acepta_mensajes=acepta))
@@ -155,7 +158,8 @@ def enviar_recordatorios(sesion: Session, establecimiento_id: str,
         if ya:
             continue
         try:
-            wa_id = whatsapp.enviar_recordatorio(n.telefono, n.alias_cuidador, n.id_nino, semana)
+            wa_id = whatsapp.enviar_recordatorio(n.telefono, n.alias_cuidador, n.id_nino, semana,
+                                                 nombre_nino=n.nombre_nino)
             estado = "enviado"
             resultado["enviados"] += 1
         except Exception as e:  # sin internet, token vencido, número no registrado...

@@ -84,10 +84,10 @@ def test_baja_y_alta(s):
 def test_envio_fallido_no_detiene_a_los_demas(s, monkeypatch):
     original = whatsapp.enviar_recordatorio
 
-    def falla_uno(tel, alias, id_nino, semana):
+    def falla_uno(tel, alias, id_nino, semana, **kw):
         if id_nino == "N0002":
             raise RuntimeError("token vencido")
-        return original(tel, alias, id_nino, semana)
+        return original(tel, alias, id_nino, semana, **kw)
 
     monkeypatch.setattr(whatsapp, "enviar_recordatorio", falla_uno)
     r = servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)

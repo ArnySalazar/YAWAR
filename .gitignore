@@ -21,7 +21,3 @@ datos_procesados/
 # Modelos entrenados pesados
 modelo/*.joblib
 
-# Herramientas locales del editor (no se suben)
-.claude/
-CLAUDE.md
-CLAUDE.local.md

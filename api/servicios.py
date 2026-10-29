@@ -244,6 +244,9 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
                 reg.derivar, reg.motivo_derivar = True, "mensaje que no es texto"
             sesion.commit()
             whatsapp.enviar_texto(tel, mensajes.TEXTO_NO_LEE_AUDIO)
+            for n in ninos:
+                _avisar_personal(sesion, _registro_de_semana(sesion, n.id_nino, semana_iso(momento)),
+                                 "mensaje de voz o imagen que el sistema no puede leer")
     elif msg["tipo"] == "text":
         texto = msg["valor"].strip().lower()
         ninos = sesion.scalars(select(Nino).where(Nino.telefono == tel)).all()
@@ -270,6 +273,8 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
                 sesion.commit()
                 whatsapp.enviar_texto(tel, mensajes.TEXTO_ALARMA if d["alarma"]
                                       else mensajes.TEXTO_GRACIAS_DETALLE)
+                if d["alarma"]:
+                    _avisar_personal(sesion, pendiente, "posible señal de peligro")
             elif d["alarma"]:
                 # Escribió sin que se le preguntara y describe un peligro: no se ignora
                 for n in ninos:
@@ -279,9 +284,30 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
                     reg.motivo_derivar = d["motivo_derivar"]
                 sesion.commit()
                 whatsapp.enviar_texto(tel, mensajes.TEXTO_ALARMA)
+                for n in ninos:
+                    _avisar_personal(sesion, _registro_de_semana(sesion, n.id_nino, semana_iso(momento)),
+                                     "posible señal de peligro")
             else:
                 whatsapp.enviar_texto(tel, mensajes.TEXTO_AYUDA)
     return True
+
+
+def _avisar_personal(sesion: Session, reg: "Registro", motivo: str) -> None:
+    """Aviso inmediato al personal de CRED, una sola vez por niño y semana
+    (como en Verma et al.: el aviso no se repite, para no causar fatiga de alarmas).
+    Si falla (plantilla no aprobada, sin internet), el caso igual queda primero en el panel."""
+    if reg.alerta_enviada or not config.CRED_TELEFONOS_ALERTA:
+        return
+    nino = sesion.get(Nino, reg.id_nino)
+    enviada = False
+    for tel in config.CRED_TELEFONOS_ALERTA:
+        try:
+            whatsapp.enviar_alerta_personal(tel, reg.id_nino, nino.edad_meses, motivo)
+            enviada = True
+        except Exception as e:
+            log.error("No se pudo avisar al personal (%s): %s", reg.id_nino, e)
+    reg.alerta_enviada = enviada
+    sesion.commit()
 
 
 def _registro_de_semana(sesion: Session, id_nino: str, semana: str) -> "Registro":

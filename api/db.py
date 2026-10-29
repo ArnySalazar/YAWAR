@@ -83,6 +83,7 @@ class Registro(Base):
     alarma: Mapped[bool] = mapped_column(Boolean, default=False)
     derivar: Mapped[bool] = mapped_column(Boolean, default=False)
     motivo_derivar: Mapped[str | None] = mapped_column(String, nullable=True)
+    alerta_enviada: Mapped[bool] = mapped_column(Boolean, default=False)  # una sola por semana
 
 
 def crear_motor(url: str = config.DATABASE_URL):
@@ -102,7 +103,8 @@ _COLUMNAS_NUEVAS = {
     "ninos": {"presentacion_hierro": "VARCHAR", "en_tratamiento_anemia": "BOOLEAN DEFAULT 0"},
     "registro_semanal": {"detalle": "TEXT", "razon_decisor": "VARCHAR",
                          "prob_razon_decisor": "FLOAT", "alarma": "BOOLEAN DEFAULT 0",
-                         "derivar": "BOOLEAN DEFAULT 0", "motivo_derivar": "VARCHAR"},
+                         "derivar": "BOOLEAN DEFAULT 0", "motivo_derivar": "VARCHAR",
+                         "alerta_enviada": "BOOLEAN DEFAULT 0"},
 }
 
 

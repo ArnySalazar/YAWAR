@@ -233,3 +233,25 @@ def test_padron_sin_geografia_se_carga():
            "X1,EESS09,Mamá de X1,+51000000099,20,17,\n").encode()
     assert servicios.cargar_padron(sesion, csv) == 1
     assert servicios.generar_lista(sesion, "EESS09", capacidad=1, hoy=LUNES)[0]["id_nino"] == "X1"
+
+
+def test_alarma_avisa_al_personal_una_sola_vez(s, monkeypatch):
+    from api import config
+    monkeypatch.setattr(config, "CRED_TELEFONOS_ALERTA", ["51000000777"])
+    monkeypatch.setattr(servicios, "decidir", _decisor_fijo(True))
+    servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)
+    servicios.procesar_entrante(s, texto("51000000003", "convulsionó"), LUNES)
+    servicios.procesar_entrante(s, texto("51000000003", "sigue mal"), LUNES)
+    avisos = [m for m in whatsapp.BANDEJA_PRUEBA
+              if m.get("type") == "template" and m["to"] == "51000000777"]
+    assert len(avisos) == 1  # no se repite en la misma semana
+    params = [p["text"] for p in avisos[0]["template"]["components"][0]["parameters"]]
+    assert params == ["N0003", "22", "posible señal de peligro"]  # sin el texto de la madre
+
+
+def test_sin_telefono_del_personal_no_se_envia_aviso(s, monkeypatch):
+    from api import config
+    monkeypatch.setattr(config, "CRED_TELEFONOS_ALERTA", [])
+    monkeypatch.setattr(servicios, "decidir", _decisor_fijo(True))
+    servicios.procesar_entrante(s, texto("51000000003", "convulsionó"), LUNES)
+    assert not [m for m in whatsapp.BANDEJA_PRUEBA if m.get("type") == "template"]

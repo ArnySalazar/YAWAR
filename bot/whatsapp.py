@@ -60,6 +60,25 @@ def enviar_recordatorio(telefono: str, alias: str, id_nino: str, semana: str,
     return _enviar(payload)
 
 
+def enviar_alerta_personal(telefono: str, id_nino: str, edad_meses: int, motivo: str) -> str | None:
+    """Plantilla de utilidad para el personal: código del niño, edad y motivo, sin copiar
+    lo que escribió el cuidador (eso se ve en el panel)."""
+    payload = {
+        "messaging_product": "whatsapp",
+        "to": telefono,
+        "type": "template",
+        "template": {
+            "name": config.WA_PLANTILLA_ALERTA,
+            "language": {"code": config.WA_PLANTILLA_IDIOMA},
+            "components": [{"type": "body", "parameters": [
+                {"type": "text", "text": id_nino},
+                {"type": "text", "text": str(edad_meses)},
+                {"type": "text", "text": motivo}]}],
+        },
+    }
+    return _enviar(payload)
+
+
 def enviar_pregunta_razon(telefono: str, id_nino: str, semana: str) -> str | None:
     """Mensaje de lista (permitido porque la persona acaba de responder)."""
     filas = [{"id": mensajes.id_boton(f"razon:{k}", id_nino, semana), "title": v}

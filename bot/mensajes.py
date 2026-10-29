@@ -31,7 +31,13 @@ TEXTO_BAJA = (
 )
 TEXTO_ALTA = "Gracias, volverás a recibir los recordatorios semanales."
 TEXTO_AYUDA = (
-    "Por ahora solo puedo leer los botones. Si no quieres recibir más mensajes, escribe BAJA."
+    "Gracias por escribirnos. Para contarnos algo del hierro, toca \"Tuve un problema\" y luego "
+    "\"Otro motivo\" en el mensaje de la semana. Si no quieres recibir más mensajes, escribe BAJA."
+)
+TEXTO_NO_LEE_AUDIO = (
+    "Por ahora no podemos escuchar audios ni ver fotos. ¿Nos lo escribes en un mensaje? "
+    "Si tu niño o niña no puede tomar ni lactar, vomita todo, convulsiona o no despierta, "
+    "llévalo de inmediato al establecimiento de salud o llama al 106 (SAMU)."
 )
 PALABRAS_BAJA = {"baja", "stop", "no quiero", "no quiero mensajes", "cancelar"}
 PALABRAS_ALTA = {"alta"}

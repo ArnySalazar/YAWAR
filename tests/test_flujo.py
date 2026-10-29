@@ -177,3 +177,59 @@ def test_padron_rechaza_edad_fuera_de_6_a_35(s):
     malo = PADRON.read_text().replace(",8,urbano", ",4,urbano", 1).encode()
     with pytest.raises(ValueError, match="entre 6 y 35"):
         servicios.cargar_padron(s, malo)
+
+
+def _decisor_fijo(alarma, motivo=None):
+    return lambda t: {"razon": "otro", "prob_razon": 0.9, "alarma": alarma,
+                      "prob_alarma": 0.99 if alarma else 0.0, "derivar": alarma or bool(motivo),
+                      "motivo_derivar": motivo or ("posible señal de peligro" if alarma else None)}
+
+
+def test_problema_de_esta_semana_sube_sin_esperar_al_lunes(s):
+    servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)
+    servicios.procesar_entrante(s, boton("51000000004", f"problema|N0004|{SEM}"), LUNES)
+    lista = servicios.generar_lista(s, "EESS01", capacidad=1, hoy=LUNES + timedelta(days=2))
+    assert lista[0]["id_nino"] == "N0004" and lista[0]["seguimiento"].startswith("esta semana")
+
+
+def test_texto_sin_preguntar_con_peligro_no_se_ignora(s, monkeypatch):
+    monkeypatch.setattr(servicios, "decidir", _decisor_fijo(True))
+    servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)
+    servicios.procesar_entrante(s, texto("51000000003", "mi bebe convulsiono anoche"), LUNES)
+    assert "106" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+    lista = servicios.generar_lista(s, "EESS01", capacidad=1, hoy=LUNES)
+    assert lista[0]["id_nino"] == "N0003" and lista[0]["seguimiento"].startswith("POSIBLE SEÑAL")
+
+
+def test_texto_sin_preguntar_sin_peligro_recibe_ayuda(s, monkeypatch):
+    monkeypatch.setattr(servicios, "decidir", _decisor_fijo(False))
+    servicios.procesar_entrante(s, texto("51000000003", "hola buenas"), LUNES)
+    assert "Otro motivo" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+
+
+def test_audio_se_deriva_y_pide_texto(s):
+    servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)
+    servicios.procesar_entrante(s, {"wa_id": "wamid.a1", "telefono": "51000000002",
+                                    "tipo": "audio", "valor": ""}, LUNES)
+    assert "audios" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+    lista = servicios.generar_lista(s, "EESS01", capacidad=1, hoy=LUNES)
+    assert lista[0]["id_nino"] == "N0002" and lista[0]["seguimiento"].startswith("mensaje para leer")
+
+
+def test_clasificador_apagado_dispara_meta_alerta(s, monkeypatch):
+    monkeypatch.setattr(servicios, "decidir", _decisor_fijo(False, "clasificador no disponible (URLError)"))
+    servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)
+    servicios.procesar_entrante(s, boton("51000000001", f"problema|N0001|{SEM}"), LUNES)
+    servicios.procesar_entrante(s, {"wa_id": "wamid.o2", "telefono": "51000000001",
+                                    "tipo": "interactive", "valor": f"razon:otro|N0001|{SEM}"}, LUNES)
+    servicios.procesar_entrante(s, texto("51000000001", "pasó algo raro"), LUNES)
+    ind = servicios.indicadores(s, "EESS01", SEM)
+    assert "Ollama" in ind["meta_alerta"]
+
+
+def test_padron_sin_geografia_se_carga():
+    sesion = fabrica_sesiones(crear_motor("sqlite://"))()
+    csv = ("id_nino,establecimiento_id,alias_cuidador,telefono,edad_meses,controles_cred,fecha_entrega_hierro\n"
+           "X1,EESS09,Mamá de X1,+51000000099,20,17,\n").encode()
+    assert servicios.cargar_padron(sesion, csv) == 1
+    assert servicios.generar_lista(sesion, "EESS09", capacidad=1, hoy=LUNES)[0]["id_nino"] == "X1"

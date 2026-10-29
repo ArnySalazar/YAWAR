@@ -23,9 +23,10 @@ class Nino(Base):
     nombre_nino: Mapped[str | None] = mapped_column(String, nullable=True)  # apodo que autoriza la madre
     telefono: Mapped[str] = mapped_column(String, index=True)
     edad_meses: Mapped[int] = mapped_column(Integer)
-    area: Mapped[str] = mapped_column(String)
-    region: Mapped[str] = mapped_column(String)
-    altitud_msnm: Mapped[int] = mapped_column(Integer)
+    # Geografía: opcional (el modelo no la usa; se guarda solo si el padrón la trae)
+    area: Mapped[str | None] = mapped_column(String, nullable=True)
+    region: Mapped[str | None] = mapped_column(String, nullable=True)
+    altitud_msnm: Mapped[int | None] = mapped_column(Integer, nullable=True)
     controles_cred: Mapped[int] = mapped_column(Integer)
     fecha_entrega_hierro: Mapped[date | None] = mapped_column(Date, nullable=True)
     # Consentimiento: si el cuidador escribe BAJA, deja de recibir mensajes
@@ -81,6 +82,7 @@ class Registro(Base):
     prob_razon_decisor: Mapped[float | None] = mapped_column(Float, nullable=True)
     alarma: Mapped[bool] = mapped_column(Boolean, default=False)
     derivar: Mapped[bool] = mapped_column(Boolean, default=False)
+    motivo_derivar: Mapped[str | None] = mapped_column(String, nullable=True)
 
 
 def crear_motor(url: str = config.DATABASE_URL):
@@ -100,7 +102,7 @@ _COLUMNAS_NUEVAS = {
     "ninos": {"presentacion_hierro": "VARCHAR", "en_tratamiento_anemia": "BOOLEAN DEFAULT 0"},
     "registro_semanal": {"detalle": "TEXT", "razon_decisor": "VARCHAR",
                          "prob_razon_decisor": "FLOAT", "alarma": "BOOLEAN DEFAULT 0",
-                         "derivar": "BOOLEAN DEFAULT 0"},
+                         "derivar": "BOOLEAN DEFAULT 0", "motivo_derivar": "VARCHAR"},
 }
 
 

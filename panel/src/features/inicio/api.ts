@@ -120,7 +120,7 @@ export function buildAlerts(lista: FilaLista[], metaAlerta: string | null | unde
       type: 'reported_problem',
       title: r1 === 1 ? '1 reportó problema o no le dio' : `${r1} reportaron problema o no le dieron`,
       description:
-        `Cuidadores que la semana pasada respondieron «No le di» (${noLeDi}) o «Tuve un problema» (${problema}). ` +
+        `Cuidadores con una posible señal de peligro, un mensaje para leer, o que esta semana o la anterior respondieron «No le di» (${noLeDi}) o «Tuve un problema» (${problema}). ` +
         'Van primero en la lista.',
       note: null,
       tag: 'Regla R1',

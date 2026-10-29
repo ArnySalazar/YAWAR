@@ -42,6 +42,11 @@ const FIELD_RULES: Record<string, FieldRule> = {
   controles_cred: (v) => (/^\d+$/.test(v) ? null : 'debe ser un número entero de controles (0 o más).'),
   fecha_entrega_hierro: (v) => (toIsoDate(v) ? null : 'debe ser una fecha válida con formato AAAA-MM-DD.'),
   acepta_mensajes: (v) => (/^[01]$/.test(v) ? null : 'debe ser 1 (acepta mensajes) o 0 (no acepta).'),
+  presentacion_hierro: (v) =>
+    v.toLowerCase().split('+').every((x) => ['gotas', 'jarabe', 'polvo'].includes(x.trim()))
+      ? null
+      : 'debe ser gotas, jarabe o polvo (o varias unidas con «+»).',
+  en_tratamiento_anemia: (v) => (/^[01]$/.test(v) ? null : 'debe ser 1 (en tratamiento) o 0 (no).'),
 }
 
 /** Columnas cuyo valor puede quedar vacío porque la API lo acepta así (sin entrega de hierro aún). */
@@ -84,7 +89,7 @@ function normalizeValue(name: string, value: string): string {
     return digits ? `+51${digits}` : value
   }
   if (name === 'fecha_entrega_hierro') return toIsoDate(value) ?? value
-  if (name === 'area') return value.toLowerCase()
+  if (name === 'area' || name === 'presentacion_hierro') return value.toLowerCase()
   return value
 }
 
@@ -217,10 +222,12 @@ export function validateRegistryCsv(rawText: string, file: FileInfo, columns: Co
         message: `Se esperaban ${header.length} campos y se encontraron ${cells.length}.`,
       })
     } else {
-      for (const { name } of present) {
+      for (const { name, required } of present) {
         const value = valueOf(cells, name)
         if (value === '') {
-          if (!BLANK_ALLOWED.has(name)) rowIssues.push({ row: rowNumber, column: name, message: 'Campo obligatorio vacío.' })
+          // Las columnas opcionales pueden quedar vacías; las obligatorias no (salvo la fecha de entrega)
+          if (required && !BLANK_ALLOWED.has(name))
+            rowIssues.push({ row: rowNumber, column: name, message: 'Campo obligatorio vacío.' })
           continue
         }
         const problem = FIELD_RULES[name]?.(value)

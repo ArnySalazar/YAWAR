@@ -56,6 +56,16 @@ function reasonOf(registro: SemanaHistorial): ReasonCode | null {
   return registro.razon
 }
 
+/** Agrega lo que escribió el cuidador (o el aviso de un audio) y si hay una posible señal de peligro. */
+function mensajeConDetalle(registro: SemanaHistorial, base: string) {
+  if (!registro.detalle) return base
+  const peligro = registro.alarma ? 'POSIBLE SEÑAL DE PELIGRO · ' : ''
+  // El servidor anota los audios entre paréntesis: se muestran tal cual, sin comillas
+  if (registro.detalle.startsWith('(')) return `${peligro}${registro.detalle.slice(1, -1).replace(/^envió/, 'Envió')}`
+  const prefijo = registro.respuesta === 'sin_respuesta' ? 'Escribió' : base
+  return `${peligro}${prefijo}: «${registro.detalle}»`
+}
+
 /** Una fila de la lista + su registro de la semana → respuesta de la pantalla. */
 export function buildResponse(fila: FilaLista, registro: SemanaHistorial): CommunicationResponse {
   const reason = reasonOf(registro)
@@ -68,9 +78,13 @@ export function buildResponse(fila: FilaLista, registro: SemanaHistorial): Commu
     priorityRank: fila.orden,
     semana: registro.semana,
     answer: registro.respuesta,
-    responseType: responseTypeOf(registro.respuesta),
+    // Un mensaje escrito o un audio que debe leer una persona cuenta como problema, aunque no haya botón
+    responseType: registro.alarma || registro.derivar ? 'problema' : responseTypeOf(registro.respuesta),
     // La razón solo acompaña a «No le di» y «Tuve un problema»; «Sí le di» va sin razón
-    message: textoRespuesta(registro.respuesta, registro.respuesta === 'si_le_di' ? null : registro.razon),
+    message: mensajeConDetalle(
+      registro,
+      textoRespuesta(registro.respuesta, registro.respuesta === 'si_le_di' ? null : registro.razon),
+    ),
     reason,
     reasonLabel: reason ? REASON_LABELS[reason] : null,
     reasonSeverity: reason ? REASON_SEVERITY[reason] : null,

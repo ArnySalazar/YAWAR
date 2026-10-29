@@ -11,7 +11,7 @@ const rules = [
     tone: 'bg-brand-dark text-white',
     title: 'Dificultad reportada (Máxima)',
     description:
-      'Cuidadores que la semana pasada respondieron "No le di" o "Tuve un problema" al recordatorio de WhatsApp (por ejemplo: no le gusta, estreñimiento, se acabó el hierro, se olvidó).',
+      'Primero, cualquier mensaje con una posible señal de peligro (revisar hoy) y los mensajes que debe leer una persona. Luego, cuidadores que esta semana o la anterior respondieron "No le di" o "Tuve un problema" (por ejemplo: no le gusta, estreñimiento, se acabó el hierro, se olvidó).',
   },
   {
     rule: 'R2',
@@ -27,7 +27,7 @@ const rules = [
     tone: 'bg-[#2b322d] text-[#ebf3eb]',
     title: 'Probabilidad de no consumo (Predictiva)',
     description:
-      'El resto, ordenado por la probabilidad estimada de no estar tomando el hierro (modelo con edad, área, región, altitud y controles CRED).',
+      'El resto, ordenado por la probabilidad estimada de no estar tomando el hierro (modelo con edad, controles CRED desde el nacimiento, atraso en controles y presentación del hierro). En cada regla, los niños en tratamiento de anemia van primero.',
   },
 ] as const
 

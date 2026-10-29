@@ -86,8 +86,8 @@ export function BotHistoryCard({
 
       <div className="pt-4">
         <p className="border-t border-[#f3f4f6] pt-[13px] text-[10px] leading-5 text-[#9ca3af] italic">
-          * Respuestas elegidas con los botones del bot de WhatsApp (el bot no recibe texto libre). La acción del
-          sistema sigue una regla fija.
+          * Respuestas elegidas con los botones del bot de WhatsApp y, cuando el cuidador escribe, su mensaje. El
+          clasificador local solo ordena y deriva; la acción la decide el personal.
         </p>
       </div>
     </FichaCard>

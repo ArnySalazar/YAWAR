@@ -85,7 +85,10 @@ def historial(id_nino: str, s: Session = Depends(sesion)):
     regs = s.scalars(select(Registro).where(Registro.id_nino == id_nino)
                      .order_by(Registro.semana.desc())).all()
     return [{"semana": r.semana, "accion": r.accion, "puntaje": r.puntaje,
-             "respuesta": r.respuesta, "razon": r.razon} for r in regs]
+             "respuesta": r.respuesta, "razon": r.razon,
+             # Mensaje escrito o audio del cuidador y lo que decidió el clasificador local
+             "detalle": r.detalle, "razon_decisor": r.razon_decisor,
+             "alarma": bool(r.alarma), "derivar": bool(r.derivar)} for r in regs]
 
 
 @panel.get("/establecimientos/{est}/indicadores")

@@ -20,4 +20,6 @@ datos_procesados/
 
 # Modelos entrenados pesados
 modelo/*.joblib
-
+# Prueba del decisor: puede tener mensajes reales de cuidadores
+clasificador/prueba.csv
+clasificador/resultados_prueba.csv

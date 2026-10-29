@@ -71,6 +71,12 @@ class Registro(Base):
     respuesta: Mapped[str] = mapped_column(String, default="sin_respuesta")
     razon: Mapped[str | None] = mapped_column(String, nullable=True)
     fecha_respuesta: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # "Otro motivo": lo que escribió el cuidador y lo que decidió el clasificador local
+    detalle: Mapped[str | None] = mapped_column(Text, nullable=True)
+    razon_decisor: Mapped[str | None] = mapped_column(String, nullable=True)
+    prob_razon_decisor: Mapped[float | None] = mapped_column(Float, nullable=True)
+    alarma: Mapped[bool] = mapped_column(Boolean, default=False)
+    derivar: Mapped[bool] = mapped_column(Boolean, default=False)
 
 
 def crear_motor(url: str = config.DATABASE_URL):
@@ -81,7 +87,26 @@ def crear_motor(url: str = config.DATABASE_URL):
         def _activar_claves_foraneas(conexion, _):
             conexion.execute("PRAGMA foreign_keys=ON")  # SQLite no las aplica por defecto
     Base.metadata.create_all(motor)
+    if url.startswith("sqlite"):
+        _agregar_columnas_nuevas(motor)
     return motor
+
+
+_COLUMNAS_NUEVAS = {
+    "registro_semanal": {"detalle": "TEXT", "razon_decisor": "VARCHAR",
+                         "prob_razon_decisor": "FLOAT", "alarma": "BOOLEAN DEFAULT 0",
+                         "derivar": "BOOLEAN DEFAULT 0"},
+}
+
+
+def _agregar_columnas_nuevas(motor):
+    """create_all no agrega columnas a tablas que ya existen: se agregan aquí."""
+    with motor.begin() as con:
+        for tabla, columnas in _COLUMNAS_NUEVAS.items():
+            existentes = {fila[1] for fila in con.exec_driver_sql(f"PRAGMA table_info({tabla})")}
+            for nombre, tipo in columnas.items():
+                if nombre not in existentes:
+                    con.exec_driver_sql(f"ALTER TABLE {tabla} ADD COLUMN {nombre} {tipo}")
 
 
 def fabrica_sesiones(motor):

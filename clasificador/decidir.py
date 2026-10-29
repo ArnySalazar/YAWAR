@@ -47,7 +47,7 @@ def _prob_opciones(prompt: str, opciones: list[str]) -> dict[str, float]:
     }).encode()
     pedido = urllib.request.Request(OLLAMA_URL, data=cuerpo,
                                     headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(pedido, timeout=60) as r:
+    with urllib.request.urlopen(pedido, timeout=20) as r:
         resp = json.load(r)
     tops = resp["logprobs"][0]["top_logprobs"]
     p = {o: 0.0 for o in opciones}

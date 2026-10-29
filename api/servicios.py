@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 from api import config
 from api.db import Mensaje, MensajeEntrante, Nino, Registro, ahora, semana_iso
 from bot import mensajes, whatsapp
+from clasificador.decidir import decidir
 from modelo.puntuar import puntuar
 
 COLUMNAS_PADRON = ["id_nino", "establecimiento_id", "alias_cuidador", "telefono", "edad_meses",
@@ -79,7 +80,14 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
 
 def _necesita_seguimiento(sesion: Session, id_nino: str, hoy: datetime) -> tuple[int, str] | None:
     """Escalamiento: devuelve (nivel, motivo) si el niño debe subir en la lista.
-    Nivel 0 = reportó un problema o que no le dio; nivel 1 = no respondió a tiempo."""
+    Nivel 0 = posible señal de peligro, reportó un problema o que no le dio;
+    nivel 1 = no respondió a tiempo."""
+    alarma = sesion.scalars(
+        select(Registro).where(Registro.id_nino == id_nino, Registro.alarma.is_(True),
+                               Registro.semana >= semana_iso(hoy - timedelta(days=7)))
+        .order_by(Registro.semana.desc())).first()
+    if alarma is not None:
+        return 0, f"POSIBLE SEÑAL DE PELIGRO, revisar hoy: \"{(alarma.detalle or '')[:120]}\""
     ultimo = sesion.scalars(
         select(Registro).where(Registro.id_nino == id_nino,
                                Registro.semana < semana_iso(hoy))
@@ -119,7 +127,8 @@ def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
                       "seguimiento": seg[1] if seg else None})
     # Primero quienes reportaron un problema, luego quienes no respondieron, luego el resto;
     # dentro de cada grupo, mayor puntaje primero
-    filas.sort(key=lambda f: (f["nivel"], -f["puntaje"]))
+    filas.sort(key=lambda f: (f["nivel"], not str(f["seguimiento"]).startswith("POSIBLE SEÑAL"),
+                              -f["puntaje"]))
 
     for orden, f in enumerate(filas, start=1):
         f["orden"] = orden
@@ -210,8 +219,26 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
             sesion.commit()
             whatsapp.enviar_texto(tel, mensajes.TEXTO_ALTA)
         else:
-            whatsapp.enviar_texto(tel, mensajes.TEXTO_AYUDA)
+            pendiente = _otro_motivo_pendiente(sesion, ninos)
+            if pendiente is None:
+                whatsapp.enviar_texto(tel, mensajes.TEXTO_AYUDA)
+            else:
+                d = decidir(msg["valor"])
+                pendiente.detalle = msg["valor"].strip()[:1000]
+                pendiente.razon_decisor, pendiente.prob_razon_decisor = d["razon"], d["prob_razon"]
+                pendiente.alarma, pendiente.derivar = d["alarma"], d["derivar"]
+                sesion.commit()
+                whatsapp.enviar_texto(tel, mensajes.TEXTO_ALARMA if d["alarma"]
+                                      else mensajes.TEXTO_GRACIAS_DETALLE)
     return True
+
+
+def _otro_motivo_pendiente(sesion: Session, ninos: list) -> "Registro | None":
+    """El registro más reciente de este teléfono que eligió "Otro motivo" y aún no lo explicó."""
+    return sesion.scalars(
+        select(Registro).where(Registro.id_nino.in_([n.id_nino for n in ninos]),
+                               Registro.razon == "otro", Registro.detalle.is_(None))
+        .order_by(Registro.semana.desc())).first()
 
 
 def actualizar_estado(sesion: Session, wa_id: str, estado: str) -> None:
@@ -256,10 +283,11 @@ def registrar_respuesta(sesion: Session, resp: dict, momento: datetime | None = 
         if razon in mensajes.RAZONES:
             reg.razon = razon
             sesion.commit()
+            texto = mensajes.TEXTO_PIDE_DETALLE if razon == "otro" else mensajes.TEXTO_GRACIAS_RAZON
             try:
-                whatsapp.enviar_texto(nino.telefono, mensajes.TEXTO_GRACIAS_RAZON)
+                whatsapp.enviar_texto(nino.telefono, texto)
             except Exception as e:
-                log.error("No se pudo agradecer a %s: %s", nino.id_nino, e)
+                log.error("No se pudo responder a %s: %s", nino.id_nino, e)
     sesion.commit()
 
 

@@ -36,6 +36,17 @@ TEXTO_AYUDA = (
 PALABRAS_BAJA = {"baja", "stop", "no quiero", "no quiero mensajes", "cancelar"}
 PALABRAS_ALTA = {"alta"}
 
+TEXTO_PIDE_DETALLE = (
+    "Gracias. ¿Nos cuentas en un mensaje qué pasó? Así tu establecimiento sabrá cómo ayudarte."
+)
+TEXTO_GRACIAS_DETALLE = "Gracias por contarnos. Una persona de tu establecimiento lo revisará."
+# Texto fijo de seguridad (no es consejo clínico): debe revisarlo el asesor de salud.
+TEXTO_ALARMA = (
+    "Gracias por contarnos. Una persona de tu establecimiento lo revisará. "
+    "Si tu niño o niña no puede tomar ni lactar, vomita todo, convulsiona o no despierta, "
+    "llévalo de inmediato al establecimiento de salud o llama al 106 (SAMU)."
+)
+
 TEXTO_GRACIAS_RAZON = (
     "Gracias por contarnos. Tu respuesta nos ayuda a mejorar este seguimiento."
 )

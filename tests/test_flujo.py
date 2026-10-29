@@ -7,6 +7,7 @@ from pathlib import Path
 os.environ["MODO_PRUEBA"] = "1"
 os.environ["DATABASE_URL"] = "sqlite:///" + os.path.join(tempfile.mkdtemp(), "prueba.db")
 os.environ["API_CLAVE"] = "clave-de-prueba"
+os.environ["WA_APP_SECRET"] = ""  # las pruebas no firman el webhook
 
 import pytest  # noqa: E402
 from sqlalchemy import select  # noqa: E402
@@ -133,3 +134,31 @@ def test_api_exige_clave_y_webhook_responde_200():
     assert ok.json() == {"cargados": 10}
     # Un webhook con contenido raro no debe devolver error (Meta reintentaría)
     assert c.post("/webhook", json={"entry": "basura"}).status_code == 200
+
+
+def test_otro_motivo_con_alarma_sube_primero(s, monkeypatch):
+    monkeypatch.setattr(servicios, "decidir", lambda t: {
+        "razon": "otro", "prob_razon": 0.9, "alarma": True, "prob_alarma": 0.99,
+        "derivar": True, "motivo_derivar": "posible señal de peligro"})
+    servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)
+    servicios.procesar_entrante(s, boton("51000000002", f"problema|N0002|{SEM}"), LUNES)
+    servicios.procesar_entrante(s, {"wa_id": "wamid.o1", "telefono": "51000000002",
+                                    "tipo": "interactive", "valor": f"razon:otro|N0002|{SEM}"}, LUNES)
+    assert "cuentas" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]  # pidió el detalle
+    servicios.procesar_entrante(s, texto("51000000002", "no quiere lactar y está muy decaído"), LUNES)
+    reg = s.scalars(select(Registro).where(Registro.id_nino == "N0002", Registro.semana == SEM)).one()
+    assert reg.detalle.startswith("no quiere lactar") and reg.alarma and reg.derivar
+    assert "106" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]  # mensaje fijo de seguridad
+    lista = servicios.generar_lista(s, "EESS01", capacidad=1, hoy=LUNES)
+    assert lista[0]["id_nino"] == "N0002" and lista[0]["seguimiento"].startswith("POSIBLE SEÑAL")
+
+
+def test_otro_motivo_sin_ollama_deriva_a_persona(s):
+    from clasificador import decidir as mod
+    mod_url = mod.OLLAMA_URL
+    mod.OLLAMA_URL = "http://127.0.0.1:9/api/generate"  # puerto cerrado: simula Ollama apagado
+    try:
+        d = mod.decidir("se me cayó el frasco")
+    finally:
+        mod.OLLAMA_URL = mod_url
+    assert d["derivar"] and not d["alarma"] and "no disponible" in d["motivo_derivar"]

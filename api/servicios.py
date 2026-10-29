@@ -46,8 +46,8 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
     for i, fila in enumerate(df.to_dict("records"), start=2):  # fila 1 = encabezado
         try:
             edad = int(fila["edad_meses"])
-            if not 0 <= edad <= 59:
-                raise ValueError("edad_meses fuera de rango")
+            if not 6 <= edad <= 35:
+                raise ValueError("edad_meses debe estar entre 6 y 35")
             area = str(fila["area"]).strip().lower()
             if area not in ("urbano", "rural"):
                 raise ValueError("area debe ser urbano o rural")
@@ -59,13 +59,18 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
             acepta = str(fila.get("acepta_mensajes", "1")).strip().lower() not in ("0", "no", "false")
             nombre = fila.get("nombre_nino")
             nombre = str(nombre).strip() if pd.notna(nombre) and str(nombre).strip() else None
+            pres = fila.get("presentacion_hierro")
+            pres = str(pres).strip().lower() if pd.notna(pres) and str(pres).strip() else None
+            if pres and not set(pres.split("+")) <= {"gotas", "jarabe", "polvo"}:
+                raise ValueError("presentacion_hierro debe ser gotas, jarabe o polvo (o varias con +)")
+            trat = str(fila.get("en_tratamiento_anemia", "0")).strip().lower() in ("1", "si", "sí", "true")
             ninos.append(Nino(
                 id_nino=str(fila["id_nino"]), establecimiento_id=str(fila["establecimiento_id"]),
                 alias_cuidador=str(fila["alias_cuidador"]), nombre_nino=nombre,
                 telefono=tel, edad_meses=edad,
                 area=area, region=str(fila["region"]), altitud_msnm=int(fila["altitud_msnm"]),
                 controles_cred=int(fila["controles_cred"]), fecha_entrega_hierro=fecha,
-                acepta_mensajes=acepta))
+                acepta_mensajes=acepta, presentacion_hierro=pres, en_tratamiento_anemia=trat))
         except (ValueError, TypeError) as e:
             errores.append(f"fila {i}: {e}")
     if errores:
@@ -113,7 +118,8 @@ def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
     ninos = sesion.scalars(select(Nino).where(Nino.establecimiento_id == establecimiento_id)).all()
     if not ninos:
         return []
-    df = pd.DataFrame([{c: getattr(n, c) for c in COLUMNAS_PADRON} for n in ninos])
+    df = pd.DataFrame([{c: getattr(n, c) for c in [*COLUMNAS_PADRON, "presentacion_hierro"]}
+                       for n in ninos])
     puntos = puntuar(df).set_index("id_nino")
 
     filas = []
@@ -122,13 +128,16 @@ def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
         filas.append({"id_nino": n.id_nino, "alias_cuidador": n.alias_cuidador,
                       "edad_meses": n.edad_meses,
                       "puntaje": float(puntos.loc[n.id_nino, "prob_no_consumo"]),
-                      "motivos": puntos.loc[n.id_nino, "motivos"],
+                      "motivos": ("en tratamiento de anemia; " if n.en_tratamiento_anemia else "")
+                                 + puntos.loc[n.id_nino, "motivos"],
+                      "tratamiento_anemia": bool(n.en_tratamiento_anemia),
                       "nivel": seg[0] if seg else 2,
                       "seguimiento": seg[1] if seg else None})
-    # Primero quienes reportaron un problema, luego quienes no respondieron, luego el resto;
-    # dentro de cada grupo, mayor puntaje primero
+    # Primero quienes reportaron un problema, luego quienes no respondieron, luego el resto.
+    # Dentro de cada grupo: posible señal de peligro, luego niños en tratamiento de anemia
+    # (más daño si dejan el hierro), luego mayor puntaje.
     filas.sort(key=lambda f: (f["nivel"], not str(f["seguimiento"]).startswith("POSIBLE SEÑAL"),
-                              -f["puntaje"]))
+                              not f["tratamiento_anemia"], -f["puntaje"]))
 
     for orden, f in enumerate(filas, start=1):
         f["orden"] = orden

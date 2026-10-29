@@ -30,6 +30,10 @@ class Nino(Base):
     fecha_entrega_hierro: Mapped[date | None] = mapped_column(Date, nullable=True)
     # Consentimiento: si el cuidador escribe BAJA, deja de recibir mensajes
     acepta_mensajes: Mapped[bool] = mapped_column(Boolean, default=True)
+    # Opcionales, de la libreta CRED: presentación del hierro ("gotas", "jarabe", "polvo",
+    # o varias con "+") y si el niño está en tratamiento de anemia (no en prevención)
+    presentacion_hierro: Mapped[str | None] = mapped_column(String, nullable=True)
+    en_tratamiento_anemia: Mapped[bool] = mapped_column(Boolean, default=False)
 
 
 class Mensaje(Base):
@@ -93,6 +97,7 @@ def crear_motor(url: str = config.DATABASE_URL):
 
 
 _COLUMNAS_NUEVAS = {
+    "ninos": {"presentacion_hierro": "VARCHAR", "en_tratamiento_anemia": "BOOLEAN DEFAULT 0"},
     "registro_semanal": {"detalle": "TEXT", "razon_decisor": "VARCHAR",
                          "prob_razon_decisor": "FLOAT", "alarma": "BOOLEAN DEFAULT 0",
                          "derivar": "BOOLEAN DEFAULT 0"},

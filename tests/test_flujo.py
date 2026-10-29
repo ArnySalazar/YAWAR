@@ -162,3 +162,18 @@ def test_otro_motivo_sin_ollama_deriva_a_persona(s):
     finally:
         mod.OLLAMA_URL = mod_url
     assert d["derivar"] and not d["alarma"] and "no disponible" in d["motivo_derivar"]
+
+
+def test_tratamiento_de_anemia_va_antes_dentro_del_grupo(s):
+    from api.db import Nino
+    n = s.get(Nino, "N0001")  # 8 meses: el modelo lo pone abajo
+    n.en_tratamiento_anemia = True
+    s.commit()
+    lista = servicios.generar_lista(s, "EESS01", capacidad=1, hoy=LUNES)
+    assert lista[0]["id_nino"] == "N0001" and lista[0]["motivos"].startswith("en tratamiento")
+
+
+def test_padron_rechaza_edad_fuera_de_6_a_35(s):
+    malo = PADRON.read_text().replace(",8,urbano", ",4,urbano", 1).encode()
+    with pytest.raises(ValueError, match="entre 6 y 35"):
+        servicios.cargar_padron(s, malo)

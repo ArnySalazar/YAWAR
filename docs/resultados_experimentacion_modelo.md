@@ -255,3 +255,12 @@ M4 no mejora PPV@20 frente a M3 y requiere ocho variables adicionales. Gradient 
 - Metadatos del artefacto: [`modelo/m3_produccion_metadata.json`](../modelo/m3_produccion_metadata.json).
 
 Se exportó un artefacto provisional para integración y priorización. Aún no debe considerarse definitivo ni interpretarse como una probabilidad absoluta calibrada.
+
+## Decisión de producción (29 de octubre de 2026)
+
+- El M3 logístico mejora al M2 en la prueba temporal 2024→2025: +1,71 puntos de PPV@20 (IC 95 %: +0,41 a +2,88).
+- Esa mejora proviene de dos variables que el establecimiento no registra con el mismo significado que ENDES:
+  - `n_cred_con_fecha`: en ENDES cuenta los controles con fecha en el carné que muestra la madre, lo que refleja cuánto cuida la familia el carné. En el padrón del establecimiento, todo control registrado tiene fecha.
+  - `lugar_cred_codigo`: en ENDES distingue MINSA, EsSalud o privado, y su ausencia marca a niños sin CRED registrado (el indicador de faltante está entre las variables más importantes del modelo ampliado). En el padrón de un establecimiento del MINSA es constante y nunca falta.
+- Decisión: el M2 sigue en producción (`modelo/puntuar.py`). El M3 queda como candidato para el modo silencioso del piloto, donde se verificará si esas variables pueden registrarse con el mismo significado antes de reemplazar al M2.
+- Las importancias de `importancias_candidato.csv` son del modelo ampliado: indican de dónde puede venir la ganancia, pero no la prueban para el M3.

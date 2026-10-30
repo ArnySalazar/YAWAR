@@ -5,15 +5,17 @@ import csv
 import io
 import logging
 import secrets
+from typing import Literal
+
+from pydantic import BaseModel, Field
 
 from fastapi import (APIRouter, Depends, FastAPI, File, Header, HTTPException, Query, Request,
                      UploadFile)
 from fastapi.responses import PlainTextResponse, StreamingResponse
-from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from api import config, servicios
-from api.db import Registro, ahora, crear_motor, fabrica_sesiones, semana_iso
+from api.db import ahora, crear_motor, fabrica_sesiones, semana_iso
 from bot import whatsapp
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -75,6 +77,12 @@ def exportar_lista(est: str, capacidad: int = Query(10, ge=0), s: Session = Depe
                              headers={"Content-Disposition": f"attachment; filename=lista_{est}.csv"})
 
 
+@panel.get("/establecimientos/{est}/lista")
+def consultar_lista(est: str, s: Session = Depends(sesion)):
+    """Lectura del plan y del estado actual; conserva los canales asignados y no escribe."""
+    return servicios.generar_lista(s, est, capacidad=0, guardar=False)
+
+
 @panel.post("/establecimientos/{est}/recordatorios")
 def enviar_recordatorios(est: str, s: Session = Depends(sesion)):
     return servicios.enviar_recordatorios(s, est)
@@ -82,13 +90,26 @@ def enviar_recordatorios(est: str, s: Session = Depends(sesion)):
 
 @panel.get("/ninos/{id_nino}/historial")
 def historial(id_nino: str, s: Session = Depends(sesion)):
-    regs = s.scalars(select(Registro).where(Registro.id_nino == id_nino)
-                     .order_by(Registro.semana.desc())).all()
-    return [{"semana": r.semana, "accion": r.accion, "puntaje": r.puntaje,
-             "respuesta": r.respuesta, "razon": r.razon,
-             # Mensaje escrito o audio del cuidador y lo que decidió el clasificador local
-             "detalle": r.detalle, "razon_decisor": r.razon_decisor,
-             "alarma": bool(r.alarma), "derivar": bool(r.derivar)} for r in regs]
+    return servicios.historial_nino(s, id_nino)
+
+
+class AtencionEntrada(BaseModel):
+    medio: Literal["llamada", "visita_presencial"]
+    version_alarma: int = Field(ge=0, strict=True)
+
+
+@panel.post("/ninos/{id_nino}/alarmas/{registro_id}/atencion")
+def atender_alarma(id_nino: str, registro_id: int, entrada: AtencionEntrada,
+                   s: Session = Depends(sesion)):
+    """Registra una atención humana. No implica recuperación ni modifica la asignación de canal.
+
+    Repetir el mismo medio y versión devuelve la atención existente; una versión
+    desactualizada u otro medio para la misma atención responde 409.
+    """
+    try:
+        return servicios.atender_alarma(s, id_nino, registro_id, entrada.version_alarma, entrada.medio)
+    except servicios.ErrorAtencion as e:
+        raise HTTPException(e.codigo, str(e))
 
 
 @panel.get("/establecimientos/{est}/indicadores")

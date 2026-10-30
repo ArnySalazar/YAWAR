@@ -68,3 +68,11 @@ def leer_id_boton(valor: str) -> tuple[str, str, str] | None:
     if len(partes) != 3:
         return None
     return partes[0], partes[1], partes[2]
+
+
+TEXTO_NO_INSCRITO = (
+    "Hola, este es un mensaje automático de YAWAR, el seguimiento del hierro de los "
+    "establecimientos de salud. No pudimos reconocer este chat, así que nadie lo va a revisar. "
+    "Si tu niño o niña no puede tomar ni lactar, vomita todo, convulsiona o no despierta, "
+    "llévalo de inmediato al establecimiento de salud o llama al 106 (SAMU)."
+)

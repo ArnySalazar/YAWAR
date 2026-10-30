@@ -255,3 +255,80 @@ def test_sin_telefono_del_personal_no_se_envia_aviso(s, monkeypatch):
     monkeypatch.setattr(servicios, "decidir", _decisor_fijo(True))
     servicios.procesar_entrante(s, texto("51000000003", "convulsionó"), LUNES)
     assert not [m for m in whatsapp.BANDEJA_PRUEBA if m.get("type") == "template"]
+
+
+def test_numero_ajeno_recibe_orientacion_con_106_una_vez_al_dia(s):
+    servicios.procesar_entrante(s, texto("51999999999", "hola"), LUNES)
+    ultimo = whatsapp.BANDEJA_PRUEBA[-1]
+    assert ultimo["to"] == "51999999999"
+    assert "No pudimos reconocer" in ultimo["text"]["body"] and "106" in ultimo["text"]["body"]
+    n = len(whatsapp.BANDEJA_PRUEBA)
+    servicios.procesar_entrante(s, texto("51999999999", "hola?"), LUNES + timedelta(hours=1))
+    assert len(whatsapp.BANDEJA_PRUEBA) == n  # no se repite dentro de las 24 horas
+    servicios.procesar_entrante(s, texto("51999999999", "buenas"), LUNES + timedelta(hours=26))
+    assert len(whatsapp.BANDEJA_PRUEBA) == n + 1  # tras 24 horas sin escribir, sí
+
+
+def test_mensaje_sin_telefono_se_guarda_y_se_responde_por_usuario(s):
+    from api.db import MensajeEntrante
+    evento = {"entry": [{"changes": [{"value": {
+        "contacts": [{"profile": {"name": "Prueba", "username": "prueba"}, "user_id": "PE.123"}],
+        "messages": [{"from_user_id": "PE.123", "id": "wamid.bsuid1", "timestamp": "1",
+                      "type": "text", "text": {"body": "Hola"}}]}}]}]}
+    msg = whatsapp.extraer_mensajes(evento)[0]
+    assert msg["telefono"] == "usuario:PE.123"
+    servicios.procesar_entrante(s, msg, LUNES)
+    guardado = s.scalars(select(MensajeEntrante).where(MensajeEntrante.wa_id == "wamid.bsuid1")).one()
+    assert guardado.telefono == "usuario:PE.123"
+    ultimo = whatsapp.BANDEJA_PRUEBA[-1]
+    assert ultimo.get("recipient") == "PE.123" and "to" not in ultimo
+    assert "106" in ultimo["text"]["body"]
+
+
+def test_audio_de_numero_ajeno_recibe_orientacion(s):
+    servicios.procesar_entrante(s, {"wa_id": "wamid.a9", "telefono": "51999999998",
+                                    "tipo": "audio", "valor": ""}, LUNES)
+    assert "No pudimos reconocer" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+
+
+def test_numero_ajeno_no_pasa_por_el_decisor(s, monkeypatch):
+    def no_deberia_llamarse(t):
+        raise AssertionError("el decisor no debe leer mensajes de números fuera del padrón")
+    monkeypatch.setattr(servicios, "decidir", no_deberia_llamarse)
+    servicios.procesar_entrante(s, texto("51999999997", "mi bebe convulsiona"), LUNES)
+    assert "106" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+
+
+CABECERA = "id_nino,establecimiento_id,alias_cuidador,telefono,edad_meses,controles_cred,fecha_entrega_hierro,nombre_nino\n"
+
+
+def _sesion_vacia():
+    return fabrica_sesiones(crear_motor("sqlite://"))()
+
+
+def test_hermanos_sin_nombre_no_se_cargan():
+    s = _sesion_vacia()
+    csv = CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,\nH2,EESS01,Ana,51911111111,30,18,2026-10-01,\n"
+    with pytest.raises(ValueError, match="nombre_nino"):
+        servicios.cargar_padron(s, csv.encode())
+    assert s.scalars(select(Nino)).first() is None  # no se cargó nada
+
+
+def test_hermanos_con_nombres_distintos_se_cargan():
+    s = _sesion_vacia()
+    csv = CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,Luis\nH2,EESS01,Ana,51911111111,30,18,2026-10-01,Mia\n"
+    assert servicios.cargar_padron(s, csv.encode()) == 2
+
+
+def test_hermanos_con_el_mismo_nombre_no_se_cargan():
+    s = _sesion_vacia()
+    csv = CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,Luis\nH2,EESS01,Ana,51911111111,30,18,2026-10-01,luis\n"
+    with pytest.raises(ValueError, match="mismo nombre_nino"):
+        servicios.cargar_padron(s, csv.encode())
+
+
+def test_hermano_nuevo_sin_nombre_choca_con_uno_ya_cargado():
+    s = _sesion_vacia()
+    servicios.cargar_padron(s, (CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,Luis\n").encode())
+    with pytest.raises(ValueError, match="ya cargado"):
+        servicios.cargar_padron(s, (CABECERA + "H2,EESS01,Ana,51911111111,30,18,2026-10-01,\n").encode())

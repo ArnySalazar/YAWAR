@@ -8,6 +8,16 @@
 
 ## Preparar (una sola vez)
 
+La carpeta **8 · Atención de alarmas (manual)** añade lectura del plan, selección de una
+alarma pendiente desde el historial y registro de atención. Configura `id_nino` con un niño
+sintético con alarma (por ejemplo `SIM-ALARMA-EESS01-1`), define `probar_atenciones=true`
+en el entorno y ejecuta sus peticiones en orden. Por defecto esta carpeta se omite al correr
+la colección completa.
+La petición de historial guarda `registro_alarma_id` y `version_alarma`; `medio_atencion`
+acepta `llamada` (valor por defecto) o `visita_presencial`. El envío de atención se omite
+si no se ha seleccionado una alarma. Repetirlo con el mismo medio devuelve el mismo ID;
+otro medio o una versión antigua responde 409. No envía mensajes por WhatsApp.
+
 1. Usar **Postman de escritorio**. La versión web no llega a `localhost` sin el Postman Agent.
 2. **Import** → arrastrar los dos archivos `.json`.
 3. Arriba a la derecha, elegir el entorno **"YAWAR · local (modo prueba)"**.

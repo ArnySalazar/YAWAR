@@ -81,9 +81,22 @@ class Registro(Base):
     razon_decisor: Mapped[str | None] = mapped_column(String, nullable=True)
     prob_razon_decisor: Mapped[float | None] = mapped_column(Float, nullable=True)
     alarma: Mapped[bool] = mapped_column(Boolean, default=False)
+    alarma_version: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
     derivar: Mapped[bool] = mapped_column(Boolean, default=False)
     motivo_derivar: Mapped[str | None] = mapped_column(String, nullable=True)
     alerta_enviada: Mapped[bool] = mapped_column(Boolean, default=False)  # una sola por semana
+
+
+class AtencionAlarma(Base):
+    """Una atención por versión de alarma; conserva el aviso que se atendió."""
+    __tablename__ = "atenciones_alarma"
+    __table_args__ = (UniqueConstraint("registro_id", "version_alarma"),)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    registro_id: Mapped[int] = mapped_column(ForeignKey("registro_semanal.id"), index=True)
+    version_alarma: Mapped[int] = mapped_column(Integer)
+    medio: Mapped[str] = mapped_column(String)  # llamada | visita_presencial
+    atendido_en: Mapped[datetime] = mapped_column(DateTime)
+    detalle_alarma: Mapped[str | None] = mapped_column(Text, nullable=True)
 
 
 def crear_motor(url: str = config.DATABASE_URL):
@@ -100,11 +113,12 @@ def crear_motor(url: str = config.DATABASE_URL):
 
 
 _COLUMNAS_NUEVAS = {
-    "ninos": {"presentacion_hierro": "VARCHAR", "en_tratamiento_anemia": "BOOLEAN DEFAULT 0"},
+    "ninos": {"nombre_nino": "VARCHAR", "presentacion_hierro": "VARCHAR", "en_tratamiento_anemia": "BOOLEAN DEFAULT 0"},
     "registro_semanal": {"detalle": "TEXT", "razon_decisor": "VARCHAR",
                          "prob_razon_decisor": "FLOAT", "alarma": "BOOLEAN DEFAULT 0",
                          "derivar": "BOOLEAN DEFAULT 0", "motivo_derivar": "VARCHAR",
-                         "alerta_enviada": "BOOLEAN DEFAULT 0"},
+                         "alerta_enviada": "BOOLEAN DEFAULT 0",
+                         "alarma_version": "INTEGER NOT NULL DEFAULT 0"},
 }
 
 

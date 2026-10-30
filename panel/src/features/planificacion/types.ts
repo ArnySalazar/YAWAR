@@ -3,7 +3,7 @@
  * (POST /establecimientos/{id}/lista) y del historial de cada niño.
  * No hay agenda con horas, reasignación manual ni semanas pasadas: la API no los tiene.
  */
-import type { SemanaIso } from '@/api/yawar'
+import type { AlarmaPendiente, AtencionAlarma, SemanaIso } from '@/api/yawar'
 
 /** Canal asignado por la regla de corte: los N primeros a visita, el resto a WhatsApp. */
 export type FollowUpChannel = 'home_visit' | 'whatsapp'
@@ -34,6 +34,9 @@ export interface ChannelAssignment {
 }
 
 export interface PlannedChild {
+  inAnemiaTreatment: boolean
+  pendingAlarms?: AlarmaPendiente[]
+  alarmAttendances?: AtencionAlarma[]
   id: string
   /** Código del niño en el padrón, ej. N0001. */
   code: string

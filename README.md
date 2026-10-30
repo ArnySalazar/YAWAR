@@ -83,7 +83,7 @@ Si en el `.env` defines `API_CLAVE`, las rutas del panel piden el encabezado `X-
 
 ## Padrón
 
-CSV con una fila por niño. Obligatorias: `id_nino`, `establecimiento_id`, `alias_cuidador`, `telefono`, `edad_meses` (6 a 35), `controles_cred` (desde el nacimiento) y `fecha_entrega_hierro`. Opcionales: `presentacion_hierro`, `en_tratamiento_anemia`, `nombre_nino` y la geografía. Todo sale de la libreta CRED.
+CSV con una fila por niño. Obligatorias: `id_nino`, `establecimiento_id`, `alias_cuidador`, `telefono`, `edad_meses` (6 a 35), `controles_cred` (desde el nacimiento) y `fecha_entrega_hierro`. Opcionales: `presentacion_hierro`, `en_tratamiento_anemia`, `nombre_nino` y la geografía. Todo sale de la libreta CRED. Si un mismo teléfono tiene varios niños (hermanos), cada uno necesita un `nombre_nino` distinto: así cada mensaje semanal dice por qué niño se pregunta.
 
 ## Puntos de acceso de la API
 
@@ -106,7 +106,43 @@ Plantillas (categoría utilidad, español), aprobadas en Meta antes de usarse:
 
 El webhook necesita una URL pública con HTTPS apuntando a `/webhook`, con el mismo `WA_VERIFY_TOKEN` del `.env`. Si el cuidador escribe BAJA deja de recibir mensajes (ALTA para volver).
 
+## Atención de posibles señales de peligro
+
+En Planificación, **Atender** abre el detalle del niño. **Registrar atención** exige elegir
+**Llamada** o **Visita presencial**. El servidor registra la hora local de Lima y conserva
+la señal original, la versión atendida y el medio. Una atención indica que el personal atendió
+el aviso; no confirma recuperación. Una señal nueva vuelve a quedar pendiente, también dentro
+de la misma semana, y no borra atenciones anteriores.
+
+- `POST /ninos/{id}/alarmas/{registro_id}/atencion`, protegido con `X-API-Key` cuando está configurada.
+  Cuerpo: `{"medio":"llamada","version_alarma":1}`. Medios: `llamada` o `visita_presencial`.
+- `200`: atención guardada; repetir la misma versión y medio devuelve el mismo registro.
+- `404`: no existe ese registro para el niño; `409`: versión desactualizada o ya atendida por otro medio;
+  `422`: faltan datos o el medio/versión no son válidos. No se cambia una atención anterior.
+- Lista e historial incluyen las alarmas pendientes, sus identificadores/versiones y las atenciones.
+  `alarma=true` se conserva como dato histórico.
+- Indicadores incorpora `alarmas_pendientes` en la raíz: niños con al menos una alarma sin atender
+  hasta la semana consultada, incluidas semanas anteriores. Cada semana de `serie` añade
+  `alarmas_pendientes` y `alarmas_atendidas` (estado de la última versión de cada registro semanal).
+  El campo previo `alarmas` mantiene su significado histórico. Inicio muestra el total pendiente.
+- `GET /establecimientos/{id}/lista` consulta el estado sin escribir ni reasignar canales. El panel lo usa
+  después de registrar atención; **Generar planificación** sigue siendo la acción explícita de reasignación.
+
+Al reiniciar la API se crea `atenciones_alarma` y se agrega `alarma_version` sin borrar datos;
+las alarmas anteriores arrancan en versión 0 y pendientes. No hace falta reiniciar la demo.
+El historial de la ficha muestra todas las atenciones, aunque haya otra alarma pendiente.
+
+## WhatsApp en modo de pruebas
+
+1. Crear una app en Meta for Developers y agregar el producto WhatsApp. Meta da un número de prueba y permite registrar unos pocos números destinatarios: usar solo números del equipo.
+2. Copiar el token y el `phone_number_id` al `.env` y poner `MODO_PRUEBA=0`.
+3. Crear la plantilla `recordatorio_hierro` (categoría utilidad, español): cuerpo con la variable `{{1}}` para el alias y tres botones de respuesta rápida en este orden: **Sí le di**, **No le di**, **Tuve un problema**. Debe estar aprobada para poder enviarla.
+4. El webhook necesita una URL pública con HTTPS (por ejemplo, un túnel temporal) apuntando a `/webhook`, con el mismo `WA_VERIFY_TOKEN` del `.env`.
+
+Por qué una plantilla: WhatsApp solo permite iniciar una conversación con plantillas aprobadas. La lista de razones sí puede ser un mensaje libre porque se envía justo después de que la persona respondió.
+
 **Meta-alerta**: si en una semana un establecimiento envía o recibe menos del 30 % de su promedio reciente, o si el decisor no responde, el sistema lo avisa.
+
 
 ## Reglas del repositorio
 

@@ -32,6 +32,9 @@ export function buildWeeklyPlan(
   const children = ordenada.map(
     (fila): PlannedChild => ({
       id: fila.id_nino,
+      inAnemiaTreatment: fila.tratamiento_anemia === true,
+      pendingAlarms: fila.alarmas_pendientes,
+      alarmAttendances: fila.atenciones_alarma,
       code: fila.id_nino,
       ageMonths: fila.edad_meses,
       caregiverAlias: fila.alias_cuidador,
@@ -65,8 +68,13 @@ export function buildWeeklyPlan(
 
 export function lastReportFor(historial: SemanaHistorial[] | undefined, semanaActual: SemanaIso): CaregiverReport | null {
   const ultima = ultimaRespuesta(historial)
-  if (!ultima) return null
-  return { text: textoRespuesta(ultima.respuesta, ultima.razon), semana: ultima.semana, isThisWeek: ultima.semana === semanaActual }
+  if (ultima) {
+    return { text: textoRespuesta(ultima.respuesta, ultima.razon), semana: ultima.semana, isThisWeek: ultima.semana === semanaActual }
+  }
+  // No tocó botones pero escribió (o mandó un audio): no es "sin respuesta"
+  const escrito = historial?.find((h) => h.detalle)
+  if (!escrito) return null
+  return { text: 'Escribió un mensaje', semana: escrito.semana, isThisWeek: escrito.semana === semanaActual }
 }
 
 /** Agrega la última respuesta de cada cuidador; sin historiales (cargando), queda undefined. */

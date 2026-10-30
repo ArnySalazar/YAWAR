@@ -38,3 +38,8 @@ Esto deja los CSV y diccionarios en `endes_raw/<año>/extraido/<módulo>/`. `end
 El padrón acepta una columna opcional `acepta_mensajes` (1 o 0; por defecto 1).
 
 `padron_ejemplo.csv` es un padrón **simulado** de 10 niños para probar la API. Gian genera el padrón completo para la demo.
+
+`padron_demo_30.csv` agrega **30 niños ficticios** con edades de 6 a 35 meses, 10 en tratamiento,
+consentimiento explícito y campos opcionales. La guía de casos y el cargador de historial para una
+base separada están en [`docs/escenarios_demo_30.md`](../docs/escenarios_demo_30.md).
+Desde la raíz: `python -m scripts.preparar_demo_30`. No reemplaza la base activa ni envía WhatsApp.

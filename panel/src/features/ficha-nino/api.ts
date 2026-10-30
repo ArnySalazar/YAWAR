@@ -65,6 +65,8 @@ export function buildBotHistory(historial: SemanaHistorial[], semanaActual: Sema
   return deMasReciente(historial).map((s) => {
     const isCurrentWeek = s.semana === semanaActual
     return {
+      attendances: s.atenciones,
+      alarmPending: s.alarma_pendiente,
       semana: s.semana,
       status: statusFor(s.respuesta),
       respuesta: s.respuesta,

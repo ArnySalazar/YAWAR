@@ -26,6 +26,7 @@ export function toPrioritizedChildren(lista: FilaLista[]): PrioritizedChild[] {
       const signal = signalFor(fila)
       return {
         id: fila.id_nino,
+        pendingAlarms: fila.alarmas_pendientes,
         code: fila.id_nino,
         ageMonths: fila.edad_meses,
         caregiverAlias: fila.alias_cuidador,
@@ -66,6 +67,12 @@ export function buildHomeOverview(
 }
 
 /* ------------------------------------------------------------------ indicadores */
+
+/** La API actual informa alarmas por semana; admite también el contador en la raíz. */
+export function dangerCountFor(indicadores: Indicadores | undefined): number {
+  return indicadores?.alarmas_pendientes ?? indicadores?.serie.at(-1)?.alarmas_pendientes
+    ?? indicadores?.alarmas ?? indicadores?.serie.at(-1)?.alarmas ?? 0
+}
 
 /** Respuestas al recordatorio de la semana en curso: la última semana de la serie de indicadores. */
 export function buildWhatsappStats(indicadores: Pick<Indicadores, 'serie'>): WhatsappStats | null {

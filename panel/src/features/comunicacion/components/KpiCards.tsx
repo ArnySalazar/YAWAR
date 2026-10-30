@@ -126,7 +126,7 @@ export function KpiCards({ summary, counts, withoutRecord }: KpiCardsProps) {
           }
         />
         <KpiCard
-          label="Reportaron problema"
+          label="Problema o posible peligro"
           value={countOf('problema')}
           valueClass="text-brand"
           suffix="cuidadores"
@@ -137,7 +137,7 @@ export function KpiCards({ summary, counts, withoutRecord }: KpiCardsProps) {
           }
           footer={
             <IconCaption icon={problemIcon} width={14.667} height={12.667}>
-              Respondieron «Tuve un problema»
+              «Tuve un problema», mensaje para leer o posible peligro
             </IconCaption>
           }
         />

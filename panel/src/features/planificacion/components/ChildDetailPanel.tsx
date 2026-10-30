@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { paths } from '@/routes/paths'
 import { channelLabel, reportWhen } from '../utils'
 import type { PlannedChild, PriorityRule } from '../types'
+import { AtencionAlarmaForm } from './AtencionAlarmaForm'
+import { AtencionAlarmaResumen } from '@/components/ui/AtencionAlarmaResumen'
 
 const ruleTitle: Record<PriorityRule, string> = {
   R1: 'Regla 1 · Dificultad reportada (Máxima)',
@@ -24,6 +26,10 @@ export function ChildDetailPanel({ child }: { child: PlannedChild }) {
   const isVisit = child.assignment.channel === 'home_visit'
   return (
     <div className="flex flex-col gap-4 rounded-[12px] border border-line bg-white p-4">
+      {child.pendingAlarms?.map((alarma) => (
+        <AtencionAlarmaForm key={`${alarma.registro_id}-${alarma.version_alarma}`} idNino={child.id} alarma={alarma} />
+      ))}
+      {child.alarmAttendances?.map((atencion) => <AtencionAlarmaResumen key={atencion.id} atencion={atencion} />)}
       <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <Fact label="Cuidador">{child.caregiverAlias}</Fact>
         <Fact label="Criterio aplicado">

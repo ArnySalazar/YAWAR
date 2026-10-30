@@ -23,13 +23,18 @@ class Nino(Base):
     nombre_nino: Mapped[str | None] = mapped_column(String, nullable=True)  # apodo que autoriza la madre
     telefono: Mapped[str] = mapped_column(String, index=True)
     edad_meses: Mapped[int] = mapped_column(Integer)
-    area: Mapped[str] = mapped_column(String)
-    region: Mapped[str] = mapped_column(String)
-    altitud_msnm: Mapped[int] = mapped_column(Integer)
+    # Geografía: opcional (el modelo no la usa; se guarda solo si el padrón la trae)
+    area: Mapped[str | None] = mapped_column(String, nullable=True)
+    region: Mapped[str | None] = mapped_column(String, nullable=True)
+    altitud_msnm: Mapped[int | None] = mapped_column(Integer, nullable=True)
     controles_cred: Mapped[int] = mapped_column(Integer)
     fecha_entrega_hierro: Mapped[date | None] = mapped_column(Date, nullable=True)
     # Consentimiento: si el cuidador escribe BAJA, deja de recibir mensajes
     acepta_mensajes: Mapped[bool] = mapped_column(Boolean, default=True)
+    # Opcionales, de la libreta CRED: presentación del hierro ("gotas", "jarabe", "polvo",
+    # o varias con "+") y si el niño está en tratamiento de anemia (no en prevención)
+    presentacion_hierro: Mapped[str | None] = mapped_column(String, nullable=True)
+    en_tratamiento_anemia: Mapped[bool] = mapped_column(Boolean, default=False)
 
 
 class Mensaje(Base):
@@ -71,6 +76,14 @@ class Registro(Base):
     respuesta: Mapped[str] = mapped_column(String, default="sin_respuesta")
     razon: Mapped[str | None] = mapped_column(String, nullable=True)
     fecha_respuesta: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    # "Otro motivo": lo que escribió el cuidador y lo que decidió el clasificador local
+    detalle: Mapped[str | None] = mapped_column(Text, nullable=True)
+    razon_decisor: Mapped[str | None] = mapped_column(String, nullable=True)
+    prob_razon_decisor: Mapped[float | None] = mapped_column(Float, nullable=True)
+    alarma: Mapped[bool] = mapped_column(Boolean, default=False)
+    derivar: Mapped[bool] = mapped_column(Boolean, default=False)
+    motivo_derivar: Mapped[str | None] = mapped_column(String, nullable=True)
+    alerta_enviada: Mapped[bool] = mapped_column(Boolean, default=False)  # una sola por semana
 
 
 def crear_motor(url: str = config.DATABASE_URL):
@@ -81,7 +94,28 @@ def crear_motor(url: str = config.DATABASE_URL):
         def _activar_claves_foraneas(conexion, _):
             conexion.execute("PRAGMA foreign_keys=ON")  # SQLite no las aplica por defecto
     Base.metadata.create_all(motor)
+    if url.startswith("sqlite"):
+        _agregar_columnas_nuevas(motor)
     return motor
+
+
+_COLUMNAS_NUEVAS = {
+    "ninos": {"presentacion_hierro": "VARCHAR", "en_tratamiento_anemia": "BOOLEAN DEFAULT 0"},
+    "registro_semanal": {"detalle": "TEXT", "razon_decisor": "VARCHAR",
+                         "prob_razon_decisor": "FLOAT", "alarma": "BOOLEAN DEFAULT 0",
+                         "derivar": "BOOLEAN DEFAULT 0", "motivo_derivar": "VARCHAR",
+                         "alerta_enviada": "BOOLEAN DEFAULT 0"},
+}
+
+
+def _agregar_columnas_nuevas(motor):
+    """create_all no agrega columnas a tablas que ya existen: se agregan aquí."""
+    with motor.begin() as con:
+        for tabla, columnas in _COLUMNAS_NUEVAS.items():
+            existentes = {fila[1] for fila in con.exec_driver_sql(f"PRAGMA table_info({tabla})")}
+            for nombre, tipo in columnas.items():
+                if nombre not in existentes:
+                    con.exec_driver_sql(f"ALTER TABLE {tabla} ADD COLUMN {nombre} {tipo}")
 
 
 def fabrica_sesiones(motor):

@@ -33,7 +33,7 @@ describe('Adaptador de la Ficha del niño', () => {
       semana: '2026-W43',
       status: 'alerta',
       answer: 'Tuve un problema: Estreñimiento',
-      outcome: 'Se envió la lista de motivos. Prioridad R1 en la lista de la semana siguiente.',
+      outcome: 'Se envió la lista de motivos. Prioridad R1 en la lista desde esta misma semana.',
       channel: 'whatsapp',
       riskScore: 0.571,
       isCurrentWeek: true,
@@ -163,7 +163,7 @@ describe('Pantalla de la Ficha del niño', () => {
     expect(within(panel).getByText('Completado')).toBeInTheDocument()
     expect(within(panel).getAllByText('Sin respuesta').length).toBeGreaterThan(0)
     expect(
-      within(panel).getByText('Acción del sistema: Se envió la lista de motivos. Prioridad R1 en la lista de la semana siguiente.'),
+      within(panel).getByText('Acción del sistema: Se envió la lista de motivos. Prioridad R1 en la lista desde esta misma semana.'),
     ).toBeInTheDocument()
     expect(await within(panel).findByText('Semana en curso: aún no responde.')).toBeInTheDocument()
     expect(within(panel).getByText('Acción de esa semana: Visita domiciliaria · Riesgo de no consumo: 28%')).toBeInTheDocument()

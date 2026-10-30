@@ -32,4 +32,9 @@ API_CLAVE = os.getenv("API_CLAVE", "")  # si se define, el panel debe enviar el 
 ZONA_HORARIA = os.getenv("ZONA_HORARIA", "America/Lima")
 
 DIAS_SIN_RESPUESTA = int(os.getenv("DIAS_SIN_RESPUESTA", "7"))
+
+# Aviso inmediato al personal de CRED cuando hay una posible señal de peligro.
+# Teléfonos separados por coma; si está vacío, no se envía nada (solo se ve en el panel).
+CRED_TELEFONOS_ALERTA = [t.strip() for t in os.getenv("CRED_TELEFONOS_ALERTA", "").split(",") if t.strip()]
+WA_PLANTILLA_ALERTA = os.getenv("WA_PLANTILLA_ALERTA", "alerta_personal_cred")
 UMBRAL_META_ALERTA = float(os.getenv("UMBRAL_META_ALERTA", "0.3"))

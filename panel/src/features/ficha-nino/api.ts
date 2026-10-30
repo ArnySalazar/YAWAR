@@ -35,16 +35,16 @@ export function statusFor(respuesta: Respuesta): WeeklyResponseStatus {
 
 /**
  * Qué hizo el sistema con la respuesta. Es una regla fija: los textos que envió el bot no se
- * guardan. Después de "No le di" o "Tuve un problema" el bot manda la lista de motivos, y la lista
- * de la semana siguiente sube al niño a la Regla 1.
+ * guardan. Después de "No le di" o "Tuve un problema" el bot manda la lista de motivos, y el niño
+ * sube a la Regla 1 desde esa misma semana.
  */
 export function outcomeFor(respuesta: Respuesta, razon: Razon | null, isCurrentWeek: boolean) {
   switch (respuesta) {
     case 'problema':
     case 'no_le_di':
       return razon
-        ? 'Se envió la lista de motivos. Prioridad R1 en la lista de la semana siguiente.'
-        : 'Se envió la lista de motivos (no eligió ninguno). Prioridad R1 en la lista de la semana siguiente.'
+        ? 'Se envió la lista de motivos. Prioridad R1 en la lista desde esta misma semana.'
+        : 'Se envió la lista de motivos (no eligió ninguno). Prioridad R1 en la lista desde esta misma semana.'
     case 'si_le_di':
       return 'Sin dificultades reportadas.'
     default:
@@ -68,8 +68,16 @@ export function buildBotHistory(historial: SemanaHistorial[], semanaActual: Sema
       semana: s.semana,
       status: statusFor(s.respuesta),
       respuesta: s.respuesta,
-      answer: textoRespuesta(s.respuesta, s.razon),
-      outcome: outcomeFor(s.respuesta, s.razon, isCurrentWeek),
+      answer: !s.detalle
+        ? textoRespuesta(s.respuesta, s.razon)
+        : s.detalle.startsWith('(')
+          ? s.detalle.slice(1, -1).replace(/^envió/, 'Envió')
+          : `${s.respuesta === 'sin_respuesta' ? 'Escribió' : textoRespuesta(s.respuesta, s.razon)}: «${s.detalle}»`,
+      outcome: s.alarma
+        ? 'Posible señal de peligro: se envió el texto de seguridad (106) y el niño pasó al primer lugar de la lista.'
+        : s.derivar
+          ? 'Mensaje para que lo lea una persona; el niño subió en la lista.'
+          : outcomeFor(s.respuesta, s.razon, isCurrentWeek),
       channel: s.accion ? channelOf(s.accion) : null,
       riskScore: s.puntaje,
       isCurrentWeek,

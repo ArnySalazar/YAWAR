@@ -11,10 +11,15 @@ from sqlalchemy.orm import Session
 from api import config
 from api.db import Mensaje, MensajeEntrante, Nino, Registro, ahora, semana_iso
 from bot import mensajes, whatsapp
+from clasificador.decidir import decidir
 from modelo.puntuar import puntuar
 
 COLUMNAS_PADRON = ["id_nino", "establecimiento_id", "alias_cuidador", "telefono", "edad_meses",
-                   "area", "region", "altitud_msnm", "controles_cred", "fecha_entrega_hierro"]
+                   "controles_cred", "fecha_entrega_hierro"]
+# Opcionales: geografía (no la usa el modelo), presentación del hierro, tratamiento de anemia,
+# apodo del niño y consentimiento
+COLUMNAS_OPCIONALES = ["area", "region", "altitud_msnm", "presentacion_hierro",
+                       "en_tratamiento_anemia", "nombre_nino", "acepta_mensajes"]
 
 log = logging.getLogger("yawar")
 
@@ -45,11 +50,16 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
     for i, fila in enumerate(df.to_dict("records"), start=2):  # fila 1 = encabezado
         try:
             edad = int(fila["edad_meses"])
-            if not 0 <= edad <= 59:
-                raise ValueError("edad_meses fuera de rango")
-            area = str(fila["area"]).strip().lower()
-            if area not in ("urbano", "rural"):
+            if not 6 <= edad <= 35:
+                raise ValueError("edad_meses debe estar entre 6 y 35")
+            area = fila.get("area")
+            area = str(area).strip().lower() if pd.notna(area) and str(area).strip() else None
+            if area is not None and area not in ("urbano", "rural"):
                 raise ValueError("area debe ser urbano o rural")
+            region = fila.get("region")
+            region = str(region).strip() if pd.notna(region) and str(region).strip() else None
+            alt = fila.get("altitud_msnm")
+            alt = int(alt) if pd.notna(alt) and str(alt).strip() else None
             tel = normalizar_telefono(fila["telefono"])
             if len(tel) < 9:
                 raise ValueError("telefono inválido")
@@ -58,13 +68,18 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
             acepta = str(fila.get("acepta_mensajes", "1")).strip().lower() not in ("0", "no", "false")
             nombre = fila.get("nombre_nino")
             nombre = str(nombre).strip() if pd.notna(nombre) and str(nombre).strip() else None
+            pres = fila.get("presentacion_hierro")
+            pres = str(pres).strip().lower() if pd.notna(pres) and str(pres).strip() else None
+            if pres and not set(pres.split("+")) <= {"gotas", "jarabe", "polvo"}:
+                raise ValueError("presentacion_hierro debe ser gotas, jarabe o polvo (o varias con +)")
+            trat = str(fila.get("en_tratamiento_anemia", "0")).strip().lower() in ("1", "si", "sí", "true")
             ninos.append(Nino(
                 id_nino=str(fila["id_nino"]), establecimiento_id=str(fila["establecimiento_id"]),
                 alias_cuidador=str(fila["alias_cuidador"]), nombre_nino=nombre,
                 telefono=tel, edad_meses=edad,
-                area=area, region=str(fila["region"]), altitud_msnm=int(fila["altitud_msnm"]),
+                area=area, region=region, altitud_msnm=alt,
                 controles_cred=int(fila["controles_cred"]), fecha_entrega_hierro=fecha,
-                acepta_mensajes=acepta))
+                acepta_mensajes=acepta, presentacion_hierro=pres, en_tratamiento_anemia=trat))
         except (ValueError, TypeError) as e:
             errores.append(f"fila {i}: {e}")
     if errores:
@@ -79,7 +94,27 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
 
 def _necesita_seguimiento(sesion: Session, id_nino: str, hoy: datetime) -> tuple[int, str] | None:
     """Escalamiento: devuelve (nivel, motivo) si el niño debe subir en la lista.
-    Nivel 0 = reportó un problema o que no le dio; nivel 1 = no respondió a tiempo."""
+    Nivel 0 = posible señal de peligro, reportó un problema o que no le dio;
+    nivel 1 = no respondió a tiempo."""
+    desde = semana_iso(hoy - timedelta(days=7))
+    alarma = sesion.scalars(
+        select(Registro).where(Registro.id_nino == id_nino, Registro.alarma.is_(True),
+                               Registro.semana >= desde)
+        .order_by(Registro.semana.desc())).first()
+    if alarma is not None:
+        return 0, f"POSIBLE SEÑAL DE PELIGRO, revisar hoy: \"{(alarma.detalle or '')[:120]}\""
+    por_leer = sesion.scalars(
+        select(Registro).where(Registro.id_nino == id_nino, Registro.derivar.is_(True),
+                               Registro.semana >= desde)
+        .order_by(Registro.semana.desc())).first()
+    if por_leer is not None:
+        return 0, f"mensaje para leer: \"{(por_leer.detalle or '')[:120]}\""
+    # Respuesta de esta misma semana: el niño sube apenas el cuidador avisa
+    actual = sesion.scalars(
+        select(Registro).where(Registro.id_nino == id_nino, Registro.semana == semana_iso(hoy),
+                               Registro.respuesta.in_(("no_le_di", "problema")))).first()
+    if actual is not None:
+        return 0, f"esta semana respondió: {mensajes.RESPUESTAS[actual.respuesta]}"
     ultimo = sesion.scalars(
         select(Registro).where(Registro.id_nino == id_nino,
                                Registro.semana < semana_iso(hoy))
@@ -105,7 +140,8 @@ def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
     ninos = sesion.scalars(select(Nino).where(Nino.establecimiento_id == establecimiento_id)).all()
     if not ninos:
         return []
-    df = pd.DataFrame([{c: getattr(n, c) for c in COLUMNAS_PADRON} for n in ninos])
+    df = pd.DataFrame([{c: getattr(n, c) for c in [*COLUMNAS_PADRON, "presentacion_hierro"]}
+                       for n in ninos])
     puntos = puntuar(df).set_index("id_nino")
 
     filas = []
@@ -114,12 +150,17 @@ def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
         filas.append({"id_nino": n.id_nino, "alias_cuidador": n.alias_cuidador,
                       "edad_meses": n.edad_meses,
                       "puntaje": float(puntos.loc[n.id_nino, "prob_no_consumo"]),
-                      "motivos": puntos.loc[n.id_nino, "motivos"],
+                      "motivos": ("en tratamiento de anemia; " if n.en_tratamiento_anemia else "")
+                                 + puntos.loc[n.id_nino, "motivos"],
+                      "tratamiento_anemia": bool(n.en_tratamiento_anemia),
                       "nivel": seg[0] if seg else 2,
                       "seguimiento": seg[1] if seg else None})
-    # Primero quienes reportaron un problema, luego quienes no respondieron, luego el resto;
-    # dentro de cada grupo, mayor puntaje primero
-    filas.sort(key=lambda f: (f["nivel"], -f["puntaje"]))
+    # Primero quienes reportaron un problema, luego quienes no respondieron, luego el resto.
+    # Dentro de cada grupo: posible señal de peligro, luego niños en tratamiento de anemia
+    # (más daño si dejan el hierro), luego mayor puntaje.
+    filas.sort(key=lambda f: (f["nivel"], not str(f["seguimiento"]).startswith("POSIBLE SEÑAL"),
+                              not str(f["seguimiento"]).startswith("mensaje para leer"),
+                              not f["tratamiento_anemia"], -f["puntaje"]))
 
     for orden, f in enumerate(filas, start=1):
         f["orden"] = orden
@@ -194,6 +235,18 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
             opcion, id_nino, semana = leido
             registrar_respuesta(sesion, {"telefono": tel, "opcion": opcion,
                                          "id_nino": id_nino, "semana": semana}, momento)
+    elif msg["tipo"] != "text":  # audio, imagen, sticker...: no se puede leer
+        ninos = sesion.scalars(select(Nino).where(Nino.telefono == tel)).all()
+        if ninos:
+            for n in ninos:
+                reg = _registro_de_semana(sesion, n.id_nino, semana_iso(momento))
+                reg.detalle = _sumar_detalle(reg.detalle, f"(envió un {msg['tipo']} que el sistema no puede leer)")
+                reg.derivar, reg.motivo_derivar = True, "mensaje que no es texto"
+            sesion.commit()
+            whatsapp.enviar_texto(tel, mensajes.TEXTO_NO_LEE_AUDIO)
+            for n in ninos:
+                _avisar_personal(sesion, _registro_de_semana(sesion, n.id_nino, semana_iso(momento)),
+                                 "mensaje de voz o imagen que el sistema no puede leer")
     elif msg["tipo"] == "text":
         texto = msg["valor"].strip().lower()
         ninos = sesion.scalars(select(Nino).where(Nino.telefono == tel)).all()
@@ -210,8 +263,74 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
             sesion.commit()
             whatsapp.enviar_texto(tel, mensajes.TEXTO_ALTA)
         else:
-            whatsapp.enviar_texto(tel, mensajes.TEXTO_AYUDA)
+            pendiente = _otro_motivo_pendiente(sesion, ninos, momento)
+            d = decidir(msg["valor"])
+            if pendiente is not None:
+                pendiente.detalle = msg["valor"].strip()[:1000]
+                pendiente.razon_decisor, pendiente.prob_razon_decisor = d["razon"], d["prob_razon"]
+                pendiente.alarma, pendiente.derivar = d["alarma"], d["derivar"]
+                pendiente.motivo_derivar = d["motivo_derivar"]
+                sesion.commit()
+                whatsapp.enviar_texto(tel, mensajes.TEXTO_ALARMA if d["alarma"]
+                                      else mensajes.TEXTO_GRACIAS_DETALLE)
+                if d["alarma"]:
+                    _avisar_personal(sesion, pendiente, "posible señal de peligro")
+            elif d["alarma"]:
+                # Escribió sin que se le preguntara y describe un peligro: no se ignora
+                for n in ninos:
+                    reg = _registro_de_semana(sesion, n.id_nino, semana_iso(momento))
+                    reg.detalle = _sumar_detalle(reg.detalle, msg["valor"].strip())
+                    reg.alarma, reg.derivar = True, True
+                    reg.motivo_derivar = d["motivo_derivar"]
+                sesion.commit()
+                whatsapp.enviar_texto(tel, mensajes.TEXTO_ALARMA)
+                for n in ninos:
+                    _avisar_personal(sesion, _registro_de_semana(sesion, n.id_nino, semana_iso(momento)),
+                                     "posible señal de peligro")
+            else:
+                whatsapp.enviar_texto(tel, mensajes.TEXTO_AYUDA)
     return True
+
+
+def _avisar_personal(sesion: Session, reg: "Registro", motivo: str) -> None:
+    """Aviso inmediato al personal de CRED, una sola vez por niño y semana
+    (como en Verma et al.: el aviso no se repite, para no causar fatiga de alarmas).
+    Si falla (plantilla no aprobada, sin internet), el caso igual queda primero en el panel."""
+    if reg.alerta_enviada or not config.CRED_TELEFONOS_ALERTA:
+        return
+    nino = sesion.get(Nino, reg.id_nino)
+    enviada = False
+    for tel in config.CRED_TELEFONOS_ALERTA:
+        try:
+            whatsapp.enviar_alerta_personal(tel, reg.id_nino, nino.edad_meses, motivo)
+            enviada = True
+        except Exception as e:
+            log.error("No se pudo avisar al personal (%s): %s", reg.id_nino, e)
+    reg.alerta_enviada = enviada
+    sesion.commit()
+
+
+def _registro_de_semana(sesion: Session, id_nino: str, semana: str) -> "Registro":
+    reg = sesion.scalars(select(Registro).where(Registro.semana == semana,
+                                                Registro.id_nino == id_nino)).first()
+    if reg is None:
+        reg = Registro(semana=semana, id_nino=id_nino)
+        sesion.add(reg)
+    return reg
+
+
+def _sumar_detalle(previo: str | None, nuevo: str) -> str:
+    return (f"{previo} | {nuevo}" if previo else nuevo)[:1000]
+
+
+def _otro_motivo_pendiente(sesion: Session, ninos: list, momento: datetime) -> "Registro | None":
+    """El registro de esta semana o la anterior que eligió "Otro motivo" y aún no lo explicó.
+    Más atrás no: un mensaje de hoy no debe pegarse a una respuesta de hace un mes."""
+    return sesion.scalars(
+        select(Registro).where(Registro.id_nino.in_([n.id_nino for n in ninos]),
+                               Registro.razon == "otro", Registro.detalle.is_(None),
+                               Registro.semana >= semana_iso(momento - timedelta(days=7)))
+        .order_by(Registro.semana.desc())).first()
 
 
 def actualizar_estado(sesion: Session, wa_id: str, estado: str) -> None:
@@ -256,10 +375,11 @@ def registrar_respuesta(sesion: Session, resp: dict, momento: datetime | None = 
         if razon in mensajes.RAZONES:
             reg.razon = razon
             sesion.commit()
+            texto = mensajes.TEXTO_PIDE_DETALLE if razon == "otro" else mensajes.TEXTO_GRACIAS_RAZON
             try:
-                whatsapp.enviar_texto(nino.telefono, mensajes.TEXTO_GRACIAS_RAZON)
+                whatsapp.enviar_texto(nino.telefono, texto)
             except Exception as e:
-                log.error("No se pudo agradecer a %s: %s", nino.id_nino, e)
+                log.error("No se pudo responder a %s: %s", nino.id_nino, e)
     sesion.commit()
 
 
@@ -288,13 +408,22 @@ def indicadores(sesion: Session, establecimiento_id: str, semana: str,
             Registro.respuesta != "sin_respuesta"))
         si = sesion.scalar(select(func.count()).select_from(Registro).where(
             Registro.id_nino.in_(ids), Registro.semana == s, Registro.respuesta == "si_le_di"))
-        return {"semana": s, "enviados": env, "fallidos": fall, "respondidos": resp, "si_le_di": si}
+        sin_decisor = sesion.scalar(select(func.count()).select_from(Registro).where(
+            Registro.id_nino.in_(ids), Registro.semana == s,
+            Registro.motivo_derivar.like("%no disponible%")))
+        alarmas = sesion.scalar(select(func.count()).select_from(Registro).where(
+            Registro.id_nino.in_(ids), Registro.semana == s, Registro.alarma.is_(True)))
+        return {"semana": s, "enviados": env, "fallidos": fall, "respondidos": resp, "si_le_di": si,
+                "alarmas": alarmas, "sin_clasificador": sin_decisor}
 
     serie = [conteos(s) for s in sorted(semanas)]
     actual = next(c for c in serie if c["semana"] == semana)
     previas = [c for c in serie if c["semana"] < semana]
     alerta = None
-    if len(previas) >= 2:
+    if actual["sin_clasificador"]:
+        alerta = ("El clasificador de mensajes no respondió esta semana: revisar que Ollama esté "
+                  "encendido. Esos mensajes quedaron para que los lea una persona.")
+    elif len(previas) >= 2:
         prom_env = sum(c["enviados"] for c in previas) / len(previas)
         prom_resp = sum(c["respondidos"] for c in previas) / len(previas)
         if prom_env and actual["enviados"] < config.UMBRAL_META_ALERTA * prom_env:

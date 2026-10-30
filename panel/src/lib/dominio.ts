@@ -34,6 +34,9 @@ export function senalDeFila(fila: Pick<FilaLista, 'nivel' | 'seguimiento'>): Sen
   if (fila.nivel !== 0) return null
   const texto = fila.seguimiento ?? ''
   if (texto.endsWith(RESPUESTAS.problema)) return 'problema'
+  // Señal de peligro o mensaje que debe leer una persona: se muestran como problema reportado;
+  // el texto completo va en la nota de seguimiento de la fila.
+  if (texto.startsWith('POSIBLE SEÑAL') || texto.startsWith('mensaje para leer')) return 'problema'
   return 'no_le_di'
 }
 

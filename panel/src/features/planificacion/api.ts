@@ -8,6 +8,9 @@ import { rangoSemana } from '@/lib/semana'
 import type { CaregiverReport, PlannedChild, PrioritySignal, WeeklyPlan } from './types'
 
 export function signalFor(fila: Pick<FilaLista, 'nivel' | 'seguimiento'>): PrioritySignal {
+  const nota = fila.seguimiento ?? ''
+  if (nota.startsWith('POSIBLE SEÑAL')) return { kind: 'reported_problem', rule: 'R1', label: 'Posible peligro' }
+  if (nota.startsWith('mensaje para leer')) return { kind: 'reported_problem', rule: 'R1', label: 'Mensaje para leer' }
   switch (senalDeFila(fila)) {
     case 'problema':
       return { kind: 'reported_problem', rule: 'R1', label: 'Reportó problema' }

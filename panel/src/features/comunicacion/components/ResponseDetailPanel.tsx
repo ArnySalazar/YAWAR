@@ -25,8 +25,8 @@ function DetailField({ label, children }: { label: string; children: ReactNode }
 }
 
 /**
- * Detalle con lo que sí registra la API: respuesta, motivo, semana y acción asignada. No hay
- * conversación que mostrar (el bot recibe botones y la API no devuelve los mensajes) ni fechas.
+ * Detalle con lo que registra la API: respuesta, motivo, mensaje escrito (si lo hay), semana y
+ * acción asignada.
  */
 function DetailContent({ item }: { item: CommunicationResponse }) {
   return (
@@ -37,7 +37,7 @@ function DetailContent({ item }: { item: CommunicationResponse }) {
         <ResponseMessage item={item} />
         <ReasonTag item={item} className="self-start" />
         <p className="text-[11px] font-medium leading-[14px] tracking-[0.33px] text-muted">
-          Respuesta elegida con los botones del recordatorio semanal de WhatsApp.
+          Respuesta del cuidador al recordatorio semanal de WhatsApp (botones y, si eligió «Otro motivo» o escribió, su mensaje).
         </p>
       </div>
 

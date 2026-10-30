@@ -90,8 +90,15 @@ function elegirArchivo(archivo: File) {
 
 describe('Contrato del padrón', () => {
   it('usa las columnas de POST /padron, en el mismo orden, y acepta_mensajes como opcional', () => {
-    expect(REQUIRED_COLUMN_NAMES).toEqual(COLUMNAS_API)
+    // La geografía es opcional: el modelo no la usa (minimización de datos)
+    expect(REQUIRED_COLUMN_NAMES).toEqual(COLUMNAS_API.filter((c) => !['area', 'region', 'altitud_msnm'].includes(c)))
     expect(REGISTRY_CONTRACT.filter((columna) => !columna.required).map((columna) => columna.name)).toEqual([
+      'area',
+      'region',
+      'altitud_msnm',
+      'presentacion_hierro',
+      'en_tratamiento_anemia',
+      'nombre_nino',
       'acepta_mensajes',
     ])
   })
@@ -99,8 +106,8 @@ describe('Contrato del padrón', () => {
   it('genera la plantilla en el navegador con la cabecera exacta y un ejemplo que pasa la validación', () => {
     const plantilla = buildRegistryTemplate('EESS02')
     const [cabecera, ejemplo] = plantilla.trim().split('\r\n')
-    expect(cabecera).toBe(`${CABECERA},acepta_mensajes`)
-    expect(ejemplo).toBe('N0001,EESS02,Mamá de N0001,+51000000001,8,urbano,Lima,150,3,2026-10-01,1')
+    expect(cabecera).toBe(`${CABECERA},presentacion_hierro,en_tratamiento_anemia,nombre_nino,acepta_mensajes`)
+    expect(ejemplo).toBe('N0001,EESS02,Mamá de N0001,+51000000001,8,urbano,Lima,150,3,2026-10-01,gotas,0,Mateo,1')
     expect(validar(plantilla).ok).toBe(true)
   })
 })
@@ -152,9 +159,11 @@ describe('Validación local', () => {
     expect(validar(`${alReves.join(',')}\n${filaAlReves}`).ok).toBe(true)
 
     expect(ubicaciones(`${CABECERA},dni\n${fila('N0001')},12345678`)).toEqual(['1·dni'])
-    expect(ubicaciones(`${CABECERA.replace(',region', '')}\n${fila('N0001').replace(',Lima', '')}`)).toEqual([
-      '1·region',
+    expect(ubicaciones(`${CABECERA.replace(',edad_meses', '')}\n${fila('N0001').replace(',8,urbano', ',urbano')}`)).toEqual([
+      '1·edad_meses',
     ])
+    // La geografía puede faltar
+    expect(validar(`${CABECERA.replace(',region', '')}\n${fila('N0001').replace(',Lima', '')}`).ok).toBe(true)
   })
 })
 
@@ -399,7 +408,9 @@ describe('Pantalla de Administración', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Plantilla CSV de ejemplo' }))
     expect(descargas.nombres).toEqual(['plantilla_padron_yawar.csv'])
-    expect(await descargas.blobs[0].text()).toContain(`${CABECERA},acepta_mensajes`)
+    expect(await descargas.blobs[0].text()).toContain(
+      `${CABECERA},presentacion_hierro,en_tratamiento_anemia,nombre_nino,acepta_mensajes`,
+    )
     expect(api.pedidos).toHaveLength(antes)
   })
 
@@ -442,7 +453,9 @@ describe('Pantalla de Administración', () => {
     expect(await screen.findByText('Lista descargada.')).toBeInTheDocument()
     const [pedido] = api.pedidosA('GET', '/establecimientos/EESS01/lista.csv')
     expect(pedido.params.get('capacidad')).toBe('10')
-    expect(descargas.nombres).toEqual(['lista_EESS01_2026-W43.csv'])
+    // El nombre lleva la semana en curso, así que no se fija una semana concreta
+    expect(descargas.nombres).toHaveLength(1)
+    expect(descargas.nombres[0]).toMatch(/^lista_EESS01_\d{4}-W\d{2}\.csv$/)
     expect(await descargas.blobs[0].text()).toContain('1,N0001,Mamá de N0001')
   })
 

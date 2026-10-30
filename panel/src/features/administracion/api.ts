@@ -52,28 +52,28 @@ export const REGISTRY_CONTRACT: ContractColumn[] = [
   },
   {
     name: 'area',
-    description: '«urbano» o «rural» (no importan las mayúsculas).',
+    description: 'Opcional (el modelo no la usa). «urbano» o «rural».',
     type: 'Texto',
-    required: true,
+    required: false,
     example: 'urbano',
   },
   {
     name: 'region',
-    description: 'Región del domicilio (ej. Lima, Cusco, Puno).',
+    description: 'Opcional (el modelo no la usa). Región del domicilio (ej. Lima, Cusco, Puno).',
     type: 'Texto',
-    required: true,
+    required: false,
     example: 'Lima',
   },
   {
     name: 'altitud_msnm',
-    description: 'Altitud en metros sobre el nivel del mar: número entero (ej. 150).',
+    description: 'Opcional (el modelo no la usa). Altitud en metros sobre el nivel del mar: número entero (ej. 150).',
     type: 'Entero',
-    required: true,
+    required: false,
     example: '150',
   },
   {
     name: 'controles_cred',
-    description: 'Cantidad de controles CRED registrados: número entero, 0 o más.',
+    description: 'Total de controles CRED desde el nacimiento, según la libreta: número entero, 0 o más.',
     type: 'Entero',
     required: true,
     example: '3',
@@ -86,6 +86,27 @@ export const REGISTRY_CONTRACT: ContractColumn[] = [
     example: '2026-10-01',
   },
   {
+    name: 'presentacion_hierro',
+    description: 'Opcional. Presentación del hierro según la libreta: gotas, jarabe o polvo (varias con «+», ej. gotas+polvo).',
+    type: 'Texto',
+    required: false,
+    example: 'gotas',
+  },
+  {
+    name: 'en_tratamiento_anemia',
+    description: 'Opcional. 1 si el niño está en tratamiento de anemia (no solo prevención); 0 si no. Va primero dentro de su grupo.',
+    type: '1 o 0',
+    required: false,
+    example: '0',
+  },
+  {
+    name: 'nombre_nino',
+    description: 'Opcional. Apodo del niño que autoriza el cuidador, para el mensaje semanal. Nunca el nombre completo.',
+    type: 'Texto',
+    required: false,
+    example: 'Mateo',
+  },
+  {
     name: 'acepta_mensajes',
     description:
       'Opcional. 1 = acepta WhatsApp; 0 = no. Si falta la columna, la API pone 1 a todos y anula las BAJA pedidas por WhatsApp.',
@@ -95,7 +116,7 @@ export const REGISTRY_CONTRACT: ContractColumn[] = [
   },
 ]
 
-/** Las 10 columnas obligatorias, en el orden de la API. */
+/** Las columnas obligatorias, en el orden de la API. */
 export const REQUIRED_COLUMN_NAMES = REGISTRY_CONTRACT.filter((column) => column.required).map((column) => column.name)
 
 /**

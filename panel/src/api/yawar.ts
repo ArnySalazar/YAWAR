@@ -11,7 +11,7 @@ export type SemanaIso = string
 export type Accion = 'visita' | 'whatsapp'
 export type Respuesta = 'si_le_di' | 'no_le_di' | 'problema' | 'sin_respuesta'
 export type Razon = 'sabor' | 'estrenimiento' | 'se_acabo' | 'olvido' | 'otro'
-/** 0 = la semana pasada respondió "No le di" o "Tuve un problema"; 1 = no respondió en 7 días o más; 2 = sin novedad. */
+/** 0 = posible señal de peligro, mensaje para leer, o respondió "No le di" o "Tuve un problema" (esta semana o la anterior); 1 = no respondió en 7 días o más; 2 = sin novedad. */
 export type Nivel = 0 | 1 | 2
 
 /** GET /salud */
@@ -48,6 +48,14 @@ export interface SemanaHistorial {
   puntaje: number | null
   respuesta: Respuesta
   razon: Razon | null
+  /** Lo que escribió el cuidador (en "Otro motivo" o sin que se le preguntara), o el aviso de un audio. */
+  detalle?: string | null
+  /** Razón que asignó el clasificador local al mensaje escrito. */
+  razon_decisor?: string | null
+  /** Posible señal de peligro detectada en el mensaje. */
+  alarma?: boolean
+  /** El mensaje debe leerlo una persona. */
+  derivar?: boolean
 }
 
 /** POST /establecimientos/{id}/recordatorios */

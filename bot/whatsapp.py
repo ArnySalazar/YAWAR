@@ -98,7 +98,13 @@ def enviar_pregunta_razon(telefono: str, id_nino: str, semana: str) -> str | Non
 
 
 def enviar_texto(telefono: str, texto: str) -> str | None:
-    return _enviar({"messaging_product": "whatsapp", "to": telefono,
+    """Si el remitente llegó sin teléfono (usuario con nombre de usuario de WhatsApp),
+    se responde a su identificador con el campo "recipient", como pide Meta."""
+    if telefono.startswith("usuario:"):
+        destino = {"recipient": telefono.removeprefix("usuario:")}
+    else:
+        destino = {"to": telefono}
+    return _enviar({"messaging_product": "whatsapp", **destino,
                     "type": "text", "text": {"body": texto}})
 
 
@@ -130,7 +136,11 @@ def extraer_mensajes(evento: dict) -> list[dict]:
                     valor = msg.get("text", {}).get("body", "")
                 else:
                     valor = ""
-                salida.append({"wa_id": msg.get("id", ""), "telefono": msg.get("from", ""),
+                # Con nombre de usuario activado, Meta puede omitir el teléfono y mandar
+                # solo from_user_id: se guarda como "usuario:<id>" para no perder al remitente.
+                remitente = msg.get("from") or (
+                    "usuario:" + msg["from_user_id"] if msg.get("from_user_id") else "")
+                salida.append({"wa_id": msg.get("id", ""), "telefono": remitente,
                                "tipo": tipo, "valor": valor})
     return salida
 

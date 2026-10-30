@@ -224,7 +224,7 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
         return False
     if sesion.scalars(select(MensajeEntrante).where(MensajeEntrante.wa_id == msg["wa_id"])).first():
         return False
-    tel = normalizar_telefono(msg["telefono"])
+    tel = msg["telefono"] if msg["telefono"].startswith("usuario:") else normalizar_telefono(msg["telefono"])
     sesion.add(MensajeEntrante(wa_id=msg["wa_id"], telefono=tel, tipo=msg["tipo"],
                                contenido=msg["valor"][:1000], recibido_en=momento))
     sesion.commit()
@@ -247,11 +247,14 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
             for n in ninos:
                 _avisar_personal(sesion, _registro_de_semana(sesion, n.id_nino, semana_iso(momento)),
                                  "mensaje de voz o imagen que el sistema no puede leer")
+        else:
+            _responder_no_inscrito(sesion, tel, momento)
     elif msg["tipo"] == "text":
         texto = msg["valor"].strip().lower()
         ninos = sesion.scalars(select(Nino).where(Nino.telefono == tel)).all()
         if not ninos:
-            return True  # número que no está en el padrón: se guarda y no se responde
+            _responder_no_inscrito(sesion, tel, momento)  # se guarda y se orienta, con el 106
+            return True
         if texto in mensajes.PALABRAS_BAJA:
             for n in ninos:
                 n.acepta_mensajes = False
@@ -290,6 +293,18 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
             else:
                 whatsapp.enviar_texto(tel, mensajes.TEXTO_AYUDA)
     return True
+
+
+def _responder_no_inscrito(sesion: Session, tel: str, momento: datetime) -> None:
+    """Quien no está en el padrón (o llega sin teléfono) recibe una orientación con el 106,
+    una sola vez cada 24 horas, para no conversar con avisos automáticos ni repetir."""
+    if not tel:
+        return
+    recientes = sesion.scalar(select(func.count()).select_from(MensajeEntrante).where(
+        MensajeEntrante.telefono == tel,
+        MensajeEntrante.recibido_en >= momento - timedelta(hours=24)))
+    if recientes <= 1:  # el único es el que acaba de llegar
+        whatsapp.enviar_texto(tel, mensajes.TEXTO_NO_INSCRITO)
 
 
 def _avisar_personal(sesion: Session, reg: "Registro", motivo: str) -> None:

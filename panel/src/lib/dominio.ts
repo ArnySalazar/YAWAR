@@ -53,10 +53,11 @@ export function listaMotivos(motivos: string) {
     .filter(Boolean)
 }
 
-/** "Mamá de N0001" → "Mamá". Si el alias no sigue ese formato, se devuelve completo. */
+/** "Mamá de N0001" → "Mamá". Si el alias no sigue ese formato (p. ej. "María"), el parentesco
+ * no se conoce y se devuelve vacío: mostrar el alias como parentesco sería un dato falso. */
 export function parentesco(alias: string) {
   const m = /^(.+?)\s+de\s+/i.exec(alias)
-  return m ? m[1] : alias
+  return m ? m[1] : ''
 }
 
 export type GrupoEdad = '6-11' | '12-23' | '24-35'

@@ -42,11 +42,13 @@ function DetailContent({ item }: { item: CommunicationResponse }) {
       </div>
 
       <dl className="grid grid-cols-2 gap-x-4 gap-y-3">
-        <DetailField label="Respuesta">{RESPUESTAS[item.answer]}</DetailField>
+        <DetailField label="Respuesta">
+          {item.answer === 'sin_respuesta' && item.message ? 'Escribió un mensaje' : RESPUESTAS[item.answer]}
+        </DetailField>
         <DetailField label="Motivo">{item.reasonLabel ?? '—'}</DetailField>
         <DetailField label="Semana">{etiquetaSemanaLarga(item.semana)}</DetailField>
         <DetailField label="Acción asignada">{ACTION_LABELS[item.action ?? 'ninguna']}</DetailField>
-        <DetailField label="Parentesco">{item.caregiverRole}</DetailField>
+        <DetailField label="Parentesco">{item.caregiverRole || '—'}</DetailField>
         <DetailField label="Cuidador">{item.caregiverAlias}</DetailField>
       </dl>
 

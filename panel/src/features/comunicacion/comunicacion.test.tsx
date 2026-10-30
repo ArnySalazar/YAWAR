@@ -194,7 +194,7 @@ describe('Pantalla de Comunicación', () => {
     expect(within(respuestas).getByText('/ 4 contactados')).toBeInTheDocument()
     expect(within(respuestas).getByText('50% de tasa de respuesta')).toBeInTheDocument()
     expect(within(respuestas).getByRole('progressbar')).toHaveAttribute('aria-valuenow', '50')
-    expect(await within(tarjetaKpi('Reportaron problema')).findByText('1')).toBeInTheDocument()
+    expect(await within(tarjetaKpi('Problema o posible peligro')).findByText('1')).toBeInTheDocument()
     expect(within(tarjetaKpi('Reportaron no consumo')).getByText('0')).toBeInTheDocument()
     expect(within(tarjetaKpi('Sin respuesta')).getByText('2')).toBeInTheDocument()
     expect(screen.getByText(/los 4 niños de la lista actual con registro en la semana/)).toBeInTheDocument()
@@ -371,7 +371,7 @@ describe('Pantalla de Comunicación', () => {
     expect(alerta).toHaveTextContent('No se pudo cargar la información.')
     expect(alerta).toHaveTextContent('Internal Server Error')
     // Los KPIs de los historiales quedan sin dato, no "cargando"
-    await waitFor(() => expect(within(tarjetaKpi('Reportaron problema')).getByText('—')).toBeInTheDocument())
+    await waitFor(() => expect(within(tarjetaKpi('Problema o posible peligro')).getByText('—')).toBeInTheDocument())
     fireEvent.click(within(alerta).getByRole('button', { name: 'Reintentar' }))
     await waitFor(() => expect(api.pedidosA('POST', '/establecimientos/EESS01/lista')).toHaveLength(2))
   })

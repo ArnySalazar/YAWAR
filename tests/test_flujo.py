@@ -297,3 +297,38 @@ def test_numero_ajeno_no_pasa_por_el_decisor(s, monkeypatch):
     monkeypatch.setattr(servicios, "decidir", no_deberia_llamarse)
     servicios.procesar_entrante(s, texto("51999999997", "mi bebe convulsiona"), LUNES)
     assert "106" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+
+
+CABECERA = "id_nino,establecimiento_id,alias_cuidador,telefono,edad_meses,controles_cred,fecha_entrega_hierro,nombre_nino\n"
+
+
+def _sesion_vacia():
+    return fabrica_sesiones(crear_motor("sqlite://"))()
+
+
+def test_hermanos_sin_nombre_no_se_cargan():
+    s = _sesion_vacia()
+    csv = CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,\nH2,EESS01,Ana,51911111111,30,18,2026-10-01,\n"
+    with pytest.raises(ValueError, match="nombre_nino"):
+        servicios.cargar_padron(s, csv.encode())
+    assert s.scalars(select(Nino)).first() is None  # no se cargó nada
+
+
+def test_hermanos_con_nombres_distintos_se_cargan():
+    s = _sesion_vacia()
+    csv = CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,Luis\nH2,EESS01,Ana,51911111111,30,18,2026-10-01,Mia\n"
+    assert servicios.cargar_padron(s, csv.encode()) == 2
+
+
+def test_hermanos_con_el_mismo_nombre_no_se_cargan():
+    s = _sesion_vacia()
+    csv = CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,Luis\nH2,EESS01,Ana,51911111111,30,18,2026-10-01,luis\n"
+    with pytest.raises(ValueError, match="mismo nombre_nino"):
+        servicios.cargar_padron(s, csv.encode())
+
+
+def test_hermano_nuevo_sin_nombre_choca_con_uno_ya_cargado():
+    s = _sesion_vacia()
+    servicios.cargar_padron(s, (CABECERA + "H1,EESS01,Ana,51911111111,12,10,2026-10-01,Luis\n").encode())
+    with pytest.raises(ValueError, match="ya cargado"):
+        servicios.cargar_padron(s, (CABECERA + "H2,EESS01,Ana,51911111111,30,18,2026-10-01,\n").encode())

@@ -46,7 +46,7 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
     if duplicados:
         raise ValueError(f"id_nino repetidos: {duplicados}")
 
-    errores, ninos = [], []
+    errores, ninos, fila_de = [], [], {}
     for i, fila in enumerate(df.to_dict("records"), start=2):  # fila 1 = encabezado
         try:
             edad = int(fila["edad_meses"])
@@ -73,6 +73,7 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
             if pres and not set(pres.split("+")) <= {"gotas", "jarabe", "polvo"}:
                 raise ValueError("presentacion_hierro debe ser gotas, jarabe o polvo (o varias con +)")
             trat = str(fila.get("en_tratamiento_anemia", "0")).strip().lower() in ("1", "si", "sí", "true")
+            fila_de[str(fila["id_nino"])] = i
             ninos.append(Nino(
                 id_nino=str(fila["id_nino"]), establecimiento_id=str(fila["establecimiento_id"]),
                 alias_cuidador=str(fila["alias_cuidador"]), nombre_nino=nombre,
@@ -82,6 +83,28 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
                 acepta_mensajes=acepta, presentacion_hierro=pres, en_tratamiento_anemia=trat))
         except (ValueError, TypeError) as e:
             errores.append(f"fila {i}: {e}")
+    # Hermanos con el mismo teléfono: cada uno recibe su propio mensaje semanal, y sin
+    # nombre_nino los dos dirían "tu niño o niña"; el cuidador no sabría por cuál se pregunta.
+    por_tel = {}
+    for n in ninos:
+        por_tel.setdefault(n.telefono, []).append(n)
+    if por_tel:
+        ids = [n.id_nino for n in ninos]
+        for previo in sesion.scalars(select(Nino).where(Nino.telefono.in_(list(por_tel)),
+                                                        Nino.id_nino.not_in(ids))):
+            por_tel[previo.telefono].append(previo)
+    for grupo in por_tel.values():
+        if len(grupo) < 2:
+            continue
+        filas = ", ".join(str(fila_de[n.id_nino]) if n.id_nino in fila_de else f"{n.id_nino} (ya cargado)"
+                          for n in grupo)
+        nombres = [n.nombre_nino for n in grupo]
+        if any(not x for x in nombres):
+            errores.append(f"filas {filas}: el mismo teléfono tiene {len(grupo)} niños; cada uno necesita "
+                           "nombre_nino para que el cuidador sepa por cuál se le pregunta")
+        elif len({x.strip().lower() for x in nombres}) < len(nombres):
+            errores.append(f"filas {filas}: hermanos con el mismo teléfono y el mismo nombre_nino; "
+                           "usen nombres o apodos distintos")
     if errores:
         raise ValueError("El padrón tiene errores y no se cargó: " + "; ".join(errores[:10]))
     for n in ninos:

@@ -83,7 +83,7 @@ Si en el `.env` defines `API_CLAVE`, las rutas del panel piden el encabezado `X-
 
 ## Padrón
 
-CSV con una fila por niño. Obligatorias: `id_nino`, `establecimiento_id`, `alias_cuidador`, `telefono`, `edad_meses` (6 a 35), `controles_cred` (desde el nacimiento) y `fecha_entrega_hierro`. Opcionales: `presentacion_hierro`, `en_tratamiento_anemia`, `nombre_nino` y la geografía. Todo sale de la libreta CRED.
+CSV con una fila por niño. Obligatorias: `id_nino`, `establecimiento_id`, `alias_cuidador`, `telefono`, `edad_meses` (6 a 35), `controles_cred` (desde el nacimiento) y `fecha_entrega_hierro`. Opcionales: `presentacion_hierro`, `en_tratamiento_anemia`, `nombre_nino` y la geografía. Todo sale de la libreta CRED. Si un mismo teléfono tiene varios niños (hermanos), cada uno necesita un `nombre_nino` distinto: así cada mensaje semanal dice por qué niño se pregunta.
 
 ## Puntos de acceso de la API
 

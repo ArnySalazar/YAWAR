@@ -1,0 +1,11 @@
+modelo,variables,algoritmo,n_variables_originales
+M1__logistica,M1,logistica,1
+M2__logistica,M2,logistica,5
+M3__logistica,M3,logistica,7
+M3__random_forest,M3,random_forest,7
+M3__extra_trees,M3,extra_trees,7
+M3__gradient_boosting,M3,gradient_boosting,7
+M4__logistica,M4,logistica,15
+M4__random_forest,M4,random_forest,15
+M4__extra_trees,M4,extra_trees,15
+M4__gradient_boosting,M4,gradient_boosting,15

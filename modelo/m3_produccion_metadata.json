@@ -1,0 +1,89 @@
+{
+  "nombre": "YAWAR_M3_no_tomo_7d",
+  "version": "1.0.0-provisional",
+  "estado": "provisional; pendiente de recalibración y validación en piloto",
+  "creado_utc": "2026-10-29T21:40:49.657059+00:00",
+  "objetivo": "no_tomo_7d = 1 si el niño no tomó hierro en los últimos 7 días",
+  "probabilidades_calibradas": false,
+  "uso_recomendado_actual": "ordenar o priorizar niños por riesgo relativo",
+  "anios_entrenamiento": [
+    2024,
+    2025
+  ],
+  "n_entrenamiento": 14516,
+  "n_por_anio": {
+    "2024": 7344,
+    "2025": 7172
+  },
+  "prevalencia_no_tomo_7d": 0.5704050702672913,
+  "prevalencia_por_anio": {
+    "2024": 0.5962690631808278,
+    "2025": 0.5439208031232571
+  },
+  "variables_modelo": [
+    "edad_meses",
+    "atraso_cred",
+    "recibio_jarabe",
+    "recibio_gotas",
+    "recibio_polvo",
+    "n_cred_con_fecha",
+    "lugar_cred_codigo"
+  ],
+  "entradas_api": [
+    "id_nino",
+    "edad_meses",
+    "controles_cred_acum (o controles_cred)",
+    "recibio_jarabe/recibio_gotas/recibio_polvo (o presentacion_hierro)",
+    "n_cred_con_fecha",
+    "lugar_cred_codigo"
+  ],
+  "hiperparametros": {
+    "splines_edad_n_knots": 7,
+    "splines_edad_degree": 3,
+    "regresion_penalty": "elasticnet",
+    "regresion_C": 0.3,
+    "regresion_l1_ratio": 0.5,
+    "regresion_solver": "saga",
+    "random_state": 2026
+  },
+  "mediana_controles_global": 15.0,
+  "mediana_controles_por_edad": {
+    "6": 9.0,
+    "7": 10.0,
+    "8": 11.0,
+    "9": 11.0,
+    "10": 12.0,
+    "11": 13.0,
+    "12": 14.0,
+    "13": 14.0,
+    "14": 14.0,
+    "15": 15.0,
+    "16": 16.0,
+    "17": 16.0,
+    "18": 17.0,
+    "19": 17.0,
+    "20": 17.0,
+    "21": 17.0,
+    "22": 18.0,
+    "23": 17.0,
+    "24": 18.0,
+    "25": 19.0,
+    "26": 18.0,
+    "27": 19.0,
+    "28": 20.0,
+    "29": 19.0,
+    "30": 20.0,
+    "31": 20.0,
+    "32": 20.0,
+    "33": 21.0,
+    "34": 20.0,
+    "35": 21.0
+  },
+  "archivo_entrenamiento": "datos_procesados\\tabla_modelo_2024_2025_limpia.csv",
+  "sha256_entrenamiento": "7d48cbfdf5fa8c64455f29c6fe655ee84d0c6b6615482844a70c909419caadb5",
+  "versiones": {
+    "pandas": "2.2.3",
+    "scikit_learn": "1.6.1",
+    "joblib": "1.5.0"
+  }
+}

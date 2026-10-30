@@ -5,11 +5,11 @@ import re
 from datetime import datetime, timedelta
 
 import pandas as pd
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.orm import Session
 
 from api import config
-from api.db import Mensaje, MensajeEntrante, Nino, Registro, ahora, semana_iso
+from api.db import AtencionAlarma, Mensaje, MensajeEntrante, Nino, Registro, ahora, semana_iso
 from bot import mensajes, whatsapp
 from clasificador.decidir import decidir
 from modelo.puntuar import puntuar
@@ -92,19 +92,97 @@ def cargar_padron(sesion: Session, contenido_csv: bytes) -> int:
 
 # ---------- Lista semanal ----------
 
+def alarma_pendiente():
+    """Predicado compartido: una atención solo cierra la versión vista por el personal."""
+    atendida = select(AtencionAlarma.id).where(
+        AtencionAlarma.registro_id == Registro.id,
+        AtencionAlarma.version_alarma == Registro.alarma_version).exists()
+    return Registro.alarma.is_(True) & ~atendida
+
+
+def datos_atencion(atencion: AtencionAlarma) -> dict:
+    return {"id": atencion.id, "registro_id": atencion.registro_id,
+            "version_alarma": atencion.version_alarma, "medio": atencion.medio,
+            "atendido_en": atencion.atendido_en.isoformat(), "detalle_alarma": atencion.detalle_alarma}
+
+
+def _nueva_alarma(sesion: Session, registro: Registro) -> None:
+    # El incremento en SQL evita perder versiones cuando llegan dos mensajes a la vez.
+    registro.alarma = True
+    sesion.flush()
+    sesion.execute(update(Registro).where(Registro.id == registro.id).values(
+        alarma_version=Registro.alarma_version + 1))
+    sesion.refresh(registro)
+
+
+class ErrorAtencion(ValueError):
+    def __init__(self, codigo: int, mensaje: str):
+        super().__init__(mensaje)
+        self.codigo = codigo
+
+
+def atender_alarma(sesion: Session, id_nino: str, registro_id: int, version: int,
+                   medio: str, momento: datetime | None = None) -> dict:
+    if medio not in ("llamada", "visita_presencial"):
+        raise ErrorAtencion(422, "El medio debe ser llamada o visita_presencial")
+    reg = sesion.get(Registro, registro_id)
+    if reg is None or reg.id_nino != id_nino:
+        raise ErrorAtencion(404, "No existe esa alarma para el niño")
+    # Bloqueo de escritura antes de comprobar la versión y la atención: evita cerrar
+    # una alarma distinta si llega un mensaje o una segunda petición simultánea.
+    resultado = sesion.execute(update(Registro).where(
+        Registro.id == registro_id, Registro.alarma.is_(True),
+        Registro.alarma_version == version).values(alarma_version=version))
+    if resultado.rowcount != 1:
+        sesion.rollback()
+        raise ErrorAtencion(409, "La alarma cambió o ya no está disponible. Actualiza el caso.")
+    sesion.refresh(reg)
+    previa = sesion.scalar(select(AtencionAlarma).where(
+        AtencionAlarma.registro_id == registro_id, AtencionAlarma.version_alarma == version))
+    if previa:
+        if previa.medio != medio:
+            sesion.rollback()
+            raise ErrorAtencion(409, "Esta alarma ya fue atendida por otro medio. Actualiza el caso.")
+        sesion.commit()
+        return datos_atencion(previa)
+    atencion = AtencionAlarma(registro_id=registro_id, version_alarma=version,
+                             medio=medio, atendido_en=momento or ahora(), detalle_alarma=reg.detalle)
+    sesion.add(atencion)
+    sesion.commit()
+    return datos_atencion(atencion)
+
+
+def historial_nino(sesion: Session, id_nino: str) -> list[dict]:
+    registros = sesion.scalars(select(Registro).where(Registro.id_nino == id_nino)
+                              .order_by(Registro.semana.desc())).all()
+    salida = []
+    for r in registros:
+        atenciones = sesion.scalars(select(AtencionAlarma).where(
+            AtencionAlarma.registro_id == r.id).order_by(AtencionAlarma.atendido_en.desc(),
+                                                       AtencionAlarma.id.desc())).all()
+        salida.append({"semana": r.semana, "accion": r.accion, "puntaje": r.puntaje,
+                       "respuesta": r.respuesta, "razon": r.razon, "detalle": r.detalle,
+                       "razon_decisor": r.razon_decisor, "alarma": bool(r.alarma), "derivar": bool(r.derivar),
+                       "registro_id": r.id, "version_alarma": r.alarma_version,
+                       "alarma_pendiente": bool(r.alarma) and not any(
+                           a.version_alarma == r.alarma_version for a in atenciones),
+                       "atenciones": [datos_atencion(a) for a in atenciones]})
+    return salida
+
+
 def _necesita_seguimiento(sesion: Session, id_nino: str, hoy: datetime) -> tuple[int, str] | None:
     """Escalamiento: devuelve (nivel, motivo) si el niño debe subir en la lista.
     Nivel 0 = posible señal de peligro, reportó un problema o que no le dio;
     nivel 1 = no respondió a tiempo."""
     desde = semana_iso(hoy - timedelta(days=7))
     alarma = sesion.scalars(
-        select(Registro).where(Registro.id_nino == id_nino, Registro.alarma.is_(True),
-                               Registro.semana >= desde)
+        select(Registro).where(Registro.id_nino == id_nino, alarma_pendiente(),
+                               Registro.semana <= semana_iso(hoy))
         .order_by(Registro.semana.desc())).first()
     if alarma is not None:
         return 0, f"POSIBLE SEÑAL DE PELIGRO, revisar hoy: \"{(alarma.detalle or '')[:120]}\""
     por_leer = sesion.scalars(
-        select(Registro).where(Registro.id_nino == id_nino, Registro.derivar.is_(True),
+        select(Registro).where(Registro.id_nino == id_nino, Registro.derivar.is_(True), Registro.alarma.is_(False),
                                Registro.semana >= desde)
         .order_by(Registro.semana.desc())).first()
     if por_leer is not None:
@@ -134,7 +212,7 @@ def _necesita_seguimiento(sesion: Session, id_nino: str, hoy: datetime) -> tuple
 
 
 def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
-                  hoy: datetime | None = None) -> list[dict]:
+                  hoy: datetime | None = None, *, guardar: bool = True) -> list[dict]:
     hoy = hoy or ahora()
     semana = semana_iso(hoy)
     ninos = sesion.scalars(select(Nino).where(Nino.establecimiento_id == establecimiento_id)).all()
@@ -147,7 +225,16 @@ def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
     filas = []
     for n in ninos:
         seg = _necesita_seguimiento(sesion, n.id_nino, hoy)
+        pendientes = sesion.scalars(select(Registro).where(
+            Registro.id_nino == n.id_nino, alarma_pendiente(), Registro.semana <= semana)
+            .order_by(Registro.semana.desc())).all()
+        atenciones = sesion.scalars(select(AtencionAlarma).join(Registro).where(
+            Registro.id_nino == n.id_nino, Registro.semana <= semana)
+            .order_by(AtencionAlarma.atendido_en.desc(), AtencionAlarma.id.desc())).all()
         filas.append({"id_nino": n.id_nino, "alias_cuidador": n.alias_cuidador,
+                      "alarmas_pendientes": [{"registro_id": r.id, "version_alarma": r.alarma_version,
+                                               "semana": r.semana} for r in pendientes],
+                      "atenciones_alarma": [datos_atencion(a) for a in atenciones],
                       "edad_meses": n.edad_meses,
                       "puntaje": float(puntos.loc[n.id_nino, "prob_no_consumo"]),
                       "motivos": ("en tratamiento de anemia; " if n.en_tratamiento_anemia else "")
@@ -171,12 +258,24 @@ def generar_lista(sesion: Session, establecimiento_id: str, capacidad: int,
             f["regla"] = f"puntaje, capacidad de {capacidad} visitas"
         reg = sesion.scalars(select(Registro).where(Registro.semana == semana,
                                                     Registro.id_nino == f["id_nino"])).first()
+        if not guardar:
+            if reg is not None and reg.accion in ("visita", "whatsapp"):
+                f["accion"] = reg.accion
+                if not f["seguimiento"]:
+                    f["regla"] = "asignación del plan semanal guardado"
+            continue
         if reg is None:
             reg = Registro(semana=semana, id_nino=f["id_nino"])
             sesion.add(reg)
         reg.puntaje, reg.accion, reg.regla = f["puntaje"], f["accion"], f["regla"]
         reg.prob_asignacion = 1.0  # asignación determinista; cambia si un piloto sortea
-    sesion.commit()
+    if guardar:
+        sesion.commit()
+    else:
+        # La lectura conserva los canales guardados; no vuelve a aplicar el corte N.
+        filas.sort(key=lambda f: (f["accion"] != "visita", f["orden"]))
+        for orden, fila in enumerate(filas, start=1):
+            fila["orden"] = orden
     return filas
 
 
@@ -268,7 +367,10 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
             if pendiente is not None:
                 pendiente.detalle = msg["valor"].strip()[:1000]
                 pendiente.razon_decisor, pendiente.prob_razon_decisor = d["razon"], d["prob_razon"]
-                pendiente.alarma, pendiente.derivar = d["alarma"], d["derivar"]
+                pendiente.alarma = pendiente.alarma or d["alarma"]
+                pendiente.derivar = pendiente.derivar or d["derivar"]
+                if d["alarma"]:
+                    _nueva_alarma(sesion, pendiente)
                 pendiente.motivo_derivar = d["motivo_derivar"]
                 sesion.commit()
                 whatsapp.enviar_texto(tel, mensajes.TEXTO_ALARMA if d["alarma"]
@@ -281,6 +383,7 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
                     reg = _registro_de_semana(sesion, n.id_nino, semana_iso(momento))
                     reg.detalle = _sumar_detalle(reg.detalle, msg["valor"].strip())
                     reg.alarma, reg.derivar = True, True
+                    _nueva_alarma(sesion, reg)
                     reg.motivo_derivar = d["motivo_derivar"]
                 sesion.commit()
                 whatsapp.enviar_texto(tel, mensajes.TEXTO_ALARMA)
@@ -413,8 +516,11 @@ def indicadores(sesion: Session, establecimiento_id: str, semana: str,
             Registro.motivo_derivar.like("%no disponible%")))
         alarmas = sesion.scalar(select(func.count()).select_from(Registro).where(
             Registro.id_nino.in_(ids), Registro.semana == s, Registro.alarma.is_(True)))
+        pendientes = sesion.scalar(select(func.count()).select_from(Registro).where(
+            Registro.id_nino.in_(ids), Registro.semana == s, alarma_pendiente()))
         return {"semana": s, "enviados": env, "fallidos": fall, "respondidos": resp, "si_le_di": si,
-                "alarmas": alarmas, "sin_clasificador": sin_decisor}
+                "alarmas": alarmas, "alarmas_pendientes": pendientes,
+                "alarmas_atendidas": alarmas - pendientes, "sin_clasificador": sin_decisor}
 
     serie = [conteos(s) for s in sorted(semanas)]
     actual = next(c for c in serie if c["semana"] == semana)
@@ -430,4 +536,7 @@ def indicadores(sesion: Session, establecimiento_id: str, semana: str,
             alerta = "Se enviaron muchos menos recordatorios que en semanas anteriores."
         elif prom_resp and actual["respondidos"] < config.UMBRAL_META_ALERTA * prom_resp:
             alerta = "Llegaron muchas menos respuestas que en semanas anteriores."
-    return {"establecimiento_id": establecimiento_id, "serie": serie, "meta_alerta": alerta}
+    pendientes_total = sesion.scalar(select(func.count(func.distinct(Registro.id_nino))).where(
+        Registro.id_nino.in_(ids), Registro.semana <= semana, alarma_pendiente()))
+    return {"establecimiento_id": establecimiento_id, "serie": serie, "meta_alerta": alerta,
+            "alarmas_pendientes": pendientes_total}

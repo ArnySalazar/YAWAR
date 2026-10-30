@@ -21,15 +21,22 @@ export function ChildIdentity({ child }: { child: PlannedChild }) {
         {child.priorityRank}
       </span>
       <div className="min-w-0">
-        <Link
-          to={paths.fichaNino(child.code)}
-          className={cn(
-            'text-[12px] leading-4 font-semibold tracking-[0.24px] whitespace-nowrap hover:underline',
-            isVisit ? 'text-brand-dark' : 'text-ink-strong',
+        <div className="flex flex-wrap items-center gap-1.5">
+          <Link
+            to={paths.fichaNino(child.code)}
+            className={cn(
+              'text-[12px] leading-4 font-semibold tracking-[0.24px] whitespace-nowrap hover:underline',
+              isVisit ? 'text-brand-dark' : 'text-ink-strong',
+            )}
+          >
+            {child.code}
+          </Link>
+          {child.inAnemiaTreatment && (
+            <span className="inline-flex items-center rounded-full bg-track px-2.5 py-1 text-[11px] leading-[14px] font-semibold text-nav-ink">
+              En tratamiento
+            </span>
           )}
-        >
-          {child.code}
-        </Link>
+        </div>
         <p className="text-[13px] leading-[18px] text-muted">{caregiverLine(child)}</p>
       </div>
     </div>

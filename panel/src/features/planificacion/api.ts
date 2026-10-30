@@ -32,6 +32,9 @@ export function buildWeeklyPlan(
   const children = ordenada.map(
     (fila): PlannedChild => ({
       id: fila.id_nino,
+      inAnemiaTreatment: fila.tratamiento_anemia === true,
+      pendingAlarms: fila.alarmas_pendientes,
+      alarmAttendances: fila.atenciones_alarma,
       code: fila.id_nino,
       ageMonths: fila.edad_meses,
       caregiverAlias: fila.alias_cuidador,

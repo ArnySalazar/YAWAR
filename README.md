@@ -68,6 +68,32 @@ curl localhost:8000/establecimientos/EESS01/indicadores
 
 **Meta-alerta:** si en una semana un establecimiento envía o recibe menos del 30% de su promedio reciente, el sistema lo avisa (para detectar que algo dejó de funcionar).
 
+## Atención de posibles señales de peligro
+
+En Planificación, **Atender** abre el detalle del niño. **Registrar atención** exige elegir
+**Llamada** o **Visita presencial**. El servidor registra la hora local de Lima y conserva
+la señal original, la versión atendida y el medio. Una atención indica que el personal atendió
+el aviso; no confirma recuperación. Una señal nueva vuelve a quedar pendiente, también dentro
+de la misma semana, y no borra atenciones anteriores.
+
+- `POST /ninos/{id}/alarmas/{registro_id}/atencion`, protegido con `X-API-Key` cuando está configurada.
+  Cuerpo: `{"medio":"llamada","version_alarma":1}`. Medios: `llamada` o `visita_presencial`.
+- `200`: atención guardada; repetir la misma versión y medio devuelve el mismo registro.
+- `404`: no existe ese registro para el niño; `409`: versión desactualizada o ya atendida por otro medio;
+  `422`: faltan datos o el medio/versión no son válidos. No se cambia una atención anterior.
+- Lista e historial incluyen las alarmas pendientes, sus identificadores/versiones y las atenciones.
+  `alarma=true` se conserva como dato histórico.
+- Indicadores incorpora `alarmas_pendientes` en la raíz: niños con al menos una alarma sin atender
+  hasta la semana consultada, incluidas semanas anteriores. Cada semana de `serie` añade
+  `alarmas_pendientes` y `alarmas_atendidas` (estado de la última versión de cada registro semanal).
+  El campo previo `alarmas` mantiene su significado histórico. Inicio muestra el total pendiente.
+- `GET /establecimientos/{id}/lista` consulta el estado sin escribir ni reasignar canales. El panel lo usa
+  después de registrar atención; **Generar planificación** sigue siendo la acción explícita de reasignación.
+
+Al reiniciar la API se crea `atenciones_alarma` y se agrega `alarma_version` sin borrar datos;
+las alarmas anteriores arrancan en versión 0 y pendientes. No hace falta reiniciar la demo.
+El historial de la ficha muestra todas las atenciones, aunque haya otra alarma pendiente.
+
 ## WhatsApp en modo de pruebas
 
 1. Crear una app en Meta for Developers y agregar el producto WhatsApp. Meta da un número de prueba y permite registrar unos pocos números destinatarios: usar solo números del equipo.

@@ -1,5 +1,5 @@
 /**
- * Las 7 rutas de la API de YAWAR que usa el panel, con sus tipos tal como responden.
+ * Rutas de la API de YAWAR que usa el panel, con sus tipos tal como responden.
  * Es la única puerta hacia la API: las pantallas transforman estos datos en su `api.ts`.
  * Rutas y reglas documentadas en el README de la raíz y en http://localhost:8000/docs.
  */
@@ -14,6 +14,22 @@ export type Razon = 'sabor' | 'estrenimiento' | 'se_acabo' | 'olvido' | 'otro'
 /** 0 = posible señal de peligro, mensaje para leer, o respondió "No le di" o "Tuve un problema" (esta semana o la anterior); 1 = no respondió en 7 días o más; 2 = sin novedad. */
 export type Nivel = 0 | 1 | 2
 
+export type MedioAtencion = 'llamada' | 'visita_presencial'
+export interface AlarmaPendiente {
+  registro_id: number
+  version_alarma: number
+  semana: SemanaIso
+}
+export interface AtencionAlarma {
+  id: number
+  registro_id: number
+  version_alarma: number
+  medio: MedioAtencion
+  /** Fecha y hora local de Lima, como /salud. */
+  atendido_en: string
+  detalle_alarma: string | null
+}
+
 /** GET /salud */
 export interface Salud {
   ok: boolean
@@ -24,6 +40,10 @@ export interface Salud {
 
 /** Una fila de POST /establecimientos/{id}/lista */
 export interface FilaLista {
+  /** Indicador informativo de tratamiento de anemia, tal como lo devuelve la API. */
+  tratamiento_anemia?: boolean | null
+  alarmas_pendientes?: AlarmaPendiente[]
+  atenciones_alarma?: AtencionAlarma[]
   orden: number
   id_nino: string
   alias_cuidador: string
@@ -42,6 +62,10 @@ export interface FilaLista {
 
 /** Una semana de GET /ninos/{id}/historial (de la más reciente a la más antigua). */
 export interface SemanaHistorial {
+  registro_id?: number
+  version_alarma?: number
+  alarma_pendiente?: boolean
+  atenciones?: AtencionAlarma[]
   semana: SemanaIso
   /** null si en esa semana solo se envió el recordatorio, sin generar la lista. */
   accion: Accion | null
@@ -66,6 +90,10 @@ export interface ResultadoRecordatorios {
 }
 
 export interface SemanaIndicadores {
+  alarmas_pendientes?: number
+  alarmas_atendidas?: number
+  /** Niños con posible señal de peligro durante esta semana. */
+  alarmas?: number
   semana: SemanaIso
   enviados: number
   fallidos: number
@@ -75,6 +103,10 @@ export interface SemanaIndicadores {
 
 /** GET /establecimientos/{id}/indicadores */
 export interface Indicadores {
+  /** Niños con alguna alarma pendiente, incluidas semanas anteriores. */
+  alarmas_pendientes?: number
+  /** Niños con posible señal de peligro; puede faltar en versiones anteriores de la API. */
+  alarmas?: number
   establecimiento_id: string
   /** De la semana más antigua a la pedida (hasta 5). */
   serie: SemanaIndicadores[]
@@ -84,6 +116,12 @@ export interface Indicadores {
 const enc = encodeURIComponent
 
 export const yawarApi = {
+  consultarLista: (establecimiento: string) =>
+    http.get<FilaLista[]>(`/establecimientos/${enc(establecimiento)}/lista`),
+  registrarAtencion: (idNino: string, registroId: number, version: number, medio: MedioAtencion) =>
+    http.post<AtencionAlarma>(`/ninos/${enc(idNino)}/alarmas/${registroId}/atencion`, {
+      medio, version_alarma: version,
+    }),
   salud: () => http.get<Salud>('/salud'),
 
   /** Genera (o regenera) la lista de la semana actual: escribe en la base. */

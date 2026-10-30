@@ -22,6 +22,16 @@ export function RowActions({ child, expanded, onToggleDetail, className }: RowAc
 
   return (
     <div className={cn('flex items-center gap-1', className)}>
+      {!!child.pendingAlarms?.length && (
+        <button type="button" onClick={() => { if (!expanded) onToggleDetail() }}
+          aria-label={`Atender alarma de ${child.code}`}
+          className="rounded-full bg-brand-soft px-3 py-1.5 text-xs font-semibold text-brand-dark hover:bg-[#ffdad6]">
+          Atender
+        </button>
+      )}
+      {!child.pendingAlarms?.length && !!child.alarmAttendances?.length && (
+        <span className="rounded-full bg-track px-2 py-1 text-xs font-semibold text-success">Atendido</span>
+      )}
       <button
         type="button"
         aria-expanded={expanded}

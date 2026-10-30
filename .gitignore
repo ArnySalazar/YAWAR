@@ -24,3 +24,4 @@ modelo/*.joblib
 clasificador/prueba.csv
 clasificador/resultados_prueba.csv
 modelo/datos/
+modelo/datos/

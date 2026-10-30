@@ -1,0 +1,14 @@
+variable,bloque,motivo
+edad_meses,niño,Principal patrón por edad; se modela con splines en regresión logística.
+atraso_cred,CRED derivada,"Controles acumulados menos la mediana para su edad, calculada solo en entrenamiento."
+recibio_jarabe/gotas/polvo,tratamiento,Presentación recibida; mantiene las variables del modelo previo.
+n_cred_con_fecha,CRED,Cantidad de controles respaldados por fecha en el carné.
+lugar_cred_codigo,acceso,Tipo de establecimiento donde se realizó el CRED.
+anemia_oms,clínica,"Una sola definición clínica; no se añaden Hb, nivel y MINSA simultáneamente."
+edad_madre,madre,Etapa de vida de la cuidadora.
+nivel_educativo_madre,madre,Contexto educativo; se trata como categoría.
+cuidador_habitual,cuidados,Quién cuida al niño cuando la madre se ausenta.
+quintil_riqueza,hogar,Contexto socioeconómico; se trata como categoría.
+n_menores_5_hogar,hogar,Carga de cuidado de niños pequeños.
+personas_por_dormitorio,hogar,Hacinamiento sin repetir residentes y habitaciones por separado.
+area,acceso,Contexto urbano/rural; obliga a revisar equidad por área.

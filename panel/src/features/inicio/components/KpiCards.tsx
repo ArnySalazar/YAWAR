@@ -2,6 +2,8 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import { cn } from '@/lib/cn'
 import { paths } from '@/routes/paths'
+import { useIndicadores } from '@/api/queries'
+import { dangerCountFor } from '../api'
 import { useWhatsappStats } from '../hooks'
 import { formatPct, plural } from '../utils'
 import type { HomeOverview } from '../types'
@@ -12,6 +14,7 @@ import whatsappIcon from '../assets/icon-kpi-whatsapp.svg'
 import chevronRightIcon from '../assets/icon-chevron-right.svg'
 import algorithmIcon from '../assets/icon-algorithm.svg'
 import syncIcon from '../assets/icon-sync.svg'
+import alertTriangleIcon from '../assets/icon-alert-triangle.svg'
 
 interface KpiCardProps {
   to: string
@@ -22,20 +25,26 @@ interface KpiCardProps {
   badge?: ReactNode
   footer: ReactNode
   footerIndicator: ReactNode
+  danger?: boolean
+  label?: string
 }
 
-function KpiCard({ to, title, icon, iconBgClass, value, badge, footer, footerIndicator }: KpiCardProps) {
+function KpiCard({ to, title, icon, iconBgClass, value, badge, footer, footerIndicator, danger, label }: KpiCardProps) {
   return (
     <Link
       to={to}
-      className="group flex flex-col justify-between rounded-xl border border-line bg-white p-6 shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0px_4px_12px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      aria-label={label}
+      className={cn(
+        'group flex flex-col justify-between rounded-xl border p-6 shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0px_4px_12px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand',
+        danger ? 'border-brand bg-brand-soft' : 'border-line bg-white',
+      )}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2">
           <span className={cn('flex size-8 shrink-0 items-center justify-center rounded-full', iconBgClass)}>
             <img src={icon.src} alt="" width={icon.width} height={icon.height} />
           </span>
-          <h2 className="text-xs font-semibold leading-4 tracking-[0.24px] text-muted">{title}</h2>
+          <h2 className={cn('text-xs font-semibold leading-4 tracking-[0.24px]', danger ? 'text-brand-dark' : 'text-muted')}>{title}</h2>
         </div>
         <img
           src={chevronRightIcon}
@@ -52,7 +61,7 @@ function KpiCard({ to, title, icon, iconBgClass, value, badge, footer, footerInd
       </div>
 
       <div className="flex items-end justify-between gap-2 pt-6">
-        <div className="text-[11px] font-medium leading-[14px] tracking-[0.33px] text-muted">{footer}</div>
+        <div className={cn('text-[11px] font-medium leading-[14px] tracking-[0.33px]', danger ? 'text-brand-dark' : 'text-muted')}>{footer}</div>
         {footerIndicator}
       </div>
     </Link>
@@ -86,10 +95,28 @@ function useWhatsappKpi() {
 export function KpiCards({ overview }: { overview: HomeOverview }) {
   const { roster, prioritized, homeVisits, whatsappFollowUps } = overview
   const whatsapp = useWhatsappKpi()
+  const indicadores = useIndicadores()
+  const alarmas = dangerCountFor(indicadores.data)
   const ageRange = roster.ageRangeMonths
 
   return (
-    <section aria-label="Indicadores de la semana" className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+    <section aria-label="Indicadores de la semana" className={cn('grid grid-cols-1 gap-5 sm:grid-cols-2', alarmas > 0 ? 'xl:grid-cols-5' : 'xl:grid-cols-4')}>
+      {alarmas > 0 && (
+        <div role="alert" aria-label="Posible peligro" className="flex [&>a]:w-full">
+          <KpiCard
+            to={paths.planificacion}
+            title="Posible señal de peligro"
+            label={`${alarmas} ${alarmas === 1 ? 'niño' : 'niños'} con posible señal de peligro: revisar hoy`}
+            icon={{ src: alertTriangleIcon, width: 15.6, height: 13.5 }}
+            iconBgClass="bg-[#ffdad6]"
+            value={<p className="text-[32px] font-bold leading-10 text-brand-dark">{alarmas}</p>}
+            badge={<span className={cn(badgeClass, 'bg-[#ffdad6] text-brand-dark')}>{alarmas === 1 ? 'niño' : 'niños'}</span>}
+            footer="Revisar hoy en Planificación"
+            footerIndicator={<span aria-hidden className="size-2 shrink-0 rounded-full bg-brand" />}
+            danger
+          />
+        </div>
+      )}
       <KpiCard
         to={paths.ninos}
         title={ageRange ? `Padrón Activo (${ageRange.min}-${ageRange.max} m)` : 'Padrón Activo'}

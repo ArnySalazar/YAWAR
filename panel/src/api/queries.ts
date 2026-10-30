@@ -5,7 +5,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEstablecimiento } from '@/features/establecimiento/EstablecimientoProvider'
 import { diaDe, semanaIso } from '@/lib/semana'
-import { yawarApi, type SemanaHistorial, type SemanaIso } from './yawar'
+import { yawarApi, type FilaLista, type MedioAtencion, type SemanaHistorial, type SemanaIso } from './yawar'
 
 export const claves = {
   salud: ['salud'] as const,
@@ -122,5 +122,27 @@ export function useCargarPadron() {
           queryClient.resetQueries({ queryKey: [clave] }),
         ),
       ),
+  })
+}
+
+/** Refresca también tras un conflicto para que el personal vea la versión nueva del aviso. */
+export function useRegistrarAtencion() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: ({ idNino, registroId, version, medio }: {
+      idNino: string; registroId: number; version: number; medio: MedioAtencion
+    }) => yawarApi.registrarAtencion(idNino, registroId, version, medio),
+    onSettled: async () => {
+      // El POST de generar lista reasigna visitas: aquí se usa la lectura sin efectos.
+      const listas = queryClient.getQueriesData<FilaLista[]>({ queryKey: ['lista'] })
+      await Promise.allSettled([
+        ...listas.map(async ([clave]) => {
+          const lista = await yawarApi.consultarLista(String(clave[1]))
+          queryClient.setQueryData(clave, lista)
+        }),
+        ...['historial', 'historiales', 'indicadores'].map((clave) =>
+          queryClient.invalidateQueries({ queryKey: [clave] })),
+      ])
+    },
   })
 }

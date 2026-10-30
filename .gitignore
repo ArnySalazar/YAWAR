@@ -4,6 +4,7 @@
 datos/*
 !datos/README.md
 !datos/padron_ejemplo.csv
+!datos/padron_demo_30.csv
 *.db
 # Python
 __pycache__/

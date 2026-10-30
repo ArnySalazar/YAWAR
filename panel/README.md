@@ -47,6 +47,48 @@ Ese único comando levanta la API, con el Python del `.venv` (si la API ya estab
 
 ## Pantallas y de dónde sale cada dato
 
+### Simular alarmas de cuidadores en local
+
+Desde `panel/`, con el entorno Python del proyecto instalado (PowerShell):
+
+```powershell
+..\.venv\Scripts\python.exe -X utf8 scripts/simular-alarmas.py --cantidad 2
+```
+
+Recarga Inicio con **EESS01** seleccionado: aparecerá la tarjeta roja «Posible señal de peligro»
+con **2 niños** y «Revisar hoy en Planificación», junto a los demás indicadores de la semana.
+El enlace abre Planificación, donde los niños `SIM-ALARMA-EESS01-1` y `SIM-ALARMA-EESS01-2`
+se identifican con «Posible peligro». La simulación usa la semana actual de Lima y guarda mensajes
+entrantes ficticios y sus registros semanales. Predefine el resultado del clasificador; no ejecuta
+Ollama ni llama a WhatsApp. Los niños sintéticos tienen `acepta_mensajes=False` y teléfonos no enrutables.
+
+Usa `--cantidad 1` para el singular o `--cantidad 0` para desactivar las alarmas sintéticas.
+Si hay otras alarmas en el establecimiento, seguirán contándose. Puedes elegir otro con
+`--establecimiento EESS02`. Cada ejecución guarda un respaldo SQLite junto a la base y conserva
+los niños e historiales que no pertenecen a la simulación. Para retirar los dos niños sintéticos:
+
+```powershell
+..\.venv\Scripts\python.exe -X utf8 scripts/simular-alarmas.py --limpiar
+```
+
+El aviso lee `serie[última semana].alarmas`, tal como lo entrega la API actual; también admite
+el contador `alarmas` en la raíz. No incluye el texto del mensaje del cuidador.
+
+Con la funcionalidad de atención, Inicio prioriza `alarmas_pendientes` de los indicadores.
+En Inicio, abre **⋮** en la fila del niño y selecciona **Atender**. El mismo menú muestra
+**Llamada** y **Visita presencial** como opciones exclusivas; selecciona el medio y pulsa
+**Confirmar atención por llamada/visita presencial**. Elegir una opción no guarda nada hasta
+confirmar. **Volver al menú**, Escape o un clic fuera permiten salir. Si hay varias semanas
+pendientes, primero se elige la alarma a atender. La opción **Atender** solo aparece si hay
+alarmas pendientes con su identificador y versión, y usa la misma operación del backend.
+En Planificación pulsa **Atender**, luego **Registrar atención**, selecciona **Llamada** o
+**Visita presencial** y guarda. Se actualizan la tarjeta y el historial sin regenerar el plan.
+La ficha conserva el medio y la hora de cada atención. Si llega otro mensaje con una nueva
+señal de peligro, vuelve a aparecer pendiente. Una atención no confirma recuperación.
+Reinicia la API después de actualizar el código para que aplique la migración automática.
+El simulador abre una versión nueva al usar `--cantidad 1` o `--cantidad 2` y su limpieza
+también retira las atenciones de los dos niños sintéticos.
+
 | Ruta | Pantalla | Datos de la API |
 | --- | --- | --- |
 | `/` | Inicio | Lista de la semana, indicadores (incluida la meta-alerta) |

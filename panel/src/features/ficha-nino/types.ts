@@ -4,7 +4,7 @@
  * No hay nombres, iniciales, teléfonos, sector, suplemento, fecha del último CRED ni año de registro:
  * la API no los tiene o van contra las reglas del proyecto.
  */
-import type { Respuesta, SemanaIso } from '@/api/yawar'
+import type { AtencionAlarma, Respuesta, SemanaIso } from '@/api/yawar'
 
 /** Estado de una semana según lo que respondió el cuidador con los botones del bot de WhatsApp. */
 export type WeeklyResponseStatus = 'alerta' | 'interrupcion' | 'completado' | 'sin_respuesta'
@@ -43,6 +43,8 @@ export interface ChildRoster {
 
 /** Una semana del historial del bot. */
 export interface BotWeeklyResponse {
+  attendances?: AtencionAlarma[]
+  alarmPending?: boolean
   semana: SemanaIso
   status: WeeklyResponseStatus
   respuesta: Respuesta

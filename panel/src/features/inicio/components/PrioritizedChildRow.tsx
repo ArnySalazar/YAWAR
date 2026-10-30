@@ -114,7 +114,7 @@ export function PrioritizedChildRow({ child }: { child: PrioritizedChild }) {
             <span className="text-xs font-bold leading-4 tracking-[0.24px] text-ink-strong">{pct}%</span>
           </div>
         </div>
-        <RowActionsMenu childCode={child.code} />
+        <RowActionsMenu childCode={child.code} pendingAlarms={child.pendingAlarms} />
       </div>
     </li>
   )

@@ -1096,6 +1096,132 @@
           ]
         }
       ]
+    },
+    {
+      "name": "8 · Atención de alarmas (manual)",
+      "description": "Activar probar_atenciones=true y usar un niño sintético con alarma. La atención conserva el aviso y no confirma recuperación. Protegido por la clave heredada de la colección.",
+      "event": [{ "listen": "prerequest", "script": { "type": "text/javascript", "exec": ["if (String(pm.variables.get('probar_atenciones')) !== 'true') pm.execution.skipRequest();"] } }],
+      "item": [
+        {
+          "name": "Consultar plan sin reasignar canales",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/establecimientos/{{est}}/lista",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "establecimientos",
+                "{{est}}",
+                "lista"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Entrega la lista con alarmas pendientes y atenciones', () => pm.response.json().forEach(n => { pm.expect(n.alarmas_pendientes).to.be.an('array'); pm.expect(n.atenciones_alarma).to.be.an('array'); }));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Seleccionar alarma pendiente del historial",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/ninos/{{id_nino}}/historial",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "ninos",
+                "{{id_nino}}",
+                "historial"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "pm.collectionVariables.unset('registro_alarma_id'); pm.collectionVariables.unset('version_alarma');",
+                  "const pendiente = pm.response.json().find(r => r.alarma_pendiente);",
+                  "pm.test('El niño tiene una alarma pendiente', () => pm.expect(pendiente).to.exist);",
+                  "if (pendiente) { pm.collectionVariables.set('registro_alarma_id', pendiente.registro_id); pm.collectionVariables.set('version_alarma', pendiente.version_alarma); }"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Registrar atención por llamada o visita presencial",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/ninos/{{id_nino}}/alarmas/{{registro_alarma_id}}/atencion",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "ninos",
+                "{{id_nino}}",
+                "alarmas",
+                "{{registro_alarma_id}}",
+                "atencion"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"medio\": \"{{medio_atencion}}\",\n  \"version_alarma\": {{version_alarma}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.collectionVariables.get('registro_alarma_id') === undefined) pm.execution.skipRequest();",
+                  "if (!pm.variables.get('medio_atencion')) pm.variables.set('medio_atencion', 'llamada');"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Responde 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Conserva versión, medio y fecha', () => { const a = pm.response.json(); pm.expect(a.version_alarma).to.eql(Number(pm.collectionVariables.get('version_alarma'))); pm.expect(a.medio).to.eql(pm.variables.get('medio_atencion')); pm.expect(a.atendido_en).to.be.a('string'); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

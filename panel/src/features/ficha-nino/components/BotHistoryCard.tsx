@@ -1,4 +1,5 @@
 import chatIcon from '../assets/chat.svg'
+import { AtencionAlarmaResumen } from '@/components/ui/AtencionAlarmaResumen'
 import arrowRightRedIcon from '../assets/arrow-right-red.svg'
 import { cn } from '@/lib/cn'
 import { channelName, riskPct, weekTitle } from '../format'
@@ -100,6 +101,8 @@ function BotHistoryEntry({ entry }: { entry: BotWeeklyResponse }) {
 
   return (
     <li className={cn('flex flex-col gap-1 rounded-xl border p-[13px]', style.box)}>
+      {entry.alarmPending && <p className="text-xs font-semibold text-brand-dark">Posible peligro · pendiente de atención</p>}
+      {entry.attendances?.map((atencion) => <AtencionAlarmaResumen key={atencion.id} atencion={atencion} />)}
       <div className="flex items-center justify-between gap-2">
         <p className={cn('text-xs leading-4', style.title)}>
           {weekTitle(entry.semana)}

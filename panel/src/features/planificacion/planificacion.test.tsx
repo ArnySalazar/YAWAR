@@ -40,6 +40,25 @@ describe('Adaptador de Planificación', () => {
 })
 
 describe('Pantalla de Planificación', () => {
+  it.each([true, false, null, undefined])('muestra En tratamiento solo con tratamiento_anemia=true (recibe %s)', async (tratamiento_anemia) => {
+    mockApi({
+      'POST /establecimientos/EESS01/lista': LISTA.map((fila) => ({
+        ...fila, tratamiento_anemia: fila.id_nino === 'N0002' ? tratamiento_anemia : false,
+      })),
+    })
+    renderizar(<PlanificacionPage />)
+    const tabla = await screen.findByRole('table')
+    const fila = within(tabla).getByRole('link', { name: 'N0002' }).closest('tr')!
+    if (tratamiento_anemia === true) {
+      expect(within(fila).getByText('En tratamiento')).toBeInTheDocument()
+    } else {
+      expect(within(fila).queryByText('En tratamiento')).not.toBeInTheDocument()
+    }
+    // El indicador nunca cambia el orden que entrega el backend.
+    expect(within(tabla).getAllByRole('link', { name: /^N\d+$/ }).map((link) => link.textContent))
+      .toEqual(LISTA.map((nino) => nino.id_nino))
+  })
+
   it('genera la lista con la capacidad guardada y muestra a cada niño con su señal y su última respuesta', async () => {
     const api = mockApi()
     renderizar(<PlanificacionPage />)

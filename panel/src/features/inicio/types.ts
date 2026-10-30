@@ -3,7 +3,7 @@
  * (POST /establecimientos/{id}/lista) y de los indicadores (GET /establecimientos/{id}/indicadores).
  * No hay agenda por día y hora, mapa, fotos, dosaje de Hb ni visitas realizadas: la API no los tiene.
  */
-import type { SemanaIso } from '@/api/yawar'
+import type { AlarmaPendiente, SemanaIso } from '@/api/yawar'
 
 /** Regla que ubicó al niño en la lista (las mismas de la API): R1 = nivel 0, R2 = nivel 1, R3 = nivel 2. */
 export type PriorityRule = 'R1' | 'R2' | 'R3'
@@ -12,6 +12,7 @@ export type PriorityRule = 'R1' | 'R2' | 'R3'
 export type NextAction = { type: 'home_visit'; visitOrder: number } | { type: 'whatsapp_followup' }
 
 export interface PrioritizedChild {
+  pendingAlarms?: AlarmaPendiente[]
   id: string
   /** Código del niño en el padrón, ej. N0001. */
   code: string

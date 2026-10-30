@@ -107,6 +107,64 @@ describe('Adaptador de Inicio', () => {
 })
 
 describe('Pantalla de Inicio', () => {
+  it('oculta la tarjeta al atender aunque la alarma histórica permanezca marcada', async () => {
+    abrirInicio({ 'GET /establecimientos/EESS01/indicadores': {
+      ...INDICADORES, alarmas_pendientes: 0,
+      serie: [{ ...INDICADORES.serie.at(-1)!, alarmas: 2, alarmas_pendientes: 0, alarmas_atendidas: 2 }],
+    } })
+    await screen.findByText('2 respuestas')
+    expect(screen.queryByRole('alert', { name: 'Posible peligro' })).not.toBeInTheDocument()
+  })
+
+  it.each([2, 1, 0, undefined])('lee alarmas=%s de la semana actual con el formato real de la API', async (alarmas) => {
+    abrirInicio({
+      'GET /establecimientos/EESS01/indicadores': {
+        ...INDICADORES,
+        serie: INDICADORES.serie.map((semana, i) => ({
+          ...semana,
+          alarmas: i === INDICADORES.serie.length - 1 ? alarmas : 5,
+        })),
+      },
+    })
+
+    await screen.findByText('2 respuestas')
+    if (alarmas) {
+      const aviso = await screen.findByRole('alert', { name: 'Posible peligro' })
+      expect(within(aviso).getByRole('heading', { name: 'Posible señal de peligro' })).toBeInTheDocument()
+      expect(within(aviso).getByText(String(alarmas))).toBeInTheDocument()
+      expect(aviso).toHaveTextContent('Revisar hoy en Planificación')
+    } else {
+      expect(screen.queryByRole('alert', { name: 'Posible peligro' })).not.toBeInTheDocument()
+    }
+  })
+
+  it.each([
+    [2, '2 niños con posible señal de peligro: revisar hoy'],
+    [1, '1 niño con posible señal de peligro: revisar hoy'],
+  ])('muestra la tarjeta de posible peligro junto a los indicadores con alarmas=%i y enlaza a Planificación', async (alarmas, texto) => {
+    abrirInicio({
+      'GET /establecimientos/EESS01/indicadores': { ...INDICADORES, alarmas },
+    })
+
+    const aviso = await screen.findByRole('alert', { name: 'Posible peligro' })
+    expect(within(aviso).getByRole('link', { name: texto })).toHaveAttribute('href', '/planificacion')
+    expect(within(aviso).getByText(String(alarmas))).toBeInTheDocument()
+    const indicadores = screen.getByRole('region', { name: 'Indicadores de la semana' })
+    expect(indicadores).toContainElement(aviso)
+    expect(indicadores.firstElementChild).toBe(aviso)
+    expect(within(indicadores).getAllByRole('link')).toHaveLength(5)
+  })
+
+  it.each([0, undefined])('no muestra el aviso de posible peligro con alarmas=%s', async (alarmas) => {
+    abrirInicio({ 'GET /establecimientos/EESS01/indicadores': { ...INDICADORES, alarmas } })
+
+    // Espera a que los indicadores se hayan cargado antes de comprobar la ausencia.
+    await screen.findByText('2 respuestas')
+    expect(screen.queryByRole('alert', { name: 'Posible peligro' })).not.toBeInTheDocument()
+    expect(within(screen.getByRole('region', { name: 'Indicadores de la semana' })).getAllByRole('link')).toHaveLength(4)
+    expect(screen.queryByText(/con posible señal de peligro: revisar hoy/)).not.toBeInTheDocument()
+  })
+
   it('saluda sin nombre de usuario y muestra el establecimiento y la semana ISO', async () => {
     abrirInicio()
     const titulo = screen.getByRole('heading', { level: 1 })
@@ -287,7 +345,7 @@ describe('Pantalla de Inicio', () => {
     for (const img of container.querySelectorAll('img')) {
       expect(img.getAttribute('src') ?? '').not.toMatch(/avatar|\.(png|jpe?g|webp)$/i)
     }
-    // El menú de cada niño solo lleva a otras pantallas (no registra llamadas ni mensajes)
+    // Sin alarmas pendientes, el menú conserva únicamente los accesos a otras pantallas.
     fireEvent.click(screen.getByRole('button', { name: 'Más opciones para N0001' }))
     expect(screen.getAllByRole('menuitem').map((item) => item.textContent)).toEqual([
       'Ver ficha del niño',

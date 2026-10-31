@@ -148,7 +148,7 @@ def test_otro_motivo_con_alarma_sube_primero(s, monkeypatch):
     servicios.procesar_entrante(s, texto("51000000002", "no quiere lactar y está muy decaído"), LUNES)
     reg = s.scalars(select(Registro).where(Registro.id_nino == "N0002", Registro.semana == SEM)).one()
     assert reg.detalle.startswith("no quiere lactar") and reg.alarma and reg.derivar
-    assert "106" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]  # mensaje fijo de seguridad
+    assert "hospital más cercano" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]  # mensaje fijo de seguridad
     lista = servicios.generar_lista(s, "EESS01", capacidad=1, hoy=LUNES)
     assert lista[0]["id_nino"] == "N0002" and lista[0]["seguimiento"].startswith("POSIBLE SEÑAL")
 
@@ -196,7 +196,7 @@ def test_texto_sin_preguntar_con_peligro_no_se_ignora(s, monkeypatch):
     monkeypatch.setattr(servicios, "decidir", _decisor_fijo(True))
     servicios.enviar_recordatorios(s, "EESS01", hoy=LUNES)
     servicios.procesar_entrante(s, texto("51000000003", "mi bebe convulsiono anoche"), LUNES)
-    assert "106" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+    assert "hospital más cercano" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
     lista = servicios.generar_lista(s, "EESS01", capacidad=1, hoy=LUNES)
     assert lista[0]["id_nino"] == "N0003" and lista[0]["seguimiento"].startswith("POSIBLE SEÑAL")
 
@@ -257,11 +257,11 @@ def test_sin_telefono_del_personal_no_se_envia_aviso(s, monkeypatch):
     assert not [m for m in whatsapp.BANDEJA_PRUEBA if m.get("type") == "template"]
 
 
-def test_numero_ajeno_recibe_orientacion_con_106_una_vez_al_dia(s):
+def test_numero_ajeno_recibe_orientacion_de_seguridad_una_vez_al_dia(s):
     servicios.procesar_entrante(s, texto("51999999999", "hola"), LUNES)
     ultimo = whatsapp.BANDEJA_PRUEBA[-1]
     assert ultimo["to"] == "51999999999"
-    assert "No pudimos reconocer" in ultimo["text"]["body"] and "106" in ultimo["text"]["body"]
+    assert "No pudimos reconocer" in ultimo["text"]["body"] and "hospital más cercano" in ultimo["text"]["body"]
     n = len(whatsapp.BANDEJA_PRUEBA)
     servicios.procesar_entrante(s, texto("51999999999", "hola?"), LUNES + timedelta(hours=1))
     assert len(whatsapp.BANDEJA_PRUEBA) == n  # no se repite dentro de las 24 horas
@@ -282,7 +282,7 @@ def test_mensaje_sin_telefono_se_guarda_y_se_responde_por_usuario(s):
     assert guardado.telefono == "usuario:PE.123"
     ultimo = whatsapp.BANDEJA_PRUEBA[-1]
     assert ultimo.get("recipient") == "PE.123" and "to" not in ultimo
-    assert "106" in ultimo["text"]["body"]
+    assert "hospital más cercano" in ultimo["text"]["body"]
 
 
 def test_audio_de_numero_ajeno_recibe_orientacion(s):
@@ -296,7 +296,7 @@ def test_numero_ajeno_no_pasa_por_el_decisor(s, monkeypatch):
         raise AssertionError("el decisor no debe leer mensajes de números fuera del padrón")
     monkeypatch.setattr(servicios, "decidir", no_deberia_llamarse)
     servicios.procesar_entrante(s, texto("51999999997", "mi bebe convulsiona"), LUNES)
-    assert "106" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
+    assert "hospital más cercano" in whatsapp.BANDEJA_PRUEBA[-1]["text"]["body"]
 
 
 CABECERA = "id_nino,establecimiento_id,alias_cuidador,telefono,edad_meses,controles_cred,fecha_entrega_hierro,nombre_nino\n"

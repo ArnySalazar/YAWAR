@@ -26,3 +26,5 @@ clasificador/prueba.csv
 clasificador/resultados_prueba.csv
 modelo/datos/
 modelo/datos/
+clasificador/resultados_*.csv
+clasificador/resumen_*.txt

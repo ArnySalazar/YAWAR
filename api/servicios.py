@@ -375,7 +375,7 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
         texto = msg["valor"].strip().lower()
         ninos = sesion.scalars(select(Nino).where(Nino.telefono == tel)).all()
         if not ninos:
-            _responder_no_inscrito(sesion, tel, momento)  # se guarda y se orienta, con el 106
+            _responder_no_inscrito(sesion, tel, momento)  # se guarda y se orienta, con el texto de seguridad
             return True
         if texto in mensajes.PALABRAS_BAJA:
             for n in ninos:
@@ -422,7 +422,7 @@ def procesar_entrante(sesion: Session, msg: dict, momento: datetime | None = Non
 
 
 def _responder_no_inscrito(sesion: Session, tel: str, momento: datetime) -> None:
-    """Quien no está en el padrón (o llega sin teléfono) recibe una orientación con el 106,
+    """Quien no está en el padrón (o llega sin teléfono) recibe una orientación de seguridad,
     una sola vez cada 24 horas, para no conversar con avisos automáticos ni repetir."""
     if not tel:
         return

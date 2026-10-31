@@ -45,7 +45,7 @@ La comparación de modelos de `docs/resultados_experimentacion_modelo.md` incluy
 
 Cuando el cuidador elige "Otro motivo" o escribe sin que se le pregunte, un modelo de lenguaje abierto que corre en local (Qwen 2.5 7B con Ollama) clasifica el mensaje en una de ocho razones y detecta señales de peligro. No redacta respuestas: lee la probabilidad de cada opción.
 
-- Si detecta peligro, el asistente envía un texto fijo (acudir al establecimiento o llamar al 106), el niño sube al primer lugar y se avisa al personal.
+- Si detecta peligro, el asistente envía un texto fijo (acudir al establecimiento de salud o al hospital más cercano), el niño sube al primer lugar y se avisa al personal.
 - Si duda o el motivo es "otro", el caso queda como "mensaje para leer".
 - Los audios no se procesan: se pide escribir y el caso pasa a una persona.
 - Si Ollama no responde, todo se deriva a una persona y el panel muestra una meta-alerta.

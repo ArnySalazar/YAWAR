@@ -76,7 +76,7 @@ export function buildBotHistory(historial: SemanaHistorial[], semanaActual: Sema
           ? s.detalle.slice(1, -1).replace(/^envió/, 'Envió')
           : `${s.respuesta === 'sin_respuesta' ? 'Escribió' : textoRespuesta(s.respuesta, s.razon)}: «${s.detalle}»`,
       outcome: s.alarma
-        ? 'Posible señal de peligro: se envió el texto de seguridad (106) y el niño pasó al primer lugar de la lista.'
+        ? 'Posible señal de peligro: se envió el texto de seguridad y el niño pasó al primer lugar de la lista.'
         : s.derivar
           ? 'Mensaje para que lo lea una persona; el niño subió en la lista.'
           : outcomeFor(s.respuesta, s.razon, isCurrentWeek),

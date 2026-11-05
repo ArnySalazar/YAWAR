@@ -1,7 +1,6 @@
 import { Suspense } from 'react'
 import { Outlet, ScrollRestoration } from 'react-router'
 import { Skeleton } from '@/components/ui/AsyncContent'
-import { PedirClave } from '@/components/ui/PedirClave'
 import { AppHeader } from './AppHeader'
 import { AppFooter } from './AppFooter'
 import { PageContainer } from './PageContainer'
@@ -16,7 +15,6 @@ export function AppLayout() {
         </Suspense>
       </main>
       <AppFooter />
-      <PedirClave />
       <ScrollRestoration />
     </div>
   )

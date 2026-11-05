@@ -9,19 +9,36 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from pathlib import Path
+
 from fastapi import (APIRouter, Depends, FastAPI, File, Header, HTTPException, Query, Request,
-                     UploadFile)
-from fastapi.responses import PlainTextResponse, StreamingResponse
+                     Response, UploadFile)
+from fastapi.responses import FileResponse, PlainTextResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 
-from api import config, servicios
+from api import acceso, config, servicios
 from api.db import ahora, crear_motor, fabrica_sesiones, semana_iso
 from bot import whatsapp
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("yawar")
 
-app = FastAPI(title="YAWAR API", version="0.2.0")
+app = FastAPI(title="YAWAR API", version="0.3.0",
+              docs_url="/docs" if config.MOSTRAR_DOCS else None,
+              redoc_url=None, openapi_url="/openapi.json" if config.MOSTRAR_DOCS else None)
+
+
+@app.middleware("http")
+async def cabeceras_seguras(request: Request, call_next):
+    r = await call_next(request)
+    r.headers.setdefault("X-Content-Type-Options", "nosniff")
+    r.headers.setdefault("X-Frame-Options", "DENY")
+    r.headers.setdefault("Referrer-Policy", "same-origin")
+    r.headers.setdefault("X-Robots-Tag", "noindex, nofollow")
+    r.headers.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+    return r
+
 _motor = crear_motor()
 _Sesion = fabrica_sesiones(_motor)
 
@@ -34,10 +51,19 @@ def sesion():
         s.close()
 
 
-def exigir_clave(x_api_key: str | None = Header(default=None)):
-    """Si API_CLAVE está definida en el .env, el panel debe enviarla en X-API-Key."""
-    if config.API_CLAVE and not (x_api_key and secrets.compare_digest(x_api_key, config.API_CLAVE)):
-        raise HTTPException(401, "Falta la clave de acceso o es incorrecta")
+def exigir_clave(request: Request, x_api_key: str | None = Header(default=None),
+                 s: Session = Depends(sesion)):
+    """Acceso a las rutas del panel: sesión iniciada (cookie) o X-API-Key para scripts.
+
+    Sin PANEL_LOGIN ni API_CLAVE (solo en desarrollo) las rutas quedan abiertas.
+    """
+    if config.API_CLAVE and x_api_key and secrets.compare_digest(x_api_key, config.API_CLAVE):
+        return
+    if acceso.usuario_de_token(s, request.cookies.get(acceso.COOKIE)):
+        return
+    if not config.PANEL_LOGIN and not config.API_CLAVE:
+        return
+    raise HTTPException(401, "Inicia sesión para usar el panel")
 
 
 # Rutas del panel: protegidas con la clave
@@ -45,6 +71,7 @@ panel = APIRouter(dependencies=[Depends(exigir_clave)])
 
 
 @app.get("/salud")
+@app.get("/api/salud", include_in_schema=False)  # el panel publicado llama a /api/salud
 def salud():
     return {"ok": True, "modo_prueba": config.MODO_PRUEBA, "hora_local": ahora().isoformat()}
 
@@ -117,7 +144,63 @@ def indicadores(est: str, semana: str | None = None, s: Session = Depends(sesion
     return servicios.indicadores(s, est, semana or semana_iso(ahora()))
 
 
-app.include_router(panel)
+# ---------- Inicio de sesión ----------
+auth = APIRouter(prefix="/auth")
+
+
+class Credenciales(BaseModel):
+    usuario: str = Field(min_length=1, max_length=64)
+    clave: str = Field(min_length=1, max_length=256)
+
+
+def _ip(request: Request) -> str:
+    # Detrás del túnel de Cloudflare la IP real llega en CF-Connecting-IP
+    return request.headers.get("CF-Connecting-IP") or (request.client.host if request.client else "?")
+
+
+@auth.post("/login")
+def iniciar_sesion(entrada: Credenciales, request: Request, response: Response,
+                   s: Session = Depends(sesion)):
+    llaves = (f"ip:{_ip(request)}", f"u:{entrada.usuario.strip().lower()}")
+    if any(acceso.bloqueado(k) for k in llaves):
+        raise HTTPException(429, "Demasiados intentos. Espera 15 minutos y vuelve a intentar.")
+    u = acceso.autenticar(s, entrada.usuario, entrada.clave)
+    if u is None:
+        for k in llaves:
+            acceso.anotar_fallo(k)
+        raise HTTPException(401, "Usuario o contraseña incorrectos")
+    for k in llaves:
+        acceso.limpiar_fallos(k)
+    token = acceso.abrir_sesion(s, u)
+    response.set_cookie(acceso.COOKIE, token, max_age=config.SESION_HORAS * 3600, httponly=True,
+                        secure=config.SESION_COOKIE_SEGURA, samesite="strict", path="/")
+    log.info("Inicio de sesión: %s", u.usuario)
+    return {"usuario": u.usuario, "nombre": u.nombre}
+
+
+@auth.post("/salir")
+def salir(request: Request, response: Response, s: Session = Depends(sesion)):
+    acceso.cerrar_sesion(s, request.cookies.get(acceso.COOKIE))
+    response.delete_cookie(acceso.COOKIE, path="/", secure=config.SESION_COOKIE_SEGURA,
+                           httponly=True, samesite="strict")
+    return {"ok": True}
+
+
+@auth.get("/yo")
+def quien_soy(request: Request, s: Session = Depends(sesion)):
+    u = acceso.usuario_de_token(s, request.cookies.get(acceso.COOKIE))
+    if u:
+        return {"usuario": u.usuario, "nombre": u.nombre, "login": True}
+    if not config.PANEL_LOGIN and not config.API_CLAVE:
+        return {"usuario": None, "nombre": "Desarrollo", "login": False}
+    raise HTTPException(401, "Inicia sesión para usar el panel")
+
+
+# Las rutas del panel se sirven en la raíz (scripts y pruebas) y bajo /api (el panel publicado,
+# que vive en el mismo dominio y llama a /api/...)
+for _prefijo in ("", "/api"):
+    app.include_router(panel, prefix=_prefijo)
+    app.include_router(auth, prefix=_prefijo)
 
 
 # ---------- Webhook de WhatsApp (sin clave: lo protege la firma de Meta) ----------
@@ -147,3 +230,25 @@ async def recibir_webhook(request: Request, s: Session = Depends(sesion)):
         log.exception("Error procesando el webhook")
         s.rollback()
     return {"ok": True}
+
+
+# ---------- Panel compilado (npm run build), servido desde el mismo dominio ----------
+_DIST = Path(config.PANEL_DIST).resolve()
+
+if (_DIST / "index.html").is_file():
+    if (_DIST / "assets").is_dir():
+        app.mount("/assets", StaticFiles(directory=_DIST / "assets"), name="assets")
+
+    @app.get("/robots.txt", include_in_schema=False, response_class=PlainTextResponse)
+    def robots():
+        return "User-agent: *\nDisallow: /\n"
+
+    @app.api_route("/{ruta:path}", methods=["GET", "HEAD"], include_in_schema=False)
+    def panel_web(ruta: str):
+        if ruta.startswith("api/") or ruta == "api":
+            raise HTTPException(404, "No existe")
+        archivo = (_DIST / ruta).resolve()
+        if ruta and archivo.is_file() and _DIST in archivo.parents:
+            return FileResponse(archivo)
+        # Rutas del panel (/planificacion, /ninos/…): las resuelve React
+        return FileResponse(_DIST / "index.html", headers={"Cache-Control": "no-cache"})

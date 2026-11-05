@@ -99,6 +99,25 @@ class AtencionAlarma(Base):
     detalle_alarma: Mapped[str | None] = mapped_column(Text, nullable=True)
 
 
+class Usuario(Base):
+    """Personal que entra al panel. La contraseña se guarda solo como hash (scrypt)."""
+    __tablename__ = "usuarios"
+    usuario: Mapped[str] = mapped_column(String, primary_key=True)
+    nombre: Mapped[str] = mapped_column(String)
+    clave_hash: Mapped[str] = mapped_column(String)
+    activo: Mapped[bool] = mapped_column(Boolean, default=True)
+    creado_en: Mapped[datetime] = mapped_column(DateTime)
+
+
+class SesionPanel(Base):
+    """Sesión abierta en el panel. Se guarda el hash del token, nunca el token."""
+    __tablename__ = "sesiones_panel"
+    token_hash: Mapped[str] = mapped_column(String, primary_key=True)
+    usuario: Mapped[str] = mapped_column(ForeignKey("usuarios.usuario"), index=True)
+    creada_en: Mapped[datetime] = mapped_column(DateTime)
+    expira_en: Mapped[datetime] = mapped_column(DateTime, index=True)
+
+
 def crear_motor(url: str = config.DATABASE_URL):
     args = {"check_same_thread": False} if url.startswith("sqlite") else {}
     motor = create_engine(url, connect_args=args)

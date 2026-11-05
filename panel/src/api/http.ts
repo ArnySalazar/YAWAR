@@ -15,8 +15,8 @@ export class ApiError extends Error {
 
 export const SIN_CONEXION = 'No se pudo conectar con el servidor de YAWAR. Revisa que la API esté encendida.'
 
-/** Evento que avisa que la API pidió la clave (401); lo escucha PedirClave. */
-export const EVENTO_FALTA_CLAVE = 'yawar:falta-clave'
+/** Evento que avisa que la sesión no existe o venció (401); lo escucha SesionProvider. */
+export const EVENTO_SIN_SESION = 'yawar:sin-sesion'
 
 type QueryParams = Record<string, string | number | boolean | null | undefined>
 
@@ -25,25 +25,8 @@ interface RequestOptions {
   body?: unknown
   headers?: HeadersInit
   signal?: AbortSignal
-}
-
-const LLAVE_CLAVE = 'yawar.clave'
-
-// La clave la escribe la persona en pantalla (PedirClave); nunca va dentro del código del panel.
-export function guardarClave(clave: string) {
-  try {
-    sessionStorage.setItem(LLAVE_CLAVE, clave)
-  } catch {
-    // navegador sin almacenamiento: se pedirá de nuevo
-  }
-}
-
-function leerClave() {
-  try {
-    return sessionStorage.getItem(LLAVE_CLAVE) ?? ''
-  } catch {
-    return ''
-  }
+  /** No avisar a SesionProvider si responde 401 (lo usa la pantalla de ingreso). */
+  sinAvisoDeSesion?: boolean
 }
 
 function buildUrl(path: string, params?: QueryParams) {
@@ -66,19 +49,19 @@ function mensajeDeError(status: number, payload: unknown) {
 }
 
 async function request<T>(method: string, path: string, options: RequestOptions = {}): Promise<T> {
-  const { params, body, headers, signal } = options
+  const { params, body, headers, signal, sinAvisoDeSesion } = options
   const isFormData = body instanceof FormData
-  const clave = leerClave()
 
   let response: Response
   try {
     response = await fetch(buildUrl(path, params), {
       method,
       signal,
+      // La sesión viaja en una cookie HttpOnly que el código del panel no puede leer
+      credentials: 'same-origin',
       headers: {
         Accept: 'application/json',
         ...(body !== undefined && !isFormData ? { 'Content-Type': 'application/json' } : {}),
-        ...(clave ? { 'X-API-Key': clave } : {}),
         ...headers,
       },
       body: body === undefined ? undefined : isFormData ? body : JSON.stringify(body),
@@ -94,7 +77,7 @@ async function request<T>(method: string, path: string, options: RequestOptions 
     : await response.text()
 
   if (!response.ok) {
-    if (response.status === 401) window.dispatchEvent(new Event(EVENTO_FALTA_CLAVE))
+    if (response.status === 401 && !sinAvisoDeSesion) window.dispatchEvent(new Event(EVENTO_SIN_SESION))
     throw new ApiError(response.status, mensajeDeError(response.status, payload), payload)
   }
 

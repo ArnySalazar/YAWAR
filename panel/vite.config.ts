@@ -28,6 +28,8 @@ export default defineConfig(({ mode }) => {
     test: {
       environment: 'jsdom',
       setupFiles: './src/test/preparar.ts',
+      // Las pruebas usan siempre estos establecimientos, sin importar el .env.local de quien las corre
+      env: { VITE_ESTABLECIMIENTOS: 'EESS01,EESS02,EESS03', VITE_API_URL: '/api' },
       // Las pruebas de pantalla completa en jsdom pasan los 5 s por defecto al correr todas juntas en Windows
       testTimeout: 15_000,
     },

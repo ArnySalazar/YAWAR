@@ -1,6 +1,6 @@
 // Pruebas de la capa común: cliente HTTP, semanas ISO y traducción de códigos.
 import { describe, expect, it, vi } from 'vitest'
-import { EVENTO_FALTA_CLAVE, guardarClave, SIN_CONEXION } from '@/api/http'
+import { EVENTO_SIN_SESION, SIN_CONEXION } from '@/api/http'
 import { yawarApi } from '@/api/yawar'
 import { grupoEdad, parentesco, senalDeFila, textoRespuesta, ultimaRespuesta } from '@/lib/dominio'
 import { etiquetaSemanaLarga, rangoSemana, semanaAnterior, semanaIso } from '@/lib/semana'
@@ -8,14 +8,14 @@ import { HISTORIALES } from './datos'
 import { errorApi, mockApi } from './utilidades'
 
 describe('Cliente de la API', () => {
-  it('llama con el prefijo /api y envía la clave guardada como X-API-Key', async () => {
+  it('llama con el prefijo /api y la sesión va en la cookie, no en encabezados', async () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response('[]', { headers: { 'content-type': 'application/json' } }))
     vi.stubGlobal('fetch', fetchMock)
-    guardarClave('secreta')
     await yawarApi.historial('N0001')
     const [url, init] = fetchMock.mock.calls[0]
     expect(new URL(url).pathname).toBe('/api/ninos/N0001/historial')
-    expect(init.headers['X-API-Key']).toBe('secreta')
+    expect(init.credentials).toBe('same-origin')
+    expect(init.headers['X-API-Key']).toBeUndefined()
     expect(init.headers.Authorization).toBeUndefined()
   })
 
@@ -51,12 +51,12 @@ describe('Cliente de la API', () => {
     await expect(yawarApi.salud()).rejects.toMatchObject({ status: 500, message: SIN_CONEXION })
   })
 
-  it('pide la clave en pantalla cuando la API responde 401', async () => {
+  it('avisa que no hay sesión cuando la API responde 401', async () => {
     mockApi({ 'GET /salud': errorApi(401, 'Falta la clave de acceso o es incorrecta') })
     const aviso = vi.fn()
-    window.addEventListener(EVENTO_FALTA_CLAVE, aviso)
+    window.addEventListener(EVENTO_SIN_SESION, aviso)
     await expect(yawarApi.salud()).rejects.toMatchObject({ status: 401 })
-    window.removeEventListener(EVENTO_FALTA_CLAVE, aviso)
+    window.removeEventListener(EVENTO_SIN_SESION, aviso)
     expect(aviso).toHaveBeenCalledOnce()
   })
 })

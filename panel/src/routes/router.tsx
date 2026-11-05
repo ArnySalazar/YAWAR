@@ -1,7 +1,10 @@
 import { lazy } from 'react'
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter, Outlet } from 'react-router'
 import { AppLayout } from '@/components/layout/AppLayout'
 import NotFoundPage from './NotFoundPage'
+import { SesionProvider } from '@/features/acceso/SesionProvider'
+import { RequiereSesion } from '@/features/acceso/RequiereSesion'
+import IngresarPage from '@/features/acceso/IngresarPage'
 
 // Cada pantalla se descarga solo cuando se visita (code splitting por ruta).
 const InicioPage = lazy(() => import('@/features/inicio/InicioPage'))
@@ -14,16 +17,30 @@ const AdministracionPage = lazy(() => import('@/features/administracion/Administ
 
 export const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <SesionProvider>
+        <Outlet />
+      </SesionProvider>
+    ),
     children: [
-      { index: true, element: <InicioPage /> },
-      { path: 'planificacion', element: <PlanificacionPage /> },
-      { path: 'ninos', element: <NinosPage /> },
-      { path: 'ninos/:childId', element: <FichaNinoPage /> },
-      { path: 'comunicacion', element: <ComunicacionPage /> },
-      { path: 'indicadores', element: <IndicadoresPage /> },
-      { path: 'administracion', element: <AdministracionPage /> },
-      { path: '*', element: <NotFoundPage /> },
+      { path: 'ingresar', element: <IngresarPage /> },
+      {
+        element: (
+          <RequiereSesion>
+            <AppLayout />
+          </RequiereSesion>
+        ),
+        children: [
+          { index: true, element: <InicioPage /> },
+          { path: 'planificacion', element: <PlanificacionPage /> },
+          { path: 'ninos', element: <NinosPage /> },
+          { path: 'ninos/:childId', element: <FichaNinoPage /> },
+          { path: 'comunicacion', element: <ComunicacionPage /> },
+          { path: 'indicadores', element: <IndicadoresPage /> },
+          { path: 'administracion', element: <AdministracionPage /> },
+          { path: '*', element: <NotFoundPage /> },
+        ],
+      },
     ],
   },
 ])

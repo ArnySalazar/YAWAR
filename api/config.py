@@ -38,3 +38,15 @@ DIAS_SIN_RESPUESTA = int(os.getenv("DIAS_SIN_RESPUESTA", "7"))
 CRED_TELEFONOS_ALERTA = [t.strip() for t in os.getenv("CRED_TELEFONOS_ALERTA", "").split(",") if t.strip()]
 WA_PLANTILLA_ALERTA = os.getenv("WA_PLANTILLA_ALERTA", "alerta_personal_cred")
 UMBRAL_META_ALERTA = float(os.getenv("UMBRAL_META_ALERTA", "0.3"))
+
+# ---------- Acceso al panel ----------
+# 1 = el panel pide usuario y contraseña (obligatorio si el panel se publica en internet).
+# API_CLAVE sigue sirviendo para scripts y pruebas que llaman a la API sin navegador.
+PANEL_LOGIN = os.getenv("PANEL_LOGIN", "1") == "1"
+SESION_HORAS = int(os.getenv("SESION_HORAS", "12"))
+# 1 = la cookie de sesión solo viaja por HTTPS. Poner 0 solo para probar por http en la red local.
+SESION_COOKIE_SEGURA = os.getenv("SESION_COOKIE_SEGURA", "1") == "1"
+# Carpeta del panel ya compilado (npm run build). Si existe, la API también sirve el panel.
+PANEL_DIST = os.getenv("PANEL_DIST", str(Path(__file__).resolve().parent.parent / "panel" / "dist"))
+# 0 = oculta /docs y /openapi.json (recomendado cuando la API está publicada)
+MOSTRAR_DOCS = os.getenv("MOSTRAR_DOCS", "1") == "1"

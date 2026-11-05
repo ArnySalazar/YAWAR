@@ -1,5 +1,6 @@
 export const paths = {
   inicio: '/',
+  ingresar: '/ingresar',
   planificacion: '/planificacion',
   ninos: '/ninos',
   fichaNino: (id: string) => `/ninos/${encodeURIComponent(id)}`,

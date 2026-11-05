@@ -8,6 +8,7 @@ import { useEstablecimiento } from '@/features/establecimiento/EstablecimientoPr
 import { etiquetaSemanaLarga } from '@/lib/semana'
 import { paths } from '@/routes/paths'
 import { cn } from '@/lib/cn'
+import { useSesion } from '@/features/acceso/SesionProvider'
 
 const NAV_ITEMS = [
   { label: 'Inicio', to: paths.inicio, end: true },
@@ -81,6 +82,26 @@ function useHayAlertas() {
   return Boolean(indicadores.data?.meta_alerta) || Boolean(lista.data?.some((fila) => fila.nivel !== 2))
 }
 
+/** Nombre del usuario y botón para cerrar sesión (no aparece si la API corre sin login). */
+function MenuUsuario() {
+  const sesion = useSesion()
+  if (!sesion?.usuario?.login) return null
+  return (
+    <div className="flex items-center gap-2 border-l border-line pl-2">
+      <span className="hidden max-w-40 truncate text-xs font-semibold text-ink md:inline" title={sesion.usuario.nombre}>
+        {sesion.usuario.nombre}
+      </span>
+      <button
+        type="button"
+        onClick={() => void sesion.salir()}
+        className="h-8 rounded-full px-3 text-xs font-semibold text-nav-ink hover:bg-chip"
+      >
+        Salir
+      </button>
+    </div>
+  )
+}
+
 export function AppHeader() {
   const { semana, modoPrueba } = useHoy()
   const hayAlertas = useHayAlertas()
@@ -119,6 +140,7 @@ export function AppHeader() {
               <span className="absolute top-1.5 right-[6.33px] size-2 rounded-full bg-brand shadow-[0px_0px_0px_2px_#f4fbf4]" />
             )}
           </Link>
+          <MenuUsuario />
         </div>
       </div>
 
